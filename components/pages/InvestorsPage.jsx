@@ -1,0 +1,429 @@
+'use client';
+
+// Ported from the design-canvas artboard Investors.dc.html.
+// Markup lives in render(); data and interaction in renderVals().
+import React, { Fragment } from 'react';
+import { playWhenVisible } from '@/lib/video';
+import { sendInquiry } from '@/lib/inquiry';
+import A from '@/components/SmartLink';
+import Footer from '@/components/Footer';
+import Nav from '@/components/Nav';
+
+export default class InvestorsPage extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
+
+  componentDidMount() {
+    var self = this;
+    this.setState({ w: 0 });
+    this.timer = setInterval(function () {
+      var cur = (self.state && self.state.w) || 0;
+      self.setState({ w: (cur + 1) % 4 });
+    }, 1800);
+  }
+  componentWillUnmount() {
+    if (this.timer) clearInterval(this.timer);
+  }
+  renderVals() {
+    var self = this;
+    var st = this.state || {};
+    var B = '';
+    var wi = st.w || 0;
+    var steps = [
+      ['More locations', 'Owners join for pricing and revenue share'],
+      ['More inventory', 'Screens, walls and gates across markets'],
+      ['More advertisers', 'National and local brands buy the reach'],
+      ['More owner revenue', 'Payouts bring the next owner in']
+    ];
+    var logos = [['Citibank', '/media/logos/citibank.png'], ['Anheuser-Busch', '/media/logos/anheuser-busch.png'], ['Allstate', '/media/logos/allstate.png'], ['Panera Bread', '/media/logos/panera.png'], ['eBay', '/media/logos/ebay.png'], ['Gatorade', '/media/logos/gatorade.png'], ['General Mills', '/media/logos/general-mills.png'], ['New York Yankees', '/media/logos/yankees.png'], ['Live Nation', '/media/logos/live-nation.png'], ['Optum', '/media/logos/optum.png'], ['Renault', '/media/logos/renault.png'], ['Rimowa', '/media/logos/rimowa.png']];
+    if (!this._vidRef) {
+      this._vidRef = playWhenVisible;
+    }
+    var engines = [
+      { no: '01', name: 'STATIC MEDIA', dot: '#FFFFFF', img: '/media/photos/hartford-healthcare-wallscape.webp', pos: '50% 50%', note: 'REAL INSTALL', alt: 'Hartford HealthCare wallscape in a parking garage',
+        head: 'Walls, wraps & gates', earn: 'Campaign fees for wallscapes, elevator wraps, gate arms, tickets and takeovers', scale: 'Printed and installed in-house; every new property adds surfaces at low cost' },
+      { no: '02', name: 'DIGITAL', dot: '#8FDCE8', img: '/media/photos/ddrb-connecticut.webp', pos: '50% 30%', note: 'REAL INSTALL · CT', alt: 'A Lot Media Digital Dynamic Rate Board installed in Connecticut',
+        head: 'Rate boards & screens', earn: 'Ad time on screens we build, plus the dynamic-pricing value owners get from the rate board', scale: 'Software-driven inventory, ready for self-serve and programmatic' },
+      { no: '03', name: 'EVENTS & VENUES', dot: '#FBAE4F', img: '/media/renders/event-night-market.webp', pos: '50% 50%', note: 'CONCEPT RENDER', tag: 'NEXT GROWTH ENGINE', alt: 'Concept render of a night market on a parking garage rooftop',
+        head: 'The real estate itself', earn: 'Brand activations, venue rental and event-day parking + media packages', scale: 'Off-peak space and rooftops across the footprint become bookable venues, with media attached' }
+    ];
+    return {
+      vidRef: this._vidRef,
+      engines: engines.map(function (e) {
+        var hot = !!e.tag;
+        return { no: e.no, name: e.name, dot: e.dot, img: B + e.img, pos: e.pos, note: e.note, tag: e.tag || '', alt: e.alt, head: e.head, earn: e.earn, scale: e.scale,
+          bg: hot ? '#0B1220' : '#FFFFFF', fg: hot ? '#FFFFFF' : '#0B1220', line: hot ? 'rgba(255,255,255,0.16)' : 'rgba(11,18,32,0.12)',
+          ring: hot ? 'inset 0 0 0 3px #FBAE4F' : 'none' };
+      }),
+      wheel: steps.map(function (s, i) {
+        var on = i === wi;
+        return { no: '0' + (i + 1), title: s[0], desc: s[1], arrow: i === 3 ? '↺' : '→', bg: on ? '#FBAE4F' : '#FFFFFF', fg: '#0B1220' };
+      }),
+      logos: logos.map(function (l) { return { name: l[0], src: B + l[1] }; }),
+      leaders: [{ name: '[Name]', role: '[Chief Executive Officer]' }, { name: '[Name]', role: '[President / COO]' }, { name: '[Name]', role: '[Chief Revenue Officer]' }, { name: '[Name]', role: '[Head of Real Estate]' }],
+      sent: !!st.sent,
+      notSent: !st.sent,
+      submit: function (e) { if (e && e.preventDefault) e.preventDefault(); sendInquiry(e, 'investor', null); self.setState({ sent: true }); }
+    };
+  }
+
+  render() {
+    const v = this.renderVals() || {};
+    return (
+      <div className="alm-root" style={{ background: "#F5F5F7", color: "#0B1220", fontFamily: "'Montserrat', system-ui, sans-serif", overflowX: "hidden", WebkitFontSmoothing: "antialiased" }}>
+        <Nav active="investors" />
+        {/* HERO */}
+        <div style={{ background: "#05080F" }}>
+          <section className="alm-hero" data-scrub="exit" style={{ position: "relative", minHeight: "820px", background: "#0B1220", color: "#FFFFFF", overflow: "hidden" }}>
+            <video className="alm-hero-media" ref={v.vidRef} src="/media/video/highway-night.mp4" poster="/media/video/highway-night-poster.webp" autoPlay muted loop playsInline preload="auto" aria-hidden="true" style={{ position: "absolute", inset: "0", width: "100%", height: "100%", objectFit: "cover", objectPosition: "50% 40%" }} />
+            <div style={{ position: "absolute", inset: "0", background: "linear-gradient(180deg, rgba(11,18,32,0.5) 0%, rgba(11,18,32,0.35) 40%, rgba(11,18,32,0.94) 100%)" }} />
+            <div className="alm-hero-copy" style={{ position: "relative", maxWidth: "1360px", minHeight: "820px", margin: "0 auto", padding: "0 28px 72px", boxSizing: "border-box", display: "flex", flexDirection: "column", justifyContent: "flex-end" }}>
+              <div className="alm-rise" style={{ display: "flex", alignItems: "center", gap: "10px", fontSize: "15px", fontWeight: "600", letterSpacing: "-0.005em", opacity: "0.72" }}><span style={{ width: "7px", height: "7px", background: "#FBAE4F", borderRadius: "50%" }} />Investor relations</div>
+              <h1 className="alm-rise" style={{ margin: "22px 0 0", maxWidth: "1240px", fontSize: "clamp(44px, 7.2vw, 116px)", lineHeight: "1", letterSpacing: "-0.035em", fontWeight: "600", animationDelay: ".1s" }}>The media layer of <span style={{ color: "#FBAE4F" }}>America’s parking.</span></h1>
+              <div className="alm-rise" style={{ marginTop: "32px", display: "flex", flexWrap: "wrap", gap: "24px 48px", alignItems: "flex-end", justifyContent: "space-between", animationDelay: ".2s" }}>
+                <p style={{ margin: "0", maxWidth: "620px", fontSize: "19px", lineHeight: "1.55", fontWeight: "400", color: "#E4E8EF" }}>A vertically integrated out-of-home network across 12,000 parking locations — from the factory that builds our screens to the sales team that fills them.</p>
+                <div style={{ display: "flex", gap: "12px", flexWrap: "wrap" }}>
+                  <A className="alm-btn" href="#access" style={{ display: "inline-flex", alignItems: "center", minHeight: "56px", padding: "0 26px", borderRadius: "999px", background: "#FBAE4F", color: "#0B1220", fontWeight: "600", fontSize: "15px", letterSpacing: "-0.005em" }}>Request the data room</A>
+                  <A className="alm-btn" href="#thesis" style={{ display: "inline-flex", alignItems: "center", minHeight: "56px", padding: "0 26px", borderRadius: "999px", border: "2px solid #FFFFFF", color: "#FFFFFF", fontWeight: "600", fontSize: "15px", letterSpacing: "-0.005em" }}>Read the thesis</A>
+                </div>
+              </div>
+              <div style={{ position: "absolute", right: "28px", bottom: "24px", fontFamily: "'Geist Mono', monospace", fontSize: "11px", letterSpacing: "0.08em", color: "rgba(255,255,255,0.55)" }}>DRONE FOOTAGE · ILLUSTRATIVE</div>
+            </div>
+          </section>
+        </div>
+        {/* MARKET OPPORTUNITY */}
+        <section style={{ padding: "140px 28px 40px" }}>
+          <div style={{ maxWidth: "1240px", margin: "0 auto" }}>
+            <div style={{ textAlign: "center" }}>
+              <div style={{ display: "inline-flex", alignItems: "center", gap: "10px", fontSize: "17px", fontWeight: "600", letterSpacing: "-0.01em", color: "#A85C00" }}><span style={{ width: "7px", height: "7px", background: "#FBAE4F", borderRadius: "50%" }} />The opportunity</div>
+              <h2 className="alm-in" style={{ margin: "16px auto 0", maxWidth: "960px", fontSize: "clamp(40px, 6vw, 88px)", lineHeight: "1", letterSpacing: "-0.04em", fontWeight: "600" }}>The one traditional medium<br />that keeps growing.</h2>
+              <p className="alm-in" style={{ margin: "24px auto 0", maxWidth: "680px", fontSize: "21px", lineHeight: "1.5", fontWeight: "400", color: "#5B6474" }}>US out-of-home set a record in 2025 and digital is taking a bigger share every year. Parking — where every trip ends — is still one of its least built-out venues.</p>
+            </div>
+            <div style={{ marginTop: "64px", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: "16px" }}>
+              <div className="alm-in" style={{ padding: "36px", minHeight: "260px", borderRadius: "28px", background: "#0B1220", color: "#FFFFFF", display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
+                <div style={{ fontSize: "15px", fontWeight: "600", color: "#A3ACBC" }}>US OOH revenue, 2025</div>
+                <div>
+                  <div style={{ fontSize: "clamp(56px, 5.4vw, 84px)", fontWeight: "600", lineHeight: "0.95", letterSpacing: "-0.05em", background: "linear-gradient(90deg, #FBAE4F, #FFE1B8)", WebkitBackgroundClip: "text", backgroundClip: "text", color: "transparent" }}>$9.46B</div>
+                  <div style={{ marginTop: "10px", fontSize: "16px", lineHeight: "1.5", color: "#C9D0DB" }}>A record year, up 3.6%.</div>
+                </div>
+              </div>
+              <div className="alm-in" style={{ padding: "36px", minHeight: "260px", borderRadius: "28px", background: "#FFFFFF", display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
+                <div style={{ fontSize: "15px", fontWeight: "600", color: "#5B6474" }}>Growth streak</div>
+                <div>
+                  <div style={{ fontSize: "clamp(56px, 5.4vw, 84px)", fontWeight: "600", lineHeight: "0.95", letterSpacing: "-0.05em" }}>19</div>
+                  <div style={{ marginTop: "10px", fontSize: "16px", lineHeight: "1.5", color: "#5B6474" }}>consecutive quarters of growth.</div>
+                </div>
+              </div>
+              <div className="alm-in" style={{ padding: "36px", minHeight: "260px", borderRadius: "28px", background: "#FFFFFF", display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
+                <div style={{ fontSize: "15px", fontWeight: "600", color: "#5B6474" }}>Digital share</div>
+                <div>
+                  <div style={{ fontSize: "clamp(56px, 5.4vw, 84px)", fontWeight: "600", lineHeight: "0.95", letterSpacing: "-0.05em", color: "#1D7F92" }}>36.3%</div>
+                  <div style={{ marginTop: "10px", fontSize: "16px", lineHeight: "1.5", color: "#5B6474" }}>of OOH revenue, up 10.5% year over year.</div>
+                </div>
+              </div>
+              <div className="alm-in" style={{ padding: "36px", minHeight: "260px", borderRadius: "28px", background: "#FFFFFF", display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
+                <div style={{ fontSize: "15px", fontWeight: "600", color: "#5B6474" }}>Why now</div>
+                <ul style={{ margin: "0", padding: "0", listStyle: "none", display: "grid", gap: "12px", fontSize: "16px", lineHeight: "1.45", fontWeight: "500" }}>
+                  <li style={{ display: "flex", gap: "10px" }}><span style={{ color: "#FBAE4F" }}>●</span>Digital screens unlock self-serve and programmatic buying</li>
+                  <li style={{ display: "flex", gap: "10px" }}><span style={{ color: "#FBAE4F" }}>●</span>Brands are moving budget to live, in-person moments</li>
+                  <li style={{ display: "flex", gap: "10px" }}><span style={{ color: "#FBAE4F" }}>●</span>Owners want new income from existing space</li>
+                </ul>
+              </div>
+            </div>
+            <div style={{ marginTop: "18px", fontSize: "13px", lineHeight: "1.5", color: "#6E7685" }}>Source: OAAA, US out-of-home advertising revenue for full-year 2025, reported March 2026.</div>
+          </div>
+        </section>
+        {/* METRICS */}
+        <section style={{ padding: "104px 28px" }}>
+          <div style={{ maxWidth: "1360px", margin: "0 auto" }}>
+            <div style={{ display: "flex", alignItems: "center", gap: "10px", fontSize: "15px", fontWeight: "600", letterSpacing: "-0.005em", opacity: "0.72" }}><span style={{ width: "7px", height: "7px", background: "#FBAE4F", borderRadius: "50%" }} />At a glance</div>
+            <div style={{ marginTop: "40px", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: "48px 32px" }}>
+              <div style={{ borderTop: "3px solid #0B1220", paddingTop: "20px" }}>
+                <div style={{ fontSize: "clamp(48px, 5vw, 76px)", fontWeight: "600", lineHeight: "0.95", letterSpacing: "-0.035em" }}>12,000</div>
+                <div style={{ marginTop: "10px", fontSize: "12px", fontWeight: "600", letterSpacing: "0.14em", color: "#4E586A" }}>PARKING LOCATIONS</div>
+              </div>
+              <div style={{ borderTop: "3px solid #0B1220", paddingTop: "20px" }}>
+                <div style={{ fontSize: "clamp(48px, 5vw, 76px)", fontWeight: "600", lineHeight: "0.95", letterSpacing: "-0.035em" }}>3M+</div>
+                <div style={{ marginTop: "10px", fontSize: "12px", fontWeight: "600", letterSpacing: "0.14em", color: "#4E586A" }}>CARS PARKED DAILY</div>
+              </div>
+              <div style={{ borderTop: "3px solid #0B1220", paddingTop: "20px" }}>
+                <div style={{ fontSize: "clamp(48px, 5vw, 76px)", fontWeight: "600", lineHeight: "0.95", letterSpacing: "-0.035em" }}>400+</div>
+                <div style={{ marginTop: "10px", fontSize: "12px", fontWeight: "600", letterSpacing: "0.14em", color: "#4E586A" }}>CITIES · 40 STATES</div>
+              </div>
+              <div style={{ borderTop: "3px solid #0B1220", paddingTop: "20px" }}>
+                <div style={{ fontSize: "clamp(48px, 5vw, 76px)", fontWeight: "600", lineHeight: "0.95", letterSpacing: "-0.035em" }}>11</div>
+                <div style={{ marginTop: "10px", fontSize: "12px", fontWeight: "600", letterSpacing: "0.14em", color: "#4E586A" }}>FLAGSHIP MARKETS</div>
+              </div>
+              <div style={{ borderTop: "3px solid #0B1220", paddingTop: "20px" }}>
+                <div style={{ fontSize: "clamp(48px, 5vw, 76px)", fontWeight: "600", lineHeight: "0.95", letterSpacing: "-0.035em" }}>50+</div>
+                <div style={{ marginTop: "10px", fontSize: "12px", fontWeight: "600", letterSpacing: "0.14em", color: "#4E586A" }}>ADVERTISER BRANDS</div>
+              </div>
+              <div style={{ borderTop: "3px solid #0B1220", paddingTop: "20px" }}>
+                <div style={{ fontSize: "clamp(48px, 5vw, 76px)", fontWeight: "600", lineHeight: "0.95", letterSpacing: "-0.035em" }}>2016</div>
+                <div style={{ marginTop: "10px", fontSize: "12px", fontWeight: "600", letterSpacing: "0.14em", color: "#4E586A" }}>DESIGNING &amp; INSTALLING SINCE</div>
+              </div>
+            </div>
+            <div style={{ marginTop: "48px", padding: "32px", borderRadius: "18px", background: "#0B1220", color: "#FFFFFF", display: "flex", flexWrap: "wrap", gap: "24px 48px", alignItems: "center", justifyContent: "space-between" }}>
+              <div style={{ display: "flex", flexWrap: "wrap", gap: "24px 48px" }}>
+                <div>
+                  <div style={{ fontSize: "11px", fontWeight: "600", letterSpacing: "0.14em", color: "#8B95A7" }}>REVENUE</div>
+                  <div style={{ marginTop: "6px", fontSize: "28px", fontWeight: "650", letterSpacing: "-0.02em" }}>[Figure]</div>
+                </div>
+                <div>
+                  <div style={{ fontSize: "11px", fontWeight: "600", letterSpacing: "0.14em", color: "#8B95A7" }}>YOY GROWTH</div>
+                  <div style={{ marginTop: "6px", fontSize: "28px", fontWeight: "650", letterSpacing: "-0.02em" }}>[Figure]</div>
+                </div>
+                <div>
+                  <div style={{ fontSize: "11px", fontWeight: "600", letterSpacing: "0.14em", color: "#8B95A7" }}>SCREENS DEPLOYED</div>
+                  <div style={{ marginTop: "6px", fontSize: "28px", fontWeight: "650", letterSpacing: "-0.02em" }}>[Figure]</div>
+                </div>
+                <div>
+                  <div style={{ fontSize: "11px", fontWeight: "600", letterSpacing: "0.14em", color: "#8B95A7" }}>OWNER PAYOUTS</div>
+                  <div style={{ marginTop: "6px", fontSize: "28px", fontWeight: "650", letterSpacing: "-0.02em" }}>[Figure]</div>
+                </div>
+              </div>
+              <div style={{ fontSize: "13px", fontWeight: "700", color: "#FBAE4F" }}>FINANCIALS AVAILABLE UNDER NDA</div>
+            </div>
+          </div>
+        </section>
+        {/* THREE ENGINES */}
+        <section style={{ padding: "24px 28px 128px" }}>
+          <div style={{ maxWidth: "1360px", margin: "0 auto" }}>
+            <div style={{ display: "flex", flexWrap: "wrap", gap: "24px 64px", alignItems: "flex-end", justifyContent: "space-between" }}>
+              <div>
+                <div style={{ display: "flex", alignItems: "center", gap: "10px", fontSize: "15px", fontWeight: "600", letterSpacing: "-0.005em", opacity: "0.72" }}><span style={{ width: "7px", height: "7px", background: "#FBAE4F", borderRadius: "50%" }} />The business</div>
+                <h2 className="alm-in" style={{ margin: "22px 0 0", maxWidth: "980px", fontSize: "clamp(38px, 5.2vw, 80px)", lineHeight: "1", letterSpacing: "-0.035em", fontWeight: "600" }}>Three revenue engines.<br />One footprint.</h2>
+              </div>
+              <p style={{ margin: "0", maxWidth: "440px", fontSize: "17px", lineHeight: "1.6", fontWeight: "400", color: "#4E586A" }}>The same locations monetize three ways — so every new property we sign adds static, digital and event inventory at once.</p>
+            </div>
+            <div style={{ marginTop: "48px", padding: "32px", borderRadius: "18px", background: "#FFFFFF" }}>
+              <div style={{ display: "grid", gridTemplateColumns: "minmax(120px, 160px) 1fr", gap: "16px 24px", alignItems: "center" }}>
+                <div style={{ fontSize: "11px", fontWeight: "600", letterSpacing: "0.14em", color: "#4E586A" }}>TODAY</div>
+                <div style={{ display: "flex", gap: "4px", height: "44px" }}>
+                  <div style={{ flex: "1", minWidth: "0", borderRadius: "4px", background: "#0B1220", color: "#FFFFFF", display: "flex", alignItems: "center", padding: "0 14px", fontSize: "12px", fontWeight: "600", letterSpacing: "0.1em", overflow: "hidden" }}>STATIC</div>
+                  <div style={{ flex: "1", minWidth: "0", borderRadius: "4px", background: "#8FDCE8", color: "#0B1220", display: "flex", alignItems: "center", padding: "0 14px", fontSize: "12px", fontWeight: "600", letterSpacing: "0.1em", overflow: "hidden" }}>DIGITAL</div>
+                  <div style={{ flex: "1", minWidth: "0", borderRadius: "4px", background: "#FBAE4F", color: "#0B1220", display: "flex", alignItems: "center", padding: "0 14px", fontSize: "12px", fontWeight: "600", letterSpacing: "0.1em", overflow: "hidden" }}>EVENTS</div>
+                </div>
+                <div style={{ fontSize: "11px", fontWeight: "600", letterSpacing: "0.14em", color: "#4E586A" }}>WHERE WE’RE HEADED</div>
+                <div style={{ display: "flex", gap: "4px", height: "44px" }}>
+                  <div style={{ flex: "1", minWidth: "0", borderRadius: "4px", background: "#0B1220", color: "#FFFFFF", display: "flex", alignItems: "center", padding: "0 14px", fontSize: "12px", fontWeight: "600", letterSpacing: "0.1em", overflow: "hidden" }}>STATIC</div>
+                  <div style={{ flex: "1", minWidth: "0", borderRadius: "4px", background: "#8FDCE8", color: "#0B1220", display: "flex", alignItems: "center", padding: "0 14px", fontSize: "12px", fontWeight: "600", letterSpacing: "0.1em", overflow: "hidden" }}>DIGITAL</div>
+                  <div className="alm-grow" style={{ flex: "1.7", minWidth: "0", borderRadius: "4px", backgroundImage: "repeating-linear-gradient(135deg, #FBAE4F 0 10px, #F5A136 10px 20px)", backgroundSize: "28.28px 28.28px", color: "#0B1220", display: "flex", alignItems: "center", justifyContent: "space-between", padding: "0 14px", fontSize: "12px", fontWeight: "600", letterSpacing: "0.1em", overflow: "hidden" }}>
+                    <span>EVENTS &amp; VENUES</span>
+                    <span>↗</span>
+                  </div>
+                </div>
+              </div>
+              <div style={{ marginTop: "16px", fontFamily: "'Geist Mono', monospace", fontSize: "11px", letterSpacing: "0.08em", color: "#8A93A3" }}>DIRECTIONAL · ROUGHLY EQUAL THIRDS TODAY · DETAIL IN THE DATA ROOM</div>
+            </div>
+            <div style={{ marginTop: "16px", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "16px" }}>
+              {(v.engines || []).map((e, eI) => (
+                <Fragment key={eI}>
+                  <article className="alm-tile alm-in" style={{ display: "flex", flexDirection: "column", borderRadius: "18px", overflow: "hidden", background: e.bg, color: e.fg, boxShadow: e.ring }}>
+                    <div style={{ position: "relative", height: "260px", overflow: "hidden", background: "#0B1220" }}>
+                      <img src={e.img} alt={e.alt} style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: e.pos, display: "block" }} loading="lazy" decoding="async" />
+                      {e.tag ? (
+                        <>
+                          <span style={{ position: "absolute", top: "14px", left: "14px", padding: "6px 11px", borderRadius: "999px", background: "#FBAE4F", color: "#0B1220", fontSize: "11px", fontWeight: "600", letterSpacing: "0.1em" }}>{e.tag}</span>
+                        </>
+                      ) : null}
+                      <span style={{ position: "absolute", right: "12px", bottom: "12px", fontFamily: "'Geist Mono', monospace", fontSize: "10px", letterSpacing: "0.1em", color: "rgba(255,255,255,0.75)" }}>{e.note}</span>
+                    </div>
+                    <div style={{ padding: "30px", display: "flex", flexDirection: "column", gap: "14px", flex: "1" }}>
+                      <div style={{ display: "flex", alignItems: "center", gap: "10px", fontSize: "12px", fontWeight: "600", letterSpacing: "0.14em" }}><span style={{ width: "7px", height: "7px", background: e.dot, outline: "1px solid rgba(127,127,127,0.4)", borderRadius: "50%" }} />{e.no} · {e.name}</div>
+                      <div style={{ fontSize: "28px", fontWeight: "650", lineHeight: "1.08", letterSpacing: "-0.02em" }}>{e.head}</div>
+                      <dl style={{ margin: "6px 0 0", display: "grid", gridTemplateColumns: "minmax(0, 1fr) minmax(0, 2fr)", borderTop: `1px solid ${e.line}` }}>
+                        <dt style={{ padding: "12px 0", borderBottom: `1px solid ${e.line}`, fontSize: "11px", fontWeight: "600", letterSpacing: "0.12em", opacity: "0.7" }}>HOW IT EARNS</dt>
+                        <dd style={{ margin: "0", padding: "12px 0", borderBottom: `1px solid ${e.line}`, fontSize: "14px", fontWeight: "600", lineHeight: "1.5" }}>{e.earn}</dd>
+                        <dt style={{ padding: "12px 0", borderBottom: `1px solid ${e.line}`, fontSize: "11px", fontWeight: "600", letterSpacing: "0.12em", opacity: "0.7" }}>WHY IT SCALES</dt>
+                        <dd style={{ margin: "0", padding: "12px 0", borderBottom: `1px solid ${e.line}`, fontSize: "14px", fontWeight: "600", lineHeight: "1.5" }}>{e.scale}</dd>
+                      </dl>
+                    </div>
+                  </article>
+                </Fragment>
+              ))}
+            </div>
+          </div>
+        </section>
+        {/* THESIS */}
+        <section id="thesis" style={{ padding: "128px 28px", background: "#0B1220", color: "#FFFFFF" }}>
+          <div style={{ maxWidth: "1360px", margin: "0 auto" }}>
+            <div style={{ display: "flex", alignItems: "center", gap: "10px", fontSize: "15px", fontWeight: "600", letterSpacing: "-0.005em", opacity: "0.72" }}><span style={{ width: "7px", height: "7px", background: "#FBAE4F", borderRadius: "50%" }} />The thesis</div>
+            <h2 className="alm-in" style={{ margin: "22px 0 0", maxWidth: "1000px", fontSize: "clamp(38px, 5.2vw, 80px)", lineHeight: "1", letterSpacing: "-0.035em", fontWeight: "600" }}>Why we win.</h2>
+            <div style={{ marginTop: "64px", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(290px, 1fr))", gap: "48px 40px" }}>
+              <div style={{ borderTop: "3px solid #FBAE4F", paddingTop: "24px" }}>
+                <div style={{ fontFamily: "'Geist Mono', monospace", fontSize: "13px", color: "#FBAE4F" }}>01</div>
+                <div style={{ marginTop: "14px", fontSize: "26px", fontWeight: "650", lineHeight: "1.08", letterSpacing: "-0.02em" }}>An overlooked venue</div>
+                <p style={{ margin: "14px 0 0", fontSize: "16px", lineHeight: "1.65", fontWeight: "400", color: "#C9D0DB" }}>Parking is the first and last stop of the trip, with up to ten minutes of dwell. We believe it is one of the least-mediated high-attention venues in out-of-home.</p>
+              </div>
+              <div style={{ borderTop: "3px solid #FBAE4F", paddingTop: "24px" }}>
+                <div style={{ fontFamily: "'Geist Mono', monospace", fontSize: "13px", color: "#FBAE4F" }}>02</div>
+                <div style={{ marginTop: "14px", fontSize: "26px", fontWeight: "650", lineHeight: "1.08", letterSpacing: "-0.02em" }}>Vertically integrated</div>
+                <p style={{ margin: "14px 0 0", fontSize: "16px", lineHeight: "1.65", fontWeight: "400", color: "#C9D0DB" }}>We own the manufacturing, software, printing, design, installation and sales. Fewer vendors means faster deployment and more margin per placement.</p>
+              </div>
+              <div style={{ borderTop: "3px solid #FBAE4F", paddingTop: "24px" }}>
+                <div style={{ fontFamily: "'Geist Mono', monospace", fontSize: "13px", color: "#FBAE4F" }}>03</div>
+                <div style={{ marginTop: "14px", fontSize: "26px", fontWeight: "650", lineHeight: "1.08", letterSpacing: "-0.02em" }}>A wedge with owners</div>
+                <p style={{ margin: "14px 0 0", fontSize: "16px", lineHeight: "1.65", fontWeight: "400", color: "#C9D0DB" }}>The Digital Dynamic Rate Board™ gives owners dynamic pricing they value on its own — and puts our screen at the entrance of every garage that installs it.</p>
+              </div>
+              <div style={{ borderTop: "3px solid #FBAE4F", paddingTop: "24px" }}>
+                <div style={{ fontFamily: "'Geist Mono', monospace", fontSize: "13px", color: "#FBAE4F" }}>04</div>
+                <div style={{ marginTop: "14px", fontSize: "26px", fontWeight: "650", lineHeight: "1.08", letterSpacing: "-0.02em" }}>Built for self-serve</div>
+                <p style={{ margin: "14px 0 0", fontSize: "16px", lineHeight: "1.65", fontWeight: "400", color: "#C9D0DB" }}>Audience data from Geopath, DOT, Census and Wi-Fi beacons plus digital inventory sets up self-serve and programmatic buying — starting with this site.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+        {/* FLYWHEEL */}
+        <section style={{ padding: "128px 28px" }}>
+          <div style={{ maxWidth: "1360px", margin: "0 auto", display: "flex", flexWrap: "wrap", gap: "56px", alignItems: "center" }}>
+            <div style={{ flex: "1 1 400px" }}>
+              <div style={{ display: "flex", alignItems: "center", gap: "10px", fontSize: "15px", fontWeight: "600", letterSpacing: "-0.005em", opacity: "0.72" }}><span style={{ width: "7px", height: "7px", background: "#FBAE4F", borderRadius: "50%" }} />The flywheel</div>
+              <h2 className="alm-in" style={{ margin: "22px 0 0", fontSize: "clamp(38px, 5vw, 72px)", lineHeight: "1", letterSpacing: "-0.035em", fontWeight: "600" }}>Every location makes the next one easier.</h2>
+              <p style={{ margin: "24px 0 0", maxWidth: "520px", fontSize: "18px", lineHeight: "1.6", fontWeight: "400", color: "#4E586A" }}>A two-sided network: owners supply the space, advertisers buy the audience, and each side’s growth strengthens the other.</p>
+            </div>
+            <div style={{ flex: "1 1 560px", minWidth: "0" }}>
+              <ol style={{ margin: "0", padding: "0", listStyle: "none", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: "12px" }}>
+                {(v.wheel || []).map((w, wI) => (
+                  <Fragment key={wI}>
+                    <li style={{ padding: "28px", borderRadius: "18px", background: w.bg, color: w.fg, transition: "background .5s ease, color .5s ease", minHeight: "170px", display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
+                      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+                        <span style={{ fontFamily: "'Geist Mono', monospace", fontSize: "13px", fontWeight: "600" }}>{w.no}</span>
+                        <span style={{ fontSize: "22px", fontWeight: "650", letterSpacing: "-0.02em" }}>{w.arrow}</span>
+                      </div>
+                      <div style={{ marginTop: "16px" }}>
+                        <div style={{ fontSize: "22px", fontWeight: "650", lineHeight: "1.08", letterSpacing: "-0.02em" }}>{w.title}</div>
+                        <div style={{ marginTop: "8px", fontSize: "14px", fontWeight: "600", opacity: "0.85" }}>{w.desc}</div>
+                      </div>
+                    </li>
+                  </Fragment>
+                ))}
+              </ol>
+            </div>
+          </div>
+        </section>
+        {/* ROADMAP */}
+        <section style={{ padding: "128px 28px", background: "#344567", color: "#FFFFFF" }}>
+          <div style={{ maxWidth: "1360px", margin: "0 auto" }}>
+            <div style={{ display: "flex", alignItems: "center", gap: "10px", fontSize: "15px", fontWeight: "600", letterSpacing: "-0.005em", opacity: "0.72" }}><span style={{ width: "7px", height: "7px", background: "#FBAE4F", borderRadius: "50%" }} />Roadmap</div>
+            <h2 className="alm-in" style={{ margin: "22px 0 0", maxWidth: "1000px", fontSize: "clamp(38px, 5.2vw, 80px)", lineHeight: "1", letterSpacing: "-0.035em", fontWeight: "600" }}>From installer to platform.</h2>
+            <ol style={{ margin: "64px 0 0", padding: "0", listStyle: "none", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(190px, 1fr))", gap: "0", borderTop: "3px solid #FBAE4F" }}>
+              <li style={{ padding: "28px 24px 0 0" }}>
+                <div style={{ fontSize: "36px", fontWeight: "650", color: "#FBAE4F", letterSpacing: "-0.02em" }}>2016</div>
+                <div style={{ marginTop: "12px", fontSize: "18px", fontWeight: "700" }}>Founded</div>
+                <div style={{ marginTop: "8px", fontSize: "15px", lineHeight: "1.55", fontWeight: "400", color: "#D5DAE3" }}>Designing and installing parking media.</div>
+              </li>
+              <li style={{ padding: "28px 24px 0 0" }}>
+                <div style={{ fontSize: "36px", fontWeight: "650", color: "#FBAE4F", letterSpacing: "-0.02em" }}>[Year]</div>
+                <div style={{ marginTop: "12px", fontSize: "18px", fontWeight: "700" }}>Own manufacturing</div>
+                <div style={{ marginTop: "8px", fontSize: "15px", lineHeight: "1.55", fontWeight: "400", color: "#D5DAE3" }}>Rate boards and screens built in-house.</div>
+              </li>
+              <li style={{ padding: "28px 24px 0 0" }}>
+                <div style={{ fontSize: "36px", fontWeight: "650", color: "#FBAE4F", letterSpacing: "-0.02em" }}>Today</div>
+                <div style={{ marginTop: "12px", fontSize: "18px", fontWeight: "700" }}>Digital in NY &amp; CT</div>
+                <div style={{ marginTop: "8px", fontSize: "15px", lineHeight: "1.55", fontWeight: "400", color: "#D5DAE3" }}>12,000 locations, 11 flagship markets.</div>
+              </li>
+              <li style={{ padding: "28px 24px 0 0" }}>
+                <div style={{ fontSize: "36px", fontWeight: "650", color: "#FBAE4F", letterSpacing: "-0.02em" }}>Now</div>
+                <div style={{ marginTop: "12px", fontSize: "18px", fontWeight: "700" }}>Self-serve beta</div>
+                <div style={{ marginTop: "8px", fontSize: "15px", lineHeight: "1.55", fontWeight: "400", color: "#D5DAE3" }}>Advertisers plan and submit campaigns online.</div>
+              </li>
+              <li style={{ padding: "28px 24px 0 0" }}>
+                <div style={{ fontSize: "36px", fontWeight: "650", color: "#FBAE4F", letterSpacing: "-0.02em" }}>Now</div>
+                <div style={{ marginTop: "12px", fontSize: "18px", fontWeight: "700" }}>Events &amp; venues</div>
+                <div style={{ marginTop: "8px", fontSize: "15px", lineHeight: "1.55", fontWeight: "400", color: "#D5DAE3" }}>Rooftops, lots and levels booked for activations, rentals and game days.</div>
+              </li>
+              <li style={{ padding: "28px 24px 0 0" }}>
+                <div style={{ fontSize: "36px", fontWeight: "650", color: "#FBAE4F", letterSpacing: "-0.02em" }}>Next</div>
+                <div style={{ marginTop: "12px", fontSize: "18px", fontWeight: "700" }}>Programmatic</div>
+                <div style={{ marginTop: "8px", fontSize: "15px", lineHeight: "1.55", fontWeight: "400", color: "#D5DAE3" }}>Digital inventory available through programmatic buying. [Timing]</div>
+              </li>
+            </ol>
+          </div>
+        </section>
+        {/* PROOF */}
+        <section style={{ padding: "128px 28px" }}>
+          <div style={{ maxWidth: "1360px", margin: "0 auto" }}>
+            <h2 className="alm-in" style={{ margin: "0", maxWidth: "900px", fontSize: "clamp(38px, 5.2vw, 80px)", lineHeight: "1", letterSpacing: "-0.035em", fontWeight: "600" }}>Proof in the field.</h2>
+            <div style={{ marginTop: "48px", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "16px" }}>
+              <figure className="alm-tile alm-wipe" style={{ margin: "0", height: "380px", borderRadius: "16px", overflow: "hidden", position: "relative", background: "#0B1220" }}>
+                <img src="/media/photos/audi-garage-lobby.webp" alt="Commuters passing an Audi digital panel" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} loading="lazy" decoding="async" />
+                <figcaption style={{ position: "absolute", left: "16px", bottom: "16px", padding: "8px 14px", borderRadius: "999px", background: "rgba(11,18,32,0.72)", color: "#FFFFFF", fontSize: "12px", fontWeight: "700" }}>AUDI · DIGITAL</figcaption>
+              </figure>
+              <figure className="alm-tile alm-wipe" style={{ margin: "0", height: "380px", borderRadius: "16px", overflow: "hidden", position: "relative", background: "#0B1220" }}>
+                <img src="/media/photos/hartford-healthcare-wallscape.webp" alt="Hartford HealthCare wallscape" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} loading="lazy" decoding="async" />
+                <figcaption style={{ position: "absolute", left: "16px", bottom: "16px", padding: "8px 14px", borderRadius: "999px", background: "rgba(11,18,32,0.72)", color: "#FFFFFF", fontSize: "12px", fontWeight: "700" }}>HARTFORD HEALTHCARE · STATIC</figcaption>
+              </figure>
+              <figure className="alm-tile alm-wipe" style={{ margin: "0", height: "380px", borderRadius: "16px", overflow: "hidden", position: "relative", background: "#0B1220" }}>
+                <img src="/media/photos/ddrb-connecticut.webp" alt="A Lot Media Digital Dynamic Rate Board installed in Connecticut" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "50% 34%", display: "block" }} loading="lazy" decoding="async" />
+                <figcaption style={{ position: "absolute", left: "16px", bottom: "16px", padding: "8px 14px", borderRadius: "999px", background: "rgba(11,18,32,0.72)", color: "#FFFFFF", fontSize: "12px", fontWeight: "700" }}>RATE BOARD · CONNECTICUT</figcaption>
+              </figure>
+            </div>
+            <div style={{ marginTop: "16px", display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(150px, 1fr))", gap: "1px", background: "rgba(11,18,32,0.08)", border: "1px solid rgba(11,18,32,0.08)" }}>
+              {(v.logos || []).map((lg, lgI) => (
+                <Fragment key={lgI}>
+                  <div className="alm-in" style={{ background: "#F5F5F7", height: "104px", display: "flex", alignItems: "center", justifyContent: "center", padding: "16px", boxSizing: "border-box" }}>
+                    <img src={lg.src} alt={lg.name} style={{ maxWidth: "72%", maxHeight: "40px", objectFit: "contain", opacity: "0.82" }} loading="lazy" decoding="async" />
+                  </div>
+                </Fragment>
+              ))}
+            </div>
+          </div>
+        </section>
+        {/* LEADERSHIP */}
+        <section style={{ padding: "0 28px 128px" }}>
+          <div style={{ maxWidth: "1360px", margin: "0 auto" }}>
+            <h2 className="alm-in" style={{ margin: "0", fontSize: "clamp(32px, 4vw, 56px)", lineHeight: "0.95", letterSpacing: "-0.035em", fontWeight: "600" }}>Leadership</h2>
+            <div style={{ marginTop: "40px", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: "16px" }}>
+              {(v.leaders || []).map((p, pI) => (
+                <Fragment key={pI}>
+                  <div className="alm-in" style={{ borderRadius: "16px", overflow: "hidden", background: "#FFFFFF" }}>
+                    <div style={{ height: "260px", background: "#E3E5EA", display: "flex", alignItems: "center", justifyContent: "center", fontFamily: "'Geist Mono', monospace", fontSize: "12px", color: "#4E586A" }}>[PORTRAIT]</div>
+                    <div style={{ padding: "22px 24px 26px" }}>
+                      <div style={{ fontSize: "20px", fontWeight: "650", letterSpacing: "-0.02em" }}>{p.name}</div>
+                      <div style={{ marginTop: "6px", fontSize: "14px", fontWeight: "600", color: "#4E586A" }}>{p.role}</div>
+                    </div>
+                  </div>
+                </Fragment>
+              ))}
+            </div>
+          </div>
+        </section>
+        {/* ACCESS */}
+        <section id="access" style={{ padding: "128px 28px", background: "#0B1220", color: "#FFFFFF" }}>
+          <div style={{ maxWidth: "1360px", margin: "0 auto", display: "flex", flexWrap: "wrap", gap: "64px" }}>
+            <div style={{ flex: "1 1 380px" }}>
+              <div style={{ display: "flex", alignItems: "center", gap: "10px", fontSize: "15px", fontWeight: "600", letterSpacing: "-0.005em", opacity: "0.72" }}><span style={{ width: "7px", height: "7px", background: "#FBAE4F", borderRadius: "50%" }} />Data room</div>
+              <h2 className="alm-in" style={{ margin: "22px 0 0", fontSize: "clamp(38px, 5vw, 72px)", lineHeight: "1", letterSpacing: "-0.035em", fontWeight: "600" }}>Request investor access.</h2>
+              <p style={{ margin: "24px 0 0", fontSize: "18px", lineHeight: "1.6", fontWeight: "400", color: "#C9D0DB" }}>Financials, unit economics and the deployment pipeline are shared under NDA. Investor relations: [IR email].</p>
+            </div>
+            <div style={{ flex: "999 1 560px", minWidth: "0", padding: "40px", borderRadius: "18px", background: "#FFFFFF", color: "#0B1220" }}>
+              {v.sent ? (
+                <>
+                  <div style={{ minHeight: "320px", display: "flex", flexDirection: "column", justifyContent: "center", gap: "16px" }}>
+                    <div style={{ fontSize: "32px", fontWeight: "650", letterSpacing: "-0.02em" }}>Request received.</div>
+                    <p style={{ margin: "0", fontSize: "16px", lineHeight: "1.6", fontWeight: "400", color: "#4E586A" }}>Our team will follow up with an NDA and data room access.</p>
+                  </div>
+                </>
+              ) : null}
+              {v.notSent ? (
+                <>
+                  <form onSubmit={v.submit} style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(230px, 1fr))", gap: "18px 20px" }}>
+                    <label style={{ display: "flex", flexDirection: "column", gap: "8px", fontSize: "14px", fontWeight: "600", letterSpacing: "0" }}>Full name<input className="alm-input" type="text" style={{ minHeight: "52px", padding: "0 16px", borderRadius: "12px", border: "2px solid #D5DAE3", fontFamily: "'Montserrat', sans-serif", fontSize: "15px", fontWeight: "400" }} name="full_name" /></label>
+                    <label style={{ display: "flex", flexDirection: "column", gap: "8px", fontSize: "14px", fontWeight: "600", letterSpacing: "0" }}>Firm<input className="alm-input" type="text" style={{ minHeight: "52px", padding: "0 16px", borderRadius: "12px", border: "2px solid #D5DAE3", fontFamily: "'Montserrat', sans-serif", fontSize: "15px", fontWeight: "400" }} name="firm" /></label>
+                    <label style={{ display: "flex", flexDirection: "column", gap: "8px", fontSize: "14px", fontWeight: "600", letterSpacing: "0" }}>Email<input className="alm-input" type="email" style={{ minHeight: "52px", padding: "0 16px", borderRadius: "12px", border: "2px solid #D5DAE3", fontFamily: "'Montserrat', sans-serif", fontSize: "15px", fontWeight: "400" }} name="email" /></label>
+                    <label style={{ display: "flex", flexDirection: "column", gap: "8px", fontSize: "14px", fontWeight: "600", letterSpacing: "0" }}>Investor type<select className="alm-input" style={{ minHeight: "52px", padding: "0 14px", borderRadius: "12px", border: "2px solid #D5DAE3", fontFamily: "'Montserrat', sans-serif", fontSize: "15px", fontWeight: "400" }} name="investor_type"><option>Venture capital</option><option>Private equity</option><option>Family office</option><option>Strategic</option><option>Angel</option></select></label>
+                    <button type="submit" className="alm-btn" style={{ gridColumn: "1 / -1", minHeight: "58px", borderRadius: "999px", border: "0", background: "#FBAE4F", color: "#0B1220", fontFamily: "'Montserrat', sans-serif", fontWeight: "600", fontSize: "15px", letterSpacing: "-0.005em", cursor: "pointer" }}>Request access</button>
+                  </form>
+                </>
+              ) : null}
+            </div>
+          </div>
+        </section>
+        <Footer />
+      </div>
+    );
+  }
+}
