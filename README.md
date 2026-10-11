@@ -96,7 +96,7 @@ Motion turns on before first paint when the visitor's browser supports it, and i
 
 Every claim on the site comes from one of two places: the current alotmedia.com, or the company materials in the data room. Nothing is invented.
 
-- **From alotmedia.com:** 12,000 locations, 400+ cities, 40 states, 3,000,000+ cars parked daily, dwell times of up to 10 minutes, "designing and installing since 2016", the venue types and targeting options, the Geopath, DOT, Census and Wi-Fi beacon data sources, the market list, the LA, Chicago and NY offices, the brand logos, the gallery photos, the news posts and the "no risk, percentage of the gross" owner offer.
+- **From alotmedia.com:** 12,000 locations, 400+ cities, 40 states, 3,000,000+ cars parked daily, dwell times of up to 10 minutes, "designing and installing since 2016" (2016 is the founding year used throughout), the venue types and targeting options, the Geopath, DOT, Census and Wi-Fi beacon data sources, the market list, the LA, Chicago and NY offices, the brand logos, the gallery photos, the news posts and the "no risk, percentage of the gross" owner offer.
 - **From the data room:**
   - The 2026 DDRB deck: rate board features, configurations, hardware lineup, Device Hub, field installs (Denison, Bethlehem Parking Authority, Avail), the Hartford HealthCare case study, programmatic and quarterly revenue share, and the extra client logos.
   - The product model: 110+ units in NY and CT, 1,000 planned for the top 35 markets, and the event products.
@@ -114,7 +114,6 @@ Deliberately left out, because the data room marks it confidential: financials a
 - **Privacy policy and terms.** The footer links to the current pages on alotmedia.com (`/privacy-policy/` and `/terms-conditions/`). Move those pages over before pointing the domain here, or the links will break.
 - **News posts.** The Insights cards link to the existing blog posts on alotmedia.com. Migrate them, or keep the old blog reachable, before the domain switch.
 - **Confirm these with the team:**
-  - The founding year. The website says 2016; the tax filings list 2018 as the business start date.
   - The NY office address. The website says 231 W 29th St; a 2023 contract lists 239 W 29th St.
   - Manufacturing. The website says A Lot Media owns its plants; the DDRB deck says manufacturing, printing and the CMS come from sister companies MetroClick and faytech. The site uses the deck's wording.
 - **Images that aren't straight photos.** They are labeled on the page: "Concept render" on the event, gate-arm and ticket images, and "Stock footage" or "Stock photo" on the videos and generic images. Some older gallery photos were retouched (cleaned and color-corrected), and the home gallery says so. The new proof-of-performance photos only have their color and exposure corrected. Swap in real event photography when you have it.
