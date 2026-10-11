@@ -29,13 +29,13 @@ export default class RealEstatePage extends React.Component {
     var diff = rate - base;
     var openIdx = st.faq == null ? 0 : st.faq;
     var faqs = [
-      ['How do I get paid?', 'You receive a check for a percentage of the gross advertising revenue generated at your location. [Confirm revenue share and payment cadence.]'],
-      ['What does it cost me?', 'We install our equipment and sell the advertising — there’s no risk to you. [Confirm contract terms.]'],
+      ['How do I get paid?', 'You receive a check in the mail for a percentage of the gross advertising revenue generated at your location. Revenue is shared quarterly, based on your revenue-split agreement.'],
+      ['What does it cost me?', 'We install our equipment and sell the advertising — there’s no risk to you. Prefer to own the hardware? Rate boards and Device Hub software are also available to purchase; ask us for pricing.'],
       ['Who controls the parking rates?', 'You do. Set rules by time, occupancy and events, and change rates across locations from your phone.'],
-      ['Will it work with my existing equipment?', 'Yes. The Digital Dynamic Rate Board™ is weatherproof and built to integrate with existing parking equipment.'],
-      ['Can my property host events?', 'Often, yes. Rooftops, surface lots and off-peak levels can be booked for brand activations, markets, filming and game-day packages. You approve every date, and we handle the booking and operations. [Confirm event revenue share.]'],
-      ['How long is the agreement?', '[Contract term and exit terms.]'],
-      ['What kinds of properties qualify?', 'Garages and lots of all kinds — Class A office buildings, shopping malls, hotels, sports arenas, residential buildings and universities.']
+      ['Will it work with my existing equipment?', 'Yes. The Digital Dynamic Rate Board™ integrates with LAZ and Flash parking rate portals, so rates update automatically — and Flash integration adds a live space count. Non-integrated image-based and web-based versions are available too.'],
+      ['What about programmatic ads?', 'Opting in to our advertising program opens your screen space to our internal sales team and to programmatic exchanges. Every campaign is approved by A Lot Media first: nothing illicit, such as tobacco, alcohol, cannabis or adult entertainment.'],
+      ['Can my property host events?', 'Often, yes. Lots, garages and rooftops can host brand activations, VIP parking and shuttles, and game-day takeovers. You approve every date, and we handle the booking and operations.'],
+      ['What kinds of properties qualify?', 'Garages and lots of all kinds — serving residential buildings, Class A offices, universities, movie theaters, restaurants, museums and shopping malls, plus stand-alone lots.']
     ];
     var Y = '✓', N = '—';
     if (!this._vidRef) {
@@ -54,7 +54,7 @@ export default class RealEstatePage extends React.Component {
       },
       duties: [
         { label: 'Authorize advertising at the location', you: Y, alm: N },
-        { label: 'Manufacture the rate boards', you: N, alm: Y },
+        { label: 'Supply the rate boards (with our sister companies)', you: N, alm: Y },
         { label: 'Install equipment', you: N, alm: Y },
         { label: 'Software & content management', you: N, alm: Y },
         { label: 'Find advertisers & sell campaigns', you: N, alm: Y },
@@ -68,6 +68,39 @@ export default class RealEstatePage extends React.Component {
         var open = i === openIdx;
         return { q: f[0], a: f[1], open: open, expanded: open ? 'true' : 'false', sign: open ? '−' : '+', toggle: function () { self.setState({ faq: open ? -1 : i }); } };
       }),
+      configs: [
+        { no: '1', name: 'DDRB', chip: 'INTEGRATED', desc: 'Integrated with LAZ and Flash parking rate portals. Rates update automatically.' },
+        { no: '2', name: 'DDRB + messaging', chip: 'INTEGRATED', desc: 'Integrated rates that update automatically, plus an area for advertising and messaging.', dark: true },
+        { no: '3', name: 'Image based', chip: 'STAND-ALONE', desc: 'A static 1080×1920 image. Information changes when a new image is published through our CMS.' },
+        { no: '4', name: 'Web based', chip: 'STAND-ALONE', desc: 'Information comes from a locked-down webpage, so any change shows as soon as it is published.' }
+      ].map(function (c) { return { no: c.no, name: c.name, chip: c.chip, desc: c.desc, bg: c.dark ? '#0B1220' : '#FFFFFF', fg: c.dark ? '#FFFFFF' : '#0B1220', mute: c.dark ? '#C9D0DB' : '#4E586A', chipBg: c.chip === 'INTEGRATED' ? '#8FDCE8' : '#E3E5EA' }; }),
+      hardware: [
+        { name: 'Flash topper', screen: '16″', env: 'Semi-outdoor' },
+        { name: 'Kiosk', screen: '32″', env: 'Semi- or full outdoor' },
+        { name: 'A-frame', screen: '43″', env: 'Semi- or full outdoor · battery option' },
+        { name: 'Kiosk', screen: '55″', env: 'Semi- or full outdoor' },
+        { name: 'Wall mount', screen: '43″ · 55″', env: 'Semi-outdoor (55″ also full outdoor)' },
+        { name: 'Wall mount', screen: '65″', env: 'Full outdoor' },
+        { name: 'LED panels', screen: '2.6 or 2.9 mm pitch', env: 'Outdoor · surface or ceiling mount' }
+      ],
+      tiers: [
+        { name: 'Basic', note: '1 login · support within 2 business days' },
+        { name: 'Standard', note: '2 logins · asset setup at launch' },
+        { name: 'Pro', note: '4 logins · network monitoring · quarterly assets' },
+        { name: 'Enterprise', note: '5+ logins · ongoing asset services' }
+      ],
+      features: ['Full-motion video & audio', 'JPEG · PDF · MP4', 'Unlimited creative updates', 'Custom slot length', 'Space count with Flash', 'Custom vinyl wrap'].map(function (t) { return { t: t }; }),
+      field: [
+        { kicker: 'TIME-TRIGGER CONTENT', name: 'Denison Parking', where: 'Hamilton Garage',
+          desc: 'The board changes on a schedule: from 7AM to 5PM it shows employee-only parking, and from 5PM to 7AM it switches to public parking.' },
+        { kicker: '55″ SEMI-OUTDOOR WAYFINDER', name: 'Bethlehem Parking Authority', where: 'Polk St Garage · Bethlehem, PA',
+          desc: 'A touch-screen wayfinder with 50 local points of interest. Parkers tap to explore and scan a QR code to open directions in Google Maps; the top third of the screen runs messaging and ads.' },
+        { kicker: '55″ SEMI-OUTDOOR HELP HUB', name: 'Avail', where: 'Ride-share program help desk',
+          desc: 'A fully interactive digital help desk with step-by-step instructions, FAQs, QR codes and video explanations, finished in a custom vinyl wrap.' },
+        { kicker: 'ADVERTISING · 30 GARAGES', name: 'Hartford HealthCare', where: 'Garages across Connecticut · since 2019',
+          desc: 'Hartford HealthCare signed in 2019 to advertise across 30 Connecticut garages and has renewed for five more years.', stat: '$1.5M+', statLbl: 'VALUE CREATED FOR OUR PARKING PARTNERS', hi: true }
+      ].map(function (f) { return { kicker: f.kicker, name: f.name, where: f.where, desc: f.desc, stat: f.stat || '', statLbl: f.statLbl || '',
+        bg: f.hi ? '#FBAE4F' : 'rgba(255,255,255,0.06)', fg: f.hi ? '#0B1220' : '#FFFFFF', mute: f.hi ? '#3A2A10' : '#C9D0DB', accent: f.hi ? '#0B1220' : '#FBAE4F', line: f.hi ? 'rgba(11,18,32,0.2)' : 'rgba(255,255,255,0.14)' }; }),
       sent: !!st.sent,
       notSent: !st.sent,
       submit: function (e) { if (e && e.preventDefault) e.preventDefault(); sendInquiry(e, 'property', null); self.setState({ sent: true }); }
@@ -126,17 +159,17 @@ export default class RealEstatePage extends React.Component {
               <li style={{ borderTop: "3px solid #0B1220", paddingTop: "24px" }}>
                 <div style={{ fontSize: "64px", fontWeight: "600", lineHeight: "1", color: "#FBAE4F", letterSpacing: "-0.035em" }}>02</div>
                 <div style={{ marginTop: "20px", fontSize: "22px", fontWeight: "650", letterSpacing: "-0.02em" }}>We install</div>
-                <p style={{ margin: "10px 0 0", fontSize: "16px", lineHeight: "1.6", fontWeight: "400", color: "#4E586A" }}>Rate boards built in our own factory, fitted to your existing parking equipment by our crews.</p>
+                <p style={{ margin: "10px 0 0", fontSize: "16px", lineHeight: "1.6", fontWeight: "400", color: "#4E586A" }}>High-bright, weatherproof rate boards that integrate with your current equipment vendor — including LAZ and Flash.</p>
               </li>
               <li style={{ borderTop: "3px solid #0B1220", paddingTop: "24px" }}>
                 <div style={{ fontSize: "64px", fontWeight: "600", lineHeight: "1", color: "#FBAE4F", letterSpacing: "-0.035em" }}>03</div>
                 <div style={{ marginTop: "20px", fontSize: "22px", fontWeight: "650", letterSpacing: "-0.02em" }}>We sell</div>
-                <p style={{ margin: "10px 0 0", fontSize: "16px", lineHeight: "1.6", fontWeight: "400", color: "#4E586A" }}>Our national sales network finds the advertisers and runs the campaigns.</p>
+                <p style={{ margin: "10px 0 0", fontSize: "16px", lineHeight: "1.6", fontWeight: "400", color: "#4E586A" }}>Our in-house ad sales team finds the advertisers. Open slots can also be offered on programmatic exchanges.</p>
               </li>
               <li style={{ borderTop: "3px solid #0B1220", paddingTop: "24px" }}>
                 <div style={{ fontSize: "64px", fontWeight: "600", lineHeight: "1", color: "#FBAE4F", letterSpacing: "-0.035em" }}>04</div>
                 <div style={{ marginTop: "20px", fontSize: "22px", fontWeight: "650", letterSpacing: "-0.02em" }}>You get paid</div>
-                <p style={{ margin: "10px 0 0", fontSize: "16px", lineHeight: "1.6", fontWeight: "400", color: "#4E586A" }}>A check in the mail for a percentage of gross advertising revenue. [Payment cadence]</p>
+                <p style={{ margin: "10px 0 0", fontSize: "16px", lineHeight: "1.6", fontWeight: "400", color: "#4E586A" }}>A check in the mail for a percentage of the gross advertising revenue, shared quarterly.</p>
               </li>
             </ol>
           </div>
@@ -190,6 +223,120 @@ export default class RealEstatePage extends React.Component {
             </div>
           </div>
         </section>
+        {/* DDRB LINEUP */}
+        <section id="lineup" style={{ padding: "128px 28px" }}>
+          <div style={{ maxWidth: "1360px", margin: "0 auto" }}>
+            <div style={{ display: "flex", flexWrap: "wrap", gap: "24px 64px", alignItems: "flex-end", justifyContent: "space-between" }}>
+              <div>
+                <div style={{ display: "flex", alignItems: "center", gap: "10px", fontSize: "15px", fontWeight: "600", letterSpacing: "-0.005em", opacity: "0.72" }}><span style={{ width: "7px", height: "7px", background: "#FBAE4F", borderRadius: "50%" }} />The rate board family</div>
+                <h2 className="alm-in" style={{ margin: "22px 0 0", maxWidth: "900px", fontSize: "clamp(38px, 5.2vw, 80px)", lineHeight: "1", letterSpacing: "-0.035em", fontWeight: "600" }}>Four configurations.<br />One for every garage.</h2>
+              </div>
+              <p style={{ margin: "0", maxWidth: "440px", fontSize: "17px", lineHeight: "1.6", fontWeight: "400", color: "#4E586A" }}>Integrated with LAZ and Flash parking rate portals, or running on its own. Every board can be customized — background, top bar, garage name, font color and a custom vinyl wrap.</p>
+            </div>
+            <div style={{ marginTop: "56px", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))", gap: "16px" }}>
+              {(v.configs || []).map((c, cI) => (
+                <Fragment key={cI}>
+                  <div className="alm-in" style={{ padding: "32px 28px", borderRadius: "16px", background: c.bg, color: c.fg, display: "flex", flexDirection: "column", gap: "14px", minHeight: "280px" }}>
+                    <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: "8px" }}>
+                      <span style={{ fontFamily: "'Geist Mono', monospace", fontSize: "12px", color: c.mute }}>OPTION {c.no}</span>
+                      <span style={{ fontSize: "11px", fontWeight: "600", letterSpacing: "0.08em", padding: "6px 10px", borderRadius: "999px", background: c.chipBg, color: "#0B1220" }}>{c.chip}</span>
+                    </div>
+                    <div style={{ fontSize: "28px", fontWeight: "650", lineHeight: "1.08", letterSpacing: "-0.02em" }}>{c.name}</div>
+                    <p style={{ margin: "0", fontSize: "15px", lineHeight: "1.6", fontWeight: "400", color: c.mute }}>{c.desc}</p>
+                  </div>
+                </Fragment>
+              ))}
+            </div>
+            <div style={{ marginTop: "16px", display: "flex", flexWrap: "wrap", gap: "16px" }}>
+              <figure className="alm-tile alm-wipe" style={{ margin: "0", flex: "1 1 300px", height: "560px", position: "relative", overflow: "hidden", borderRadius: "16px", background: "#0B1220" }}>
+                <img src="/media/photos/ddrb-rate-board.webp" alt="A Lot Media Digital Dynamic Rate Board showing LAZ parking rates at a Connecticut garage" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "50% 35%", display: "block" }} loading="lazy" decoding="async" />
+                <figcaption style={{ position: "absolute", left: "16px", bottom: "16px", padding: "8px 14px", borderRadius: "999px", background: "rgba(11,18,32,0.72)", color: "#FFFFFF", fontSize: "12px", fontWeight: "700", letterSpacing: "0.04em" }}>DDRB + MESSAGING · CONNECTICUT</figcaption>
+              </figure>
+              <figure className="alm-tile alm-wipe" style={{ margin: "0", flex: "2 1 600px", height: "560px", position: "relative", overflow: "hidden", borderRadius: "16px", background: "#0B1220" }}>
+                <img src="/media/photos/mt-bank-ddrb.webp" alt={"Digital Dynamic Rate Board with live rates and an M&T Bank ad beside a garage entry gate"} style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "30% 50%", display: "block" }} loading="lazy" decoding="async" />
+                <figcaption style={{ position: "absolute", left: "16px", bottom: "16px", padding: "8px 14px", borderRadius: "999px", background: "rgba(11,18,32,0.72)", color: "#FFFFFF", fontSize: "12px", fontWeight: "700", letterSpacing: "0.04em" }}>LIVE RATES ABOVE · M&amp;T BANK AD BELOW</figcaption>
+              </figure>
+            </div>
+            <div style={{ marginTop: "72px", display: "flex", flexWrap: "wrap", gap: "48px 64px", alignItems: "flex-start" }}>
+              <div style={{ flex: "1 1 520px", minWidth: "0" }}>
+                <h3 className="alm-in" style={{ margin: "0", fontSize: "clamp(28px, 3vw, 44px)", lineHeight: "1", letterSpacing: "-0.035em", fontWeight: "600" }}>The hardware lineup.</h3>
+                <p style={{ margin: "16px 0 0", maxWidth: "560px", fontSize: "16px", lineHeight: "1.6", fontWeight: "400", color: "#4E586A" }}>Semi-outdoor units for covered areas; full-outdoor units for uncovered surface lots, built to take up to two hours of peak direct sun and extreme weather.</p>
+                <div style={{ marginTop: "28px", overflowX: "auto" }}>
+                  <table style={{ width: "100%", minWidth: "480px", borderCollapse: "collapse", fontSize: "15px" }}>
+                    <thead>
+                      <tr style={{ textAlign: "left", borderBottom: "3px solid #0B1220" }}>
+                        <th scope="col" style={{ padding: "14px 12px 14px 0", fontSize: "11px", fontWeight: "600", letterSpacing: "0.14em", color: "#4E586A" }}>UNIT</th>
+                        <th scope="col" style={{ padding: "14px 12px", fontSize: "11px", fontWeight: "600", letterSpacing: "0.14em", color: "#4E586A" }}>SCREEN</th>
+                        <th scope="col" style={{ padding: "14px 12px", fontSize: "11px", fontWeight: "600", letterSpacing: "0.14em", color: "#4E586A" }}>ENVIRONMENT</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {(v.hardware || []).map((h, hI) => (
+                        <Fragment key={hI}>
+                          <tr style={{ borderBottom: "1px solid rgba(11,18,32,0.12)" }}>
+                            <th scope="row" style={{ padding: "16px 12px 16px 0", textAlign: "left", fontWeight: "700" }}>{h.name}</th>
+                            <td style={{ padding: "16px 12px", fontWeight: "600" }}>{h.screen}</td>
+                            <td style={{ padding: "16px 12px", fontWeight: "500", color: "#4E586A" }}>{h.env}</td>
+                          </tr>
+                        </Fragment>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div className="alm-in" style={{ flex: "1 1 380px", minWidth: "0", padding: "36px", borderRadius: "18px", background: "#0B1220", color: "#FFFFFF", display: "flex", flexDirection: "column", gap: "18px" }}>
+                <div style={{ fontSize: "12px", fontWeight: "600", letterSpacing: "0.14em", color: "#8FDCE8" }}>SOFTWARE</div>
+                <div style={{ fontSize: "clamp(28px, 2.6vw, 40px)", fontWeight: "600", lineHeight: "1", letterSpacing: "-0.035em" }}>Device Hub</div>
+                <p style={{ margin: "0", fontSize: "16px", lineHeight: "1.6", fontWeight: "400", color: "#C9D0DB" }}>Our content and device management system. Every plan includes software updates, remote management and multi-factor security. Higher tiers add active network monitoring, asset creation and faster support.</p>
+                <div style={{ display: "grid", gridTemplateColumns: "repeat(2, minmax(0, 1fr))", gap: "8px" }}>
+                  {(v.tiers || []).map((t, tI) => (
+                    <Fragment key={tI}>
+                      <div style={{ padding: "14px 16px", borderRadius: "12px", background: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.1)" }}>
+                        <div style={{ fontSize: "16px", fontWeight: "700" }}>{t.name}</div>
+                        <div style={{ marginTop: "4px", fontSize: "13px", lineHeight: "1.45", color: "#A3ACBC" }}>{t.note}</div>
+                      </div>
+                    </Fragment>
+                  ))}
+                </div>
+                <div style={{ display: "flex", flexWrap: "wrap", gap: "6px" }}>
+                  {(v.features || []).map((f, fI) => (
+                    <Fragment key={fI}>
+                      <span style={{ padding: "7px 12px", borderRadius: "999px", border: "1px solid rgba(255,255,255,0.24)", fontSize: "12px", fontWeight: "700" }}>{f.t}</span>
+                    </Fragment>
+                  ))}
+                </div>
+                <A className="alm-btn" href="#assess" style={{ marginTop: "6px", alignSelf: "flex-start", display: "inline-flex", alignItems: "center", minHeight: "52px", padding: "0 24px", borderRadius: "999px", background: "#FBAE4F", color: "#0B1220", fontWeight: "600", fontSize: "15px" }}>Ask about pricing</A>
+              </div>
+            </div>
+          </div>
+        </section>
+        {/* IN THE FIELD */}
+        <section id="field" style={{ padding: "128px 28px", background: "#0B1220", color: "#FFFFFF" }}>
+          <div style={{ maxWidth: "1360px", margin: "0 auto" }}>
+            <div style={{ display: "flex", alignItems: "center", gap: "10px", fontSize: "15px", fontWeight: "600", letterSpacing: "-0.005em", opacity: "0.72" }}><span style={{ width: "7px", height: "7px", background: "#FBAE4F", borderRadius: "50%" }} />In the field</div>
+            <h2 className="alm-in" style={{ margin: "22px 0 0", maxWidth: "980px", fontSize: "clamp(38px, 5.2vw, 80px)", lineHeight: "1", letterSpacing: "-0.035em", fontWeight: "600" }}>Owners and operators<br /><span style={{ color: "#FBAE4F" }}>already on board.</span></h2>
+            <div style={{ marginTop: "56px", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "16px" }}>
+              {(v.field || []).map((f, fI) => (
+                <Fragment key={fI}>
+                  <article className="alm-in" style={{ padding: "32px 28px", borderRadius: "16px", background: f.bg, color: f.fg, display: "flex", flexDirection: "column", gap: "14px" }}>
+                    <div style={{ fontFamily: "'Geist Mono', monospace", fontSize: "11px", letterSpacing: "0.14em", color: f.accent }}>{f.kicker}</div>
+                    <div style={{ fontSize: "26px", fontWeight: "650", lineHeight: "1.08", letterSpacing: "-0.02em" }}>{f.name}</div>
+                    <div style={{ fontSize: "14px", fontWeight: "600", color: f.mute }}>{f.where}</div>
+                    <p style={{ margin: "0", fontSize: "15px", lineHeight: "1.6", fontWeight: "400", color: f.mute }}>{f.desc}</p>
+                    {f.stat ? (
+                      <>
+                        <div style={{ marginTop: "auto", paddingTop: "14px", borderTop: `1px solid ${f.line}` }}>
+                          <div style={{ fontSize: "36px", fontWeight: "650", letterSpacing: "-0.02em", color: f.accent }}>{f.stat}</div>
+                          <div style={{ marginTop: "4px", fontSize: "11px", fontWeight: "600", letterSpacing: "0.12em", color: f.mute }}>{f.statLbl}</div>
+                        </div>
+                      </>
+                    ) : null}
+                  </article>
+                </Fragment>
+              ))}
+            </div>
+          </div>
+        </section>
         {/* THREE STREAMS */}
         <section id="streams" style={{ padding: "128px 28px" }}>
           <div style={{ maxWidth: "1360px", margin: "0 auto" }}>
@@ -217,14 +364,14 @@ export default class RealEstatePage extends React.Component {
               </div>
               <div className="alm-tile alm-in" style={{ position: "relative", borderRadius: "16px", overflow: "hidden", background: "#0B1220", color: "#FFFFFF", boxShadow: "inset 0 0 0 3px #FBAE4F" }}>
                 <div style={{ position: "relative", height: "320px", overflow: "hidden" }}>
-                  <img src="/media/renders/event-night-market.webp" alt="Concept render of a night market on a parking garage rooftop" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} loading="lazy" decoding="async" />
+                  <img src="/media/renders/event-popup-launch.webp" alt="Concept render of a car launch pop-up inside a parking garage" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "55% 50%", display: "block" }} loading="lazy" decoding="async" />
                   <span style={{ position: "absolute", top: "14px", left: "14px", padding: "6px 11px", borderRadius: "999px", background: "#FBAE4F", color: "#0B1220", fontSize: "11px", fontWeight: "600", letterSpacing: "0.1em" }}>NEW</span>
                   <span style={{ position: "absolute", right: "12px", bottom: "12px", fontFamily: "'Geist Mono', monospace", fontSize: "10px", letterSpacing: "0.1em", color: "rgba(255,255,255,0.7)" }}>CONCEPT RENDER</span>
                 </div>
                 <div style={{ padding: "36px" }}>
                   <div style={{ fontSize: "12px", fontWeight: "600", letterSpacing: "0.14em", color: "#FBAE4F" }}>STREAM 03</div>
                   <div style={{ marginTop: "12px", fontSize: "30px", fontWeight: "650", lineHeight: "1.08", letterSpacing: "-0.02em" }}>Your space as a venue</div>
-                  <p style={{ margin: "14px 0 0", fontSize: "16px", lineHeight: "1.6", fontWeight: "400", color: "#C9D0DB" }}>Rooftops, lots and quiet levels booked for brand activations, markets, film shoots and game days — off-peak space turned into event revenue. <A href="/events" style={{ color: "#FBAE4F", fontWeight: "600" }}>How events work →</A></p>
+                  <p style={{ margin: "14px 0 0", fontSize: "16px", lineHeight: "1.6", fontWeight: "400", color: "#C9D0DB" }}>Lots, garages and quiet levels booked for brand activations, VIP parking and shuttles, and game-day takeovers — off-peak space turned into event revenue. <A href="/events" style={{ color: "#FBAE4F", fontWeight: "600" }}>How events work →</A></p>
                 </div>
               </div>
             </div>
@@ -236,7 +383,7 @@ export default class RealEstatePage extends React.Component {
             <div style={{ display: "flex", flexWrap: "wrap", gap: "24px 64px", alignItems: "flex-end", justifyContent: "space-between" }}>
               <h2 className="alm-in" style={{ margin: "0", maxWidth: "900px", fontSize: "clamp(32px, 4vw, 56px)", lineHeight: "0.95", letterSpacing: "-0.035em", fontWeight: "600" }}>Built for every kind of property.</h2>
             </div>
-            <div style={{ marginTop: "40px", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: "12px" }}>
+            <div style={{ marginTop: "40px", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: "12px" }}>
               <div className="alm-tile alm-in" style={{ position: "relative", height: "300px", borderRadius: "16px", overflow: "hidden", background: "#0B1220", color: "#FFFFFF" }}>
                 <img src="/media/photos/checkerboard-lobby-panel.webp" alt="Garage lobby with checkerboard floor and a digital panel" style={{ position: "absolute", inset: "0", width: "100%", height: "100%", objectFit: "cover" }} loading="lazy" decoding="async" />
                 <div style={{ position: "absolute", inset: "0", background: "linear-gradient(180deg, rgba(11,18,32,0) 40%, rgba(11,18,32,0.88) 100%)" }} />
@@ -245,7 +392,7 @@ export default class RealEstatePage extends React.Component {
               <div className="alm-tile alm-in" style={{ position: "relative", height: "300px", borderRadius: "16px", overflow: "hidden", background: "#0B1220", color: "#FFFFFF" }}>
                 <img src="/media/photos/glass-lobby-panel.webp" alt="Glass-walled garage lobby with a digital panel" style={{ position: "absolute", inset: "0", width: "100%", height: "100%", objectFit: "cover" }} loading="lazy" decoding="async" />
                 <div style={{ position: "absolute", inset: "0", background: "linear-gradient(180deg, rgba(11,18,32,0) 40%, rgba(11,18,32,0.88) 100%)" }} />
-                <div style={{ position: "absolute", left: "22px", bottom: "20px", fontSize: "22px", fontWeight: "650", letterSpacing: "-0.02em" }}>Hotels &amp; residential</div>
+                <div style={{ position: "absolute", left: "22px", bottom: "20px", fontSize: "22px", fontWeight: "650", letterSpacing: "-0.02em" }}>Residential buildings</div>
               </div>
               <div style={{ height: "300px", borderRadius: "16px", background: "#344567", color: "#FFFFFF", padding: "24px", boxSizing: "border-box", display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
                 <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#FBAE4F" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
@@ -255,10 +402,10 @@ export default class RealEstatePage extends React.Component {
               </div>
               <div style={{ height: "300px", borderRadius: "16px", background: "#0B1220", color: "#FFFFFF", padding: "24px", boxSizing: "border-box", display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
                 <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#FBAE4F" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                  <ellipse cx="12" cy="12" rx="9" ry="6" />
-                  <path d="M3 12v4c0 3 4 5 9 5s9-2 9-5v-4" />
+                  <path d="M3 9a2 2 0 0 0 0 4v4h18v-4a2 2 0 0 1 0-4V5H3v4Z" />
+                  <path d="M14 5v12" />
                 </svg>
-                <div style={{ fontSize: "22px", fontWeight: "650", letterSpacing: "-0.02em" }}>Sports arenas</div>
+                <div style={{ fontSize: "22px", fontWeight: "650", letterSpacing: "-0.02em" }}>Theaters, museums &amp; restaurants</div>
               </div>
               <div style={{ height: "300px", borderRadius: "16px", background: "#0B1220", color: "#FFFFFF", padding: "24px", boxSizing: "border-box", display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
                 <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#FBAE4F" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">

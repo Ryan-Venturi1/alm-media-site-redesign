@@ -55,13 +55,15 @@ export default class AdvertisersPage extends React.Component {
       return { label: label, toggle: toggle(label), pressed: on ? 'true' : 'false', bg: on ? '#FBAE4F' : 'transparent', fg: on ? '#0B1220' : '#FFFFFF', bd: on ? '#FBAE4F' : 'rgba(255,255,255,0.3)' };
     };
     var aud = ['Profession', 'Income', 'Age', 'Gender', 'Car type', 'Specific companies'];
-    var ven = ['Class A offices', 'Universities', 'Shopping malls', 'Movie theaters', 'Residential', 'Museums', 'Restaurants', 'Hotels & arenas'];
+    var ven = ['Class A offices', 'Universities', 'Shopping malls', 'Movie theaters', 'Residential', 'Museums', 'Restaurants'];
     var a = aud.filter(function (k) { return sel[k]; });
     var v = ven.filter(function (k) { return sel[k]; });
     var summary = (!a.length && !v.length) ? 'Everyone who parks — pick a filter to narrow it down.' :
       ((a.length ? 'Drivers by ' + a.join(', ').toLowerCase() : 'All drivers') + (v.length ? ', parking at ' + v.join(', ').toLowerCase() + '.' : ', across every venue type.'));
     var logoIds = [
-      ['Citibank', '/media/logos/citibank.png'], ['Anheuser-Busch', '/media/logos/anheuser-busch.png'], ['Allstate', '/media/logos/allstate.png'],
+      ['Chase', '/media/logos/chase.png'], ['Clorox', '/media/logos/clorox.png'], ['McCormick', '/media/logos/mccormick.png'],
+      ['Corcoran', '/media/logos/corcoran.png'], ['AriZona', '/media/logos/arizona.png'], ['Avail', '/media/logos/avail.png'],
+      ['ÖDD', '/media/logos/odd.png'], ['Citibank', '/media/logos/citibank.png'], ['Anheuser-Busch', '/media/logos/anheuser-busch.png'], ['Allstate', '/media/logos/allstate.png'],
       ['Panera Bread', '/media/logos/panera.png'], ['eBay', '/media/logos/ebay.png'], ['Gatorade', '/media/logos/gatorade.png'],
       ['General Mills', '/media/logos/general-mills.png'], ['New York Yankees', '/media/logos/yankees.png'], ['Live Nation', '/media/logos/live-nation.png'],
       ['Optum', '/media/logos/optum.png'], ['Renault', '/media/logos/renault.png'], ['Rimowa', '/media/logos/rimowa.png'],
@@ -79,10 +81,10 @@ export default class AdvertisersPage extends React.Component {
       ['UC Riverside', '/media/logos/uc-riverside.png'], ['Urban Air', '/media/logos/urban-air.png'], ['Wizest', '/media/logos/wizest.png']
     ];
     var sol = [
-      { no: '01', name: 'Static', chip: '5 MARKETS', chipBg: '#E3E5EA', img: '/media/photos/compass-wallscape.webp', pos: '50% 50%', alt: 'Compass real estate wallscape on a garage level', href: '/formats#static', cta: 'Static formats', desc: 'Wallscapes, elevator wraps, gate arms, tickets and full garage takeovers — printed and installed in-house.', dark: false },
-      { no: '02', name: 'Digital', chip: 'LIVE IN NY & CT', chipBg: '#8FDCE8', img: '/media/photos/phone-at-digital-panel.webp', pos: '30% 50%', alt: 'Man using his phone beside a digital panel', href: '/formats#digital', cta: 'Digital formats', desc: 'Rate boards, interactive panels and motion-enabled signage — creative that changes by daypart, event or audience.', dark: false },
-      { no: '03', name: 'Events & venues', chip: 'NEXT GROWTH ENGINE', chipBg: '#FBAE4F', dark: true, img: '/media/renders/event-popup-launch.webp', pos: '55% 50%', alt: 'Concept render of a car launch pop-up inside a parking garage', href: '/events', cta: 'Events & venues', desc: 'Brand activations on our rooftops, lots and levels — plus event-day media packages around stadiums and arenas.', dark: false },
-      { no: '04', name: 'Market domination', chip: 'MOST EFFECTIVE', chipBg: '#FBAE4F', img: '/media/photos/msk-garage-entrance.webp', pos: '50% 50%', alt: 'Garage entrance with digital panel and branded wayfinding', href: '#targeting', cta: 'Own a market', desc: 'Every surface in a market at once — integrated formats, data-driven placement and optimization through the flight.', dark: true }
+      { no: '01', name: 'Static', chip: 'COAST TO COAST', chipBg: '#E3E5EA', img: '/media/photos/compass-wallscape.webp', pos: '50% 50%', alt: 'Compass real estate wallscape on a garage level', href: '/formats#static', cta: 'Static formats', desc: 'Wallscapes, elevator wraps, gate arms, branded tickets and full garage takeovers — designed, printed and installed for you.', dark: false },
+      { no: '02', name: 'Digital', chip: 'LIVE IN NY & CT', chipBg: '#8FDCE8', img: '/media/photos/phone-at-digital-panel.webp', pos: '30% 50%', alt: 'Man using his phone beside a digital panel', href: '/formats#digital', cta: 'Digital formats', desc: 'Rate boards, interactive panels and motion-enabled signage — full-motion video and audio, unlimited creative updates, content that switches by time of day.', dark: false },
+      { no: '03', name: 'Events & venues', chip: 'NEXT GROWTH ENGINE', chipBg: '#FBAE4F', dark: true, img: '/media/renders/event-popup-launch.webp', pos: '55% 50%', alt: 'Concept render of a car launch pop-up inside a parking garage', href: '/events', cta: 'Events & venues', desc: 'Pop-ups, product displays and vehicle test drives, VIP park-and-shuttle, and game-day takeovers in the lots where the audience arrives.', dark: false },
+      { no: '04', name: 'Market domination', chip: 'GARAGE TAKEOVER', chipBg: '#FBAE4F', img: '/media/photos/msk-garage-entrance.webp', pos: '50% 50%', alt: 'Garage entrance with digital panel and branded wayfinding', href: '#targeting', cta: 'Own a market', desc: 'Every surface in a location at once — gate arms, tickets, walls, elevators and screens — placed where your audience parks.', dark: true }
     ];
     return {
       tl: { pct: pct.toFixed(1), points: pts },
@@ -113,7 +115,7 @@ export default class AdvertisersPage extends React.Component {
               <p className="alm-rise" style={{ margin: "28px 0 0", maxWidth: "600px", fontSize: "19px", lineHeight: "1.55", fontWeight: "400", color: "#E4E8EF", animationDelay: ".2s" }}>Drivers spend up to ten minutes inside our locations — parking, walking, waiting for the elevator. No skip button, no scroll, steps from where they spend.</p>
               <div className="alm-rise" style={{ marginTop: "32px", display: "flex", gap: "12px", flexWrap: "wrap", animationDelay: ".3s" }}>
                 <A className="alm-btn" href="/plan" style={{ display: "inline-flex", alignItems: "center", minHeight: "56px", padding: "0 26px", borderRadius: "999px", background: "#FBAE4F", color: "#0B1220", fontWeight: "600", fontSize: "15px", letterSpacing: "-0.005em" }}>Plan a campaign</A>
-                <A className="alm-btn" href="/contact" style={{ display: "inline-flex", alignItems: "center", minHeight: "56px", padding: "0 26px", borderRadius: "999px", border: "2px solid #FFFFFF", color: "#FFFFFF", fontWeight: "600", fontSize: "15px", letterSpacing: "-0.005em" }}>Request the media kit</A>
+                <A className="alm-btn" href="/contact" style={{ display: "inline-flex", alignItems: "center", minHeight: "56px", padding: "0 26px", borderRadius: "999px", border: "2px solid #FFFFFF", color: "#FFFFFF", fontWeight: "600", fontSize: "15px", letterSpacing: "-0.005em" }}>Talk to sales</A>
               </div>
             </div>
           </section>
@@ -232,12 +234,12 @@ export default class AdvertisersPage extends React.Component {
               <div style={{ borderTop: "3px solid #0B1220", paddingTop: "28px" }}>
                 <div style={{ fontSize: "clamp(64px, 7vw, 104px)", fontWeight: "600", lineHeight: "1", letterSpacing: "-0.035em" }}>10<span style={{ fontSize: "0.4em" }}>MIN</span></div>
                 <div style={{ marginTop: "20px", fontSize: "20px", fontWeight: "650", letterSpacing: "-0.02em" }}>Captive</div>
-                <p style={{ margin: "10px 0 0", fontSize: "16px", lineHeight: "1.6", fontWeight: "400", color: "#4E586A" }}>Up to ten minutes of dwell at walking pace — not two seconds at sixty miles an hour.</p>
+                <p style={{ margin: "10px 0 0", fontSize: "16px", lineHeight: "1.6", fontWeight: "400", color: "#4E586A" }}>Industry-leading dwell times of up to ten minutes, at walking pace.</p>
               </div>
               <div style={{ borderTop: "3px solid #0B1220", paddingTop: "28px" }}>
                 <div style={{ fontSize: "clamp(64px, 7vw, 104px)", fontWeight: "600", lineHeight: "1", letterSpacing: "-0.035em" }}>3M+</div>
                 <div style={{ marginTop: "20px", fontSize: "20px", fontWeight: "650", letterSpacing: "-0.02em" }}>Qualified</div>
-                <p style={{ margin: "10px 0 0", fontSize: "16px", lineHeight: "1.6", fontWeight: "400", color: "#4E586A" }}>Car owners parking at Class A offices, universities, malls, theaters and residential towers — every day.</p>
+                <p style={{ margin: "10px 0 0", fontSize: "16px", lineHeight: "1.6", fontWeight: "400", color: "#4E586A" }}>Cars parked every day at residential buildings, Class A offices, universities, movie theaters, restaurants, museums and shopping malls.</p>
               </div>
               <div style={{ borderTop: "3px solid #0B1220", paddingTop: "28px" }}>
                 <div style={{ fontSize: "clamp(64px, 7vw, 104px)", fontWeight: "600", lineHeight: "1", letterSpacing: "-0.035em", color: "#0B1220" }}>STEPS</div>
@@ -251,7 +253,7 @@ export default class AdvertisersPage extends React.Component {
         <section style={{ padding: "128px 28px", background: "#344567", color: "#FFFFFF" }}>
           <div style={{ maxWidth: "1360px", margin: "0 auto" }}>
             <div style={{ display: "flex", alignItems: "center", gap: "10px", fontSize: "15px", fontWeight: "600", letterSpacing: "-0.005em", opacity: "0.72" }}><span style={{ width: "7px", height: "7px", background: "#FBAE4F", borderRadius: "50%" }} />How a campaign runs</div>
-            <h2 className="alm-in" style={{ margin: "22px 0 0", maxWidth: "900px", fontSize: "clamp(38px, 5.2vw, 80px)", lineHeight: "1", letterSpacing: "-0.035em", fontWeight: "600" }}>Brief to install,<br />under one roof.</h2>
+            <h2 className="alm-in" style={{ margin: "22px 0 0", maxWidth: "900px", fontSize: "clamp(38px, 5.2vw, 80px)", lineHeight: "1", letterSpacing: "-0.035em", fontWeight: "600" }}>Brief to install,<br />handled end to end.</h2>
             <ol style={{ margin: "64px 0 0", padding: "0", listStyle: "none", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(210px, 1fr))", gap: "40px 32px" }}>
               <li style={{ borderTop: "3px solid #FBAE4F", paddingTop: "24px" }}>
                 <div style={{ fontSize: "44px", fontWeight: "600", color: "#FBAE4F", lineHeight: "1", letterSpacing: "-0.035em" }}>01</div>
@@ -266,17 +268,17 @@ export default class AdvertisersPage extends React.Component {
               <li style={{ borderTop: "3px solid #FBAE4F", paddingTop: "24px" }}>
                 <div style={{ fontSize: "44px", fontWeight: "600", color: "#FBAE4F", lineHeight: "1", letterSpacing: "-0.035em" }}>03</div>
                 <div style={{ marginTop: "18px", fontSize: "20px", fontWeight: "650", letterSpacing: "-0.02em" }}>Create</div>
-                <div style={{ marginTop: "8px", fontSize: "15px", lineHeight: "1.6", fontWeight: "400", color: "#D5DAE3" }}>In-house design, video and print production.</div>
+                <div style={{ marginTop: "8px", fontSize: "15px", lineHeight: "1.6", fontWeight: "400", color: "#D5DAE3" }}>In-house design and print production.</div>
               </li>
               <li style={{ borderTop: "3px solid #FBAE4F", paddingTop: "24px" }}>
                 <div style={{ fontSize: "44px", fontWeight: "600", color: "#FBAE4F", lineHeight: "1", letterSpacing: "-0.035em" }}>04</div>
                 <div style={{ marginTop: "18px", fontSize: "20px", fontWeight: "650", letterSpacing: "-0.02em" }}>Install</div>
-                <div style={{ marginTop: "8px", fontSize: "15px", lineHeight: "1.6", fontWeight: "400", color: "#D5DAE3" }}>Our own crews and our own hardware.</div>
+                <div style={{ marginTop: "8px", fontSize: "15px", lineHeight: "1.6", fontWeight: "400", color: "#D5DAE3" }}>Our team installs, on hardware built by our sister companies.</div>
               </li>
               <li style={{ borderTop: "3px solid #FBAE4F", paddingTop: "24px" }}>
                 <div style={{ fontSize: "44px", fontWeight: "600", color: "#FBAE4F", lineHeight: "1", letterSpacing: "-0.035em" }}>05</div>
                 <div style={{ marginTop: "18px", fontSize: "20px", fontWeight: "650", letterSpacing: "-0.02em" }}>Report</div>
-                <div style={{ marginTop: "8px", fontSize: "15px", lineHeight: "1.6", fontWeight: "400", color: "#D5DAE3" }}>Performance reporting and optimization through the flight.</div>
+                <div style={{ marginTop: "8px", fontSize: "15px", lineHeight: "1.6", fontWeight: "400", color: "#D5DAE3" }}>Proof-of-performance photos from every placement, and creative updates through the flight.</div>
               </li>
             </ol>
           </div>
@@ -299,22 +301,26 @@ export default class AdvertisersPage extends React.Component {
             </div>
             <div style={{ marginTop: "16px", display: "flex", flexWrap: "wrap", gap: "16px" }}>
               <div style={{ flex: "2 1 560px", padding: "44px", borderRadius: "16px", background: "#0B1220", color: "#FFFFFF", display: "flex", flexDirection: "column", gap: "18px" }}>
-                <div style={{ fontSize: "12px", fontWeight: "600", letterSpacing: "0.14em", color: "#FBAE4F" }}>CASE STUDY · CHICAGO</div>
-                <div style={{ fontSize: "clamp(28px, 3vw, 44px)", fontWeight: "600", lineHeight: "0.98", letterSpacing: "-0.035em" }}>Chicago International Film Festival</div>
-                <p style={{ margin: "0", maxWidth: "640px", fontSize: "16px", lineHeight: "1.6", fontWeight: "400", color: "#C9D0DB" }}>How a festival brought its program to the garages its audience parks in. [Add campaign summary, formats and results.]</p>
+                <div style={{ fontSize: "12px", fontWeight: "600", letterSpacing: "0.14em", color: "#FBAE4F" }}>CASE STUDY · CONNECTICUT</div>
+                <div style={{ fontSize: "clamp(28px, 3vw, 44px)", fontWeight: "600", lineHeight: "0.98", letterSpacing: "-0.035em" }}>Hartford HealthCare</div>
+                <p style={{ margin: "0", maxWidth: "640px", fontSize: "16px", lineHeight: "1.6", fontWeight: "400", color: "#C9D0DB" }}>Hartford HealthCare signed with A Lot Media in 2019 for 30 garages around Connecticut, to reach CEOs and decision makers — and competitors’ areas — across the state. They loved the campaign and renewed for five more years.</p>
                 <div style={{ display: "flex", flexWrap: "wrap", gap: "40px", marginTop: "8px" }}>
                   <div>
-                    <div style={{ fontSize: "36px", fontWeight: "650", color: "#FBAE4F", letterSpacing: "-0.02em" }}>[Result]</div>
-                    <div style={{ fontSize: "12px", fontWeight: "600", letterSpacing: "0.12em", color: "#8B95A7" }}>IMPRESSIONS</div>
+                    <div style={{ fontSize: "36px", fontWeight: "650", color: "#FBAE4F", letterSpacing: "-0.02em" }}>30</div>
+                    <div style={{ fontSize: "12px", fontWeight: "600", letterSpacing: "0.12em", color: "#8B95A7" }}>GARAGES ACROSS CT</div>
                   </div>
                   <div>
-                    <div style={{ fontSize: "36px", fontWeight: "650", color: "#FBAE4F", letterSpacing: "-0.02em" }}>[Result]</div>
-                    <div style={{ fontSize: "12px", fontWeight: "600", letterSpacing: "0.12em", color: "#8B95A7" }}>LOCATIONS</div>
+                    <div style={{ fontSize: "36px", fontWeight: "650", color: "#FBAE4F", letterSpacing: "-0.02em" }}>+5 yrs</div>
+                    <div style={{ fontSize: "12px", fontWeight: "600", letterSpacing: "0.12em", color: "#8B95A7" }}>RENEWED</div>
+                  </div>
+                  <div>
+                    <div style={{ fontSize: "36px", fontWeight: "650", color: "#FBAE4F", letterSpacing: "-0.02em" }}>$1.5M+</div>
+                    <div style={{ fontSize: "12px", fontWeight: "600", letterSpacing: "0.12em", color: "#8B95A7" }}>VALUE FOR PARKING PARTNERS</div>
                   </div>
                 </div>
               </div>
               <A className="alm-btn" href="/contact" style={{ flex: "1 1 320px", padding: "44px", borderRadius: "999px", background: "#FBAE4F", color: "#0B1220", display: "flex", flexDirection: "column", justifyContent: "space-between", gap: "24px", minHeight: "280px" }}>
-                <div style={{ fontSize: "clamp(28px, 2.6vw, 40px)", fontWeight: "600", lineHeight: "0.98", letterSpacing: "-0.035em" }}>Your brand could be the next case study.</div>
+                <div style={{ fontSize: "clamp(28px, 2.6vw, 40px)", fontWeight: "600", lineHeight: "0.98", letterSpacing: "-0.035em" }}>Put your brand in front of three million drivers a day.</div>
                 <div style={{ fontSize: "15px", fontWeight: "600", letterSpacing: "-0.005em" }}>Talk to sales →</div>
               </A>
             </div>

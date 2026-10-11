@@ -21,7 +21,7 @@ export default class ContactPage extends React.Component {
     var R = [
       { label: 'Advertiser', sub: 'Brand or agency', team: 'sales team', f1: 'COMPANY', p1: 'Brand or agency', f2: 'MARKETS OF INTEREST', p2: 'e.g. New York, Boston', pm: 'Goals, timing and budget range.' },
       { label: 'Property owner', sub: 'Garage or lot', team: 'real estate team', f1: 'PROPERTY ADDRESS', p1: 'Street, city, state', f2: 'NUMBER OF SPACES', p2: 'e.g. 450', pm: 'Tell us about the location.' },
-      { label: 'Investor', sub: 'Fund or family office', team: 'investor relations team', f1: 'FIRM', p1: 'Firm name', f2: 'INVESTOR TYPE', p2: 'VC, PE, strategic…', pm: 'What would you like to learn?' },
+      { label: 'Investor', sub: 'Fund or family office', team: 'leadership team', f1: 'FIRM', p1: 'Firm name', f2: 'INVESTOR TYPE', p2: 'VC, PE, strategic…', pm: 'What would you like to learn?' },
       { label: 'Press & careers', sub: 'Media or job seekers', team: 'communications team', f1: 'ORGANIZATION', p1: 'Outlet or current role', f2: 'TOPIC', p2: 'Story, interview or role', pm: 'How can we help?' }
     ];
     var cur = R[ri];
@@ -60,6 +60,10 @@ export default class ContactPage extends React.Component {
                 </A>
               </div>
               <div style={{ marginTop: "32px", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(150px, 1fr))", gap: "20px" }}>
+                <div>
+                  <div style={{ fontSize: "16px", fontWeight: "700" }}>Hartford</div>
+                  <div style={{ marginTop: "6px", fontSize: "14px", lineHeight: "1.55", fontWeight: "500", color: "#4E586A" }}>1 Financial Plaza, 14th Fl<br />CT 06103</div>
+                </div>
                 <div>
                   <div style={{ fontSize: "16px", fontWeight: "700" }}>Los Angeles</div>
                   <div style={{ marginTop: "6px", fontSize: "14px", lineHeight: "1.55", fontWeight: "500", color: "#4E586A" }}>1335 Flower St<br />CA 90015</div>
@@ -114,7 +118,7 @@ export default class ContactPage extends React.Component {
                       <label style={{ gridColumn: "1 / -1", display: "flex", flexDirection: "column", gap: "8px", fontSize: "14px", fontWeight: "600", letterSpacing: "0" }}>Message<textarea className="alm-input" rows="5" placeholder={v.route?.pm} style={{ padding: "14px 16px", borderRadius: "12px", border: "2px solid #D5DAE3", fontFamily: "'Montserrat', sans-serif", fontSize: "15px", fontWeight: "400", resize: "vertical" }} name="message" /></label>
                     </div>
                     <button type="submit" className="alm-btn" style={{ marginTop: "24px", width: "100%", minHeight: "60px", borderRadius: "999px", border: "0", background: "#FBAE4F", color: "#0B1220", fontFamily: "'Montserrat', sans-serif", fontWeight: "600", fontSize: "15px", letterSpacing: "-0.005em", cursor: "pointer" }}>Send to our {v.route?.team}</button>
-                    <div style={{ marginTop: "16px", fontSize: "13px", fontWeight: "500", color: "#4E586A" }}>Looking to book right away? <A href="/plan" style={{ fontWeight: "600", color: "#0B1220", textDecoration: "underline" }}>Start a self-serve plan</A>.</div>
+                    <div style={{ marginTop: "16px", fontSize: "13px", fontWeight: "500", color: "#4E586A" }}>Already know your markets and formats? <A href="/plan" style={{ fontWeight: "600", color: "#0B1220", textDecoration: "underline" }}>Use the campaign planner</A>.</div>
                   </form>
                 </>
               ) : null}

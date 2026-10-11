@@ -25,19 +25,31 @@ export default class InsightsPage extends React.Component {
       ['How much does a campaign cost?', 'Rates are set per property and depend on market, format and flight. Start a plan and we will confirm availability and pricing.'],
       ['Where is the network?', '12,000 locations across 400+ cities and 40 states, with digital networks live in New York and Connecticut and static placements in Los Angeles, Chicago, Miami, Austin and Boston.'],
       ['Can you target a specific audience?', 'Yes — by profession, income, age, gender, car type and even specific companies, using Geopath, DOT and US Census data, Wi-Fi beacons and on-site data.'],
-      ['Do you produce the creative?', 'Yes. Our in-house design, video and print teams can create campaigns built for the parking context.'],
-      ['How is performance reported?', 'We provide ongoing support and performance reporting after launch. [Detail reporting metrics.]'],
-      ['I own a garage or lot. How do I join?', 'Request a free assessment on our Real Estate page. We install our equipment, sell the advertising and share gross revenue with you.']
+      ['Do you produce the creative?', 'Yes. Our in-house design team can create campaigns built for the parking context, and we handle printing and installation. Digital screens take JPEG, PDF and MP4 files.'],
+      ['How is performance reported?', 'Every placement is documented with proof-of-performance photos, and digital creative can be updated at any time. Expanded measurement — exposure and dwell metrics and campaign dashboards — is on our technology roadmap.'],
+      ['Can I buy programmatically?', 'Digital screen space that owners opt in can be offered through programmatic exchanges. Every campaign is approved by A Lot Media first — nothing illicit, such as tobacco, alcohol, cannabis or adult entertainment.'],
+      ['Do you run events?', 'Yes. Event activation, VIP park & shuttle, bulk parking, temporary and mobile media, and sponsorship packages — sold together or on their own.'],
+      ['I own a garage or lot. How do I join?', 'Request a free assessment on our Real Estate page. We install our equipment and sell the advertising, and you receive a percentage of the gross revenue, shared quarterly — with no risk to you.']
     ];
     var ql = fq.trim().toLowerCase();
     var fl = faqData.map(function (f, i) { return { f: f, i: i }; }).filter(function (x) { return !ql || (x.f[0] + ' ' + x.f[1]).toLowerCase().indexOf(ql) >= 0; });
+    var W = 'https://www.alotmedia.com/';
     var posts = [
-      ['GUIDE', 'A buyer’s guide to parking media', '8 MIN READ · [DATE]', '/media/photos/panera-now-open.webp', '60% 50%'],
-      ['PRODUCT', 'How dynamic pricing works on the rate board', '5 MIN READ · [DATE]', '/media/photos/ddrb-connecticut.webp', '50% 34%'],
-      ['CASE STUDY', 'Chicago International Film Festival', '[DATE]', '/media/photos/checkerboard-lobby-panel.webp', '50% 50%'],
-      ['REAL ESTATE', 'What an unused wall is worth', '6 MIN READ · [DATE]', '/media/photos/hartford-healthcare-entrance-wallscape.webp', '50% 40%'],
-      ['NEWS', '[Market launch announcement]', '[DATE]', '/media/markets/hartford.webp', '50% 50%'],
-      ['MEDIA KIT', 'Formats, specs & audience data', 'PDF · [SIZE]', '/media/photos/hartford-healthcare-elevator-wraps.webp', '50% 50%']
+      ['ADVERTISING', 'Why Advertise in a Garage?', 'why-advertise-in-a-garage/', '/media/photos/panera-now-open.webp', '60% 50%'],
+      ['EVENTS', 'The Event Space of the Future', 'the-event-space-of-the-future/', '/media/renders/event-popup-launch.webp', '55% 50%'],
+      ['REAL ESTATE', 'Goodbye Garage, Hello Mobility Hub', 'goodbye-garage-hello-mobility-hub/', '/media/photos/msk-garage-entrance.webp', '50% 50%'],
+      ['DIGITAL', 'Six Unique Benefits of Digital Out of Home Ads', 'six-unique-benefits-of-digital-out-of-home-ads/', '/media/photos/ddrb-connecticut.webp', '50% 34%'],
+      ['ADVERTISING', 'How To Reach Your Audience at High-Impact Times', 'how-to-reach-your-audience-at-high-impact-times/', '/media/photos/lucid-digital-panel.webp', '40% 50%'],
+      ['TECHNOLOGY', 'Smart Cities Infrastructure Beginning with Connected Parking Kiosks', 'smart-cities-infrastructure-beginning-with-connected-parking-kiosks/', '/media/photos/blank-street-interactive-panel.webp', '30% 50%']
+    ];
+    var archive = [
+      ['Everything You Need to Know About Drivers for 2022', 'everything-you-need-to-know-about-drivers-for-2022/'],
+      ['Traffic is slowing down while personal vehicle sales are speeding up', 'traffic-is-slowing-down-while-personal-vehicle-sales-are-speeding-up/'],
+      ['How to Use OOH Ad Space to Tell a Memorable Story', 'how-to-use-ooh-ad-space-to-tell-a-memorable-story/'],
+      ['A New Era for Advertising', 'a-new-era-for-advertising/'],
+      ['Advertising in a Garage Will Take Your Next Campaign into the Future', 'advertising-in-a-garage-will-take-your-next-campaign-into-the-future/'],
+      ['This 1994 technology might be the best way to engage with customers in 2021!', 'this-1994-technology-might-be-the-best-way-to-engage-with-customers-in-2021/'],
+      ['America is Driving Again', 'america-is-driving-again/']
     ];
     var terms = [
       ['OOH', 'Out-of-home advertising — any media people encounter outside the home, from billboards to garage screens.'],
@@ -53,7 +65,9 @@ export default class InsightsPage extends React.Component {
       ['Garage takeover', 'Every available surface in a location carrying one brand.'],
       ['Market domination', 'Owning multiple formats across a market at once for maximum share of voice.'],
       ['Programmatic', 'Buying digital inventory automatically through ad-tech platforms.'],
-      ['CPM', 'Cost per thousand impressions.']
+      ['CPM', 'Cost per thousand impressions.'],
+      ['Proof of performance', 'Photos that document an ad running in place, taken for every placement.'],
+      ['Device Hub', 'Our content and device management system for rate boards and screens.']
     ];
     return {
       fq: fq,
@@ -62,7 +76,8 @@ export default class InsightsPage extends React.Component {
         var isOpen = x.i === open || (ql && fl.length <= 2);
         return { q: x.f[0], a: x.f[1], open: isOpen, expanded: isOpen ? 'true' : 'false', sign: isOpen ? '−' : '+', toggle: function () { self.setState({ open: x.i === open ? -1 : x.i }); } };
       }),
-      posts: posts.map(function (p) { return { cat: p[0], title: p[1], meta: p[2], img: B + p[3], pos: p[4] }; }),
+      posts: posts.map(function (p) { return { cat: p[0], title: p[1], meta: 'READ ON ALOTMEDIA.COM', href: W + p[2], img: B + p[3], pos: p[4] }; }),
+      archive: archive.map(function (a) { return { title: a[0], href: W + a[1] }; }),
       terms: terms.map(function (t) { return { term: t[0], def: t[1] }; }),
       subbed: !!st.subbed,
       notSubbed: !st.subbed,
@@ -89,23 +104,23 @@ export default class InsightsPage extends React.Component {
         {/* NEWS */}
         <section id="news" style={{ padding: "0 28px 128px" }}>
           <div style={{ maxWidth: "1360px", margin: "0 auto" }}>
-            <A className="alm-tile alm-in" href="#news" style={{ display: "flex", flexWrap: "wrap", background: "#0B1220", color: "#FFFFFF", borderRadius: "18px", overflow: "hidden" }}>
+            <A className="alm-tile alm-in" href="/advertisers" style={{ display: "flex", flexWrap: "wrap", background: "#0B1220", color: "#FFFFFF", borderRadius: "18px", overflow: "hidden" }}>
               <div style={{ flex: "3 1 560px", minHeight: "460px", overflow: "hidden" }}>
-                <img src="/media/photos/audi-commuters.webp" alt="Commuters passing an Audi digital panel in a garage" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} loading="lazy" decoding="async" />
+                <img src="/media/photos/hartford-healthcare-wallscape.webp" alt="Hartford HealthCare wallscape inside a Connecticut parking garage" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} loading="lazy" decoding="async" />
               </div>
               <div style={{ flex: "2 1 380px", padding: "48px", display: "flex", flexDirection: "column", justifyContent: "space-between", gap: "32px" }}>
                 <div>
-                  <div style={{ fontSize: "12px", fontWeight: "600", letterSpacing: "0.14em", color: "#FBAE4F" }}>FEATURED · NEWS</div>
-                  <div style={{ marginTop: "16px", fontSize: "clamp(28px, 3vw, 44px)", fontWeight: "600", lineHeight: "0.98", letterSpacing: "-0.035em" }}>[Latest company announcement headline]</div>
-                  <p style={{ margin: "16px 0 0", fontSize: "16px", lineHeight: "1.6", fontWeight: "400", color: "#C9D0DB" }}>[One-line summary of the announcement.]</p>
+                  <div style={{ fontSize: "12px", fontWeight: "600", letterSpacing: "0.14em", color: "#FBAE4F" }}>FEATURED · CASE STUDY</div>
+                  <div style={{ marginTop: "16px", fontSize: "clamp(28px, 3vw, 44px)", fontWeight: "600", lineHeight: "0.98", letterSpacing: "-0.035em" }}>Hartford HealthCare: 30 Connecticut garages, renewed for five more years.</div>
+                  <p style={{ margin: "16px 0 0", fontSize: "16px", lineHeight: "1.6", fontWeight: "400", color: "#C9D0DB" }}>Signed in 2019 to reach decision makers across the state — and more than $1.5M of value created for our parking partners.</p>
                 </div>
-                <div style={{ fontSize: "15px", fontWeight: "600", letterSpacing: "-0.005em" }}>Read the story →</div>
+                <div style={{ fontSize: "15px", fontWeight: "600", letterSpacing: "-0.005em" }}>Read the case study →</div>
               </div>
             </A>
-            <div style={{ marginTop: "16px", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "16px" }}>
+            <div style={{ marginTop: "16px", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(360px, 1fr))", gap: "16px" }}>
               {(v.posts || []).map((p, pI) => (
                 <Fragment key={pI}>
-                  <A className="alm-tile alm-in" href="#news" style={{ display: "flex", flexDirection: "column", background: "#FFFFFF", borderRadius: "16px", overflow: "hidden" }}>
+                  <A className="alm-tile alm-in" href={p.href} style={{ display: "flex", flexDirection: "column", background: "#FFFFFF", borderRadius: "16px", overflow: "hidden" }}>
                     <div style={{ height: "220px", overflow: "hidden", background: "#0B1220" }}>
                       <img src={p.img} alt="" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: p.pos, display: "block" }} loading="lazy" decoding="async" />
                     </div>
@@ -118,6 +133,16 @@ export default class InsightsPage extends React.Component {
                 </Fragment>
               ))}
             </div>
+            <div style={{ marginTop: "40px", fontSize: "12px", fontWeight: "600", letterSpacing: "0.14em", color: "#4E586A" }}>MORE FROM THE ARCHIVE</div>
+            <ul style={{ margin: "12px 0 0", padding: "0", listStyle: "none", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: "0 40px", borderTop: "2px solid #0B1220" }}>
+              {(v.archive || []).map((a, aI) => (
+                <Fragment key={aI}>
+                  <li style={{ borderBottom: "1px solid rgba(11,18,32,0.14)" }}>
+                    <A className="alm-link" href={a.href} style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: "16px", minHeight: "64px", padding: "14px 0", fontSize: "16px", fontWeight: "600" }}>{a.title} <span className="alm-arrow" style={{ flex: "0 0 auto", display: "inline-block", color: "#8A5300" }}>→</span></A>
+                  </li>
+                </Fragment>
+              ))}
+            </ul>
           </div>
         </section>
         {/* FAQ */}
@@ -174,7 +199,7 @@ export default class InsightsPage extends React.Component {
           <div style={{ maxWidth: "1360px", margin: "0 auto", padding: "56px", borderRadius: "18px", background: "#344567", color: "#FFFFFF", display: "flex", flexWrap: "wrap", gap: "32px 48px", alignItems: "center", justifyContent: "space-between" }}>
             <div style={{ maxWidth: "560px" }}>
               <div style={{ fontSize: "clamp(28px, 3.4vw, 48px)", fontWeight: "600", lineHeight: "0.95", letterSpacing: "-0.035em" }}>The parking media briefing.</div>
-              <div style={{ marginTop: "12px", fontSize: "16px", fontWeight: "400", color: "#D5DAE3" }}>New markets, formats and campaign results — once a month.</div>
+              <div style={{ marginTop: "12px", fontSize: "16px", fontWeight: "400", color: "#D5DAE3" }}>New markets, formats and campaign news from A Lot Media.</div>
             </div>
             {v.subbed ? (
               <>

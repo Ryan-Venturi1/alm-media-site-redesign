@@ -16,11 +16,13 @@ export default class LogoMarquee extends React.Component {
     var tone = props.tone === 'light' ? 'light' : 'dark';
     var B = '';
     var all = [
+      ['Chase', '/media/logos/chase.png'], ['Clorox', '/media/logos/clorox.png'], ['McCormick', '/media/logos/mccormick.png'],
       ['Citibank', '/media/logos/citibank.png'], ['Anheuser-Busch', '/media/logos/anheuser-busch.png'], ['Allstate', '/media/logos/allstate.png'],
       ['Panera Bread', '/media/logos/panera.png'], ['eBay', '/media/logos/ebay.png'], ['Gatorade', '/media/logos/gatorade.png'],
       ['General Mills', '/media/logos/general-mills.png'], ['New York Yankees', '/media/logos/yankees.png'], ['Live Nation', '/media/logos/live-nation.png'],
       ['Optum', '/media/logos/optum.png'], ['Renault', '/media/logos/renault.png'], ['Rimowa', '/media/logos/rimowa.png'],
       ['The Peninsula Hotels', '/media/logos/peninsula-hotels.png'], ['Hartford HealthCare', '/media/logos/hartford-healthcare.png'], ['NetApp', '/media/logos/netapp.png'],
+      ['Corcoran', '/media/logos/corcoran.png'], ['AriZona', '/media/logos/arizona.png'], ['Avail', '/media/logos/avail.png'],
       ['Bumble', '/media/logos/bumble.png'], ['FILA', '/media/logos/fila.png'], ['Lucky Charms', '/media/logos/lucky-charms.png'],
       ['Getaround', '/media/logos/getaround.png'], ['Blank Street', '/media/logos/blank-street.png'], ['CubeSmart', '/media/logos/cubesmart.png'],
       ['IFC Center', '/media/logos/ifc-center.png'], ['Pinehurst', '/media/logos/pinehurst.png'], ['VNS Health', '/media/logos/vns-health.png'],
@@ -29,7 +31,7 @@ export default class LogoMarquee extends React.Component {
       ['A Beautiful Noise', '/media/logos/a-beautiful-noise.png'], ['Dr. Barbara Sturm', '/media/logos/barbara-sturm.png'], ['Chubbies', '/media/logos/chubbies.png'],
       ['GoHealth Urgent Care', '/media/logos/gohealth.png'], ['Greg Yüna', '/media/logos/greg-yuna.png'], ['Malibu Mylk', '/media/logos/malibu-mylk.png'],
       ['Marlo Laz', '/media/logos/marlo-laz.png'], ['OANDA', '/media/logos/oanda.png'], ['Planned Parenthood', '/media/logos/planned-parenthood.png'],
-      ['PulsePoint', '/media/logos/pulsepoint.png'], ['Rise Brewing Co.', '/media/logos/rise.png'], ['Sophia', '/media/logos/sophia.png'],
+      ['PulsePoint', '/media/logos/pulsepoint.png'], ['Rise Brewing Co.', '/media/logos/rise.png'], ['ÖDD', '/media/logos/odd.png'], ['Sophia', '/media/logos/sophia.png'],
       ['Summers', '/media/logos/summers.png'], ['Sweet Home Alabama', '/media/logos/sweet-home-alabama.png'], ['Temptations', '/media/logos/temptations.png'],
       ['UC Riverside', '/media/logos/uc-riverside.png'], ['Urban Air', '/media/logos/urban-air.png'], ['Wizest', '/media/logos/wizest.png']
     ].map(function (l) { return { name: l[0], src: B + l[1] }; });

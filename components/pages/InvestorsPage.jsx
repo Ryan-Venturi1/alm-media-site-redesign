@@ -37,17 +37,17 @@ export default class InvestorsPage extends React.Component {
       ['More advertisers', 'National and local brands buy the reach'],
       ['More owner revenue', 'Payouts bring the next owner in']
     ];
-    var logos = [['Citibank', '/media/logos/citibank.png'], ['Anheuser-Busch', '/media/logos/anheuser-busch.png'], ['Allstate', '/media/logos/allstate.png'], ['Panera Bread', '/media/logos/panera.png'], ['eBay', '/media/logos/ebay.png'], ['Gatorade', '/media/logos/gatorade.png'], ['General Mills', '/media/logos/general-mills.png'], ['New York Yankees', '/media/logos/yankees.png'], ['Live Nation', '/media/logos/live-nation.png'], ['Optum', '/media/logos/optum.png'], ['Renault', '/media/logos/renault.png'], ['Rimowa', '/media/logos/rimowa.png']];
+    var logos = [['Chase', '/media/logos/chase.png'], ['Clorox', '/media/logos/clorox.png'], ['McCormick', '/media/logos/mccormick.png'], ['Citibank', '/media/logos/citibank.png'], ['Anheuser-Busch', '/media/logos/anheuser-busch.png'], ['Allstate', '/media/logos/allstate.png'], ['Panera Bread', '/media/logos/panera.png'], ['General Mills', '/media/logos/general-mills.png'], ['New York Yankees', '/media/logos/yankees.png'], ['Hartford HealthCare', '/media/logos/hartford-healthcare.png'], ['Live Nation', '/media/logos/live-nation.png'], ['Rimowa', '/media/logos/rimowa.png'], ['Bumble', '/media/logos/bumble.png'], ['FILA', '/media/logos/fila.png'], ['Getaround', '/media/logos/getaround.png'], ['Blank Street', '/media/logos/blank-street.png'], ['Corcoran', '/media/logos/corcoran.png'], ['Avail', '/media/logos/avail.png']];
     if (!this._vidRef) {
       this._vidRef = playWhenVisible;
     }
     var engines = [
       { no: '01', name: 'STATIC MEDIA', dot: '#FFFFFF', img: '/media/photos/hartford-healthcare-wallscape.webp', pos: '50% 50%', note: 'REAL INSTALL', alt: 'Hartford HealthCare wallscape in a parking garage',
-        head: 'Walls, wraps & gates', earn: 'Campaign fees for wallscapes, elevator wraps, gate arms, tickets and takeovers', scale: 'Printed and installed in-house; every new property adds surfaces at low cost' },
+        head: 'Walls, wraps & gates', earn: 'Campaign fees for wallscapes, elevator wraps, gate arms, branded tickets and garage takeovers', scale: 'Every new property adds walls, gates and elevators to sell' },
       { no: '02', name: 'DIGITAL', dot: '#8FDCE8', img: '/media/photos/ddrb-connecticut.webp', pos: '50% 30%', note: 'REAL INSTALL · CT', alt: 'A Lot Media Digital Dynamic Rate Board installed in Connecticut',
-        head: 'Rate boards & screens', earn: 'Ad time on screens we build, plus the dynamic-pricing value owners get from the rate board', scale: 'Software-driven inventory, ready for self-serve and programmatic' },
-      { no: '03', name: 'EVENTS & VENUES', dot: '#FBAE4F', img: '/media/renders/event-night-market.webp', pos: '50% 50%', note: 'CONCEPT RENDER', tag: 'NEXT GROWTH ENGINE', alt: 'Concept render of a night market on a parking garage rooftop',
-        head: 'The real estate itself', earn: 'Brand activations, venue rental and event-day parking + media packages', scale: 'Off-peak space and rooftops across the footprint become bookable venues, with media attached' }
+        head: 'Rate boards & screens', earn: 'Ad time on rate boards and panels, sold by our team and on programmatic exchanges — plus rate boards and Device Hub software for owners who buy', scale: 'Software-driven inventory with remote management and unlimited creative updates' },
+      { no: '03', name: 'EVENTS & VENUES', dot: '#FBAE4F', img: '/media/renders/event-popup-launch.webp', pos: '55% 50%', note: 'CONCEPT RENDER', tag: 'NEXT GROWTH ENGINE', alt: 'Concept render of a car launch pop-up inside a parking garage',
+        head: 'The real estate itself', earn: 'Event activation, VIP park & shuttle, bulk parking, temporary and mobile media, and sponsorship', scale: 'Sold on demand with partners, on parking real estate the network already reaches' }
     ];
     return {
       vidRef: this._vidRef,
@@ -62,7 +62,21 @@ export default class InvestorsPage extends React.Component {
         return { no: '0' + (i + 1), title: s[0], desc: s[1], arrow: i === 3 ? '↺' : '→', bg: on ? '#FBAE4F' : '#FFFFFF', fg: '#0B1220' };
       }),
       logos: logos.map(function (l) { return { name: l[0], src: B + l[1] }; }),
-      leaders: [{ name: '[Name]', role: '[Chief Executive Officer]' }, { name: '[Name]', role: '[President / COO]' }, { name: '[Name]', role: '[Chief Revenue Officer]' }, { name: '[Name]', role: '[Head of Real Estate]' }],
+      leaders: [
+        { ini: 'JL', name: 'Jonah Lazowski', role: 'FOUNDER & CEO', bio: 'Founded A Lot Media to turn the media value inside parking lots and garages into a national advertising and technology platform. Leads vision, operator relationships and expansion.' },
+        { ini: 'KV', name: 'Ken Venturi', role: 'PRESIDENT · COMMERCIAL STRATEGY', bio: 'Former National CineMedia executive in interactive media, creative strategy and advertiser platforms; founder and CEO of the integrated agency Focus.' },
+        { ini: 'JC', name: 'Jesse Cooper', role: 'PARTNER', bio: 'Partner and CEO of faytech North America and founder and CEO of MetroClick — touchscreen displays, interactive technology and physical media production.' },
+        { ini: 'JC', name: 'Josh Cooper', role: 'PARTNER', bio: 'Founder and operator across MetroClick, Proof 7 and Rochambeau — digital signage, touchscreens, installation and place-based brand activation.' },
+        { ini: 'KG', name: 'Kevin Gavrushenko', role: 'DIRECTOR OF OPERATIONS', bio: 'Five years running operations at A Lot Media: deployments, vendors, properties and field execution across the network.' },
+        { ini: 'RV', name: 'Ryan Venturi', role: 'APPLIED AI ENGINEER', bio: 'Brings AI, automation and data workflows to sales, operations and location and audience intelligence. University of Colorado Boulder engineering and business.' }
+      ],
+      advisors: [
+        { ini: 'AL', name: 'Al Lazowski', role: 'STRATEGIC ADVISOR', bio: 'Co-founded LAZ Parking in 1981 and serves as its Chairman and CEO — today more than $3B in managed revenue and 21,000+ employees.' },
+        { ini: 'KH', name: 'Kurt Hall', role: 'EXECUTIVE ADVISOR', bio: 'Former Chairman, President and CEO of National CineMedia, which he built into the world’s largest cinema media network.' },
+        { ini: 'CM', name: 'Cliff Marks', role: 'EXECUTIVE ADVISOR', bio: 'Former President of National CineMedia, where he also led sales and marketing and served as interim CEO.' },
+        { ini: 'DM', name: 'Dan Migala', role: 'STRATEGIC GROWTH', bio: 'Chief Impact Officer at LAZ Parking; co-founder of 4FRONT, now part of Legends. Sports, live events and sponsorship strategy.' },
+        { ini: 'CC', name: 'Charles “Chip” Chimera', role: 'EXECUTIVE ADVISOR', bio: 'Career in out-of-home media sales with Clear Channel and Outfront Media; advises on sales leadership and agency relationships.' }
+      ],
       sent: !!st.sent,
       notSent: !st.sent,
       submit: function (e) { if (e && e.preventDefault) e.preventDefault(); sendInquiry(e, 'investor', null); self.setState({ sent: true }); }
@@ -83,13 +97,13 @@ export default class InvestorsPage extends React.Component {
               <div className="alm-rise" style={{ display: "flex", alignItems: "center", gap: "10px", fontSize: "15px", fontWeight: "600", letterSpacing: "-0.005em", opacity: "0.72" }}><span style={{ width: "7px", height: "7px", background: "#FBAE4F", borderRadius: "50%" }} />Investor relations</div>
               <h1 className="alm-rise" style={{ margin: "22px 0 0", maxWidth: "1240px", fontSize: "clamp(44px, 7.2vw, 116px)", lineHeight: "1", letterSpacing: "-0.035em", fontWeight: "600", animationDelay: ".1s" }}>The media layer of <span style={{ color: "#FBAE4F" }}>America’s parking.</span></h1>
               <div className="alm-rise" style={{ marginTop: "32px", display: "flex", flexWrap: "wrap", gap: "24px 48px", alignItems: "flex-end", justifyContent: "space-between", animationDelay: ".2s" }}>
-                <p style={{ margin: "0", maxWidth: "620px", fontSize: "19px", lineHeight: "1.55", fontWeight: "400", color: "#E4E8EF" }}>A vertically integrated out-of-home network across 12,000 parking locations — from the factory that builds our screens to the sales team that fills them.</p>
+                <p style={{ margin: "0", maxWidth: "620px", fontSize: "19px", lineHeight: "1.55", fontWeight: "400", color: "#E4E8EF" }}>A vertically integrated out-of-home network across 12,000 parking locations — screens, print and CMS through our sister companies MetroClick and faytech, software and ad sales in-house.</p>
                 <div style={{ display: "flex", gap: "12px", flexWrap: "wrap" }}>
                   <A className="alm-btn" href="#access" style={{ display: "inline-flex", alignItems: "center", minHeight: "56px", padding: "0 26px", borderRadius: "999px", background: "#FBAE4F", color: "#0B1220", fontWeight: "600", fontSize: "15px", letterSpacing: "-0.005em" }}>Request the data room</A>
                   <A className="alm-btn" href="#thesis" style={{ display: "inline-flex", alignItems: "center", minHeight: "56px", padding: "0 26px", borderRadius: "999px", border: "2px solid #FFFFFF", color: "#FFFFFF", fontWeight: "600", fontSize: "15px", letterSpacing: "-0.005em" }}>Read the thesis</A>
                 </div>
               </div>
-              <div style={{ position: "absolute", right: "28px", bottom: "24px", fontFamily: "'Geist Mono', monospace", fontSize: "11px", letterSpacing: "0.08em", color: "rgba(255,255,255,0.55)" }}>DRONE FOOTAGE · ILLUSTRATIVE</div>
+              <div style={{ position: "absolute", right: "28px", bottom: "24px", fontFamily: "'Geist Mono', monospace", fontSize: "11px", letterSpacing: "0.08em", color: "rgba(255,255,255,0.55)" }}>STOCK DRONE FOOTAGE</div>
             </div>
           </section>
         </div>
@@ -98,41 +112,40 @@ export default class InvestorsPage extends React.Component {
           <div style={{ maxWidth: "1240px", margin: "0 auto" }}>
             <div style={{ textAlign: "center" }}>
               <div style={{ display: "inline-flex", alignItems: "center", gap: "10px", fontSize: "17px", fontWeight: "600", letterSpacing: "-0.01em", color: "#A85C00" }}><span style={{ width: "7px", height: "7px", background: "#FBAE4F", borderRadius: "50%" }} />The opportunity</div>
-              <h2 className="alm-in" style={{ margin: "16px auto 0", maxWidth: "960px", fontSize: "clamp(40px, 6vw, 88px)", lineHeight: "1", letterSpacing: "-0.04em", fontWeight: "600" }}>The one traditional medium<br />that keeps growing.</h2>
-              <p className="alm-in" style={{ margin: "24px auto 0", maxWidth: "680px", fontSize: "21px", lineHeight: "1.5", fontWeight: "400", color: "#5B6474" }}>US out-of-home set a record in 2025 and digital is taking a bigger share every year. Parking — where every trip ends — is still one of its least built-out venues.</p>
+              <h2 className="alm-in" style={{ margin: "16px auto 0", maxWidth: "960px", fontSize: "clamp(40px, 6vw, 88px)", lineHeight: "1", letterSpacing: "-0.04em", fontWeight: "600" }}>Every trip ends<br />in a parking space.</h2>
+              <p className="alm-in" style={{ margin: "24px auto 0", maxWidth: "680px", fontSize: "21px", lineHeight: "1.5", fontWeight: "400", color: "#5B6474" }}>Drivers spend up to ten minutes there — three million cars a day across our network. We’re turning that moment into a national media platform, starting with the screens already live.</p>
             </div>
             <div style={{ marginTop: "64px", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: "16px" }}>
               <div className="alm-in" style={{ padding: "36px", minHeight: "260px", borderRadius: "28px", background: "#0B1220", color: "#FFFFFF", display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
-                <div style={{ fontSize: "15px", fontWeight: "600", color: "#A3ACBC" }}>US OOH revenue, 2025</div>
+                <div style={{ fontSize: "15px", fontWeight: "600", color: "#A3ACBC" }}>Installed today</div>
                 <div>
-                  <div style={{ fontSize: "clamp(56px, 5.4vw, 84px)", fontWeight: "600", lineHeight: "0.95", letterSpacing: "-0.05em", background: "linear-gradient(90deg, #FBAE4F, #FFE1B8)", WebkitBackgroundClip: "text", backgroundClip: "text", color: "transparent" }}>$9.46B</div>
-                  <div style={{ marginTop: "10px", fontSize: "16px", lineHeight: "1.5", color: "#C9D0DB" }}>A record year, up 3.6%.</div>
+                  <div style={{ fontSize: "clamp(56px, 5.4vw, 84px)", fontWeight: "600", lineHeight: "0.95", letterSpacing: "-0.05em", background: "linear-gradient(90deg, #FBAE4F, #FFE1B8)", WebkitBackgroundClip: "text", backgroundClip: "text", color: "transparent" }}>110+</div>
+                  <div style={{ marginTop: "10px", fontSize: "16px", lineHeight: "1.5", color: "#C9D0DB" }}>digital units in New York and Connecticut.</div>
                 </div>
               </div>
               <div className="alm-in" style={{ padding: "36px", minHeight: "260px", borderRadius: "28px", background: "#FFFFFF", display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
-                <div style={{ fontSize: "15px", fontWeight: "600", color: "#5B6474" }}>Growth streak</div>
+                <div style={{ fontSize: "15px", fontWeight: "600", color: "#5B6474" }}>Planned</div>
                 <div>
-                  <div style={{ fontSize: "clamp(56px, 5.4vw, 84px)", fontWeight: "600", lineHeight: "0.95", letterSpacing: "-0.05em" }}>19</div>
-                  <div style={{ marginTop: "10px", fontSize: "16px", lineHeight: "1.5", color: "#5B6474" }}>consecutive quarters of growth.</div>
+                  <div style={{ fontSize: "clamp(56px, 5.4vw, 84px)", fontWeight: "600", lineHeight: "0.95", letterSpacing: "-0.05em" }}>1,000</div>
+                  <div style={{ marginTop: "10px", fontSize: "16px", lineHeight: "1.5", color: "#5B6474" }}>more units for the top 35 US media markets.</div>
                 </div>
               </div>
               <div className="alm-in" style={{ padding: "36px", minHeight: "260px", borderRadius: "28px", background: "#FFFFFF", display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
-                <div style={{ fontSize: "15px", fontWeight: "600", color: "#5B6474" }}>Digital share</div>
+                <div style={{ fontSize: "15px", fontWeight: "600", color: "#5B6474" }}>Partner value</div>
                 <div>
-                  <div style={{ fontSize: "clamp(56px, 5.4vw, 84px)", fontWeight: "600", lineHeight: "0.95", letterSpacing: "-0.05em", color: "#1D7F92" }}>36.3%</div>
-                  <div style={{ marginTop: "10px", fontSize: "16px", lineHeight: "1.5", color: "#5B6474" }}>of OOH revenue, up 10.5% year over year.</div>
+                  <div style={{ fontSize: "clamp(56px, 5.4vw, 84px)", fontWeight: "600", lineHeight: "0.95", letterSpacing: "-0.05em", color: "#1D7F92" }}>$1.5M+</div>
+                  <div style={{ marginTop: "10px", fontSize: "16px", lineHeight: "1.5", color: "#5B6474" }}>created for our parking partners.</div>
                 </div>
               </div>
               <div className="alm-in" style={{ padding: "36px", minHeight: "260px", borderRadius: "28px", background: "#FFFFFF", display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
                 <div style={{ fontSize: "15px", fontWeight: "600", color: "#5B6474" }}>Why now</div>
                 <ul style={{ margin: "0", padding: "0", listStyle: "none", display: "grid", gap: "12px", fontSize: "16px", lineHeight: "1.45", fontWeight: "500" }}>
-                  <li style={{ display: "flex", gap: "10px" }}><span style={{ color: "#FBAE4F" }}>●</span>Digital screens unlock self-serve and programmatic buying</li>
-                  <li style={{ display: "flex", gap: "10px" }}><span style={{ color: "#FBAE4F" }}>●</span>Brands are moving budget to live, in-person moments</li>
-                  <li style={{ display: "flex", gap: "10px" }}><span style={{ color: "#FBAE4F" }}>●</span>Owners want new income from existing space</li>
+                  <li style={{ display: "flex", gap: "10px" }}><span style={{ color: "#FBAE4F" }}>●</span>Digital screens open the door to programmatic buying</li>
+                  <li style={{ display: "flex", gap: "10px" }}><span style={{ color: "#FBAE4F" }}>●</span>Events and activations put the real estate itself to work</li>
+                  <li style={{ display: "flex", gap: "10px" }}><span style={{ color: "#FBAE4F" }}>●</span>Owners earn a share of the gross, with no risk</li>
                 </ul>
               </div>
             </div>
-            <div style={{ marginTop: "18px", fontSize: "13px", lineHeight: "1.5", color: "#6E7685" }}>Source: OAAA, US out-of-home advertising revenue for full-year 2025, reported March 2026.</div>
           </div>
         </section>
         {/* METRICS */}
@@ -168,20 +181,20 @@ export default class InvestorsPage extends React.Component {
             <div style={{ marginTop: "48px", padding: "32px", borderRadius: "18px", background: "#0B1220", color: "#FFFFFF", display: "flex", flexWrap: "wrap", gap: "24px 48px", alignItems: "center", justifyContent: "space-between" }}>
               <div style={{ display: "flex", flexWrap: "wrap", gap: "24px 48px" }}>
                 <div>
-                  <div style={{ fontSize: "11px", fontWeight: "600", letterSpacing: "0.14em", color: "#8B95A7" }}>REVENUE</div>
-                  <div style={{ marginTop: "6px", fontSize: "28px", fontWeight: "650", letterSpacing: "-0.02em" }}>[Figure]</div>
+                  <div style={{ fontSize: "11px", fontWeight: "600", letterSpacing: "0.14em", color: "#8B95A7" }}>DIGITAL UNITS INSTALLED</div>
+                  <div style={{ marginTop: "6px", fontSize: "28px", fontWeight: "650", letterSpacing: "-0.02em" }}>110+</div>
                 </div>
                 <div>
-                  <div style={{ fontSize: "11px", fontWeight: "600", letterSpacing: "0.14em", color: "#8B95A7" }}>YOY GROWTH</div>
-                  <div style={{ marginTop: "6px", fontSize: "28px", fontWeight: "650", letterSpacing: "-0.02em" }}>[Figure]</div>
+                  <div style={{ fontSize: "11px", fontWeight: "600", letterSpacing: "0.14em", color: "#8B95A7" }}>UNITS PLANNED</div>
+                  <div style={{ marginTop: "6px", fontSize: "28px", fontWeight: "650", letterSpacing: "-0.02em" }}>1,000</div>
                 </div>
                 <div>
-                  <div style={{ fontSize: "11px", fontWeight: "600", letterSpacing: "0.14em", color: "#8B95A7" }}>SCREENS DEPLOYED</div>
-                  <div style={{ marginTop: "6px", fontSize: "28px", fontWeight: "650", letterSpacing: "-0.02em" }}>[Figure]</div>
+                  <div style={{ fontSize: "11px", fontWeight: "600", letterSpacing: "0.14em", color: "#8B95A7" }}>VALUE FOR PARKING PARTNERS</div>
+                  <div style={{ marginTop: "6px", fontSize: "28px", fontWeight: "650", letterSpacing: "-0.02em" }}>$1.5M+</div>
                 </div>
                 <div>
                   <div style={{ fontSize: "11px", fontWeight: "600", letterSpacing: "0.14em", color: "#8B95A7" }}>OWNER PAYOUTS</div>
-                  <div style={{ marginTop: "6px", fontSize: "28px", fontWeight: "650", letterSpacing: "-0.02em" }}>[Figure]</div>
+                  <div style={{ marginTop: "6px", fontSize: "28px", fontWeight: "650", letterSpacing: "-0.02em" }}>Quarterly</div>
                 </div>
               </div>
               <div style={{ fontSize: "13px", fontWeight: "700", color: "#FBAE4F" }}>FINANCIALS AVAILABLE UNDER NDA</div>
@@ -196,7 +209,7 @@ export default class InvestorsPage extends React.Component {
                 <div style={{ display: "flex", alignItems: "center", gap: "10px", fontSize: "15px", fontWeight: "600", letterSpacing: "-0.005em", opacity: "0.72" }}><span style={{ width: "7px", height: "7px", background: "#FBAE4F", borderRadius: "50%" }} />The business</div>
                 <h2 className="alm-in" style={{ margin: "22px 0 0", maxWidth: "980px", fontSize: "clamp(38px, 5.2vw, 80px)", lineHeight: "1", letterSpacing: "-0.035em", fontWeight: "600" }}>Three revenue engines.<br />One footprint.</h2>
               </div>
-              <p style={{ margin: "0", maxWidth: "440px", fontSize: "17px", lineHeight: "1.6", fontWeight: "400", color: "#4E586A" }}>The same locations monetize three ways — so every new property we sign adds static, digital and event inventory at once.</p>
+              <p style={{ margin: "0", maxWidth: "440px", fontSize: "17px", lineHeight: "1.6", fontWeight: "400", color: "#4E586A" }}>The same locations monetize three ways — and every product can be packaged together or sold on its own.</p>
             </div>
             <div style={{ marginTop: "48px", padding: "32px", borderRadius: "18px", background: "#FFFFFF" }}>
               <div style={{ display: "grid", gridTemplateColumns: "minmax(120px, 160px) 1fr", gap: "16px 24px", alignItems: "center" }}>
@@ -216,7 +229,7 @@ export default class InvestorsPage extends React.Component {
                   </div>
                 </div>
               </div>
-              <div style={{ marginTop: "16px", fontFamily: "'Geist Mono', monospace", fontSize: "11px", letterSpacing: "0.08em", color: "#8A93A3" }}>DIRECTIONAL · ROUGHLY EQUAL THIRDS TODAY · DETAIL IN THE DATA ROOM</div>
+              <div style={{ marginTop: "16px", fontFamily: "'Geist Mono', monospace", fontSize: "11px", letterSpacing: "0.08em", color: "#8A93A3" }}>DIRECTIONAL · NOT TO SCALE · DETAIL IN THE DATA ROOM</div>
             </div>
             <div style={{ marginTop: "16px", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "16px" }}>
               {(v.engines || []).map((e, eI) => (
@@ -261,7 +274,7 @@ export default class InvestorsPage extends React.Component {
               <div style={{ borderTop: "3px solid #FBAE4F", paddingTop: "24px" }}>
                 <div style={{ fontFamily: "'Geist Mono', monospace", fontSize: "13px", color: "#FBAE4F" }}>02</div>
                 <div style={{ marginTop: "14px", fontSize: "26px", fontWeight: "650", lineHeight: "1.08", letterSpacing: "-0.02em" }}>Vertically integrated</div>
-                <p style={{ margin: "14px 0 0", fontSize: "16px", lineHeight: "1.65", fontWeight: "400", color: "#C9D0DB" }}>We own the manufacturing, software, printing, design, installation and sales. Fewer vendors means faster deployment and more margin per placement.</p>
+                <p style={{ margin: "14px 0 0", fontSize: "16px", lineHeight: "1.65", fontWeight: "400", color: "#C9D0DB" }}>Signage manufacturing, large-format printing and our CMS come from sister companies MetroClick and faytech; software development and ad sales are in-house. Fewer vendors means faster deployment.</p>
               </div>
               <div style={{ borderTop: "3px solid #FBAE4F", paddingTop: "24px" }}>
                 <div style={{ fontFamily: "'Geist Mono', monospace", fontSize: "13px", color: "#FBAE4F" }}>03</div>
@@ -270,8 +283,8 @@ export default class InvestorsPage extends React.Component {
               </div>
               <div style={{ borderTop: "3px solid #FBAE4F", paddingTop: "24px" }}>
                 <div style={{ fontFamily: "'Geist Mono', monospace", fontSize: "13px", color: "#FBAE4F" }}>04</div>
-                <div style={{ marginTop: "14px", fontSize: "26px", fontWeight: "650", lineHeight: "1.08", letterSpacing: "-0.02em" }}>Built for self-serve</div>
-                <p style={{ margin: "14px 0 0", fontSize: "16px", lineHeight: "1.65", fontWeight: "400", color: "#C9D0DB" }}>Audience data from Geopath, DOT, Census and Wi-Fi beacons plus digital inventory sets up self-serve and programmatic buying — starting with this site.</p>
+                <div style={{ marginTop: "14px", fontSize: "26px", fontWeight: "650", lineHeight: "1.08", letterSpacing: "-0.02em" }}>Built to become a platform</div>
+                <p style={{ margin: "14px 0 0", fontSize: "16px", lineHeight: "1.65", fontWeight: "400", color: "#C9D0DB" }}>Our technology roadmap takes location data, media measurement and self-service from an internal tool to sales, agencies and brands — on top of Geopath, DOT, Census and Wi-Fi beacon data.</p>
               </div>
             </div>
           </div>
@@ -316,29 +329,29 @@ export default class InvestorsPage extends React.Component {
                 <div style={{ marginTop: "8px", fontSize: "15px", lineHeight: "1.55", fontWeight: "400", color: "#D5DAE3" }}>Designing and installing parking media.</div>
               </li>
               <li style={{ padding: "28px 24px 0 0" }}>
-                <div style={{ fontSize: "36px", fontWeight: "650", color: "#FBAE4F", letterSpacing: "-0.02em" }}>[Year]</div>
-                <div style={{ marginTop: "12px", fontSize: "18px", fontWeight: "700" }}>Own manufacturing</div>
-                <div style={{ marginTop: "8px", fontSize: "15px", lineHeight: "1.55", fontWeight: "400", color: "#D5DAE3" }}>Rate boards and screens built in-house.</div>
+                <div style={{ fontSize: "36px", fontWeight: "650", color: "#FBAE4F", letterSpacing: "-0.02em" }}>2019</div>
+                <div style={{ marginTop: "12px", fontSize: "18px", fontWeight: "700" }}>Hartford HealthCare</div>
+                <div style={{ marginTop: "8px", fontSize: "15px", lineHeight: "1.55", fontWeight: "400", color: "#D5DAE3" }}>30 Connecticut garages signed — since renewed for five more years.</div>
               </li>
               <li style={{ padding: "28px 24px 0 0" }}>
                 <div style={{ fontSize: "36px", fontWeight: "650", color: "#FBAE4F", letterSpacing: "-0.02em" }}>Today</div>
                 <div style={{ marginTop: "12px", fontSize: "18px", fontWeight: "700" }}>Digital in NY &amp; CT</div>
-                <div style={{ marginTop: "8px", fontSize: "15px", lineHeight: "1.55", fontWeight: "400", color: "#D5DAE3" }}>12,000 locations, 11 flagship markets.</div>
+                <div style={{ marginTop: "8px", fontSize: "15px", lineHeight: "1.55", fontWeight: "400", color: "#D5DAE3" }}>110+ units installed; 12,000 locations and 11 flagship markets in the network.</div>
               </li>
               <li style={{ padding: "28px 24px 0 0" }}>
-                <div style={{ fontSize: "36px", fontWeight: "650", color: "#FBAE4F", letterSpacing: "-0.02em" }}>Now</div>
-                <div style={{ marginTop: "12px", fontSize: "18px", fontWeight: "700" }}>Self-serve beta</div>
-                <div style={{ marginTop: "8px", fontSize: "15px", lineHeight: "1.55", fontWeight: "400", color: "#D5DAE3" }}>Advertisers plan and submit campaigns online.</div>
-              </li>
-              <li style={{ padding: "28px 24px 0 0" }}>
-                <div style={{ fontSize: "36px", fontWeight: "650", color: "#FBAE4F", letterSpacing: "-0.02em" }}>Now</div>
-                <div style={{ marginTop: "12px", fontSize: "18px", fontWeight: "700" }}>Events &amp; venues</div>
-                <div style={{ marginTop: "8px", fontSize: "15px", lineHeight: "1.55", fontWeight: "400", color: "#D5DAE3" }}>Rooftops, lots and levels booked for activations, rentals and game days.</div>
+                <div style={{ fontSize: "36px", fontWeight: "650", color: "#FBAE4F", letterSpacing: "-0.02em" }}>2026</div>
+                <div style={{ marginTop: "12px", fontSize: "18px", fontWeight: "700" }}>Events</div>
+                <div style={{ marginTop: "8px", fontSize: "15px", lineHeight: "1.55", fontWeight: "400", color: "#D5DAE3" }}>VIP parking and shuttle programs in four cities, and event sites for brand partners.</div>
               </li>
               <li style={{ padding: "28px 24px 0 0" }}>
                 <div style={{ fontSize: "36px", fontWeight: "650", color: "#FBAE4F", letterSpacing: "-0.02em" }}>Next</div>
-                <div style={{ marginTop: "12px", fontSize: "18px", fontWeight: "700" }}>Programmatic</div>
-                <div style={{ marginTop: "8px", fontSize: "15px", lineHeight: "1.55", fontWeight: "400", color: "#D5DAE3" }}>Digital inventory available through programmatic buying. [Timing]</div>
+                <div style={{ marginTop: "12px", fontSize: "18px", fontWeight: "700" }}>1,000 units</div>
+                <div style={{ marginTop: "8px", fontSize: "15px", lineHeight: "1.55", fontWeight: "400", color: "#D5DAE3" }}>Planned for the top 35 US media markets.</div>
+              </li>
+              <li style={{ padding: "28px 24px 0 0" }}>
+                <div style={{ fontSize: "36px", fontWeight: "650", color: "#FBAE4F", letterSpacing: "-0.02em" }}>Next</div>
+                <div style={{ marginTop: "12px", fontSize: "18px", fontWeight: "700" }}>The platform</div>
+                <div style={{ marginTop: "8px", fontSize: "15px", lineHeight: "1.55", fontWeight: "400", color: "#D5DAE3" }}>Location intelligence, smart power, media measurement and new display hardware — then agency and brand self-service.</div>
               </li>
             </ol>
           </div>
@@ -349,8 +362,8 @@ export default class InvestorsPage extends React.Component {
             <h2 className="alm-in" style={{ margin: "0", maxWidth: "900px", fontSize: "clamp(38px, 5.2vw, 80px)", lineHeight: "1", letterSpacing: "-0.035em", fontWeight: "600" }}>Proof in the field.</h2>
             <div style={{ marginTop: "48px", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "16px" }}>
               <figure className="alm-tile alm-wipe" style={{ margin: "0", height: "380px", borderRadius: "16px", overflow: "hidden", position: "relative", background: "#0B1220" }}>
-                <img src="/media/photos/audi-garage-lobby.webp" alt="Commuters passing an Audi digital panel" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} loading="lazy" decoding="async" />
-                <figcaption style={{ position: "absolute", left: "16px", bottom: "16px", padding: "8px 14px", borderRadius: "999px", background: "rgba(11,18,32,0.72)", color: "#FFFFFF", fontSize: "12px", fontWeight: "700" }}>AUDI · DIGITAL</figcaption>
+                <img src="/media/photos/lucid-garage-panel.webp" alt="Drivers walking past a Lucid ad on an A Lot Media digital panel in a New York garage" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "65% 50%", display: "block" }} loading="lazy" decoding="async" />
+                <figcaption style={{ position: "absolute", left: "16px", bottom: "16px", padding: "8px 14px", borderRadius: "999px", background: "rgba(11,18,32,0.72)", color: "#FFFFFF", fontSize: "12px", fontWeight: "700" }}>LUCID · DIGITAL · NEW YORK</figcaption>
               </figure>
               <figure className="alm-tile alm-wipe" style={{ margin: "0", height: "380px", borderRadius: "16px", overflow: "hidden", position: "relative", background: "#0B1220" }}>
                 <img src="/media/photos/hartford-healthcare-wallscape.webp" alt="Hartford HealthCare wallscape" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} loading="lazy" decoding="async" />
@@ -375,17 +388,41 @@ export default class InvestorsPage extends React.Component {
         {/* LEADERSHIP */}
         <section style={{ padding: "0 28px 128px" }}>
           <div style={{ maxWidth: "1360px", margin: "0 auto" }}>
-            <h2 className="alm-in" style={{ margin: "0", fontSize: "clamp(32px, 4vw, 56px)", lineHeight: "0.95", letterSpacing: "-0.035em", fontWeight: "600" }}>Leadership</h2>
-            <div style={{ marginTop: "40px", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: "16px" }}>
+            <div style={{ display: "flex", flexWrap: "wrap", gap: "24px 64px", alignItems: "flex-end", justifyContent: "space-between" }}>
+              <h2 className="alm-in" style={{ margin: "0", fontSize: "clamp(38px, 5.2vw, 80px)", lineHeight: "1", letterSpacing: "-0.035em", fontWeight: "600" }}>The team.</h2>
+              <p style={{ margin: "0", maxWidth: "460px", fontSize: "17px", lineHeight: "1.6", fontWeight: "400", color: "#4E586A" }}>Operators from parking, place-based media and display technology — advised by the people who built LAZ Parking and National CineMedia.</p>
+            </div>
+            <div style={{ marginTop: "48px", fontSize: "12px", fontWeight: "600", letterSpacing: "0.14em", color: "#4E586A" }}>LEADERSHIP</div>
+            <div style={{ marginTop: "16px", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(340px, 1fr))", gap: "16px" }}>
               {(v.leaders || []).map((p, pI) => (
                 <Fragment key={pI}>
-                  <div className="alm-in" style={{ borderRadius: "16px", overflow: "hidden", background: "#FFFFFF" }}>
-                    <div style={{ height: "260px", background: "#E3E5EA", display: "flex", alignItems: "center", justifyContent: "center", fontFamily: "'Geist Mono', monospace", fontSize: "12px", color: "#4E586A" }}>[PORTRAIT]</div>
-                    <div style={{ padding: "22px 24px 26px" }}>
-                      <div style={{ fontSize: "20px", fontWeight: "650", letterSpacing: "-0.02em" }}>{p.name}</div>
-                      <div style={{ marginTop: "6px", fontSize: "14px", fontWeight: "600", color: "#4E586A" }}>{p.role}</div>
+                  <article className="alm-in" style={{ padding: "26px", borderRadius: "16px", background: "#FFFFFF", display: "flex", flexDirection: "column", gap: "14px" }}>
+                    <div style={{ display: "flex", alignItems: "center", gap: "16px" }}>
+                      <span aria-hidden="true" style={{ flex: "0 0 auto", width: "64px", height: "64px", borderRadius: "50%", background: "#0B1220", color: "#FBAE4F", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "20px", fontWeight: "700", letterSpacing: "0.02em" }}>{p.ini}</span>
+                      <div>
+                        <div style={{ fontSize: "20px", fontWeight: "650", letterSpacing: "-0.02em" }}>{p.name}</div>
+                        <div style={{ marginTop: "4px", fontSize: "13px", fontWeight: "700", letterSpacing: "0.06em", color: "#8A5300" }}>{p.role}</div>
+                      </div>
                     </div>
-                  </div>
+                    <p style={{ margin: "0", fontSize: "15px", lineHeight: "1.6", fontWeight: "400", color: "#4E586A" }}>{p.bio}</p>
+                  </article>
+                </Fragment>
+              ))}
+            </div>
+            <div style={{ marginTop: "48px", fontSize: "12px", fontWeight: "600", letterSpacing: "0.14em", color: "#4E586A" }}>ADVISORS</div>
+            <div style={{ marginTop: "16px", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: "16px" }}>
+              {(v.advisors || []).map((p, pI) => (
+                <Fragment key={pI}>
+                  <article className="alm-in" style={{ padding: "26px", borderRadius: "16px", background: "#0B1220", color: "#FFFFFF", display: "flex", flexDirection: "column", gap: "14px" }}>
+                    <div style={{ display: "flex", alignItems: "center", gap: "16px" }}>
+                      <span aria-hidden="true" style={{ flex: "0 0 auto", width: "64px", height: "64px", borderRadius: "50%", background: "#FBAE4F", color: "#0B1220", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "20px", fontWeight: "700", letterSpacing: "0.02em" }}>{p.ini}</span>
+                      <div>
+                        <div style={{ fontSize: "20px", fontWeight: "650", letterSpacing: "-0.02em" }}>{p.name}</div>
+                        <div style={{ marginTop: "4px", fontSize: "13px", fontWeight: "700", letterSpacing: "0.06em", color: "#FBAE4F" }}>{p.role}</div>
+                      </div>
+                    </div>
+                    <p style={{ margin: "0", fontSize: "14px", lineHeight: "1.6", fontWeight: "400", color: "#C9D0DB" }}>{p.bio}</p>
+                  </article>
                 </Fragment>
               ))}
             </div>
@@ -397,7 +434,7 @@ export default class InvestorsPage extends React.Component {
             <div style={{ flex: "1 1 380px" }}>
               <div style={{ display: "flex", alignItems: "center", gap: "10px", fontSize: "15px", fontWeight: "600", letterSpacing: "-0.005em", opacity: "0.72" }}><span style={{ width: "7px", height: "7px", background: "#FBAE4F", borderRadius: "50%" }} />Data room</div>
               <h2 className="alm-in" style={{ margin: "22px 0 0", fontSize: "clamp(38px, 5vw, 72px)", lineHeight: "1", letterSpacing: "-0.035em", fontWeight: "600" }}>Request investor access.</h2>
-              <p style={{ margin: "24px 0 0", fontSize: "18px", lineHeight: "1.6", fontWeight: "400", color: "#C9D0DB" }}>Financials, unit economics and the deployment pipeline are shared under NDA. Investor relations: [IR email].</p>
+              <p style={{ margin: "24px 0 0", fontSize: "18px", lineHeight: "1.6", fontWeight: "400", color: "#C9D0DB" }}>Financials, unit economics and the deployment pipeline are shared under NDA. Or email team@alotmedia.com.</p>
             </div>
             <div style={{ flex: "999 1 560px", minWidth: "0", padding: "40px", borderRadius: "18px", background: "#FFFFFF", color: "#0B1220" }}>
               {v.sent ? (

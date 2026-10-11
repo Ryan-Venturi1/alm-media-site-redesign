@@ -3,7 +3,7 @@ import EventsPage from '@/components/pages/EventsPage';
 
 export const metadata: Metadata = {
   title: 'Events & venues',
-  description: 'Rooftops, surface lots and garage levels for brand activations, venue rental and event-day parking + media.',
+  description: 'Parking lots and garages for event activation, VIP park & shuttle, bulk parking, sponsorship and game-day takeovers.',
   alternates: { canonical: '/events' },
 };
 

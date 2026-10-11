@@ -37,16 +37,16 @@ If you set none of the delivery variables, form submissions are written to the V
 
 | Route | Page |
 | --- | --- |
-| `/` | Home: hero, brand marquee, KPIs, a statement that fills in as you scroll, a pinned three-business story, events showcase, investor case, a "from above" film, real installs, rate board product, sideways-scrolling formats, markets, audiences, self-serve |
-| `/advertisers` | Advertise: the journey timeline, four solutions, targeting, process, brands, case study |
+| `/` | Home: hero, brand marquee, KPIs, a statement that fills in as you scroll, a pinned three-business story, events showcase, investor case, a "from above" film, real installs, rate board product, sideways-scrolling formats, markets, audiences, campaign planner |
+| `/advertisers` | Advertise: the journey timeline, four solutions, targeting, process, brands, Hartford HealthCare case study |
 | `/formats` | Formats & specs: static, digital and events & venues, with a compare table |
-| `/events` | Events & venues: three models, game-day pricing, venue finder, process, inquiry form |
-| `/real-estate` | Property owners: three revenue streams, rate board pricing simulator, who does what, FAQ, assessment form |
+| `/events` | Events & venues: three models, game-day pricing, the seven-product portfolio, recent work, process, inquiry form |
+| `/real-estate` | Property owners: how it works, rate board simulator, configurations, hardware and Device Hub, installs in the field, three revenue streams, FAQ, assessment form |
 | `/locations` | Locations: market search and filters |
-| `/investors` | Investors: market opportunity, metrics, three engines, flywheel, roadmap, data room request |
+| `/investors` | Investors: the opportunity, metrics, three engines, thesis, flywheel, roadmap, team and advisors, data room request |
 | `/company` | Company: vertical integration, gallery with lightbox, offices |
 | `/insights` | News, FAQ, glossary, newsletter |
-| `/plan` | Self-serve campaign planner (four steps) |
+| `/plan` | Campaign planner (four steps) that sends a request to the team |
 | `/contact` | Contact form that routes to the right team |
 
 ## How the code is organised
@@ -69,7 +69,7 @@ lib/
   video.js              muted background videos that play only while on screen
   inquiry.js            sends any form to /api/inquiry
 public/
-  media/                photos (retouched real installs), renders, market images, logos, video loops + posters
+  media/                photos (real installs and proof-of-performance shots), renders, market images, logos, video loops + posters
   fonts/                Montserrat (variable) and Geist Mono, self-hosted
   og.jpg                social share image
 ```
@@ -92,11 +92,29 @@ Motion turns on before first paint when the visitor's browser supports it, and i
 | `className="alm-story" data-scrub="pin" data-steps="3"` | Pinned section whose chapters advance with scroll |
 | `className="alm-hs" data-scrub="pin"` + `data-track` | Horizontal card track while the section holds |
 
-## Content to fill before launch
+## Where the content comes from
 
-Bracketed placeholders are deliberately visible on the pages:
+Every claim on the site comes from one of two places: the current alotmedia.com, or the company materials in the data room. Nothing is invented.
 
-- Event stats (`[#]`), the recent-events cards and the Chicago case study results
-- Investor metrics (`[Figure]`), the founding year of in-house manufacturing (`[Year]`), leadership portraits and names, and the IR email
-- The rate card estimate in the planner, payout cadence, programmatic timing, open roles and the latest announcement
-- Labels such as "Concept render", "Stock footage" and "Photos retouched" mark imagery that isn't a straight photo. Keep them until real event photography replaces the renders.
+- **From alotmedia.com:** 12,000 locations, 400+ cities, 40 states, 3,000,000+ cars parked daily, dwell times of up to 10 minutes, "designing and installing since 2016", the venue types and targeting options, the Geopath, DOT, Census and Wi-Fi beacon data sources, the market list, the LA, Chicago and NY offices, the brand logos, the gallery photos, the news posts and the "no risk, percentage of the gross" owner offer.
+- **From the data room:**
+  - The 2026 DDRB deck: rate board features, configurations, hardware lineup, Device Hub, field installs (Denison, Bethlehem Parking Authority, Avail), the Hartford HealthCare case study, programmatic and quarterly revenue share, and the extra client logos.
+  - The product model: 110+ units in NY and CT, 1,000 planned for the top 35 markets, and the event products.
+  - The event assumptions: event package sizes.
+  - The leadership bios.
+  - The technology roadmap pillars.
+  - The proof-of-performance photos.
+  - The Hartford address.
+- **Recent event work** (VIP parking and shuttle in four cities, June 2026; a drone show launch site in Austin, July 2026) is described without client names.
+
+Deliberately left out, because the data room marks it confidential: financials and projections, the raise and its terms, contract values, partner names from private agreements, rate-board hardware prices and Device Hub pricing.
+
+## Before launch
+
+- **Privacy policy and terms.** The footer links to the current pages on alotmedia.com (`/privacy-policy/` and `/terms-conditions/`). Move those pages over before pointing the domain here, or the links will break.
+- **News posts.** The Insights cards link to the existing blog posts on alotmedia.com. Migrate them, or keep the old blog reachable, before the domain switch.
+- **Confirm these with the team:**
+  - The founding year. The website says 2016; the tax filings list 2018 as the business start date.
+  - The NY office address. The website says 231 W 29th St; a 2023 contract lists 239 W 29th St.
+  - Manufacturing. The website says A Lot Media owns its plants; the DDRB deck says manufacturing, printing and the CMS come from sister companies MetroClick and faytech. The site uses the deck's wording.
+- **Images that aren't straight photos.** They are labeled on the page: "Concept render" on the event, gate-arm and ticket images, and "Stock footage" or "Stock photo" on the videos and generic images. Some older gallery photos were retouched (cleaned and color-corrected), and the home gallery says so. The new proof-of-performance photos only have their color and exposure corrected. Swap in real event photography when you have it.

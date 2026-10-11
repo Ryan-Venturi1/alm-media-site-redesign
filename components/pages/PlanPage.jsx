@@ -43,12 +43,12 @@ export default class PlanPage extends React.Component {
     ];
     var anyDigital = mlist.some(function (m) { return m[3] && ms[m[0]]; });
     var flist = [
-      ['Rate boards', 'Digital · :15 / :30 spots', '/media/photos/ddrb-connecticut.webp', '50% 34%', true],
+      ['Rate boards', 'Digital · custom slot length', '/media/photos/ddrb-connecticut.webp', '50% 34%', true],
       ['Digital panels', 'Digital · interactive', '/media/photos/blank-street-interactive-panel.webp', '30% 50%', true],
       ['Wallscapes', 'Static · per location', '/media/photos/hartford-healthcare-entrance-wallscape.webp', '50% 40%'],
       ['Elevator wraps', 'Static · per bank', '/media/photos/hartford-healthcare-elevator-wraps.webp', '50% 50%'],
       ['Gate arms', 'Static · entry & exit', '/media/renders/gate-arm-wrap.webp', '50% 50%'],
-      ['Tickets', 'Static · front & back', '/media/renders/branded-ticket.webp', '62% 50%']
+      ['Tickets', 'Static · branded tickets', '/media/renders/branded-ticket.webp', '62% 50%']
     ];
     var tog = function (key, name) {
       return function () {
@@ -121,10 +121,10 @@ export default class PlanPage extends React.Component {
         <section style={{ padding: "72px 28px 40px" }}>
           <div style={{ maxWidth: "1360px", margin: "0 auto", display: "flex", flexWrap: "wrap", gap: "24px 48px", alignItems: "flex-end", justifyContent: "space-between" }}>
             <div>
-              <div style={{ display: "flex", alignItems: "center", gap: "10px", fontSize: "15px", fontWeight: "600", letterSpacing: "-0.005em", opacity: "0.72" }}><span style={{ width: "7px", height: "7px", background: "#FBAE4F", borderRadius: "50%" }} />Self-serve · beta</div>
+              <div style={{ display: "flex", alignItems: "center", gap: "10px", fontSize: "15px", fontWeight: "600", letterSpacing: "-0.005em", opacity: "0.72" }}><span style={{ width: "7px", height: "7px", background: "#FBAE4F", borderRadius: "50%" }} />Campaign planner</div>
               <h1 style={{ margin: "18px 0 0", fontSize: "clamp(40px, 5.6vw, 84px)", lineHeight: "1", letterSpacing: "-0.035em", fontWeight: "600" }}>Plan a campaign.</h1>
             </div>
-            <div style={{ fontSize: "15px", fontWeight: "400", color: "#4E586A", maxWidth: "420px" }}>Build a plan in minutes. Our team confirms availability and rates, then it goes live. <A href="/contact" style={{ fontWeight: "600", color: "#0B1220", textDecoration: "underline" }}>Prefer a planner?</A></div>
+            <div style={{ fontSize: "15px", fontWeight: "400", color: "#4E586A", maxWidth: "420px" }}>Build your request in four steps. Our team confirms availability and rates and comes back with a proposal. <A href="/contact" style={{ fontWeight: "600", color: "#0B1220", textDecoration: "underline" }}>Prefer a planner?</A></div>
           </div>
           <ol style={{ maxWidth: "1360px", margin: "40px auto 0", padding: "0", listStyle: "none", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(160px, 1fr))", gap: "8px" }}>
             {(v.steps || []).map((s, sI) => (
@@ -239,7 +239,7 @@ export default class PlanPage extends React.Component {
                             </svg>
                           </div>
                           <div style={{ fontSize: "36px", fontWeight: "650", lineHeight: "1.08", letterSpacing: "-0.02em" }}>Plan submitted.</div>
-                          <p style={{ margin: "0", maxWidth: "520px", fontSize: "16px", lineHeight: "1.6", fontWeight: "400", color: "#4E586A" }}>Your planner will confirm availability and rates. You’ll be able to track it from your advertiser dashboard.</p>
+                          <p style={{ margin: "0", maxWidth: "520px", fontSize: "16px", lineHeight: "1.6", fontWeight: "400", color: "#4E586A" }}>A planner will confirm availability and rates and reply by email with a proposal.</p>
                           <button type="button" onClick={v.restart} style={{ alignSelf: "flex-start", marginTop: "8px", minHeight: "50px", padding: "0 26px", borderRadius: "999px", border: "2px solid #0B1220", background: "transparent", fontFamily: "'Montserrat', sans-serif", fontWeight: "600", fontSize: "15px", letterSpacing: "-0.005em", cursor: "pointer" }}>Start a new plan</button>
                         </div>
                       </>
@@ -248,13 +248,15 @@ export default class PlanPage extends React.Component {
                       <>
                         <form onSubmit={v.submit}>
                           <h2 className="alm-in" style={{ margin: "0", fontSize: "30px", fontWeight: "650", letterSpacing: "-0.02em" }}>Creative &amp; contact</h2>
-                          <div style={{ marginTop: "24px", padding: "40px 24px", borderRadius: "18px", border: "2px dashed #B8BFCC", background: "#F5F5F7", textAlign: "center" }}>
-                            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#0B1220" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                              <path d="M12 16V4M7 9l5-5 5 5M4 20h16" />
+                          <div style={{ marginTop: "24px", padding: "28px 24px", borderRadius: "18px", background: "#F5F5F7", display: "flex", gap: "18px", alignItems: "flex-start" }}>
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#0B1220" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" style={{ flex: "0 0 auto" }}>
+                              <rect x="3" y="5" width="18" height="14" rx="2" />
+                              <path d="M3 7l9 6 9-6" />
                             </svg>
-                            <div style={{ marginTop: "12px", fontSize: "16px", fontWeight: "600" }}>Drop creative files here</div>
-                            <div style={{ marginTop: "4px", fontSize: "13px", fontWeight: "500", color: "#4E586A" }}>or upload later — our design team can build it for you</div>
-                            <label style={{ marginTop: "16px", display: "inline-flex", alignItems: "center", minHeight: "46px", padding: "0 18px", borderRadius: "16px", border: "2px solid #0B1220", fontSize: "14px", fontWeight: "600", letterSpacing: "0", cursor: "pointer" }}>Browse files<input type="file" multiple style={{ position: "absolute", width: "1px", height: "1px", opacity: "0" }} name="creative" /></label>
+                            <div>
+                              <div style={{ fontSize: "16px", fontWeight: "600" }}>Already have creative?</div>
+                              <div style={{ marginTop: "6px", fontSize: "14px", lineHeight: "1.6", fontWeight: "500", color: "#4E586A" }}>Send it to <A href="mailto:team@alotmedia.com" style={{ fontWeight: "600", color: "#0B1220", textDecoration: "underline" }}>team@alotmedia.com</A> once we confirm your plan. Digital screens take JPEG, PDF and MP4 files — or our design team can build it for you.</div>
+                            </div>
                           </div>
                           <div style={{ marginTop: "24px", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: "18px" }}>
                             <label style={{ display: "flex", flexDirection: "column", gap: "8px", fontSize: "14px", fontWeight: "600", letterSpacing: "0" }}>Company<input className="alm-input" type="text" placeholder="Brand or agency" style={{ minHeight: "52px", padding: "0 14px", borderRadius: "12px", border: "2px solid #D5DAE3", fontFamily: "'Montserrat', sans-serif", fontSize: "15px", fontWeight: "400" }} name="company" /></label>
@@ -262,7 +264,7 @@ export default class PlanPage extends React.Component {
                           </div>
                           <label style={{ marginTop: "18px", display: "flex", gap: "12px", alignItems: "center", fontSize: "14px", fontWeight: "600", color: "#4E586A" }}><input type="checkbox" style={{ width: "20px", height: "20px", accentColor: "#FBAE4F" }} name="design_help" />I’d like the A Lot Media design team to produce creative</label>
                           {' '}
-                          <button type="submit" className="alm-btn" style={{ marginTop: "28px", width: "100%", minHeight: "60px", borderRadius: "999px", border: "0", background: "#FBAE4F", color: "#0B1220", fontFamily: "'Montserrat', sans-serif", fontWeight: "600", fontSize: "15px", letterSpacing: "-0.005em", cursor: "pointer" }}>Submit for confirmation</button>
+                          <button type="submit" className="alm-btn" style={{ marginTop: "28px", width: "100%", minHeight: "60px", borderRadius: "999px", border: "0", background: "#FBAE4F", color: "#0B1220", fontFamily: "'Montserrat', sans-serif", fontWeight: "600", fontSize: "15px", letterSpacing: "-0.005em", cursor: "pointer" }}>Send plan request</button>
                         </form>
                       </>
                     ) : null}
@@ -281,7 +283,7 @@ export default class PlanPage extends React.Component {
             <aside aria-label="Plan summary" style={{ flex: "1 1 340px", minWidth: "0", padding: "32px", borderRadius: "8px", background: "#0B1220", color: "#FFFFFF" }}>
               <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
                 <div style={{ fontSize: "13px", fontWeight: "600", letterSpacing: "0.14em", color: "#FBAE4F" }}>YOUR PLAN</div>
-                <div style={{ fontFamily: "'Geist Mono', monospace", fontSize: "11px", color: "#8B95A7" }}>DRAFT · AUTOSAVED</div>
+                <div style={{ fontFamily: "'Geist Mono', monospace", fontSize: "11px", color: "#8B95A7" }}>DRAFT</div>
               </div>
               <div style={{ marginTop: "24px", display: "flex", flexDirection: "column" }}>
                 <div style={{ padding: "16px 0", borderTop: "1px solid rgba(255,255,255,0.14)" }}>
@@ -301,8 +303,8 @@ export default class PlanPage extends React.Component {
                   <div style={{ marginTop: "6px", fontSize: "30px", fontWeight: "650", letterSpacing: "-0.02em" }}>{v.budgetLabel}</div>
                 </div>
               </div>
-              <div style={{ marginTop: "20px", fontSize: "13px", lineHeight: "1.6", fontWeight: "500", color: "#A3ACBC" }}>Estimated reach and final pricing are confirmed by our team. [Connect rate card &amp; Geopath audience data for instant estimates.]</div>
-              <div style={{ marginTop: "24px", paddingTop: "20px", borderTop: "1px solid rgba(255,255,255,0.14)", display: "flex", alignItems: "center", gap: "12px", fontSize: "13px", fontWeight: "600", color: "#C9D0DB" }}><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FBAE4F" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><rect x="4" y="10" width="16" height="11" rx="2" /><path d="M8 10V7a4 4 0 0 1 8 0v3" /></svg> Sign in to save plans, track approvals and reorder.</div>
+              <div style={{ marginTop: "20px", fontSize: "13px", lineHeight: "1.6", fontWeight: "500", color: "#A3ACBC" }}>Availability, rates and final pricing are confirmed by our team before anything is booked.</div>
+              <div style={{ marginTop: "24px", paddingTop: "20px", borderTop: "1px solid rgba(255,255,255,0.14)", display: "flex", alignItems: "center", gap: "12px", fontSize: "13px", fontWeight: "600", color: "#C9D0DB" }}><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FBAE4F" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2" /></svg> Questions? Call 1.860.716.9084 or email team@alotmedia.com.</div>
             </aside>
           </div>
         </section>

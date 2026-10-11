@@ -20,37 +20,37 @@ export default class FormatsPage extends React.Component {
     var data = [
       { kind: 'wallscape', short: 'WALLSCAPES', name: 'Wallscapes', type: 'STATIC', stage: '02 · PARK', stageName: 'Park', best: 'Launches, brand statements, scale',
         img: '/media/photos/hartford-healthcare-entrance-wallscape.webp', pos: '50% 40%', alt: 'Hartford HealthCare wallscape above a garage entrance', caption: 'HARTFORD HEALTHCARE · WALLSCAPE',
-        desc: 'Large-format creative on the walls drivers face while they find a space. Printed in-house and installed by our own crews — from a single wall to every level.',
-        specs: [['MARKETS', 'LA · Chicago · Miami · Austin · Boston'], ['DIMENSIONS', '[Per location]'], ['MINIMUM FLIGHT', '[Weeks]'], ['PRODUCTION', 'In-house print & install']],
-        cta: 'Add to plan', ctaHref: '/plan', ss: 'SELF-SERVE READY' },
+        desc: 'Large-format creative on the walls drivers face while they find a space. Designed, printed and installed for you — from a single wall to every level.',
+        specs: [['MARKETS', 'CT · LA · Chicago · Miami · Austin · Boston'], ['SIZE', 'Custom to each wall'], ['SCALE', 'One wall to every level'], ['PRODUCTION', 'Design, print & install']],
+        cta: 'Add to plan', ctaHref: '/plan', ss: 'REQUEST ONLINE' },
       { kind: 'elevator', short: 'ELEVATOR WRAPS', name: 'Elevator wraps', type: 'STATIC', stage: '03 · WALK', stageName: 'Walk', best: 'Health, finance, local offers',
         img: '/media/photos/hartford-healthcare-elevator-wraps.webp', pos: '50% 50%', alt: 'Hartford HealthCare LifeStar elevator door wraps', caption: 'HARTFORD HEALTHCARE · ELEVATOR WRAPS',
         desc: 'Branded elevator doors at the pause between the car and the destination. A captive moment, every single ride.',
-        specs: [['MARKETS', 'LA · Chicago · Miami · Austin · Boston'], ['DIMENSIONS', '[Per bank]'], ['MINIMUM FLIGHT', '[Weeks]'], ['PRODUCTION', 'In-house print & install']],
-        cta: 'Add to plan', ctaHref: '/plan', ss: 'SELF-SERVE READY' },
+        specs: [['MARKETS', 'CT · LA · Chicago · Miami · Austin · Boston'], ['SIZE', 'Custom to each elevator bank'], ['ON THE NETWORK', 'Hartford HealthCare · Getaround'], ['PRODUCTION', 'Design, print & install']],
+        cta: 'Add to plan', ctaHref: '/plan', ss: 'REQUEST ONLINE' },
       { kind: 'gatearm', short: 'GATE ARMS', name: 'Gate arm wraps', type: 'STATIC', stage: '01 · ARRIVE', stageName: 'Arrive', best: 'Frequency, directional calls to action',
         img: '/media/renders/gate-arm-wrap.webp', pos: '50% 50%', alt: 'Concept render of a branded orange and navy gate arm at a garage entry lane at night', caption: 'GATE ARM WRAP · CONCEPT RENDER',
         desc: 'The first thing every driver sees on the way in and the last on the way out. Gate arms rise for every car — eye level, twice per visit.',
-        specs: [['MARKETS', 'LA · Chicago · Miami · Austin · Boston'], ['PLACEMENT', 'Entry & exit lanes'], ['MINIMUM FLIGHT', '[Weeks]'], ['PRODUCTION', 'In-house print & install']],
-        cta: 'Add to plan', ctaHref: '/plan', ss: 'SELF-SERVE READY' },
+        specs: [['MARKETS', 'CT · LA · Chicago · Miami · Austin · Boston'], ['PLACEMENT', 'Entry & exit lanes'], ['PAIRS WITH', 'Branded tickets'], ['PRODUCTION', 'Design, print & install']],
+        cta: 'Add to plan', ctaHref: '/plan', ss: 'REQUEST ONLINE' },
       { kind: 'ticket', short: 'TICKETS', name: 'Branded parking tickets', type: 'STATIC', stage: '01 · ARRIVE', stageName: 'Arrive', best: 'Coupons, nearby retail, QSR',
         img: '/media/renders/branded-ticket.webp', pos: '62% 50%', alt: 'Concept render of a driver taking a branded parking ticket from an entry machine', caption: 'BRANDED TICKET · CONCEPT RENDER',
         desc: 'A brand message in every driver’s hand, kept in the car until they leave. Ideal for a redeemable offer at a store steps away.',
-        specs: [['MARKETS', 'Network-wide'], ['FORMAT', 'Front & back print'], ['MINIMUM RUN', '[Tickets]'], ['REDEMPTION', '[Redemption method]']],
-        cta: 'Add to plan', ctaHref: '/plan', ss: 'SELF-SERVE READY' },
+        specs: [['MARKETS', 'Network-wide'], ['PLACEMENT', 'Entry ticket machines'], ['BEST WITH', 'An offer at a store steps away'], ['PAIRS WITH', 'Gate arms & garage takeovers']],
+        cta: 'Add to plan', ctaHref: '/plan', ss: 'REQUEST ONLINE' },
       { kind: 'ddrb', short: 'RATE BOARDS', name: 'Digital Dynamic Rate Board™', type: 'DIGITAL', stage: '02 · PARK', stageName: 'Park', best: 'Daypart & event messaging, always-on brand', live: true,
-        desc: 'Our flagship. Real-time parking rates up top and full-motion advertising below, in a weatherproof unit built in our own factory and integrated with existing parking equipment. Rates and creative update across locations from a phone.',
-        specs: [['MARKETS', 'New York · Connecticut'], ['SPOT LENGTH', '[:15 / :30]'], ['CREATIVE', '[Resolution & file types]'], ['ALSO WORKS AS', 'Wayfinder · directory · photobooth']],
-        cta: 'Add to plan', ctaHref: '/plan', ss: 'SELF-SERVE READY' },
+        desc: 'Our flagship. Real-time parking rates up top and full-motion video and audio below, in a high-bright, weatherproof unit that integrates with existing parking equipment. Rates and creative update across locations from a phone.',
+        specs: [['MARKETS', 'New York · Connecticut'], ['SLOT LENGTH', 'Custom · unlimited creative updates'], ['CREATIVE', 'JPEG · PDF · MP4'], ['ALSO WORKS AS', 'Wayfinder · directory · photobooth']],
+        cta: 'Add to plan', ctaHref: '/plan', ss: 'REQUEST ONLINE' },
       { kind: 'panel', short: 'DIGITAL PANELS', name: 'Interactive digital panels', type: 'DIGITAL', stage: '03 · WALK', stageName: 'Walk', best: 'Offers, launches, wayfinding',
         img: '/media/photos/blank-street-interactive-panel.webp', pos: '30% 50%', alt: 'Man tapping his phone on a Blank Street interactive digital panel', caption: 'BLANK STREET · INTERACTIVE PANEL',
-        desc: 'Touch-enabled screens on the walk from the car — tap for an offer, scan to redeem, or find the way to the store. Interactivity turns a glance into an action.',
-        specs: [['MARKETS', 'New York · Connecticut'], ['INTERACTION', 'Touch · QR'], ['CREATIVE', '[Resolution & file types]'], ['REPORTING', '[Reporting metrics]']],
-        cta: 'Add to plan', ctaHref: '/plan', ss: 'SELF-SERVE READY' },
-      { kind: 'event', short: 'EVENTS & VENUES', name: 'Events & venues', type: 'EVENTS', stage: '04 · ACTIVATE', stageName: 'Activate', best: 'Launches, venue rental, game days',
+        desc: 'Touch screens on the walk from the car — tap for an offer, scan a QR code, or find the way to the store. We were the first company to bring interactive touch screen technology to parking facilities.',
+        specs: [['MARKETS', 'New York · Connecticut'], ['INTERACTION', 'Touch · QR'], ['CREATIVE', 'JPEG · PDF · MP4'], ['ALSO WORKS AS', 'Wayfinder · help desk']],
+        cta: 'Add to plan', ctaHref: '/plan', ss: 'REQUEST ONLINE' },
+      { kind: 'event', short: 'EVENTS & VENUES', name: 'Events & venues', type: 'EVENTS', stage: '04 · ACTIVATE', stageName: 'Activate', best: 'Launches, VIP parking, game days',
         img: '/media/renders/rooftop-event.webp', pos: '50% 50%', alt: 'Concept render of a branded rooftop parking activation at dusk', caption: 'ROOFTOP ACTIVATION · CONCEPT RENDER',
-        desc: 'Our real estate, put to work three ways: brand activations on rooftops and levels, venue rental for organizers, and event-day parking + media around stadiums and arenas.',
-        specs: [['MODELS', 'Activations · venue rental · event-day'], ['VENUES', 'Rooftops · lots · garage levels'], ['LEAD TIME', '[Weeks]'], ['PAIRS WITH', 'Rate boards & wallscapes on site']],
+        desc: 'Our real estate, put to work: brand activations and pop-ups, VIP park-and-shuttle and bulk parking for big events, and game-day takeovers around the crowd.',
+        specs: [['MODELS', 'Activations · VIP park & shuttle · game day'], ['VENUES', 'Lots · garages · rooftops'], ['PACKAGES', 'Small · full activation · takeover'], ['PAIRS WITH', 'Rate boards & wallscapes on site']],
         cta: 'Explore events & venues', ctaHref: '/events', ss: 'WITH OUR TEAM' }
     ];
     if (!this._vidRef) {
@@ -61,7 +61,7 @@ export default class FormatsPage extends React.Component {
       formats: data.map(function (f, i) {
         var dark = i % 2 === 0;
         var digital = f.type === 'DIGITAL', live = f.type === 'EVENTS';
-        var groups = { wallscape: ['static', '01', 'STATIC MEDIA', 'Printed, installed and maintained by our own crews — walls, doors, gates and tickets along the whole parking journey.', '#FFFFFF', '#0B1220'], ddrb: ['digital', '02', 'DIGITAL', 'Screens we build in our own factory and run on our own software — live pricing, full-motion ads and a booking flow built for self-serve.', '#8FDCE8', '#3FB6C8'], event: ['events', '03', 'EVENTS & VENUES', 'Our next growth engine: the real estate itself, booked for launches, festivals, film shoots and game days.', '#FBAE4F', '#FBAE4F'] };
+        var groups = { wallscape: ['static', '01', 'STATIC MEDIA', 'Designed, printed and installed for you — walls, doors, gates and tickets along the whole parking journey.', '#FFFFFF', '#0B1220'], ddrb: ['digital', '02', 'DIGITAL', 'Screens built with our sister companies MetroClick and faytech and run on our own CMS — live pricing, full-motion video and audio, updated from a phone.', '#8FDCE8', '#3FB6C8'], event: ['events', '03', 'EVENTS & VENUES', 'Our next growth engine: the real estate itself, booked for brand activations, VIP parking, festivals and game days.', '#FBAE4F', '#FBAE4F'] };
         var g = groups[f.kind];
         return {
           kind: f.kind, short: f.short, name: f.name, type: f.type, stage: f.stage, stageName: f.stageName, best: f.best, desc: f.desc,
@@ -78,7 +78,7 @@ export default class FormatsPage extends React.Component {
           typeBg: digital ? '#8FDCE8' : (live ? '#FBAE4F' : (dark ? '#FFFFFF' : '#0B1220')),
           typeFg: digital || live ? '#0B1220' : (dark ? '#0B1220' : '#FFFFFF'),
           ss: f.ss,
-          ssBg: f.ss === 'SELF-SERVE READY' ? '#FBAE4F' : '#E3E5EA',
+          ssBg: f.ss === 'REQUEST ONLINE' ? '#FBAE4F' : '#E3E5EA',
           ssFg: '#0B1220'
         };
       })
@@ -96,7 +96,7 @@ export default class FormatsPage extends React.Component {
             <div className="alm-rise" style={{ display: "flex", alignItems: "center", gap: "10px", fontSize: "15px", fontWeight: "600", letterSpacing: "-0.005em", opacity: "0.72" }}><span style={{ width: "7px", height: "7px", background: "#FBAE4F", borderRadius: "50%" }} />Formats &amp; specs · three businesses</div>
             <h1 className="alm-rise" style={{ margin: "22px 0 0", maxWidth: "1200px", fontSize: "clamp(44px, 7vw, 112px)", lineHeight: "1", letterSpacing: "-0.035em", fontWeight: "600", animationDelay: ".1s" }}>Static. Digital.<br /><span style={{ color: "#8A5300" }}>Events.</span></h1>
             <div className="alm-rise" style={{ marginTop: "32px", display: "flex", flexWrap: "wrap", gap: "24px 64px", alignItems: "flex-end", justifyContent: "space-between", animationDelay: ".2s" }}>
-              <p style={{ margin: "0", maxWidth: "600px", fontSize: "19px", lineHeight: "1.55", fontWeight: "400", color: "#4E586A" }}>Three businesses on one footprint: printed media on the walls, digital screens at the gate, and the space itself for events. Every placement is built, installed and sold by us — buy one, or own the whole journey.</p>
+              <p style={{ margin: "0", maxWidth: "600px", fontSize: "19px", lineHeight: "1.55", fontWeight: "400", color: "#4E586A" }}>Three businesses on one footprint: printed media on the walls, digital screens at the gate, and the space itself for events. Every placement is designed, installed and sold by us — buy one, or own the whole journey.</p>
               <nav aria-label="Jump to a format" style={{ display: "flex", flexWrap: "wrap", gap: "8px", maxWidth: "640px" }}>
                 {(v.formats || []).map((f, fI) => (
                   <Fragment key={fI}>
@@ -183,7 +183,7 @@ export default class FormatsPage extends React.Component {
                   </dl>
                   <div style={{ display: "flex", gap: "12px", flexWrap: "wrap", marginTop: "8px" }}>
                     <A className="alm-btn" href={f.ctaHref} style={{ display: "inline-flex", alignItems: "center", minHeight: "54px", padding: "0 26px", borderRadius: "999px", background: "#FBAE4F", color: "#0B1220", fontWeight: "600", fontSize: "15px", letterSpacing: "-0.005em" }}>{f.cta}</A>
-                    <A className="alm-btn" href="/contact" style={{ display: "inline-flex", alignItems: "center", minHeight: "54px", padding: "0 26px", borderRadius: "999px", border: `2px solid ${f.fg}`, fontWeight: "600", fontSize: "15px", letterSpacing: "-0.005em" }}>Get the spec sheet</A>
+                    <A className="alm-btn" href="/contact" style={{ display: "inline-flex", alignItems: "center", minHeight: "54px", padding: "0 26px", borderRadius: "999px", border: `2px solid ${f.fg}`, fontWeight: "600", fontSize: "15px", letterSpacing: "-0.005em" }}>Ask about specs</A>
                   </div>
                 </div>
               </div>

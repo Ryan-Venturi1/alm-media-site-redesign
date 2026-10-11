@@ -19,7 +19,9 @@ export default class CompanyPage extends React.Component {
     var B = '';
     var gf = st.gf || 'all';
     var all = [
-      ['/media/photos/audi-garage-lobby.webp', 'AUDI · DIGITAL PANELS', 'digital', 2, '50% 50%'],
+      ['/media/photos/lucid-digital-panel.webp', 'LUCID · DIGITAL PANEL', 'digital', 2, '40% 50%'],
+      ['/media/photos/mt-bank-ddrb.webp', 'M&T BANK · RATE BOARD', 'digital', 1, '40% 50%'],
+      ['/media/photos/bmw-digital-panel.webp', 'BMW · DIGITAL PANEL', 'digital', 1, '30% 50%'],
       ['/media/photos/united-digital-panel.webp', 'UNITED · DIGITAL PANEL', 'digital', 1, '30% 50%'],
       ['/media/photos/hartford-healthcare-wallscape.webp', 'HARTFORD HEALTHCARE · WALLSCAPE', 'static', 1, '50% 50%'],
       ['/media/photos/panera-now-open.webp', 'PANERA BREAD · DIGITAL PANEL', 'digital', 1, '60% 50%'],
@@ -33,15 +35,26 @@ export default class CompanyPage extends React.Component {
       ['/media/photos/panera-garage-lobby.webp', 'PANERA BREAD · GARAGE LOBBY', 'digital', 1, '50% 50%'],
       ['/media/photos/hartford-healthcare-entrance-wallscape.webp', 'HARTFORD HEALTHCARE · ENTRANCE', 'static', 1, '50% 50%'],
       ['/media/photos/blank-street-interactive-panel.webp', 'BLANK STREET · INTERACTIVE', 'digital', 1, '30% 50%'],
-      ['/media/photos/audi-commuters.webp', 'AUDI · GARAGE LOBBY', 'digital', 1, '50% 50%'],
+      ['/media/photos/ibm-digital-panel.webp', 'IBM · DIGITAL PANEL', 'digital', 1, '60% 50%'],
+      ['/media/photos/shake-shack-panel.webp', 'SHAKE SHACK · DIGITAL PANEL', 'digital', 1, '70% 50%'],
+      ['/media/photos/ddrb-rate-board.webp', 'RATE BOARD · LIVE RATES', 'digital', 2, '50% 35%'],
+      ['/media/photos/big-apple-circus-panel.webp', 'BIG APPLE CIRCUS · DIGITAL PANEL', 'digital', 1, '50% 50%'],
+      ['/media/photos/fontainebleau-lobby-panel.webp', 'FONTAINEBLEAU · LOBBY PANEL', 'digital', 1, '50% 50%'],
+      ['/media/photos/rimowa-lobby-panel.webp', 'RIMOWA · LOBBY PANEL', 'digital', 1, '30% 50%'],
+      ['/media/photos/nyc-dot-safety-panel.webp', 'NYC DOT · SAFETY CAMPAIGN', 'digital', 1, '40% 50%'],
+      ['/media/photos/nyc-dot-office-panels.webp', 'NYC DOT · GARAGE OFFICE', 'digital', 2, '50% 50%'],
+      ['/media/photos/hartford-healthcare-kiosk.webp', 'HARTFORD HEALTHCARE · KIOSK', 'digital', 1, '60% 50%'],
+      ['/media/photos/lucid-garage-panel.webp', 'LUCID · GARAGE', 'digital', 1, '60% 50%'],
+      ['/media/photos/big-apple-circus-classic-car.webp', 'BIG APPLE CIRCUS · GARAGE', 'digital', 1, '60% 50%'],
+      ['/media/photos/ramp-digital-panel.webp', 'RAMP · DIGITAL PANEL', 'digital', 2, '50% 40%'],
       ['/media/photos/hartford-healthcare-banner.webp', 'HARTFORD HEALTHCARE · BANNER', 'static', 1, '50% 50%'],
-      ['/media/photos/checkerboard-lobby-panel.webp', 'GARAGE LOBBY · DIGITAL PANEL', 'digital', 1, '50% 50%'],
+      ['/media/photos/checkerboard-lobby-panel.webp', 'DR. BARBARA STURM · DIGITAL PANEL', 'digital', 1, '50% 50%'],
       ['/media/photos/msk-digital-panel.webp', 'MSK · DIGITAL PANEL', 'digital', 1, '50% 50%'],
       ['/media/photos/a-beautiful-noise-posters.webp', 'A BEAUTIFUL NOISE · STATIC POSTERS', 'static', 1, '50% 50%'],
       ['/media/photos/digital-panel-cashier.webp', 'DIGITAL PANEL · CASHIER', 'digital', 1, '50% 50%'],
       ['/media/photos/love-com-digital-panel.webp', 'LOVE.COM · DIGITAL PANEL', 'digital', 1, '50% 50%'],
       ['/media/photos/hartford-healthcare-display.webp', 'HARTFORD HEALTHCARE · DISPLAY', 'digital', 1, '50% 50%'],
-      ['/media/photos/customer-service-panel.webp', 'CUSTOMER SERVICE · DIGITAL PANEL', 'digital', 1, '50% 50%'],
+      ['/media/photos/customer-service-panel.webp', 'MSK · CUSTOMER SERVICE', 'digital', 1, '50% 50%'],
       ['/media/photos/blank-street-engagement.webp', 'BLANK STREET · ENGAGEMENT', 'digital', 1, '50% 50%']
     ];
     var list = all.filter(function (p) { return gf === 'all' || p[2] === gf; });
@@ -49,12 +62,12 @@ export default class CompanyPage extends React.Component {
     var cur = idx >= 0 && idx < list.length ? list[idx] : null;
     var fdefs = [['all', 'ALL'], ['digital', 'DIGITAL'], ['static', 'STATIC']];
     var stack = [
-      ['01', 'Manufacturing', 'We own the plants that build our screens and rate boards.', '/media/photos/ddrb-connecticut.webp', '50% 34%'],
-      ['02', 'Software', 'In-house engineering for content, pricing and reporting.', '/media/photos/blank-street-interactive-panel.webp', '30% 50%'],
-      ['03', 'Printing', 'Wallscapes, wraps and tickets printed in-house.', '/media/photos/hartford-healthcare-banner.webp', '50% 50%'],
-      ['04', 'Design', 'A creative team that builds for the parking context.', '/media/photos/recess-digital-panel.webp', '70% 50%'],
-      ['05', 'Installation', 'Our own crews, installing since 2016.', '/media/photos/hartford-healthcare-entrance-wallscape.webp', '50% 50%'],
-      ['06', 'Sales', 'A national sales network that keeps inventory full.', '/media/photos/audi-garage-lobby.webp', '50% 50%']
+      ['01', 'Manufacturing', 'Digital signage built by our sister companies, MetroClick and faytech.', '/media/photos/ddrb-connecticut.webp', '50% 34%'],
+      ['02', 'Software', 'An in-house development team and a custom-built content management system.', '/media/photos/blank-street-interactive-panel.webp', '30% 50%'],
+      ['03', 'Printing', 'Large-format printing for wallscapes, wraps and tickets.', '/media/photos/hartford-healthcare-banner.webp', '50% 50%'],
+      ['04', 'Design', 'A creative team that designs for the parking context.', '/media/photos/recess-digital-panel.webp', '70% 50%'],
+      ['05', 'Installation', 'Designing and installing since 2016.', '/media/photos/hartford-healthcare-entrance-wallscape.webp', '50% 50%'],
+      ['06', 'Sales', 'An in-house ad sales team, plus programmatic exchanges.', '/media/photos/bmw-digital-panel.webp', '30% 50%']
     ];
     return {
       stack: stack.map(function (s) { return { no: s[0], title: s[1], desc: s[2], img: B + s[3], pos: s[4] }; }),
@@ -82,19 +95,19 @@ export default class CompanyPage extends React.Component {
             <div className="alm-rise" style={{ display: "flex", alignItems: "center", gap: "10px", fontSize: "15px", fontWeight: "600", letterSpacing: "-0.005em", opacity: "0.72" }}><span style={{ width: "7px", height: "7px", background: "#FBAE4F", borderRadius: "50%" }} />About A Lot Media</div>
             <h1 className="alm-rise" style={{ margin: "22px 0 0", maxWidth: "1240px", fontSize: "clamp(44px, 7.2vw, 116px)", lineHeight: "1", letterSpacing: "-0.035em", fontWeight: "600", animationDelay: ".1s" }}>We build the media <span style={{ color: "#8A5300" }}>where America parks.</span></h1>
             <div className="alm-rise" style={{ marginTop: "32px", display: "flex", flexWrap: "wrap", gap: "24px 64px", justifyContent: "space-between", animationDelay: ".2s" }}>
-              <p style={{ margin: "0", maxWidth: "620px", fontSize: "19px", lineHeight: "1.6", fontWeight: "400", color: "#4E586A" }}>Since 2016, A Lot Media has designed, built and installed advertising inside parking lots and garages. Today we operate across 12,000 locations in 400+ cities, with offices in Los Angeles, Chicago and New York.</p>
+              <p style={{ margin: "0", maxWidth: "620px", fontSize: "19px", lineHeight: "1.6", fontWeight: "400", color: "#4E586A" }}>Since 2016, A Lot Media has designed and installed advertising inside parking lots and garages — and we were the first company to bring interactive touch screen technology to parking facilities. Today the network spans 12,000 locations in 400+ cities, with offices in Hartford, Los Angeles, Chicago and New York.</p>
               <div style={{ display: "flex", gap: "40px", flexWrap: "wrap" }}>
                 <div>
                   <div style={{ fontSize: "48px", fontWeight: "600", lineHeight: "1", letterSpacing: "-0.035em" }}>2016</div>
                   <div style={{ marginTop: "6px", fontSize: "12px", fontWeight: "600", letterSpacing: "0.14em", color: "#4E586A" }}>FOUNDED</div>
                 </div>
                 <div>
-                  <div style={{ fontSize: "48px", fontWeight: "600", lineHeight: "1", letterSpacing: "-0.035em" }}>3</div>
+                  <div style={{ fontSize: "48px", fontWeight: "600", lineHeight: "1", letterSpacing: "-0.035em" }}>4</div>
                   <div style={{ marginTop: "6px", fontSize: "12px", fontWeight: "600", letterSpacing: "0.14em", color: "#4E586A" }}>OFFICES</div>
                 </div>
                 <div>
-                  <div style={{ fontSize: "48px", fontWeight: "600", lineHeight: "1", letterSpacing: "-0.035em" }}>6</div>
-                  <div style={{ marginTop: "6px", fontSize: "12px", fontWeight: "600", letterSpacing: "0.14em", color: "#4E586A" }}>IN-HOUSE DISCIPLINES</div>
+                  <div style={{ fontSize: "48px", fontWeight: "600", lineHeight: "1", letterSpacing: "-0.035em" }}>100%</div>
+                  <div style={{ marginTop: "6px", fontSize: "12px", fontWeight: "600", letterSpacing: "0.14em", color: "#4E586A" }}>VERTICALLY INTEGRATED</div>
                 </div>
               </div>
             </div>
@@ -108,7 +121,7 @@ export default class CompanyPage extends React.Component {
           <div style={{ maxWidth: "1360px", margin: "0 auto" }}>
             <div style={{ display: "flex", flexWrap: "wrap", gap: "24px 64px", alignItems: "flex-end", justifyContent: "space-between" }}>
               <h2 className="alm-in" style={{ margin: "0", maxWidth: "900px", fontSize: "clamp(38px, 5.2vw, 80px)", lineHeight: "1", letterSpacing: "-0.035em", fontWeight: "600" }}>One company.<br />Every layer.</h2>
-              <p style={{ margin: "0", maxWidth: "440px", fontSize: "17px", lineHeight: "1.6", fontWeight: "400", color: "#4E586A" }}>Most networks rent screens and outsource the rest. We own the plants that build ours — and every step after.</p>
+              <p style={{ margin: "0", maxWidth: "440px", fontSize: "17px", lineHeight: "1.6", fontWeight: "400", color: "#4E586A" }}>From the screen to the sale, every layer is handled by A Lot Media or our sister companies, MetroClick and faytech.</p>
             </div>
             <ol style={{ margin: "56px 0 0", padding: "0", listStyle: "none", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: "12px" }}>
               {(v.stack || []).map((s, sI) => (
@@ -143,7 +156,7 @@ export default class CompanyPage extends React.Component {
                 ))}
               </div>
             </div>
-            <div style={{ marginTop: "48px", display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))", gridAutoRows: "240px", gap: "12px" }}>
+            <div style={{ marginTop: "48px", display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))", gridAutoRows: "240px", gridAutoFlow: "dense", gap: "12px" }}>
               {(v.photos || []).map((p, pI) => (
                 <Fragment key={pI}>
                   <button className="alm-tile alm-wipe" type="button" onClick={p.open} aria-label={`Open photo: ${p.caption}`} style={{ position: "relative", padding: "0", border: "0", borderRadius: "16px", overflow: "hidden", background: "#121B2E", cursor: "zoom-in", gridRow: `span ${p.span}` }}>
@@ -160,7 +173,16 @@ export default class CompanyPage extends React.Component {
         <section style={{ padding: "128px 28px" }}>
           <div style={{ maxWidth: "1360px", margin: "0 auto" }}>
             <h2 className="alm-in" style={{ margin: "0", fontSize: "clamp(38px, 5.2vw, 80px)", lineHeight: "1", letterSpacing: "-0.035em", fontWeight: "600" }}>Offices</h2>
-            <div style={{ marginTop: "48px", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "16px" }}>
+            <div style={{ marginTop: "48px", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: "16px" }}>
+              <div className="alm-tile alm-in" style={{ borderRadius: "16px", overflow: "hidden", background: "#FFFFFF" }}>
+                <div style={{ height: "260px", overflow: "hidden" }}>
+                  <img src="/media/markets/hartford.webp" alt="Hartford skyline" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} loading="lazy" decoding="async" />
+                </div>
+                <div style={{ padding: "28px" }}>
+                  <div style={{ fontSize: "28px", fontWeight: "650", letterSpacing: "-0.02em" }}>Hartford</div>
+                  <div style={{ marginTop: "8px", fontSize: "16px", fontWeight: "400", color: "#4E586A" }}>1 Financial Plaza, 14th Floor<br />Hartford, CT 06103</div>
+                </div>
+              </div>
               <div className="alm-tile alm-in" style={{ borderRadius: "16px", overflow: "hidden", background: "#FFFFFF" }}>
                 <div style={{ height: "260px", overflow: "hidden" }}>
                   <img src="/media/markets/la.webp" alt="Los Angeles city lights at night" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} loading="lazy" decoding="async" />
@@ -195,10 +217,10 @@ export default class CompanyPage extends React.Component {
         <section style={{ padding: "0 28px 128px" }}>
           <div style={{ maxWidth: "1360px", margin: "0 auto", padding: "56px", borderRadius: "18px", background: "#FBAE4F", display: "flex", flexWrap: "wrap", gap: "24px 48px", alignItems: "center", justifyContent: "space-between" }}>
             <div>
-              <div style={{ fontSize: "clamp(30px, 3.6vw, 52px)", fontWeight: "600", lineHeight: "0.95", letterSpacing: "-0.035em" }}>Build the network with us.</div>
-              <div style={{ marginTop: "12px", fontSize: "17px", fontWeight: "600" }}>Sales, install, engineering and design roles across our markets. [Open roles]</div>
+              <div style={{ fontSize: "clamp(30px, 3.6vw, 52px)", fontWeight: "600", lineHeight: "0.95", letterSpacing: "-0.035em" }}>Together we can do a lot.</div>
+              <div style={{ marginTop: "12px", fontSize: "17px", fontWeight: "600" }}>Advertisers, property owners, partners and future teammates — we’d love to hear from you.</div>
             </div>
-            <A className="alm-btn" href="/contact" style={{ display: "inline-flex", alignItems: "center", minHeight: "56px", padding: "0 26px", borderRadius: "999px", background: "#0B1220", color: "#FFFFFF", fontWeight: "600", fontSize: "15px", letterSpacing: "-0.005em" }}>See careers</A>
+            <A className="alm-btn" href="/contact" style={{ display: "inline-flex", alignItems: "center", minHeight: "56px", padding: "0 26px", borderRadius: "999px", background: "#0B1220", color: "#FFFFFF", fontWeight: "600", fontSize: "15px", letterSpacing: "-0.005em" }}>Get in touch</A>
           </div>
         </section>
         <Footer />

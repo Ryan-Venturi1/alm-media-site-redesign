@@ -24,48 +24,57 @@ export default class EventsPage extends React.Component {
     var kind = st.kind || 'all';
 
     var models = [
-      { id: 'activations', title: 'Brand activations', kicker: 'BRANDS PAY TO ACTIVATE', img: '/media/renders/event-popup-launch.webp', pos: '55% 50%',
+      { id: 'activations', title: 'Event activation', kicker: 'BRANDS & AGENCIES', img: '/media/renders/event-popup-launch.webp', pos: '55% 50%',
         alt: 'Concept render of a car launch pop-up inside a parking garage level', caption: 'GARAGE-LEVEL LAUNCH · CONCEPT RENDER',
-        desc: 'Pop-ups, sampling, product reveals and test drives — staged where the audience already arrives by car, and surrounded by our screens and walls.',
-        who: 'Brands, agencies and experiential producers', give: 'Space, access and approvals, build partners, on-site static and digital media',
-        price: 'Per activation · [rate card]', ex: ['Pop-up shops', 'Sampling', 'Product reveals', 'Test drives'], cta: 'Plan an activation' },
-      { id: 'rental', title: 'Venue rental', kicker: 'ORGANIZERS BOOK THE SPACE', img: '/media/renders/event-night-market.webp', pos: '50% 50%',
-        alt: 'Concept render of a night market on a parking garage rooftop at blue hour', caption: 'ROOFTOP NIGHT MARKET · CONCEPT RENDER',
-        desc: 'Rooftops, surface lots and garage levels booked for third-party events — markets, festivals, film shoots and private parties — with guest parking on site.',
-        who: 'Event organizers, promoters, studios and film crews', give: 'The venue, access hours, guest parking, site plan and property sign-off',
-        price: 'Day or multi-day venue fee · [rate card]', ex: ['Night markets', 'Festivals', 'Filming', 'Private events'], cta: 'Book a venue' },
-      { id: 'gameday', title: 'Event-day parking + media', kicker: 'TEAMS, VENUES & SPONSORS', img: '/media/renders/event-game-day.webp', pos: '50% 50%',
+        desc: 'Branded spaces and consumer experiences inside the parking or event footprint — product demos, sampling, hospitality, content capture, pop-ups and vehicle test drives — surrounded by our screens and walls.',
+        who: 'Brands, agencies and experiential producers', give: 'The space, tents, power, vehicles, signage and on-site static and digital media',
+        price: 'Small event (under 20 spaces) or full activation (about 30 spaces)', ex: ['Pop-ups', 'Sampling', 'Product demos', 'Test drives'], cta: 'Plan an activation' },
+      { id: 'vip', title: 'VIP park & shuttle', kicker: 'PREMIUM & GROUP ARRIVAL', img: '/media/renders/rooftop-event.webp', pos: '50% 50%',
+        alt: 'Concept render of a rooftop parking event with a hospitality tent and a guest vehicle at dusk', caption: 'VIP ARRIVAL · CONCEPT RENDER',
+        desc: 'Premium, pre-arranged parking paired with shuttles, guest routing and on-site coordination — plus bulk parking blocks for organizers, sponsors, fleets and large attendee groups.',
+        who: 'Event organizers, sponsors, hospitality groups and agencies', give: 'Reserved and bulk parking, shuttles, tents, vehicles, generators, signage and barricades',
+        price: 'Scoped per event, by guests, vehicles and cities', ex: ['VIP parking', 'Shuttles', 'Bulk parking', 'Hospitality'], cta: 'Plan VIP arrival' },
+      { id: 'gameday', title: 'Game day & sponsorship', kicker: 'TEAMS, VENUES & SPONSORS', img: '/media/renders/event-game-day.webp', pos: '50% 50%',
         alt: 'Concept render of fans walking from a parking garage to a stadium at sunset', caption: 'GAME DAY · CONCEPT RENDER',
-        desc: 'On game and concert days, parking near the venue comes with media: event pricing on the rate boards, sponsor takeovers and branded tickets around the crowd.',
-        who: 'Teams, arenas, sponsors and promoters', give: 'Event pricing on DDRBs, sponsor takeovers, branded tickets and wayfinding',
-        price: 'Season or per-event package · [rate card]', ex: ['Game days', 'Concerts', 'Conventions', 'Sponsor takeovers'], cta: 'Build a game-day package' }
+        desc: 'On game day the whole location becomes media: a tailgate takeover with activation and multiple media around the crowd, event pricing on the rate boards, and sponsorship packages that tie it all together.',
+        who: 'Teams, venues, sponsors and promoters', give: 'Location takeover, activation, sponsor rights, event pricing on DDRBs and branded media',
+        price: 'Domination: location takeover, activation and multiple media', ex: ['Tailgates', 'Sponsor takeovers', 'Event pricing', 'Wayfinding'], cta: 'Build a game-day package' }
     ];
 
-    var kinds = [['all', 'ALL'], ['popup', 'POP-UP'], ['market', 'MARKET / FESTIVAL'], ['film', 'FILM SHOOT'], ['private', 'PRIVATE EVENT'], ['drive', 'TEST DRIVE'], ['gameday', 'GAME DAY']];
+    var kinds = [['all', 'ALL'], ['media', 'MEDIA'], ['arrival', 'PARKING & ARRIVAL'], ['live', 'LIVE EXPERIENCE']];
     var venues = [
-      { name: 'Rooftop decks', img: '/media/renders/rooftop-event.webp', pos: '50% 50%', note: 'CONCEPT RENDER', alt: 'Concept render of a branded rooftop parking event at dusk',
-        desc: 'Open sky and skyline views on the top level — the signature setting for launches and evening events.', cap: '[Guests per deck]', best: 'Launches, markets, private events',
-        fits: ['popup', 'market', 'private', 'film'] },
-      { name: 'Surface lots', img: '/media/photos/stock-aerial.webp', pos: '50% 50%', note: 'STOCK PHOTO', alt: 'Aerial view of a large surface parking lot',
-        desc: 'Wide, flat and easy to load in — room for stages, food trucks, ride-and-drives and festival gateways.', cap: '[Sq ft · guests]', best: 'Festivals, test drives, game days',
-        fits: ['market', 'drive', 'gameday', 'film'] },
-      { name: 'Garage levels', img: '/media/photos/stock-garage.webp', pos: '50% 50%', note: 'STOCK PHOTO', alt: 'Empty concrete parking garage level under overhead lights',
-        desc: 'Covered, weatherproof and dramatic under lights — a showroom, a gallery or a set for the day.', cap: '[Bays per level]', best: 'Product reveals, filming, pop-ups',
-        fits: ['popup', 'film', 'drive', 'private'] },
-      { name: 'Lobbies & entrances', img: '/media/photos/glass-lobby-panel.webp', pos: '50% 50%', note: 'REAL INSTALL', alt: 'Glass-walled garage lobby with a digital panel and people walking',
-        desc: 'The high-traffic threshold between the car and the street — perfect for sampling and quick-hit activations.', cap: '[Daily foot traffic]', best: 'Sampling, small pop-ups, game days',
-        fits: ['popup', 'gameday'] }
+      { name: 'Permanent media', group: 'MEDIA', img: '/media/photos/mt-bank-ddrb.webp', pos: '60% 50%', note: 'REAL INSTALL', alt: 'A Lot Media Digital Dynamic Rate Board with an M&T Bank ad at a garage entrance',
+        desc: 'Installed digital and static media in and around parking, event sites and high-traffic centers — sold by the placement or across the network.', cap: 'Installed · 110+ digital units in NY & CT', best: 'Always-on presence in priority markets',
+        fits: ['media'] },
+      { name: 'Temporary media', group: 'MEDIA', img: '/media/photos/a-beautiful-noise-posters.webp', pos: '50% 50%', note: 'REAL INSTALL', alt: 'A Beautiful Noise posters along a parking garage wall',
+        desc: 'Short-duration signage and displays deployed around events, seasonal traffic or a targeted campaign — flexible timing, locations and formats.', cap: 'Campaign · on demand', best: 'Event windows and seasonal pushes',
+        fits: ['media'] },
+      { name: 'Mobile media', group: 'MEDIA', img: '/media/photos/stock-nyc-trails.webp', pos: '50% 60%', note: 'STOCK PHOTO', alt: 'City traffic at night seen from above',
+        desc: 'Branded vehicles, trailers and mobile display units that follow the crowd along event routes, arrival zones and high-traffic corridors.', cap: 'Mobile · on demand', best: 'Reach beyond a single venue',
+        fits: ['media'] },
+      { name: 'VIP park & shuttle', group: 'PARKING & ARRIVAL', img: '/media/renders/rooftop-event.webp', pos: '50% 50%', note: 'CONCEPT RENDER', alt: 'Concept render of a rooftop parking event with a hospitality tent',
+        desc: 'Premium, pre-arranged parking with shuttles, guest routing and on-site coordination for VIPs, sponsors and hospitality groups.', cap: 'Per event', best: 'Premium arrivals',
+        fits: ['arrival'] },
+      { name: 'Bulk parking', group: 'PARKING & ARRIVAL', img: '/media/photos/stock-aerial.webp', pos: '50% 50%', note: 'STOCK PHOTO', alt: 'Aerial view of a large surface parking lot',
+        desc: 'Blocks of parking reserved for organizers, sponsors, fleets, employees or large attendee groups — one solution for access, allocation and arrival.', cap: 'Blocks of spaces', best: 'Large groups and fleets',
+        fits: ['arrival'] },
+      { name: 'Event activation', group: 'LIVE EXPERIENCE', img: '/media/renders/event-popup-launch.webp', pos: '55% 50%', note: 'CONCEPT RENDER', alt: 'Concept render of a car launch pop-up inside a parking garage',
+        desc: 'Branded spaces and consumer experiences in the parking or event footprint — product demos, sampling, hospitality and content capture.', cap: 'Small · full activation · takeover', best: 'Launches, sampling, test drives',
+        fits: ['live'] },
+      { name: 'Sponsorship', group: 'LIVE EXPERIENCE', img: '/media/renders/event-game-day.webp', pos: '50% 50%', note: 'CONCEPT RENDER', alt: 'Concept render of fans walking from a parking garage to a stadium at sunset',
+        desc: 'Custom packages that combine brand rights with media, parking, shuttle and activation inventory across the attendee journey.', cap: 'Custom packages', best: 'Game days, tailgates, festivals',
+        fits: ['live'] }
     ];
 
     var bkData = [
       { label: 'Brand activation', head: 'Tell us what you’re launching.', sub: 'We’ll come back with locations, dates and a production plan.',
-        orgLabel: 'COMPANY', orgPh: 'Brand or agency', typeLabel: 'ACTIVATION TYPE', types: ['Pop-up shop', 'Sampling', 'Product reveal', 'Vehicle test drive', 'Not sure yet'],
+        orgLabel: 'COMPANY', orgPh: 'Brand or agency', typeLabel: 'ACTIVATION TYPE', types: ['Pop-up', 'Sampling', 'Product demo', 'Vehicle test drive', 'Not sure yet'],
         datePh: 'e.g. late spring, two weekends', sizeLabel: 'EXPECTED ATTENDANCE', notesLabel: 'WHAT ARE YOU LAUNCHING?', notesPh: 'A few lines on the product, the goal and the feel.' },
-      { label: 'Venue rental', head: 'Tell us what you’re hosting.', sub: 'We’ll shortlist venues that fit your headcount, dates and load-in.',
-        orgLabel: 'ORGANIZATION', orgPh: 'Promoter, studio or company', typeLabel: 'EVENT TYPE', types: ['Market or festival', 'Film or photo shoot', 'Private event', 'Concert', 'Other'],
-        datePh: 'Event days plus build and strike', sizeLabel: 'HEADCOUNT', notesLabel: 'WHAT DOES THE SPACE NEED?', notesPh: 'Power, staging, vehicles, hours, anything unusual.' },
-      { label: 'Event-day package', head: 'Own the crowd on game day.', sub: 'We’ll map parking and media around your venue or fixture list.',
-        orgLabel: 'TEAM, VENUE OR SPONSOR', orgPh: 'Who you represent', typeLabel: 'PACKAGE', types: ['Season package', 'Single event', 'Sponsor takeover', 'Parking only', 'Not sure yet'],
+      { label: 'VIP & group parking', head: 'Tell us who’s arriving.', sub: 'We’ll plan reserved parking, shuttles and on-site coordination around your event.',
+        orgLabel: 'ORGANIZATION', orgPh: 'Organizer, agency or company', typeLabel: 'WHAT YOU NEED', types: ['VIP parking', 'Shuttle service', 'Bulk parking', 'Tents & hospitality', 'Other'],
+        datePh: 'Event days', sizeLabel: 'GUESTS OR VEHICLES', notesLabel: 'WHAT DOES THE ARRIVAL NEED?', notesPh: 'Venue, guest count, shuttles, tents, power, signage.' },
+      { label: 'Game day & sponsorship', head: 'Own the crowd on game day.', sub: 'We’ll map parking, activation and media around your venue or schedule.',
+        orgLabel: 'TEAM, VENUE OR SPONSOR', orgPh: 'Who you represent', typeLabel: 'PACKAGE', types: ['Tailgate takeover', 'Single event', 'Sponsorship package', 'Parking only', 'Not sure yet'],
         datePh: 'Season, fixtures or single dates', sizeLabel: 'VENUE CAPACITY', notesLabel: 'WHICH VENUE AND EVENTS?', notesPh: 'Stadium or arena, events and what success looks like.' }
     ];
 
@@ -73,9 +82,9 @@ export default class EventsPage extends React.Component {
       { title: 'Brief', desc: 'Start with the outcome — trial, sales, sign-ups, ticket sales or buzz. We shape the format around it, from a single-level pop-up to a multi-market tour.' },
       { title: 'Venue match', desc: 'We match rooftops, lots and levels to your headcount and audience using the same Geopath, Census and on-site data behind our media plans.' },
       { title: 'Approvals', desc: 'We handle access, dates and operations with the property owner, so your team never has to chase a landlord.' },
-      { title: 'Build & promote', desc: 'Our design, print and install teams produce the set, and the rate boards, wallscapes and tickets on site announce it before day one.' },
+      { title: 'Build & promote', desc: 'We produce the build with our partners, and the rate boards, wallscapes and tickets on site announce it before day one.' },
       { title: 'Event day', desc: 'Our team coordinates load-in, guest parking, run of show and strike with the property.' },
-      { title: 'Recap', desc: 'A wrap report with what ran, where, and the results you set out to measure. [Define recap metrics.]' }
+      { title: 'Recap', desc: 'A wrap-up with proof-of-performance photos of what ran, where and when.' }
     ];
     var idx = st.step || 0;
     var steps = data.map(function (d, i) {
@@ -105,10 +114,15 @@ export default class EventsPage extends React.Component {
       venues: venues.map(function (v) {
         var match = kind !== 'all' && v.fits.indexOf(kind) !== -1;
         var dim = kind !== 'all' && !match;
-        return { name: v.name, img: B + v.img, pos: v.pos, note: v.note, alt: v.alt, desc: v.desc, cap: v.cap, best: v.best,
-          match: match, op: dim ? 0.38 : 1, ring: match ? '0 0 0 3px #FBAE4F, 0 24px 60px rgba(11,18,32,0.14)' : 'none' };
+        return { name: v.name, group: v.group, img: B + v.img, pos: v.pos, note: v.note, alt: v.alt, desc: v.desc, cap: v.cap, best: v.best,
+          match: true, op: dim ? 0.38 : 1, ring: match ? '0 0 0 3px #FBAE4F, 0 24px 60px rgba(11,18,32,0.14)' : 'none' };
       }),
-      past: [{ type: 'BRAND ACTIVATION' }, { type: 'VENUE RENTAL' }, { type: 'EVENT DAY' }],
+      past: [
+        { type: 'VIP PARK & SHUTTLE', when: 'JUNE 2026', big: 'NY · MIA · DAL · LA', name: 'Four-city VIP arrival program', where: 'New York · Miami · Dallas · Los Angeles',
+          desc: 'VIP parking, shuttle pick-up and drop-off, tents, vehicles, generators, signage, displays and barricades for a national brand program.' },
+        { type: 'EVENT SITE', when: 'JULY 2026', big: 'Austin', name: 'Drone show launch site', where: 'Downtown Austin, TX',
+          desc: 'A downtown Austin location turned into the launch site for a sponsored drone show.' }
+      ],
       steps: steps,
       cur: { no: steps[idx].no, title: data[idx].title, desc: data[idx].desc },
       bk: { head: bk.head, sub: bk.sub, orgLabel: bk.orgLabel, orgPh: bk.orgPh, typeLabel: bk.typeLabel, datePh: bk.datePh,
@@ -139,10 +153,10 @@ export default class EventsPage extends React.Component {
               <div className="alm-rise" style={{ display: "flex", alignItems: "center", gap: "10px", fontSize: "15px", fontWeight: "600", letterSpacing: "-0.005em", color: "#FBAE4F" }}><span style={{ width: "7px", height: "7px", background: "#FBAE4F", borderRadius: "50%" }} />Events &amp; venues</div>
               <h1 className="alm-rise" style={{ margin: "22px 0 0", fontSize: "clamp(56px, 9.4vw, 150px)", lineHeight: "1", letterSpacing: "-0.035em", fontWeight: "600", animationDelay: ".1s" }}>The lot is<br /><span style={{ color: "#FBAE4F" }}>the venue.</span></h1>
               <div className="alm-rise" style={{ marginTop: "32px", display: "flex", flexWrap: "wrap", gap: "24px 48px", alignItems: "flex-end", justifyContent: "space-between", animationDelay: ".2s" }}>
-                <p style={{ margin: "0", maxWidth: "560px", fontSize: "20px", lineHeight: "1.5", fontWeight: "400", color: "#E4E8EF" }}>Rooftops, surface lots and garage levels — with the parking, access and media already built in. Launch a brand here, host an event here, or own the crowd on game day.</p>
+                <p style={{ margin: "0", maxWidth: "560px", fontSize: "20px", lineHeight: "1.5", fontWeight: "400", color: "#E4E8EF" }}>Parking lots and garages where the audience already arrives — with the parking, access and media in place. Activate a brand, move your VIPs, or own the crowd on game day.</p>
                 <div style={{ display: "flex", gap: "12px", flexWrap: "wrap" }}>
                   <A className="alm-btn" href="#book" style={{ display: "inline-flex", alignItems: "center", minHeight: "56px", padding: "0 26px", borderRadius: "999px", background: "#FBAE4F", color: "#0B1220", fontWeight: "600", fontSize: "15px", letterSpacing: "-0.005em" }}>Plan an event</A>
-                  <A className="alm-btn" href="#venues" style={{ display: "inline-flex", alignItems: "center", minHeight: "56px", padding: "0 26px", borderRadius: "999px", border: "2px solid #FFFFFF", color: "#FFFFFF", fontWeight: "600", fontSize: "15px", letterSpacing: "-0.005em" }}>Find a venue</A>
+                  <A className="alm-btn" href="#venues" style={{ display: "inline-flex", alignItems: "center", minHeight: "56px", padding: "0 26px", borderRadius: "999px", border: "2px solid #FFFFFF", color: "#FFFFFF", fontWeight: "600", fontSize: "15px", letterSpacing: "-0.005em" }}>See all products</A>
                 </div>
               </div>
               <nav className="alm-rise" aria-label="Ways to work with us" style={{ marginTop: "48px", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", borderTop: "1px solid rgba(255,255,255,0.22)", animationDelay: ".3s" }}>
@@ -164,7 +178,7 @@ export default class EventsPage extends React.Component {
         <section style={{ padding: "128px 28px 24px" }}>
           <div style={{ maxWidth: "1180px", margin: "0 auto" }}>
             <p style={{ margin: "0", fontSize: "clamp(34px, 4.8vw, 72px)", lineHeight: "1.1", letterSpacing: "-0.035em", fontWeight: "600", color: "#0B1220" }}>
-              <span className="alm-fill" data-scrub="text">The space is already built. The audience already arrives by car. The parking is already solved. All that’s missing is your event.</span>
+              <span className="alm-fill" data-scrub="text">The space is already built. The audience already arrives by car. The parking is already solved. All that’s missing is your brand.</span>
             </p>
           </div>
         </section>
@@ -172,10 +186,10 @@ export default class EventsPage extends React.Component {
         <section style={{ padding: "104px 28px 40px" }}>
           <div style={{ maxWidth: "1360px", margin: "0 auto", display: "flex", flexWrap: "wrap", gap: "24px 64px", alignItems: "flex-end", justifyContent: "space-between" }}>
             <div>
-              <div style={{ display: "flex", alignItems: "center", gap: "10px", fontSize: "15px", fontWeight: "600", letterSpacing: "-0.005em", opacity: "0.72" }}><span style={{ width: "7px", height: "7px", background: "#FBAE4F", borderRadius: "50%" }} />Three ways to use our real estate</div>
-              <h2 className="alm-in" style={{ margin: "22px 0 0", maxWidth: "900px", fontSize: "clamp(38px, 5.2vw, 80px)", lineHeight: "1", letterSpacing: "-0.035em", fontWeight: "600" }}>Launch it. Host it.<br />Own game day.</h2>
+              <div style={{ display: "flex", alignItems: "center", gap: "10px", fontSize: "15px", fontWeight: "600", letterSpacing: "-0.005em", opacity: "0.72" }}><span style={{ width: "7px", height: "7px", background: "#FBAE4F", borderRadius: "50%" }} />Three ways to put parking to work</div>
+              <h2 className="alm-in" style={{ margin: "22px 0 0", maxWidth: "900px", fontSize: "clamp(38px, 5.2vw, 80px)", lineHeight: "1", letterSpacing: "-0.035em", fontWeight: "600" }}>Activate it. Arrive in style.<br />Own game day.</h2>
             </div>
-            <p style={{ margin: "0", maxWidth: "440px", fontSize: "17px", lineHeight: "1.6", fontWeight: "400", color: "#4E586A" }}>Every model runs on the same footprint and the same team — and every event comes with the static and digital media already on site.</p>
+            <p style={{ margin: "0", maxWidth: "440px", fontSize: "17px", lineHeight: "1.6", fontWeight: "400", color: "#4E586A" }}>Every product can be packaged together or sold on its own — and every event can come with static, digital and mobile media around it.</p>
           </div>
         </section>
         {(v.models || []).map((m, mI) => (
@@ -199,7 +213,7 @@ export default class EventsPage extends React.Component {
                     <dd style={{ margin: "0", padding: "14px 0", borderBottom: "1px solid rgba(11,18,32,0.12)", fontSize: "15px", fontWeight: "700" }}>{m.who}</dd>
                     <dt style={{ padding: "14px 0", borderBottom: "1px solid rgba(11,18,32,0.12)", fontSize: "11px", fontWeight: "600", letterSpacing: "0.14em", color: "#4E586A" }}>WE PROVIDE</dt>
                     <dd style={{ margin: "0", padding: "14px 0", borderBottom: "1px solid rgba(11,18,32,0.12)", fontSize: "15px", fontWeight: "700" }}>{m.give}</dd>
-                    <dt style={{ padding: "14px 0", borderBottom: "1px solid rgba(11,18,32,0.12)", fontSize: "11px", fontWeight: "600", letterSpacing: "0.14em", color: "#4E586A" }}>HOW IT’S PRICED</dt>
+                    <dt style={{ padding: "14px 0", borderBottom: "1px solid rgba(11,18,32,0.12)", fontSize: "11px", fontWeight: "600", letterSpacing: "0.14em", color: "#4E586A" }}>PACKAGES</dt>
                     <dd style={{ margin: "0", padding: "14px 0", borderBottom: "1px solid rgba(11,18,32,0.12)", fontSize: "15px", fontWeight: "700" }}>{m.price}</dd>
                   </dl>
                   <div style={{ display: "flex", flexWrap: "wrap", gap: "6px" }}>
@@ -249,10 +263,10 @@ export default class EventsPage extends React.Component {
           <div style={{ maxWidth: "1360px", margin: "0 auto" }}>
             <div style={{ display: "flex", flexWrap: "wrap", gap: "24px 64px", alignItems: "flex-end", justifyContent: "space-between" }}>
               <div>
-                <div style={{ display: "flex", alignItems: "center", gap: "10px", fontSize: "15px", fontWeight: "600", letterSpacing: "-0.005em", opacity: "0.72" }}><span style={{ width: "7px", height: "7px", background: "#FBAE4F", borderRadius: "50%" }} />Venue finder</div>
-                <h2 className="alm-in" style={{ margin: "22px 0 0", maxWidth: "900px", fontSize: "clamp(38px, 5.2vw, 80px)", lineHeight: "1", letterSpacing: "-0.035em", fontWeight: "600" }}>What are you planning?</h2>
+                <div style={{ display: "flex", alignItems: "center", gap: "10px", fontSize: "15px", fontWeight: "600", letterSpacing: "-0.005em", opacity: "0.72" }}><span style={{ width: "7px", height: "7px", background: "#FBAE4F", borderRadius: "50%" }} />The product portfolio</div>
+                <h2 className="alm-in" style={{ margin: "22px 0 0", maxWidth: "900px", fontSize: "clamp(38px, 5.2vw, 80px)", lineHeight: "1", letterSpacing: "-0.035em", fontWeight: "600" }}>Seven products.<br />Package them or pick one.</h2>
               </div>
-              <div role="group" aria-label="Choose an event type" style={{ display: "flex", flexWrap: "wrap", gap: "8px", maxWidth: "680px" }}>
+              <div role="group" aria-label="Filter products" style={{ display: "flex", flexWrap: "wrap", gap: "8px", maxWidth: "680px" }}>
                 {(v.kinds || []).map((k, kI) => (
                   <Fragment key={kI}>
                     <button type="button" aria-pressed={k.pressed} onClick={k.pick} style={{ minHeight: "44px", padding: "0 16px", borderRadius: "999px", border: "2px solid #0B1220", background: k.bg, color: k.fg, fontFamily: "'Montserrat', sans-serif", fontSize: "12px", fontWeight: "600", letterSpacing: "0.08em", cursor: "pointer", transition: "background .2s ease, color .2s ease" }}>{k.label}</button>
@@ -268,7 +282,7 @@ export default class EventsPage extends React.Component {
                       <img src={v.img} alt={v.alt} style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: v.pos, display: "block" }} loading="lazy" decoding="async" />
                       {v.match ? (
                         <>
-                          <span style={{ position: "absolute", top: "14px", left: "14px", padding: "6px 11px", borderRadius: "999px", background: "#FBAE4F", color: "#0B1220", fontSize: "11px", fontWeight: "600", letterSpacing: "0.1em" }}>GOOD FIT</span>
+                          <span style={{ position: "absolute", top: "14px", left: "14px", padding: "6px 11px", borderRadius: "999px", background: "#FBAE4F", color: "#0B1220", fontSize: "11px", fontWeight: "600", letterSpacing: "0.1em" }}>{v.group}</span>
                         </>
                       ) : null}
                       <span style={{ position: "absolute", right: "12px", bottom: "12px", fontFamily: "'Geist Mono', monospace", fontSize: "10px", letterSpacing: "0.1em", color: "rgba(255,255,255,0.75)" }}>{v.note}</span>
@@ -277,7 +291,7 @@ export default class EventsPage extends React.Component {
                       <div style={{ fontSize: "24px", fontWeight: "650", lineHeight: "1.08", letterSpacing: "-0.02em" }}>{v.name}</div>
                       <div style={{ fontSize: "15px", lineHeight: "1.55", fontWeight: "400", color: "#4E586A" }}>{v.desc}</div>
                       <dl style={{ margin: "auto 0 0", display: "grid", gridTemplateColumns: "auto 1fr", gap: "8px 14px", paddingTop: "14px", borderTop: "1px solid rgba(11,18,32,0.1)", fontSize: "13px" }}>
-                        <dt style={{ fontWeight: "600", letterSpacing: "0.08em", color: "#4E586A" }}>CAPACITY</dt>
+                        <dt style={{ fontWeight: "600", letterSpacing: "0.08em", color: "#4E586A" }}>INVENTORY</dt>
                         <dd style={{ margin: "0", fontWeight: "700" }}>{v.cap}</dd>
                         <dt style={{ fontWeight: "600", letterSpacing: "0.08em", color: "#4E586A" }}>BEST FOR</dt>
                         <dd style={{ margin: "0", fontWeight: "700" }}>{v.best}</dd>
@@ -308,7 +322,7 @@ export default class EventsPage extends React.Component {
               <div style={{ borderTop: "3px solid #FBAE4F", paddingTop: "24px" }}>
                 <div style={{ fontSize: "clamp(48px, 5vw, 72px)", fontWeight: "600", lineHeight: "0.95", letterSpacing: "-0.035em" }}>1</div>
                 <div style={{ marginTop: "14px", fontSize: "18px", fontWeight: "700" }}>Partner, end to end</div>
-                <div style={{ marginTop: "8px", fontSize: "15px", lineHeight: "1.6", fontWeight: "400", color: "#A3ACBC" }}>Property approvals, design, print, build and install.</div>
+                <div style={{ marginTop: "8px", fontSize: "15px", lineHeight: "1.6", fontWeight: "400", color: "#A3ACBC" }}>Property approvals, design, print, build and install — with our partners.</div>
               </div>
               <div style={{ borderTop: "3px solid #FBAE4F", paddingTop: "24px" }}>
                 <div style={{ fontSize: "clamp(48px, 5vw, 72px)", fontWeight: "600", lineHeight: "0.95", letterSpacing: "-0.035em" }}>+MEDIA</div>
@@ -322,28 +336,24 @@ export default class EventsPage extends React.Component {
         <section style={{ padding: "128px 28px 64px" }}>
           <div style={{ maxWidth: "1360px", margin: "0 auto" }}>
             <div style={{ display: "flex", flexWrap: "wrap", gap: "24px 64px", alignItems: "flex-end", justifyContent: "space-between" }}>
-              <h2 className="alm-in" style={{ margin: "0", maxWidth: "820px", fontSize: "clamp(38px, 5.2vw, 80px)", lineHeight: "1", letterSpacing: "-0.035em", fontWeight: "600" }}>Recent events.</h2>
-              <p style={{ margin: "0", maxWidth: "420px", fontSize: "15px", lineHeight: "1.6", fontWeight: "400", color: "#4E586A" }}>[Add real events here — photo, venue, partner and attendance for each.]</p>
+              <h2 className="alm-in" style={{ margin: "0", maxWidth: "820px", fontSize: "clamp(38px, 5.2vw, 80px)", lineHeight: "1", letterSpacing: "-0.035em", fontWeight: "600" }}>Recent work.</h2>
+              <p style={{ margin: "0", maxWidth: "420px", fontSize: "15px", lineHeight: "1.6", fontWeight: "400", color: "#4E586A" }}>Event programs we delivered in 2026. Client names are confidential; ask us for details.</p>
             </div>
             <div style={{ marginTop: "48px", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "16px" }}>
               {(v.past || []).map((p, pI) => (
                 <Fragment key={pI}>
-                  <article className="alm-in" style={{ borderRadius: "18px", overflow: "hidden", background: "#FFFFFF", border: "2px dashed rgba(11,18,32,0.18)" }}>
-                    <div style={{ height: "240px", display: "flex", alignItems: "center", justifyContent: "center", background: "repeating-linear-gradient(135deg, #EEEFEA 0 14px, #E6E7E1 14px 28px)", fontFamily: "'Geist Mono', monospace", fontSize: "12px", letterSpacing: "0.12em", color: "#4E586A" }}>[EVENT PHOTO]</div>
-                    <div style={{ padding: "22px 24px 26px" }}>
-                      <div style={{ fontFamily: "'Geist Mono', monospace", fontSize: "11px", letterSpacing: "0.14em", color: "#8A5300" }}>{p.type}</div>
-                      <div style={{ marginTop: "8px", fontSize: "22px", fontWeight: "650", letterSpacing: "-0.02em" }}>[Event name]</div>
-                      <div style={{ marginTop: "8px", fontSize: "14px", fontWeight: "600", color: "#4E586A" }}>[Venue · City] · [Partner brand]</div>
-                      <div style={{ marginTop: "16px", display: "flex", gap: "24px" }}>
-                        <div>
-                          <div style={{ fontSize: "22px", fontWeight: "650", letterSpacing: "-0.02em" }}>[#]</div>
-                          <div style={{ fontSize: "11px", fontWeight: "600", letterSpacing: "0.12em", color: "#4E586A" }}>ATTENDEES</div>
-                        </div>
-                        <div>
-                          <div style={{ fontSize: "22px", fontWeight: "650", letterSpacing: "-0.02em" }}>[#]</div>
-                          <div style={{ fontSize: "11px", fontWeight: "600", letterSpacing: "0.12em", color: "#4E586A" }}>DAYS</div>
-                        </div>
+                  <article className="alm-in" style={{ borderRadius: "18px", overflow: "hidden", background: "#FFFFFF" }}>
+                    <div style={{ height: "220px", padding: "26px 28px", boxSizing: "border-box", display: "flex", flexDirection: "column", justifyContent: "space-between", background: "#0B1220", color: "#FFFFFF" }}>
+                      <div style={{ display: "flex", justifyContent: "space-between", gap: "12px", fontFamily: "'Geist Mono', monospace", fontSize: "11px", letterSpacing: "0.14em" }}>
+                        <span style={{ color: "#FBAE4F" }}>{p.type}</span>
+                        <span style={{ color: "#A3ACBC" }}>{p.when}</span>
                       </div>
+                      <div style={{ fontSize: "clamp(40px, 4.4vw, 64px)", fontWeight: "600", lineHeight: "0.95", letterSpacing: "-0.04em" }}>{p.big}</div>
+                    </div>
+                    <div style={{ padding: "22px 28px 28px" }}>
+                      <div style={{ fontSize: "22px", fontWeight: "650", letterSpacing: "-0.02em" }}>{p.name}</div>
+                      <div style={{ marginTop: "8px", fontSize: "14px", fontWeight: "600", color: "#8A5300" }}>{p.where}</div>
+                      <p style={{ margin: "12px 0 0", fontSize: "15px", lineHeight: "1.6", fontWeight: "400", color: "#4E586A" }}>{p.desc}</p>
                     </div>
                   </article>
                 </Fragment>
@@ -381,7 +391,7 @@ export default class EventsPage extends React.Component {
               <div style={{ display: "flex", alignItems: "center", gap: "10px", fontSize: "15px", fontWeight: "600", letterSpacing: "-0.005em", opacity: "0.72" }}><span style={{ width: "7px", height: "7px", background: "#FBAE4F", borderRadius: "50%" }} />Plan an event</div>
               <h2 className="alm-in" style={{ margin: "22px 0 0", fontSize: "clamp(38px, 5vw, 72px)", lineHeight: "1", letterSpacing: "-0.035em", fontWeight: "600" }}>{v.bk?.head}</h2>
               <p style={{ margin: "24px 0 0", fontSize: "18px", lineHeight: "1.6", fontWeight: "400", color: "#D5DAE3" }}>{v.bk?.sub} Prefer to talk? Call 1.860.716.9084.</p>
-              <div style={{ marginTop: "32px", paddingTop: "24px", borderTop: "1px solid rgba(255,255,255,0.2)", fontSize: "15px", lineHeight: "1.6", fontWeight: "400", color: "#D5DAE3" }}>Own a garage or lot? <A href="/real-estate#streams" style={{ color: "#FBAE4F", fontWeight: "600" }}>List it as a venue →</A></div>
+              <div style={{ marginTop: "32px", paddingTop: "24px", borderTop: "1px solid rgba(255,255,255,0.2)", fontSize: "15px", lineHeight: "1.6", fontWeight: "400", color: "#D5DAE3" }}>Own a garage or lot? <A href="/real-estate#streams" style={{ color: "#FBAE4F", fontWeight: "600" }}>Host events on your property →</A></div>
             </div>
             <div style={{ flex: "999 1 560px", minWidth: "0", padding: "40px", borderRadius: "18px", background: "#FFFFFF", color: "#0B1220" }}>
               {v.sent ? (

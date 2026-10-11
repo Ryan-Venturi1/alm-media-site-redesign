@@ -27,7 +27,7 @@ export default class LocationsPage extends React.Component {
     };
     var all = [
       mk('New York', 'NEW YORK', 'DIGITAL LIVE', '/media/markets/nyc.webp', D.concat(S), '231 W 29th St'),
-      mk('Hartford', 'CONNECTICUT', 'DIGITAL LIVE', '/media/markets/hartford.webp', D.concat(S)),
+      mk('Hartford', 'CONNECTICUT', 'DIGITAL LIVE', '/media/markets/hartford.webp', D.concat(S), '1 Financial Plaza'),
       mk('Los Angeles', 'CALIFORNIA', 'STATIC', '/media/markets/la.webp', S, '1335 Flower St'),
       mk('Chicago', 'ILLINOIS', 'STATIC', '/media/markets/chicago.webp', S, '33 W Monroe St'),
       mk('Miami', 'FLORIDA', 'STATIC', '/media/markets/miami.webp', S),
@@ -119,6 +119,7 @@ export default class LocationsPage extends React.Component {
                 <rect x="105" y="358" width="16" height="16" fill="none" stroke="#FBAE4F" strokeWidth="1.5" />
                 <rect x="634" y="226" width="16" height="16" fill="none" stroke="#FBAE4F" strokeWidth="1.5" />
                 <rect x="857" y="216" width="16" height="16" fill="none" stroke="#FBAE4F" strokeWidth="1.5" />
+                <rect x="872" y="189" width="16" height="16" fill="none" stroke="#FBAE4F" strokeWidth="1.5" />
                 <g fontFamily="Montserrat, sans-serif" fontSize="13" fontWeight="800" fill="#FFFFFF" letterSpacing="0.5">
                   <text x="879" y="243">NEW YORK</text>
                   <text x="892" y="207">HARTFORD</text>
@@ -160,7 +161,7 @@ export default class LocationsPage extends React.Component {
                 <div style={{ marginTop: "40px", padding: "48px", borderRadius: "18px", background: "#FFFFFF", display: "flex", flexWrap: "wrap", gap: "24px", alignItems: "center", justifyContent: "space-between" }}>
                   <div>
                     <div style={{ fontSize: "24px", fontWeight: "650", letterSpacing: "-0.02em" }}>No flagship market matches “{v.q}”.</div>
-                    <div style={{ marginTop: "8px", fontSize: "16px", fontWeight: "400", color: "#4E586A" }}>We have locations in 400+ cities — ask us about inventory there. [ZIP-level lookup connects to the location database.]</div>
+                    <div style={{ marginTop: "8px", fontSize: "16px", fontWeight: "400", color: "#4E586A" }}>We have locations in 400+ cities — ask us about inventory there.</div>
                   </div>
                   <A className="alm-btn" href="/contact" style={{ display: "inline-flex", alignItems: "center", minHeight: "54px", padding: "0 26px", borderRadius: "999px", background: "#FBAE4F", color: "#0B1220", fontWeight: "600", fontSize: "15px", letterSpacing: "-0.005em" }}>Ask about a market</A>
                 </div>
@@ -206,10 +207,10 @@ export default class LocationsPage extends React.Component {
               <li style={{ padding: "22px 0", borderBottom: "1px solid rgba(255,255,255,0.16)", fontSize: "22px", fontWeight: "650", letterSpacing: "-0.02em" }}>Universities</li>
               <li style={{ padding: "22px 0", borderBottom: "1px solid rgba(255,255,255,0.16)", fontSize: "22px", fontWeight: "650", letterSpacing: "-0.02em" }}>Shopping malls</li>
               <li style={{ padding: "22px 0", borderBottom: "1px solid rgba(255,255,255,0.16)", fontSize: "22px", fontWeight: "650", letterSpacing: "-0.02em" }}>Movie theaters</li>
-              <li style={{ padding: "22px 0", borderBottom: "1px solid rgba(255,255,255,0.16)", fontSize: "22px", fontWeight: "650", letterSpacing: "-0.02em" }}>Residential towers</li>
+              <li style={{ padding: "22px 0", borderBottom: "1px solid rgba(255,255,255,0.16)", fontSize: "22px", fontWeight: "650", letterSpacing: "-0.02em" }}>Residential buildings</li>
               <li style={{ padding: "22px 0", borderBottom: "1px solid rgba(255,255,255,0.16)", fontSize: "22px", fontWeight: "650", letterSpacing: "-0.02em" }}>Museums</li>
               <li style={{ padding: "22px 0", borderBottom: "1px solid rgba(255,255,255,0.16)", fontSize: "22px", fontWeight: "650", letterSpacing: "-0.02em" }}>Restaurants</li>
-              <li style={{ padding: "22px 0", borderBottom: "1px solid rgba(255,255,255,0.16)", fontSize: "22px", fontWeight: "650", letterSpacing: "-0.02em" }}>Hotels &amp; arenas</li>
+              <li style={{ padding: "22px 0", borderBottom: "1px solid rgba(255,255,255,0.16)", fontSize: "22px", fontWeight: "650", letterSpacing: "-0.02em" }}>Stand-alone lots &amp; garages</li>
             </ul>
           </div>
         </section>

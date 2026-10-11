@@ -34,7 +34,7 @@ export default class Footer extends React.Component {
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))", gap: "48px 32px" }}>
             <div style={{ display: "flex", flexDirection: "column", gap: "18px" }}>
               <img src="/media/brand/alm-logo.png" alt="A Lot Media" style={{ height: "48px", width: "auto", alignSelf: "flex-start" }} loading="lazy" decoding="async" />
-              <p style={{ margin: "0", fontSize: "14px", lineHeight: "1.65", fontWeight: "500", color: "#A3ACBC" }}>The premier out-of-home network in parking lots and garages. Designing and installing since 2016.</p>
+              <p style={{ margin: "0", fontSize: "14px", lineHeight: "1.65", fontWeight: "500", color: "#A3ACBC" }}>The premier out-of-home advertising company specializing in parking lots and garages. Designing and installing since 2016.</p>
               <A href="mailto:team@alotmedia.com" style={{ fontSize: "14px", fontWeight: "600", color: "#FFFFFF", textDecoration: "none" }}>team@alotmedia.com</A>
               <A href="tel:18607169084" style={{ fontSize: "14px", fontWeight: "600", color: "#FFFFFF", textDecoration: "none" }}>1.860.716.9084</A>
             </div>
@@ -66,6 +66,10 @@ export default class Footer extends React.Component {
             <div style={{ display: "flex", flexDirection: "column", gap: "16px", fontSize: "14px" }}>
               <div style={{ fontSize: "12px", fontWeight: "600", letterSpacing: "0.14em", color: "#FBAE4F", marginBottom: "4px" }}>OFFICES</div>
               <div style={{ lineHeight: "1.55" }}>
+                <div style={{ fontWeight: "600" }}>Hartford</div>
+                <div style={{ color: "#A3ACBC", fontWeight: "500" }}>1 Financial Plaza, 14th Fl, CT 06103</div>
+              </div>
+              <div style={{ lineHeight: "1.55" }}>
                 <div style={{ fontWeight: "600" }}>Los Angeles</div>
                 <div style={{ color: "#A3ACBC", fontWeight: "500" }}>1335 Flower St, CA 90015</div>
               </div>
@@ -82,14 +86,14 @@ export default class Footer extends React.Component {
           <div style={{ marginTop: "72px", paddingTop: "28px", borderTop: "1px solid rgba(255,255,255,0.10)", display: "flex", flexWrap: "wrap", gap: "16px 32px", justifyContent: "space-between", fontSize: "13px", fontWeight: "500", color: "#8B95A7" }}>
             <div style={{ display: "flex", flexWrap: "wrap", gap: "8px 24px" }}>
               <span>© 2026 A Lot Media</span>
-              <A href="/insights" style={{ color: "#8B95A7", textDecoration: "none" }}>Privacy policy</A>
-              <A href="/insights" style={{ color: "#8B95A7", textDecoration: "none" }}>Terms &amp; conditions</A>
+              <A href="https://www.alotmedia.com/privacy-policy/" style={{ color: "#8B95A7", textDecoration: "none" }}>Privacy policy</A>
+              <A href="https://www.alotmedia.com/terms-conditions/" style={{ color: "#8B95A7", textDecoration: "none" }}>Terms &amp; conditions</A>
               <A href="/" style={{ color: "#8B95A7", textDecoration: "none" }}>Sitemap</A>
             </div>
             <div style={{ display: "flex", flexWrap: "wrap", gap: "8px 24px" }}>
-              <A href="https://www.linkedin.com/company/a-lot-media" style={{ color: "#8B95A7", textDecoration: "none" }}>LinkedIn</A>
-              <A href="https://www.instagram.com/alotmedia" style={{ color: "#8B95A7", textDecoration: "none" }}>Instagram</A>
-              <A href="https://www.facebook.com/A-Lot-Media-100063648526986" style={{ color: "#8B95A7", textDecoration: "none" }}>Facebook</A>
+              <A href="https://www.linkedin.com/company/a-lot-media/" style={{ color: "#8B95A7", textDecoration: "none" }}>LinkedIn</A>
+              <A href="https://www.instagram.com/alotmedia/" style={{ color: "#8B95A7", textDecoration: "none" }}>Instagram</A>
+              <A href="https://www.facebook.com/p/A-Lot-Media-100063648526986/" style={{ color: "#8B95A7", textDecoration: "none" }}>Facebook</A>
               <A href="https://www.youtube.com/@alotmediala5587" style={{ color: "#8B95A7", textDecoration: "none" }}>YouTube</A>
             </div>
           </div>
