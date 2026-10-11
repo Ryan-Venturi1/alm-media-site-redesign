@@ -216,3 +216,6 @@ html.alm-motion .alm-hs.alm-hs-on .alm-hs-bar { display: block; }
   .alm-mq-row { overflow-x: auto !important; }
   .alm-nav-bar, .alm-story-img, .alm-story-text { transition: none; }
 }
+
+/* Legal pages: the table of contents follows you on wide screens only */
+@media (min-width: 900px){.alm-legal-toc{position:sticky;top:24px}}

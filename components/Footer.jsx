@@ -86,8 +86,8 @@ export default class Footer extends React.Component {
           <div style={{ marginTop: "72px", paddingTop: "28px", borderTop: "1px solid rgba(255,255,255,0.10)", display: "flex", flexWrap: "wrap", gap: "16px 32px", justifyContent: "space-between", fontSize: "13px", fontWeight: "500", color: "#8B95A7" }}>
             <div style={{ display: "flex", flexWrap: "wrap", gap: "8px 24px" }}>
               <span>© 2026 A Lot Media</span>
-              <A href="https://www.alotmedia.com/privacy-policy/" style={{ color: "#8B95A7", textDecoration: "none" }}>Privacy policy</A>
-              <A href="https://www.alotmedia.com/terms-conditions/" style={{ color: "#8B95A7", textDecoration: "none" }}>Terms &amp; conditions</A>
+              <A href="/privacy-policy" style={{ color: "#8B95A7", textDecoration: "none" }}>Privacy policy</A>
+              <A href="/terms-conditions" style={{ color: "#8B95A7", textDecoration: "none" }}>Terms &amp; conditions</A>
               <A href="/" style={{ color: "#8B95A7", textDecoration: "none" }}>Sitemap</A>
             </div>
             <div style={{ display: "flex", flexWrap: "wrap", gap: "8px 24px" }}>

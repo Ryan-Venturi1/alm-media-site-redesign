@@ -48,6 +48,8 @@ If you set none of the delivery variables, form submissions are written to the V
 | `/insights` | News, FAQ, glossary, newsletter |
 | `/plan` | Campaign planner (four steps) that sends a request to the team |
 | `/contact` | Contact form that routes to the right team |
+| `/privacy-policy` | Privacy Policy, copied word for word from the current site |
+| `/terms-conditions` | Terms & Conditions, copied word for word from the current site |
 
 ## How the code is organised
 
@@ -63,6 +65,7 @@ components/
   Nav.jsx, Footer.jsx   site header (starts the motion engine) and footer
   LiveBoard.jsx         rate board screen drawn live on a photo with a perspective transform
   LogoMarquee.jsx       two-row brand marquee
+  LegalPage.jsx         layout for the privacy and terms pages (text in lib/legal.js)
   SmartLink.jsx         internal links use client-side navigation
 lib/
   motion.js             scroll engine: measures, then writes CSS variables and classes
@@ -111,8 +114,7 @@ Deliberately left out, because the data room marks it confidential: financials a
 
 ## Before launch
 
-- **Privacy policy and terms.** The footer links to the current pages on alotmedia.com (`/privacy-policy/` and `/terms-conditions/`). Move those pages over before pointing the domain here, or the links will break.
-- **News posts.** The Insights cards link to the existing blog posts on alotmedia.com. Migrate them, or keep the old blog reachable, before the domain switch.
+- **News posts.** The Insights cards link to the old blog posts on alotmedia.com. The blog isn't being moved, so remove those cards or point them elsewhere before the domain switch.
 - **Confirm these with the team:**
   - The NY office address. The website says 231 W 29th St; a 2023 contract lists 239 W 29th St.
   - Manufacturing. The website says A Lot Media owns its plants; the DDRB deck says manufacturing, printing and the CMS come from sister companies MetroClick and faytech. The site uses the deck's wording.
