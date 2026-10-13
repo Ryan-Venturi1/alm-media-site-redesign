@@ -39,7 +39,7 @@ export default class InsightsPage extends React.Component {
       ['EVENTS', 'The Event Space of the Future', 'the-event-space-of-the-future/', '/media/renders/event-popup-launch.webp', '55% 50%'],
       ['REAL ESTATE', 'Goodbye Garage, Hello Mobility Hub', 'goodbye-garage-hello-mobility-hub/', '/media/photos/msk-garage-entrance.webp', '50% 50%'],
       ['DIGITAL', 'Six Unique Benefits of Digital Out of Home Ads', 'six-unique-benefits-of-digital-out-of-home-ads/', '/media/photos/ddrb-connecticut.webp', '50% 34%'],
-      ['ADVERTISING', 'How To Reach Your Audience at High-Impact Times', 'how-to-reach-your-audience-at-high-impact-times/', '/media/photos/lucid-digital-panel.webp', '40% 50%'],
+      ['ADVERTISING', 'How To Reach Your Audience at High-Impact Times', 'how-to-reach-your-audience-at-high-impact-times/', '/media/photos/united-digital-panel.webp', '30% 50%'],
       ['TECHNOLOGY', 'Smart Cities Infrastructure Beginning with Connected Parking Kiosks', 'smart-cities-infrastructure-beginning-with-connected-parking-kiosks/', '/media/photos/blank-street-interactive-panel.webp', '30% 50%']
     ];
     var archive = [

@@ -360,9 +360,10 @@ export default class InvestorsPage extends React.Component {
         <section style={{ padding: "128px 28px" }}>
           <div style={{ maxWidth: "1360px", margin: "0 auto" }}>
             <h2 className="alm-in" style={{ margin: "0", maxWidth: "900px", fontSize: "clamp(38px, 5.2vw, 80px)", lineHeight: "1", letterSpacing: "-0.035em", fontWeight: "600" }}>Proof in the field.</h2>
+            <p style={{ margin: "16px 0 0", fontFamily: "'Geist Mono', monospace", fontSize: "11px", letterSpacing: "0.08em", color: "#8A93A3" }}>REAL INSTALLATIONS · PHOTOS RETOUCHED FOR LIGHT AND CLEAN-UP · ADS UNALTERED</p>
             <div style={{ marginTop: "48px", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "16px" }}>
               <figure className="alm-tile alm-wipe" style={{ margin: "0", height: "380px", borderRadius: "16px", overflow: "hidden", position: "relative", background: "#0B1220" }}>
-                <img src="/media/photos/lucid-garage-panel.webp" alt="Drivers walking past a Lucid ad on an A Lot Media digital panel in a New York garage" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "65% 50%", display: "block" }} loading="lazy" decoding="async" />
+                <img src="/media/photos/lucid-garage-panel-unedited.webp" alt="Drivers walking past a Lucid ad on an A Lot Media digital panel in a New York garage" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "65% 50%", display: "block" }} loading="lazy" decoding="async" />
                 <figcaption style={{ position: "absolute", left: "16px", bottom: "16px", padding: "8px 14px", borderRadius: "999px", background: "rgba(11,18,32,0.72)", color: "#FFFFFF", fontSize: "12px", fontWeight: "700" }}>LUCID · DIGITAL · NEW YORK</figcaption>
               </figure>
               <figure className="alm-tile alm-wipe" style={{ margin: "0", height: "380px", borderRadius: "16px", overflow: "hidden", position: "relative", background: "#0B1220" }}>

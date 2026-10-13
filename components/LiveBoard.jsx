@@ -86,9 +86,9 @@ export default class LiveBoard extends React.Component {
       dh: 1040, split: 490, gap: 38, adTop: 528, bezel: true, padTop: 34, rowPad: 18, adFont: 52, adFont2: 46,
       caption: 'LIVE DEMO · PRODUCT RENDER'
     } : {
-      img: '/media/photos/ddrb-connecticut.webp', nw: 1073, nh: 1438,
+      img: '/media/photos/ddrb-connecticut.webp', nw: 1500, nh: 2000,
       alt: 'A Lot Media Digital Dynamic Rate Board installed at a parking garage entrance in Connecticut',
-      quad: [[0.2844, 0.2098], [0.6189, 0.2214], [0.5911, 0.6186], [0.3011, 0.6235]],
+      quad: [[0.2820, 0.2040], [0.6187, 0.2120], [0.5900, 0.6150], [0.3033, 0.6215]],
       dh: 660, split: 470, gap: 0, adTop: 470, bezel: false, padTop: 26, rowPad: 12, adFont: 38, adFont2: 34,
       caption: 'LIVE DEMO · DIGITAL DYNAMIC RATE BOARD™ · CONNECTICUT'
     };

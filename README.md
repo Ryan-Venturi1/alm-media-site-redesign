@@ -118,4 +118,8 @@ Deliberately left out, because the data room marks it confidential: financials a
 - **Confirm these with the team:**
   - The NY office address. The website says 231 W 29th St; a 2023 contract lists 239 W 29th St.
   - Manufacturing. The website says A Lot Media owns its plants; the DDRB deck says manufacturing, printing and the CMS come from sister companies MetroClick and faytech. The site uses the deck's wording.
-- **Images that aren't straight photos.** They are labeled on the page: "Concept render" on the event, gate-arm and ticket images, and "Stock footage" or "Stock photo" on the videos and generic images. Some older gallery photos were retouched (cleaned and color-corrected), and the home gallery says so. The new proof-of-performance photos only have their color and exposure corrected. Swap in real event photography when you have it.
+- **Images that aren't straight photos.** They are labeled on the page: "Concept render" on the event, gate-arm and ticket images, and "Stock footage" or "Stock photo" on the videos and generic images. Swap in real event photography when you have it.
+- **Retouched install photos.** All 37 install photos were retouched with Nano Banana 2.1 for brochure-style light and color. Pipes, cables and screen glare were removed, while every ad, sign and piece of text keeps the original pixels. The home gallery, the Company gallery and the Investors proof section say "photos retouched".
+  - Two Lucid photos also have one or two adults turned to look at the screen. They are captioned "photo edited".
+  - Investors and Insights use other photos or the unedited version (`lucid-garage-panel-unedited.webp`).
+  - Confirm the Hartford HealthCare elevator-wrap color. The retouch keeps the original purple.

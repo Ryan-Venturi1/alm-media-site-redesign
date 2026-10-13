@@ -19,7 +19,7 @@ export default class CompanyPage extends React.Component {
     var B = '';
     var gf = st.gf || 'all';
     var all = [
-      ['/media/photos/lucid-digital-panel.webp', 'LUCID · DIGITAL PANEL', 'digital', 2, '40% 50%'],
+      ['/media/photos/lucid-digital-panel.webp', 'LUCID · DIGITAL PANEL · PHOTO EDITED', 'digital', 2, '40% 50%'],
       ['/media/photos/mt-bank-ddrb.webp', 'M&T BANK · RATE BOARD', 'digital', 1, '40% 50%'],
       ['/media/photos/bmw-digital-panel.webp', 'BMW · DIGITAL PANEL', 'digital', 1, '30% 50%'],
       ['/media/photos/united-digital-panel.webp', 'UNITED · DIGITAL PANEL', 'digital', 1, '30% 50%'],
@@ -44,7 +44,7 @@ export default class CompanyPage extends React.Component {
       ['/media/photos/nyc-dot-safety-panel.webp', 'NYC DOT · SAFETY CAMPAIGN', 'digital', 1, '40% 50%'],
       ['/media/photos/nyc-dot-office-panels.webp', 'NYC DOT · GARAGE OFFICE', 'digital', 2, '50% 50%'],
       ['/media/photos/hartford-healthcare-kiosk.webp', 'HARTFORD HEALTHCARE · KIOSK', 'digital', 1, '60% 50%'],
-      ['/media/photos/lucid-garage-panel.webp', 'LUCID · GARAGE', 'digital', 1, '60% 50%'],
+      ['/media/photos/lucid-garage-panel.webp', 'LUCID · GARAGE · PHOTO EDITED', 'digital', 1, '60% 50%'],
       ['/media/photos/big-apple-circus-classic-car.webp', 'BIG APPLE CIRCUS · GARAGE', 'digital', 1, '60% 50%'],
       ['/media/photos/ramp-digital-panel.webp', 'RAMP · DIGITAL PANEL', 'digital', 2, '50% 40%'],
       ['/media/photos/hartford-healthcare-banner.webp', 'HARTFORD HEALTHCARE · BANNER', 'static', 1, '50% 50%'],
@@ -147,6 +147,7 @@ export default class CompanyPage extends React.Component {
               <div>
                 <div style={{ display: "flex", alignItems: "center", gap: "10px", fontSize: "15px", fontWeight: "600", letterSpacing: "-0.005em", opacity: "0.72" }}><span style={{ width: "7px", height: "7px", background: "#FBAE4F", borderRadius: "50%" }} />Gallery</div>
                 <h2 className="alm-in" style={{ margin: "22px 0 0", fontSize: "clamp(38px, 5.2vw, 80px)", lineHeight: "1", letterSpacing: "-0.035em", fontWeight: "600" }}>In the network.</h2>
+                <p style={{ margin: "16px 0 0", fontFamily: "'Geist Mono', monospace", fontSize: "11px", letterSpacing: "0.08em", color: "rgba(255,255,255,0.55)" }}>REAL INSTALLATIONS · PHOTOS RETOUCHED</p>
               </div>
               <div role="group" aria-label="Filter gallery" style={{ display: "flex", flexWrap: "wrap", gap: "8px" }}>
                 {(v.gfilters || []).map((g, gI) => (
