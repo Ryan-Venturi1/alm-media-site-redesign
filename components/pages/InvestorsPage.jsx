@@ -37,16 +37,16 @@ export default class InvestorsPage extends React.Component {
       ['More advertisers', 'National and local brands buy the reach'],
       ['More owner revenue', 'Payouts bring the next owner in']
     ];
-    var logos = [['Chase', '/media/logos/chase.png'], ['Clorox', '/media/logos/clorox.png'], ['McCormick', '/media/logos/mccormick.png'], ['Citibank', '/media/logos/citibank.png'], ['Anheuser-Busch', '/media/logos/anheuser-busch.png'], ['Allstate', '/media/logos/allstate.png'], ['Panera Bread', '/media/logos/panera.png'], ['General Mills', '/media/logos/general-mills.png'], ['New York Yankees', '/media/logos/yankees.png'], ['Hartford HealthCare', '/media/logos/hartford-healthcare.png'], ['Live Nation', '/media/logos/live-nation.png'], ['Rimowa', '/media/logos/rimowa.png'], ['Bumble', '/media/logos/bumble.png'], ['FILA', '/media/logos/fila.png'], ['Getaround', '/media/logos/getaround.png'], ['Blank Street', '/media/logos/blank-street.png'], ['Corcoran', '/media/logos/corcoran.png'], ['Avail', '/media/logos/avail.png']];
+    var logos = [['Chase', '/media/logos/chase.png?v=36175c78'], ['Clorox', '/media/logos/clorox.png?v=94b22c30'], ['McCormick', '/media/logos/mccormick.png?v=6482d04f'], ['Citibank', '/media/logos/citibank.png?v=4e895247'], ['Anheuser-Busch', '/media/logos/anheuser-busch.png?v=46d09486'], ['Allstate', '/media/logos/allstate.png?v=ddd0329f'], ['Panera Bread', '/media/logos/panera.png?v=5633a8b9'], ['General Mills', '/media/logos/general-mills.png?v=20a2b94e'], ['New York Yankees', '/media/logos/yankees.png?v=1860f7ef'], ['Hartford HealthCare', '/media/logos/hartford-healthcare.png?v=d63767e1'], ['Live Nation', '/media/logos/live-nation.png?v=0184e138'], ['Rimowa', '/media/logos/rimowa.png?v=8a9dad9f'], ['Bumble', '/media/logos/bumble.png?v=70070fb5'], ['FILA', '/media/logos/fila.png?v=eaa1cdc1'], ['Getaround', '/media/logos/getaround.png?v=214c8213'], ['Blank Street', '/media/logos/blank-street.png?v=2c18d517'], ['Corcoran', '/media/logos/corcoran.png?v=612f3cb7'], ['Avail', '/media/logos/avail.png?v=0248d690']];
     if (!this._vidRef) {
       this._vidRef = playWhenVisible;
     }
     var engines = [
-      { no: '01', name: 'STATIC MEDIA', dot: '#FFFFFF', img: '/media/photos/hartford-healthcare-wallscape.webp', pos: '50% 50%', note: 'REAL INSTALL', alt: 'Hartford HealthCare wallscape in a parking garage',
+      { no: '01', name: 'STATIC MEDIA', dot: '#FFFFFF', img: '/media/photos/hartford-healthcare-wallscape.webp?v=0b3f98d9', pos: '50% 50%', note: 'REAL INSTALL', alt: 'Hartford HealthCare wallscape in a parking garage',
         head: 'Walls, wraps & gates', earn: 'Campaign fees for wallscapes, elevator wraps, gate arms, branded tickets and garage takeovers', scale: 'Every new property adds walls, gates and elevators to sell' },
-      { no: '02', name: 'DIGITAL', dot: '#8FDCE8', img: '/media/photos/ddrb-connecticut.webp', pos: '50% 30%', note: 'REAL INSTALL · CT', alt: 'A Lot Media Digital Dynamic Rate Board installed in Connecticut',
+      { no: '02', name: 'DIGITAL', dot: '#8FDCE8', img: '/media/photos/ddrb-connecticut.webp?v=088e4141', pos: '50% 30%', note: 'REAL INSTALL · CT', alt: 'A Lot Media Digital Dynamic Rate Board installed in Connecticut',
         head: 'Rate boards & screens', earn: 'Ad time on rate boards and panels, sold by our team and on programmatic exchanges — plus rate boards and Device Hub software for owners who buy', scale: 'Software-driven inventory with remote management and unlimited creative updates' },
-      { no: '03', name: 'EVENTS & VENUES', dot: '#FBAE4F', img: '/media/renders/event-popup-launch.webp', pos: '55% 50%', note: 'CONCEPT RENDER', tag: 'NEXT GROWTH ENGINE', alt: 'Concept render of a car launch pop-up inside a parking garage',
+      { no: '03', name: 'EVENTS & VENUES', dot: '#FBAE4F', img: '/media/photos/stock-car-event.webp?v=d303b124', pos: '55% 50%', note: 'STOCK PHOTO', tag: 'NEXT GROWTH ENGINE', alt: 'Crowd filming a car at a live automotive event at night (stock photo)',
         head: 'The real estate itself', earn: 'Event activation, VIP park & shuttle, bulk parking, temporary and mobile media, and sponsorship', scale: 'Sold on demand with partners, on parking real estate the network already reaches' }
     ];
     return {
@@ -91,7 +91,7 @@ export default class InvestorsPage extends React.Component {
         {/* HERO */}
         <div style={{ background: "#05080F" }}>
           <section className="alm-hero" data-scrub="exit" style={{ position: "relative", minHeight: "820px", background: "#0B1220", color: "#FFFFFF", overflow: "hidden" }}>
-            <video className="alm-hero-media" ref={v.vidRef} src="/media/video/highway-night.mp4" poster="/media/video/highway-night-poster.webp" autoPlay muted loop playsInline preload="auto" aria-hidden="true" style={{ position: "absolute", inset: "0", width: "100%", height: "100%", objectFit: "cover", objectPosition: "50% 40%" }} />
+            <video className="alm-hero-media" ref={v.vidRef} src="/media/video/highway-night.mp4?v=0f116ba5" poster="/media/video/highway-night-poster.webp?v=cdef3b33" autoPlay muted loop playsInline preload="auto" aria-hidden="true" style={{ position: "absolute", inset: "0", width: "100%", height: "100%", objectFit: "cover", objectPosition: "50% 40%" }} />
             <div style={{ position: "absolute", inset: "0", background: "linear-gradient(180deg, rgba(11,18,32,0.5) 0%, rgba(11,18,32,0.35) 40%, rgba(11,18,32,0.94) 100%)" }} />
             <div className="alm-hero-copy" style={{ position: "relative", maxWidth: "1360px", minHeight: "820px", margin: "0 auto", padding: "0 28px 72px", boxSizing: "border-box", display: "flex", flexDirection: "column", justifyContent: "flex-end" }}>
               <div className="alm-rise" style={{ display: "flex", alignItems: "center", gap: "10px", fontSize: "15px", fontWeight: "600", letterSpacing: "-0.005em", opacity: "0.72" }}><span style={{ width: "7px", height: "7px", background: "#FBAE4F", borderRadius: "50%" }} />Investor relations</div>
@@ -363,15 +363,15 @@ export default class InvestorsPage extends React.Component {
             <p style={{ margin: "16px 0 0", fontFamily: "'Geist Mono', monospace", fontSize: "11px", letterSpacing: "0.08em", color: "#8A93A3" }}>REAL INSTALLATIONS · PHOTOS RETOUCHED FOR LIGHT AND CLEAN-UP · ADS UNALTERED</p>
             <div style={{ marginTop: "48px", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "16px" }}>
               <figure className="alm-tile alm-wipe" style={{ margin: "0", height: "380px", borderRadius: "16px", overflow: "hidden", position: "relative", background: "#0B1220" }}>
-                <img src="/media/photos/lucid-garage-panel-unedited.webp" alt="Drivers walking past a Lucid ad on an A Lot Media digital panel in a New York garage" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "65% 50%", display: "block" }} loading="lazy" decoding="async" />
+                <img src="/media/photos/lucid-garage-panel-unedited.webp?v=63c8d27f" alt="Drivers walking past a Lucid ad on an A Lot Media digital panel in a New York garage" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "65% 50%", display: "block" }} loading="lazy" decoding="async" />
                 <figcaption style={{ position: "absolute", left: "16px", bottom: "16px", padding: "8px 14px", borderRadius: "999px", background: "rgba(11,18,32,0.72)", color: "#FFFFFF", fontSize: "12px", fontWeight: "700" }}>LUCID · DIGITAL · NEW YORK</figcaption>
               </figure>
               <figure className="alm-tile alm-wipe" style={{ margin: "0", height: "380px", borderRadius: "16px", overflow: "hidden", position: "relative", background: "#0B1220" }}>
-                <img src="/media/photos/hartford-healthcare-wallscape.webp" alt="Hartford HealthCare wallscape" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} loading="lazy" decoding="async" />
+                <img src="/media/photos/hartford-healthcare-wallscape.webp?v=0b3f98d9" alt="Hartford HealthCare wallscape" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} loading="lazy" decoding="async" />
                 <figcaption style={{ position: "absolute", left: "16px", bottom: "16px", padding: "8px 14px", borderRadius: "999px", background: "rgba(11,18,32,0.72)", color: "#FFFFFF", fontSize: "12px", fontWeight: "700" }}>HARTFORD HEALTHCARE · STATIC</figcaption>
               </figure>
               <figure className="alm-tile alm-wipe" style={{ margin: "0", height: "380px", borderRadius: "16px", overflow: "hidden", position: "relative", background: "#0B1220" }}>
-                <img src="/media/photos/ddrb-connecticut.webp" alt="A Lot Media Digital Dynamic Rate Board installed in Connecticut" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "50% 34%", display: "block" }} loading="lazy" decoding="async" />
+                <img src="/media/photos/ddrb-connecticut.webp?v=088e4141" alt="A Lot Media Digital Dynamic Rate Board installed in Connecticut" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "50% 34%", display: "block" }} loading="lazy" decoding="async" />
                 <figcaption style={{ position: "absolute", left: "16px", bottom: "16px", padding: "8px 14px", borderRadius: "999px", background: "rgba(11,18,32,0.72)", color: "#FFFFFF", fontSize: "12px", fontWeight: "700" }}>RATE BOARD · CONNECTICUT</figcaption>
               </figure>
             </div>

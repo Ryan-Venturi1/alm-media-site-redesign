@@ -34,21 +34,21 @@ export default class PlanPage extends React.Component {
     var budget = st.budget || 50000;
     var start = st.start || '2026-11-02';
     var mlist = [
-      ['New York', 'DIGITAL LIVE', '/media/markets/nyc.webp', true], ['Hartford', 'DIGITAL LIVE', '/media/markets/hartford.webp', true],
-      ['Los Angeles', 'STATIC', '/media/markets/la.webp'], ['Chicago', 'STATIC', '/media/markets/chicago.webp'],
-      ['Miami', 'STATIC', '/media/markets/miami.webp'], ['Austin', 'STATIC', '/media/markets/austin.webp'],
-      ['Boston', 'STATIC', '/media/markets/boston.webp'], ['Washington DC', 'ON REQUEST', '/media/markets/dc.webp'],
-      ['Atlanta', 'ON REQUEST', '/media/markets/atlanta.webp'], ['Nashville', 'ON REQUEST', '/media/markets/nashville.webp'],
-      ['Detroit', 'ON REQUEST', '/media/markets/detroit.webp']
+      ['New York', 'DIGITAL LIVE', '/media/markets/nyc.webp?v=ceab88a6', true], ['Hartford', 'DIGITAL LIVE', '/media/markets/hartford.webp?v=a1857c29', true],
+      ['Los Angeles', 'STATIC', '/media/markets/la.webp?v=59df333e'], ['Chicago', 'STATIC', '/media/markets/chicago.webp?v=c1fc7d1b'],
+      ['Miami', 'STATIC', '/media/markets/miami.webp?v=599c78ee'], ['Austin', 'STATIC', '/media/markets/austin.webp?v=5e92badf'],
+      ['Boston', 'STATIC', '/media/markets/boston.webp?v=e3730036'], ['Washington DC', 'ON REQUEST', '/media/markets/dc.webp?v=7b36c5f4'],
+      ['Atlanta', 'ON REQUEST', '/media/markets/atlanta.webp?v=466f3c23'], ['Nashville', 'ON REQUEST', '/media/markets/nashville.webp?v=a608fc0a'],
+      ['Detroit', 'ON REQUEST', '/media/markets/detroit.webp?v=24ce01a5']
     ];
     var anyDigital = mlist.some(function (m) { return m[3] && ms[m[0]]; });
     var flist = [
-      ['Rate boards', 'Digital · custom slot length', '/media/photos/ddrb-connecticut.webp', '50% 34%', true],
-      ['Digital panels', 'Digital · interactive', '/media/photos/blank-street-interactive-panel.webp', '30% 50%', true],
-      ['Wallscapes', 'Static · per location', '/media/photos/hartford-healthcare-entrance-wallscape.webp', '50% 40%'],
-      ['Elevator wraps', 'Static · per bank', '/media/photos/hartford-healthcare-elevator-wraps.webp', '50% 50%'],
-      ['Gate arms', 'Static · entry & exit', '/media/renders/gate-arm-wrap.webp', '50% 50%'],
-      ['Tickets', 'Static · branded tickets', '/media/renders/branded-ticket.webp', '62% 50%']
+      ['Rate boards', 'Digital · custom slot length', '/media/photos/ddrb-connecticut.webp?v=088e4141', '50% 34%', true],
+      ['Digital panels', 'Digital · interactive', '/media/photos/blank-street-interactive-panel.webp?v=6f1265ae', '30% 50%', true],
+      ['Wallscapes', 'Static · per location', '/media/photos/hartford-healthcare-entrance-wallscape.webp?v=04dc2f7b', '50% 40%'],
+      ['Elevator wraps', 'Static · per bank', '/media/photos/hartford-healthcare-elevator-wraps.webp?v=20725f9d', '50% 50%'],
+      ['Gate arms', 'Static · entry & exit', '/media/renders/gate-arm-wrap.webp?v=1dedea94', '50% 50%'],
+      ['Tickets', 'Static · branded tickets', '/media/renders/branded-ticket.webp?v=6c7f672f', '62% 50%']
     ];
     var tog = function (key, name) {
       return function () {

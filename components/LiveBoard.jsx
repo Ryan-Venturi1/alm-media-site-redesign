@@ -73,20 +73,20 @@ export default class LiveBoard extends React.Component {
     var product = variant === 'product';
     var crop = variant === 'photo' && this.props.crop !== false;
     var PRODUCT = {
-      img: '/media/renders/ddrb-product.webp', nw: 1136, nh: 1408,
+      img: '/media/renders/ddrb-product-front.webp?v=53c9b30a', nw: 1600, nh: 1986,
       alt: 'Product render of the A Lot Media Digital Dynamic Rate Board on a dark background',
-      quad: [[0.3838, 0.1136], [0.6215, 0.1286], [0.6215, 0.4972], [0.3838, 0.4666]],
-      dh: 752, split: 466, gap: 0, adTop: 466, bezel: false, padTop: 28, rowPad: 14, adFont: 42, adFont2: 38,
+      quad: [[0.3809, 0.1263], [0.6193, 0.1263], [0.6193, 0.4980], [0.3809, 0.4980]],
+      dh: 774, split: 480, gap: 0, adTop: 480, bezel: false, padTop: 28, rowPad: 14, adFont: 42, adFont2: 38,
       caption: 'PRODUCT RENDER · LIVE SCREEN DEMO'
     };
     var V = product ? PRODUCT : hero ? {
-      img: '/media/renders/ddrb-hero.webp', nw: 2400, nh: 1349,
+      img: '/media/renders/ddrb-hero.webp?v=6ccaa498', nw: 2400, nh: 1349,
       alt: 'Product render of the A Lot Media Digital Dynamic Rate Board at a parking garage entrance at night',
       quad: [[0.6075, 0.1446], [0.7467, 0.0986], [0.7467, 0.7932], [0.6083, 0.7821]],
       dh: 1040, split: 490, gap: 38, adTop: 528, bezel: true, padTop: 34, rowPad: 18, adFont: 52, adFont2: 46,
       caption: 'LIVE DEMO · PRODUCT RENDER'
     } : {
-      img: '/media/photos/ddrb-connecticut.webp', nw: 1500, nh: 2000,
+      img: '/media/photos/ddrb-connecticut.webp?v=088e4141', nw: 1500, nh: 2000,
       alt: 'A Lot Media Digital Dynamic Rate Board installed at a parking garage entrance in Connecticut',
       quad: [[0.2820, 0.2040], [0.6187, 0.2120], [0.5900, 0.6150], [0.3033, 0.6215]],
       dh: 660, split: 470, gap: 0, adTop: 470, bezel: false, padTop: 26, rowPad: 12, adFont: 38, adFont2: 34,

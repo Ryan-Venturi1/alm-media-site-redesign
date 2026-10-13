@@ -35,12 +35,12 @@ export default class InsightsPage extends React.Component {
     var fl = faqData.map(function (f, i) { return { f: f, i: i }; }).filter(function (x) { return !ql || (x.f[0] + ' ' + x.f[1]).toLowerCase().indexOf(ql) >= 0; });
     var W = 'https://www.alotmedia.com/';
     var posts = [
-      ['ADVERTISING', 'Why Advertise in a Garage?', 'why-advertise-in-a-garage/', '/media/photos/panera-now-open.webp', '60% 50%'],
-      ['EVENTS', 'The Event Space of the Future', 'the-event-space-of-the-future/', '/media/renders/event-popup-launch.webp', '55% 50%'],
-      ['REAL ESTATE', 'Goodbye Garage, Hello Mobility Hub', 'goodbye-garage-hello-mobility-hub/', '/media/photos/msk-garage-entrance.webp', '50% 50%'],
-      ['DIGITAL', 'Six Unique Benefits of Digital Out of Home Ads', 'six-unique-benefits-of-digital-out-of-home-ads/', '/media/photos/ddrb-connecticut.webp', '50% 34%'],
-      ['ADVERTISING', 'How To Reach Your Audience at High-Impact Times', 'how-to-reach-your-audience-at-high-impact-times/', '/media/photos/united-digital-panel.webp', '30% 50%'],
-      ['TECHNOLOGY', 'Smart Cities Infrastructure Beginning with Connected Parking Kiosks', 'smart-cities-infrastructure-beginning-with-connected-parking-kiosks/', '/media/photos/blank-street-interactive-panel.webp', '30% 50%']
+      ['ADVERTISING', 'Why Advertise in a Garage?', 'why-advertise-in-a-garage/', '/media/photos/panera-now-open.webp?v=2fa97a26', '60% 50%'],
+      ['EVENTS', 'The Event Space of the Future', 'the-event-space-of-the-future/', '/media/photos/stock-car-event.webp?v=d303b124', '55% 50%'],
+      ['REAL ESTATE', 'Goodbye Garage, Hello Mobility Hub', 'goodbye-garage-hello-mobility-hub/', '/media/photos/msk-garage-entrance.webp?v=a0e27476', '50% 50%'],
+      ['DIGITAL', 'Six Unique Benefits of Digital Out of Home Ads', 'six-unique-benefits-of-digital-out-of-home-ads/', '/media/photos/ddrb-connecticut.webp?v=088e4141', '50% 34%'],
+      ['ADVERTISING', 'How To Reach Your Audience at High-Impact Times', 'how-to-reach-your-audience-at-high-impact-times/', '/media/photos/united-digital-panel.webp?v=f8d1849b', '30% 50%'],
+      ['TECHNOLOGY', 'Smart Cities Infrastructure Beginning with Connected Parking Kiosks', 'smart-cities-infrastructure-beginning-with-connected-parking-kiosks/', '/media/photos/blank-street-interactive-panel.webp?v=6f1265ae', '30% 50%']
     ];
     var archive = [
       ['Everything You Need to Know About Drivers for 2022', 'everything-you-need-to-know-about-drivers-for-2022/'],
@@ -106,7 +106,7 @@ export default class InsightsPage extends React.Component {
           <div style={{ maxWidth: "1360px", margin: "0 auto" }}>
             <A className="alm-tile alm-in" href="/advertisers" style={{ display: "flex", flexWrap: "wrap", background: "#0B1220", color: "#FFFFFF", borderRadius: "18px", overflow: "hidden" }}>
               <div style={{ flex: "3 1 560px", minHeight: "460px", overflow: "hidden" }}>
-                <img src="/media/photos/hartford-healthcare-wallscape.webp" alt="Hartford HealthCare wallscape inside a Connecticut parking garage" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} loading="lazy" decoding="async" />
+                <img src="/media/photos/hartford-healthcare-wallscape.webp?v=0b3f98d9" alt="Hartford HealthCare wallscape inside a Connecticut parking garage" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} loading="lazy" decoding="async" />
               </div>
               <div style={{ flex: "2 1 380px", padding: "48px", display: "flex", flexDirection: "column", justifyContent: "space-between", gap: "32px" }}>
                 <div>

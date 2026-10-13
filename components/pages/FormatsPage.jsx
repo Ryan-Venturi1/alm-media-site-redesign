@@ -19,22 +19,22 @@ export default class FormatsPage extends React.Component {
     var B = '';
     var data = [
       { kind: 'wallscape', short: 'WALLSCAPES', name: 'Wallscapes', type: 'STATIC', stage: '02 · PARK', stageName: 'Park', best: 'Launches, brand statements, scale',
-        img: '/media/photos/hartford-healthcare-entrance-wallscape.webp', pos: '50% 40%', alt: 'Hartford HealthCare wallscape above a garage entrance', caption: 'HARTFORD HEALTHCARE · WALLSCAPE',
+        img: '/media/photos/hartford-healthcare-entrance-wallscape.webp?v=04dc2f7b', pos: '50% 40%', alt: 'Hartford HealthCare wallscape above a garage entrance', caption: 'HARTFORD HEALTHCARE · WALLSCAPE',
         desc: 'Large-format creative on the walls drivers face while they find a space. Designed, printed and installed for you — from a single wall to every level.',
         specs: [['MARKETS', 'CT · LA · Chicago · Miami · Austin · Boston'], ['SIZE', 'Custom to each wall'], ['SCALE', 'One wall to every level'], ['PRODUCTION', 'Design, print & install']],
         cta: 'Add to plan', ctaHref: '/plan', ss: 'REQUEST ONLINE' },
       { kind: 'elevator', short: 'ELEVATOR WRAPS', name: 'Elevator wraps', type: 'STATIC', stage: '03 · WALK', stageName: 'Walk', best: 'Health, finance, local offers',
-        img: '/media/photos/hartford-healthcare-elevator-wraps.webp', pos: '50% 50%', alt: 'Hartford HealthCare LifeStar elevator door wraps', caption: 'HARTFORD HEALTHCARE · ELEVATOR WRAPS',
+        img: '/media/photos/hartford-healthcare-elevator-wraps.webp?v=20725f9d', pos: '50% 50%', alt: 'Hartford HealthCare LifeStar elevator door wraps', caption: 'HARTFORD HEALTHCARE · ELEVATOR WRAPS',
         desc: 'Branded elevator doors at the pause between the car and the destination. A captive moment, every single ride.',
         specs: [['MARKETS', 'CT · LA · Chicago · Miami · Austin · Boston'], ['SIZE', 'Custom to each elevator bank'], ['ON THE NETWORK', 'Hartford HealthCare · Getaround'], ['PRODUCTION', 'Design, print & install']],
         cta: 'Add to plan', ctaHref: '/plan', ss: 'REQUEST ONLINE' },
       { kind: 'gatearm', short: 'GATE ARMS', name: 'Gate arm wraps', type: 'STATIC', stage: '01 · ARRIVE', stageName: 'Arrive', best: 'Frequency, directional calls to action',
-        img: '/media/renders/gate-arm-wrap.webp', pos: '50% 50%', alt: 'Concept render of a branded orange and navy gate arm at a garage entry lane at night', caption: 'GATE ARM WRAP · CONCEPT RENDER',
+        img: '/media/renders/gate-arm-wrap.webp?v=1dedea94', pos: '50% 50%', alt: 'Concept render of a branded orange and navy gate arm at a garage entry lane at night', caption: 'GATE ARM WRAP · CONCEPT RENDER',
         desc: 'The first thing every driver sees on the way in and the last on the way out. Gate arms rise for every car — eye level, twice per visit.',
         specs: [['MARKETS', 'CT · LA · Chicago · Miami · Austin · Boston'], ['PLACEMENT', 'Entry & exit lanes'], ['PAIRS WITH', 'Branded tickets'], ['PRODUCTION', 'Design, print & install']],
         cta: 'Add to plan', ctaHref: '/plan', ss: 'REQUEST ONLINE' },
       { kind: 'ticket', short: 'TICKETS', name: 'Branded parking tickets', type: 'STATIC', stage: '01 · ARRIVE', stageName: 'Arrive', best: 'Coupons, nearby retail, QSR',
-        img: '/media/renders/branded-ticket.webp', pos: '62% 50%', alt: 'Concept render of a driver taking a branded parking ticket from an entry machine', caption: 'BRANDED TICKET · CONCEPT RENDER',
+        img: '/media/renders/branded-ticket.webp?v=6c7f672f', pos: '62% 50%', alt: 'Concept render of a driver taking a branded parking ticket from an entry machine', caption: 'BRANDED TICKET · CONCEPT RENDER',
         desc: 'A brand message in every driver’s hand, kept in the car until they leave. Ideal for a redeemable offer at a store steps away.',
         specs: [['MARKETS', 'Network-wide'], ['PLACEMENT', 'Entry ticket machines'], ['BEST WITH', 'An offer at a store steps away'], ['PAIRS WITH', 'Gate arms & garage takeovers']],
         cta: 'Add to plan', ctaHref: '/plan', ss: 'REQUEST ONLINE' },
@@ -43,12 +43,12 @@ export default class FormatsPage extends React.Component {
         specs: [['MARKETS', 'New York · Connecticut'], ['SLOT LENGTH', 'Custom · unlimited creative updates'], ['CREATIVE', 'JPEG · PDF · MP4'], ['ALSO WORKS AS', 'Wayfinder · directory · photobooth']],
         cta: 'Add to plan', ctaHref: '/plan', ss: 'REQUEST ONLINE' },
       { kind: 'panel', short: 'DIGITAL PANELS', name: 'Interactive digital panels', type: 'DIGITAL', stage: '03 · WALK', stageName: 'Walk', best: 'Offers, launches, wayfinding',
-        img: '/media/photos/blank-street-interactive-panel.webp', pos: '30% 50%', alt: 'Man tapping his phone on a Blank Street interactive digital panel', caption: 'BLANK STREET · INTERACTIVE PANEL',
+        img: '/media/photos/blank-street-interactive-panel.webp?v=6f1265ae', pos: '30% 50%', alt: 'Man tapping his phone on a Blank Street interactive digital panel', caption: 'BLANK STREET · INTERACTIVE PANEL',
         desc: 'Touch screens on the walk from the car — tap for an offer, scan a QR code, or find the way to the store. We were the first company to bring interactive touch screen technology to parking facilities.',
         specs: [['MARKETS', 'New York · Connecticut'], ['INTERACTION', 'Touch · QR'], ['CREATIVE', 'JPEG · PDF · MP4'], ['ALSO WORKS AS', 'Wayfinder · help desk']],
         cta: 'Add to plan', ctaHref: '/plan', ss: 'REQUEST ONLINE' },
       { kind: 'event', short: 'EVENTS & VENUES', name: 'Events & venues', type: 'EVENTS', stage: '04 · ACTIVATE', stageName: 'Activate', best: 'Launches, VIP parking, game days',
-        img: '/media/renders/rooftop-event.webp', pos: '50% 50%', alt: 'Concept render of a branded rooftop parking activation at dusk', caption: 'ROOFTOP ACTIVATION · CONCEPT RENDER',
+        img: '/media/photos/stock-rooftop-tent.webp?v=b0f4fddd', pos: '50% 50%', alt: 'Guests under a lit canopy at an evening rooftop event (stock photo)', caption: 'ROOFTOP EVENT · STOCK PHOTO',
         desc: 'Our real estate, put to work: brand activations and pop-ups, VIP park-and-shuttle and bulk parking for big events, and game-day takeovers around the crowd.',
         specs: [['MODELS', 'Activations · VIP park & shuttle · game day'], ['VENUES', 'Lots · garages · rooftops'], ['PACKAGES', 'Small · full activation · takeover'], ['PAIRS WITH', 'Rate boards & wallscapes on site']],
         cta: 'Explore events & venues', ctaHref: '/events', ss: 'WITH OUR TEAM' }
@@ -110,7 +110,7 @@ export default class FormatsPage extends React.Component {
         {/* CINEMATIC BAND */}
         <section className="alm-band" aria-label="Inside a parking structure" style={{ position: "relative", height: "560px", overflow: "hidden", background: "#05080F", color: "#FFFFFF" }}>
           <div className="alm-expand" data-scrub="enter" style={{ position: "absolute", inset: "0", overflow: "hidden" }}>
-            <video className="alm-par" data-scrub="cover" ref={v.vidRef} src="/media/video/parking-deck.mp4" poster="/media/video/parking-deck-poster.webp" muted loop playsInline preload="none" aria-hidden="true" style={{ position: "absolute", inset: "0", width: "100%", height: "100%", objectFit: "cover" }} />
+            <video className="alm-par" data-scrub="cover" ref={v.vidRef} src="/media/video/parking-deck.mp4?v=6e52b41f" poster="/media/video/parking-deck-poster.webp?v=3d37a326" muted loop playsInline preload="none" aria-hidden="true" style={{ position: "absolute", inset: "0", width: "100%", height: "100%", objectFit: "cover" }} />
             <div aria-hidden="true" style={{ position: "absolute", inset: "0", background: "linear-gradient(90deg, rgba(5,8,15,0.88) 0%, rgba(5,8,15,0.55) 45%, rgba(5,8,15,0.15) 100%)" }} />
           </div>
           <div style={{ position: "relative", height: "100%", maxWidth: "1360px", margin: "0 auto", padding: "0 28px", display: "flex", flexDirection: "column", justifyContent: "center", gap: "22px" }}>

@@ -115,7 +115,7 @@ export default class RealEstatePage extends React.Component {
         {/* HERO */}
         <div style={{ background: "#05080F" }}>
           <section className="alm-hero" data-scrub="exit" style={{ position: "relative", minHeight: "800px", background: "#0B1220", color: "#FFFFFF", overflow: "hidden" }}>
-            <video className="alm-hero-media" ref={v.vidRef} src="/media/video/garage-level.mp4" poster="/media/video/garage-level-poster.webp" autoPlay muted loop playsInline preload="auto" aria-hidden="true" style={{ position: "absolute", inset: "0", width: "100%", height: "100%", objectFit: "cover", objectPosition: "60% 50%" }} />
+            <video className="alm-hero-media" ref={v.vidRef} src="/media/video/garage-level.mp4?v=a3bbeb94" poster="/media/video/garage-level-poster.webp?v=6ffae7a4" autoPlay muted loop playsInline preload="auto" aria-hidden="true" style={{ position: "absolute", inset: "0", width: "100%", height: "100%", objectFit: "cover", objectPosition: "60% 50%" }} />
             <div style={{ position: "absolute", inset: "0", background: "linear-gradient(90deg, rgba(11,18,32,0.92) 0%, rgba(11,18,32,0.7) 45%, rgba(11,18,32,0.2) 100%)" }} />
             <div className="alm-hero-copy" style={{ position: "relative", maxWidth: "1360px", minHeight: "800px", margin: "0 auto", padding: "0 28px 72px", boxSizing: "border-box", display: "flex", flexDirection: "column", justifyContent: "flex-end" }}>
               <div className="alm-rise" style={{ display: "flex", alignItems: "center", gap: "12px", fontSize: "13px", fontWeight: "800", letterSpacing: "0.18em" }}><span style={{ width: "10px", height: "10px", background: "#FBAE4F" }} />FOR GARAGE &amp; LOT OWNERS</div>
@@ -249,11 +249,11 @@ export default class RealEstatePage extends React.Component {
             </div>
             <div style={{ marginTop: "16px", display: "flex", flexWrap: "wrap", gap: "16px" }}>
               <figure className="alm-tile alm-wipe" style={{ margin: "0", flex: "1 1 300px", height: "560px", position: "relative", overflow: "hidden", borderRadius: "16px", background: "#0B1220" }}>
-                <img src="/media/photos/ddrb-rate-board.webp" alt="A Lot Media Digital Dynamic Rate Board showing LAZ parking rates at a Connecticut garage" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "50% 35%", display: "block" }} loading="lazy" decoding="async" />
+                <img src="/media/photos/ddrb-rate-board.webp?v=088e4141" alt="A Lot Media Digital Dynamic Rate Board showing LAZ parking rates at a Connecticut garage" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "50% 35%", display: "block" }} loading="lazy" decoding="async" />
                 <figcaption style={{ position: "absolute", left: "16px", bottom: "16px", padding: "8px 14px", borderRadius: "999px", background: "rgba(11,18,32,0.72)", color: "#FFFFFF", fontSize: "12px", fontWeight: "700", letterSpacing: "0.04em" }}>DDRB + MESSAGING · CONNECTICUT</figcaption>
               </figure>
               <figure className="alm-tile alm-wipe" style={{ margin: "0", flex: "2 1 600px", height: "560px", position: "relative", overflow: "hidden", borderRadius: "16px", background: "#0B1220" }}>
-                <img src="/media/photos/mt-bank-ddrb.webp" alt={"Digital Dynamic Rate Board with live rates and an M&T Bank ad beside a garage entry gate"} style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "30% 50%", display: "block" }} loading="lazy" decoding="async" />
+                <img src="/media/photos/mt-bank-ddrb.webp?v=9afe12a0" alt={"Digital Dynamic Rate Board with live rates and an M&T Bank ad beside a garage entry gate"} style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "30% 50%", display: "block" }} loading="lazy" decoding="async" />
                 <figcaption style={{ position: "absolute", left: "16px", bottom: "16px", padding: "8px 14px", borderRadius: "999px", background: "rgba(11,18,32,0.72)", color: "#FFFFFF", fontSize: "12px", fontWeight: "700", letterSpacing: "0.04em" }}>LIVE RATES ABOVE · M&amp;T BANK AD BELOW</figcaption>
               </figure>
             </div>
@@ -344,7 +344,7 @@ export default class RealEstatePage extends React.Component {
             <div style={{ marginTop: "56px", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "16px" }}>
               <div className="alm-tile alm-in" style={{ borderRadius: "16px", overflow: "hidden", background: "#FFFFFF" }}>
                 <div style={{ height: "320px", overflow: "hidden" }}>
-                  <img src="/media/photos/ddrb-connecticut.webp" alt="A Lot Media Digital Dynamic Rate Board installed in Connecticut" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "50% 34%", display: "block" }} loading="lazy" decoding="async" />
+                  <img src="/media/photos/ddrb-connecticut.webp?v=088e4141" alt="A Lot Media Digital Dynamic Rate Board installed in Connecticut" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "50% 34%", display: "block" }} loading="lazy" decoding="async" />
                 </div>
                 <div style={{ padding: "36px" }}>
                   <div style={{ fontSize: "12px", fontWeight: "600", letterSpacing: "0.14em", color: "#8A5300" }}>STREAM 01</div>
@@ -354,7 +354,7 @@ export default class RealEstatePage extends React.Component {
               </div>
               <div className="alm-tile alm-in" style={{ borderRadius: "16px", overflow: "hidden", background: "#FFFFFF" }}>
                 <div style={{ height: "320px", overflow: "hidden" }}>
-                  <img src="/media/photos/hartford-healthcare-entrance-wallscape.webp" alt="Hartford HealthCare wallscape above a garage entrance" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} loading="lazy" decoding="async" />
+                  <img src="/media/photos/hartford-healthcare-entrance-wallscape.webp?v=04dc2f7b" alt="Hartford HealthCare wallscape above a garage entrance" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} loading="lazy" decoding="async" />
                 </div>
                 <div style={{ padding: "36px" }}>
                   <div style={{ fontSize: "12px", fontWeight: "600", letterSpacing: "0.14em", color: "#8A5300" }}>STREAM 02</div>
@@ -364,9 +364,9 @@ export default class RealEstatePage extends React.Component {
               </div>
               <div className="alm-tile alm-in" style={{ position: "relative", borderRadius: "16px", overflow: "hidden", background: "#0B1220", color: "#FFFFFF", boxShadow: "inset 0 0 0 3px #FBAE4F" }}>
                 <div style={{ position: "relative", height: "320px", overflow: "hidden" }}>
-                  <img src="/media/renders/event-popup-launch.webp" alt="Concept render of a car launch pop-up inside a parking garage" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "55% 50%", display: "block" }} loading="lazy" decoding="async" />
+                  <img src="/media/photos/stock-car-event.webp?v=d303b124" alt="Crowd filming a car at a live automotive event at night (stock photo)" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "55% 50%", display: "block" }} loading="lazy" decoding="async" />
                   <span style={{ position: "absolute", top: "14px", left: "14px", padding: "6px 11px", borderRadius: "999px", background: "#FBAE4F", color: "#0B1220", fontSize: "11px", fontWeight: "600", letterSpacing: "0.1em" }}>NEW</span>
-                  <span style={{ position: "absolute", right: "12px", bottom: "12px", fontFamily: "'Geist Mono', monospace", fontSize: "10px", letterSpacing: "0.1em", color: "rgba(255,255,255,0.7)" }}>CONCEPT RENDER</span>
+                  <span style={{ position: "absolute", right: "12px", bottom: "12px", fontFamily: "'Geist Mono', monospace", fontSize: "10px", letterSpacing: "0.1em", color: "rgba(255,255,255,0.7)" }}>STOCK PHOTO</span>
                 </div>
                 <div style={{ padding: "36px" }}>
                   <div style={{ fontSize: "12px", fontWeight: "600", letterSpacing: "0.14em", color: "#FBAE4F" }}>STREAM 03</div>
@@ -385,12 +385,12 @@ export default class RealEstatePage extends React.Component {
             </div>
             <div style={{ marginTop: "40px", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: "12px" }}>
               <div className="alm-tile alm-in" style={{ position: "relative", height: "300px", borderRadius: "16px", overflow: "hidden", background: "#0B1220", color: "#FFFFFF" }}>
-                <img src="/media/photos/checkerboard-lobby-panel.webp" alt="Garage lobby with checkerboard floor and a digital panel" style={{ position: "absolute", inset: "0", width: "100%", height: "100%", objectFit: "cover" }} loading="lazy" decoding="async" />
+                <img src="/media/photos/checkerboard-lobby-panel.webp?v=18fa5976" alt="Garage lobby with checkerboard floor and a digital panel" style={{ position: "absolute", inset: "0", width: "100%", height: "100%", objectFit: "cover" }} loading="lazy" decoding="async" />
                 <div style={{ position: "absolute", inset: "0", background: "linear-gradient(180deg, rgba(11,18,32,0) 40%, rgba(11,18,32,0.88) 100%)" }} />
                 <div style={{ position: "absolute", left: "22px", bottom: "20px", fontSize: "22px", fontWeight: "650", letterSpacing: "-0.02em" }}>Class A offices</div>
               </div>
               <div className="alm-tile alm-in" style={{ position: "relative", height: "300px", borderRadius: "16px", overflow: "hidden", background: "#0B1220", color: "#FFFFFF" }}>
-                <img src="/media/photos/glass-lobby-panel.webp" alt="Glass-walled garage lobby with a digital panel" style={{ position: "absolute", inset: "0", width: "100%", height: "100%", objectFit: "cover" }} loading="lazy" decoding="async" />
+                <img src="/media/photos/glass-lobby-panel.webp?v=6d8d0735" alt="Glass-walled garage lobby with a digital panel" style={{ position: "absolute", inset: "0", width: "100%", height: "100%", objectFit: "cover" }} loading="lazy" decoding="async" />
                 <div style={{ position: "absolute", inset: "0", background: "linear-gradient(180deg, rgba(11,18,32,0) 40%, rgba(11,18,32,0.88) 100%)" }} />
                 <div style={{ position: "absolute", left: "22px", bottom: "20px", fontSize: "22px", fontWeight: "650", letterSpacing: "-0.02em" }}>Residential buildings</div>
               </div>

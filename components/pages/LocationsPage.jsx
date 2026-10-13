@@ -26,17 +26,17 @@ export default class LocationsPage extends React.Component {
         chipBg: kind === 'digital' ? '#FBAE4F' : (kind === 'static' ? '#0B1220' : '#E3E5EA'), chipFg: kind === 'static' ? '#FFFFFF' : '#0B1220' };
     };
     var all = [
-      mk('New York', 'NEW YORK', 'DIGITAL LIVE', '/media/markets/nyc.webp', D.concat(S), '231 W 29th St'),
-      mk('Hartford', 'CONNECTICUT', 'DIGITAL LIVE', '/media/markets/hartford.webp', D.concat(S), '1 Financial Plaza'),
-      mk('Los Angeles', 'CALIFORNIA', 'STATIC', '/media/markets/la.webp', S, '1335 Flower St'),
-      mk('Chicago', 'ILLINOIS', 'STATIC', '/media/markets/chicago.webp', S, '33 W Monroe St'),
-      mk('Miami', 'FLORIDA', 'STATIC', '/media/markets/miami.webp', S),
-      mk('Austin', 'TEXAS', 'STATIC', '/media/markets/austin.webp', S),
-      mk('Boston', 'MASSACHUSETTS', 'STATIC', '/media/markets/boston.webp', S),
-      mk('Washington', 'DISTRICT OF COLUMBIA', 'ON REQUEST', '/media/markets/dc.webp', ['Ask our team']),
-      mk('Atlanta', 'GEORGIA', 'ON REQUEST', '/media/markets/atlanta.webp', ['Ask our team']),
-      mk('Nashville', 'TENNESSEE', 'ON REQUEST', '/media/markets/nashville.webp', ['Ask our team']),
-      mk('Detroit', 'MICHIGAN', 'ON REQUEST', '/media/markets/detroit.webp', ['Ask our team'])
+      mk('New York', 'NEW YORK', 'DIGITAL LIVE', '/media/markets/nyc.webp?v=ceab88a6', D.concat(S), '231 W 29th St'),
+      mk('Hartford', 'CONNECTICUT', 'DIGITAL LIVE', '/media/markets/hartford.webp?v=a1857c29', D.concat(S), '1 Financial Plaza'),
+      mk('Los Angeles', 'CALIFORNIA', 'STATIC', '/media/markets/la.webp?v=59df333e', S, '1335 Flower St'),
+      mk('Chicago', 'ILLINOIS', 'STATIC', '/media/markets/chicago.webp?v=c1fc7d1b', S, '33 W Monroe St'),
+      mk('Miami', 'FLORIDA', 'STATIC', '/media/markets/miami.webp?v=599c78ee', S),
+      mk('Austin', 'TEXAS', 'STATIC', '/media/markets/austin.webp?v=5e92badf', S),
+      mk('Boston', 'MASSACHUSETTS', 'STATIC', '/media/markets/boston.webp?v=e3730036', S),
+      mk('Washington', 'DISTRICT OF COLUMBIA', 'ON REQUEST', '/media/markets/dc.webp?v=7b36c5f4', ['Ask our team']),
+      mk('Atlanta', 'GEORGIA', 'ON REQUEST', '/media/markets/atlanta.webp?v=466f3c23', ['Ask our team']),
+      mk('Nashville', 'TENNESSEE', 'ON REQUEST', '/media/markets/nashville.webp?v=a608fc0a', ['Ask our team']),
+      mk('Detroit', 'MICHIGAN', 'ON REQUEST', '/media/markets/detroit.webp?v=24ce01a5', ['Ask our team'])
     ];
     var ql = q.trim().toLowerCase();
     var res = all.filter(function (m) {

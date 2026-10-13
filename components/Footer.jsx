@@ -20,7 +20,7 @@ export default class Footer extends React.Component {
     return (
       <footer style={{ fontFamily: "'Montserrat', system-ui, sans-serif", color: "#FFFFFF", background: "#070C17", WebkitFontSmoothing: "antialiased" }}>
         <div style={{ position: "relative", overflow: "hidden", background: "#0B1220" }}>
-          <img src="/media/photos/stock-nyc-trails.webp" alt="" style={{ position: "absolute", inset: "0", width: "100%", height: "100%", objectFit: "cover", objectPosition: "50% 60%" }} loading="lazy" decoding="async" />
+          <img src="/media/photos/stock-nyc-trails.webp?v=99f803ae" alt="" style={{ position: "absolute", inset: "0", width: "100%", height: "100%", objectFit: "cover", objectPosition: "50% 60%" }} loading="lazy" decoding="async" />
           <div style={{ position: "absolute", inset: "0", background: "linear-gradient(90deg, rgba(7,12,23,0.92) 0%, rgba(7,12,23,0.6) 55%, rgba(7,12,23,0.35) 100%)" }} />
           <div style={{ position: "relative", maxWidth: "1360px", margin: "0 auto", padding: "128px 28px", display: "flex", flexWrap: "wrap", gap: "32px 64px", alignItems: "flex-end", justifyContent: "space-between" }}>
             <h2 style={{ margin: "0", maxWidth: "860px", fontSize: "clamp(36px, 5vw, 76px)", lineHeight: "1", letterSpacing: "-0.035em", fontWeight: "600" }}>Put your brand where <span style={{ color: "#FBAE4F" }}>3,000,000 cars</span> park every day.</h2>
@@ -33,7 +33,7 @@ export default class Footer extends React.Component {
         <div style={{ maxWidth: "1360px", margin: "0 auto", padding: "80px 28px 40px" }}>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))", gap: "48px 32px" }}>
             <div style={{ display: "flex", flexDirection: "column", gap: "18px" }}>
-              <img src="/media/brand/alm-logo.png" alt="A Lot Media" style={{ height: "48px", width: "auto", alignSelf: "flex-start" }} loading="lazy" decoding="async" />
+              <img src="/media/brand/alm-logo.png?v=6fceb514" alt="A Lot Media" style={{ height: "48px", width: "auto", alignSelf: "flex-start" }} loading="lazy" decoding="async" />
               <p style={{ margin: "0", fontSize: "14px", lineHeight: "1.65", fontWeight: "500", color: "#A3ACBC" }}>The premier out-of-home advertising company specializing in parking lots and garages. Designing and installing since 2016.</p>
               <A href="mailto:team@alotmedia.com" style={{ fontSize: "14px", fontWeight: "600", color: "#FFFFFF", textDecoration: "none" }}>team@alotmedia.com</A>
               <A href="tel:18607169084" style={{ fontSize: "14px", fontWeight: "600", color: "#FFFFFF", textDecoration: "none" }}>1.860.716.9084</A>

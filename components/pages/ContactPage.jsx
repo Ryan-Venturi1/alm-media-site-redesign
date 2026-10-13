@@ -78,7 +78,7 @@ export default class ContactPage extends React.Component {
                 </div>
               </div>
               <div style={{ marginTop: "40px", flex: "1", minHeight: "260px", borderRadius: "18px", overflow: "hidden", background: "#0B1220" }}>
-                <img src="/media/photos/stock-nyc-trails.webp" alt="Manhattan skyline with highway light trails at night" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} loading="lazy" decoding="async" />
+                <img src="/media/photos/stock-nyc-trails.webp?v=99f803ae" alt="Manhattan skyline with highway light trails at night" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} loading="lazy" decoding="async" />
               </div>
             </div>
             <div style={{ flex: "1 1 560px", minWidth: "0", padding: "40px", borderRadius: "18px", background: "#FFFFFF" }}>

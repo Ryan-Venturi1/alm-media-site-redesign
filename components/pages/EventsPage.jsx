@@ -24,18 +24,18 @@ export default class EventsPage extends React.Component {
     var kind = st.kind || 'all';
 
     var models = [
-      { id: 'activations', title: 'Event activation', kicker: 'BRANDS & AGENCIES', img: '/media/renders/event-popup-launch.webp', pos: '55% 50%',
-        alt: 'Concept render of a car launch pop-up inside a parking garage level', caption: 'GARAGE-LEVEL LAUNCH · CONCEPT RENDER',
+      { id: 'activations', title: 'Event activation', kicker: 'BRANDS & AGENCIES', img: '/media/photos/stock-car-event.webp?v=d303b124', pos: '55% 50%',
+        alt: 'Crowd filming a car at a live automotive event at night (stock photo)', caption: 'LIVE ACTIVATION · STOCK PHOTO',
         desc: 'Branded spaces and consumer experiences inside the parking or event footprint — product demos, sampling, hospitality, content capture, pop-ups and vehicle test drives — surrounded by our screens and walls.',
         who: 'Brands, agencies and experiential producers', give: 'The space, tents, power, vehicles, signage and on-site static and digital media',
         price: 'Small event (under 20 spaces) or full activation (about 30 spaces)', ex: ['Pop-ups', 'Sampling', 'Product demos', 'Test drives'], cta: 'Plan an activation' },
-      { id: 'vip', title: 'VIP park & shuttle', kicker: 'PREMIUM & GROUP ARRIVAL', img: '/media/renders/rooftop-event.webp', pos: '50% 50%',
-        alt: 'Concept render of a rooftop parking event with a hospitality tent and a guest vehicle at dusk', caption: 'VIP ARRIVAL · CONCEPT RENDER',
+      { id: 'vip', title: 'VIP park & shuttle', kicker: 'PREMIUM & GROUP ARRIVAL', img: '/media/photos/stock-rooftop-tent.webp?v=b0f4fddd', pos: '50% 50%',
+        alt: 'Guests under a lit canopy at an evening rooftop event (stock photo)', caption: 'VIP HOSPITALITY · STOCK PHOTO',
         desc: 'Premium, pre-arranged parking paired with shuttles, guest routing and on-site coordination — plus bulk parking blocks for organizers, sponsors, fleets and large attendee groups.',
         who: 'Event organizers, sponsors, hospitality groups and agencies', give: 'Reserved and bulk parking, shuttles, tents, vehicles, generators, signage and barricades',
         price: 'Scoped per event, by guests, vehicles and cities', ex: ['VIP parking', 'Shuttles', 'Bulk parking', 'Hospitality'], cta: 'Plan VIP arrival' },
-      { id: 'gameday', title: 'Game day & sponsorship', kicker: 'TEAMS, VENUES & SPONSORS', img: '/media/renders/event-game-day.webp', pos: '50% 50%',
-        alt: 'Concept render of fans walking from a parking garage to a stadium at sunset', caption: 'GAME DAY · CONCEPT RENDER',
+      { id: 'gameday', title: 'Game day & sponsorship', kicker: 'TEAMS, VENUES & SPONSORS', img: '/media/photos/stock-tailgate.webp?v=bdd01506', pos: '50% 50%',
+        alt: 'Friends tailgating beside pickup trucks in a lot (stock photo)', caption: 'TAILGATE · STOCK PHOTO',
         desc: 'On game day the whole location becomes media: a tailgate takeover with activation and multiple media around the crowd, event pricing on the rate boards, and sponsorship packages that tie it all together.',
         who: 'Teams, venues, sponsors and promoters', give: 'Location takeover, activation, sponsor rights, event pricing on DDRBs and branded media',
         price: 'Domination: location takeover, activation and multiple media', ex: ['Tailgates', 'Sponsor takeovers', 'Event pricing', 'Wayfinding'], cta: 'Build a game-day package' }
@@ -43,25 +43,25 @@ export default class EventsPage extends React.Component {
 
     var kinds = [['all', 'ALL'], ['media', 'MEDIA'], ['arrival', 'PARKING & ARRIVAL'], ['live', 'LIVE EXPERIENCE']];
     var venues = [
-      { name: 'Permanent media', group: 'MEDIA', img: '/media/photos/mt-bank-ddrb.webp', pos: '60% 50%', note: 'REAL INSTALL', alt: 'A Lot Media Digital Dynamic Rate Board with an M&T Bank ad at a garage entrance',
+      { name: 'Permanent media', group: 'MEDIA', img: '/media/photos/mt-bank-ddrb.webp?v=9afe12a0', pos: '60% 50%', note: 'REAL INSTALL', alt: 'A Lot Media Digital Dynamic Rate Board with an M&T Bank ad at a garage entrance',
         desc: 'Installed digital and static media in and around parking, event sites and high-traffic centers — sold by the placement or across the network.', cap: 'Installed · 110+ digital units in NY & CT', best: 'Always-on presence in priority markets',
         fits: ['media'] },
-      { name: 'Temporary media', group: 'MEDIA', img: '/media/photos/a-beautiful-noise-posters.webp', pos: '50% 50%', note: 'REAL INSTALL', alt: 'A Beautiful Noise posters along a parking garage wall',
+      { name: 'Temporary media', group: 'MEDIA', img: '/media/photos/a-beautiful-noise-posters.webp?v=88fee631', pos: '50% 50%', note: 'REAL INSTALL', alt: 'A Beautiful Noise posters along a parking garage wall',
         desc: 'Short-duration signage and displays deployed around events, seasonal traffic or a targeted campaign — flexible timing, locations and formats.', cap: 'Campaign · on demand', best: 'Event windows and seasonal pushes',
         fits: ['media'] },
-      { name: 'Mobile media', group: 'MEDIA', img: '/media/photos/stock-nyc-trails.webp', pos: '50% 60%', note: 'STOCK PHOTO', alt: 'City traffic at night seen from above',
+      { name: 'Mobile media', group: 'MEDIA', img: '/media/photos/stock-nyc-trails.webp?v=99f803ae', pos: '50% 60%', note: 'STOCK PHOTO', alt: 'City traffic at night seen from above',
         desc: 'Branded vehicles, trailers and mobile display units that follow the crowd along event routes, arrival zones and high-traffic corridors.', cap: 'Mobile · on demand', best: 'Reach beyond a single venue',
         fits: ['media'] },
-      { name: 'VIP park & shuttle', group: 'PARKING & ARRIVAL', img: '/media/renders/rooftop-event.webp', pos: '50% 50%', note: 'CONCEPT RENDER', alt: 'Concept render of a rooftop parking event with a hospitality tent',
+      { name: 'VIP park & shuttle', group: 'PARKING & ARRIVAL', img: '/media/photos/stock-rooftop-tent.webp?v=b0f4fddd', pos: '50% 50%', note: 'STOCK PHOTO', alt: 'Guests under a lit canopy at an evening rooftop event (stock photo)',
         desc: 'Premium, pre-arranged parking with shuttles, guest routing and on-site coordination for VIPs, sponsors and hospitality groups.', cap: 'Per event', best: 'Premium arrivals',
         fits: ['arrival'] },
-      { name: 'Bulk parking', group: 'PARKING & ARRIVAL', img: '/media/photos/stock-aerial.webp', pos: '50% 50%', note: 'STOCK PHOTO', alt: 'Aerial view of a large surface parking lot',
+      { name: 'Bulk parking', group: 'PARKING & ARRIVAL', img: '/media/photos/stock-aerial.webp?v=1f2e8bf5', pos: '50% 50%', note: 'STOCK PHOTO', alt: 'Aerial view of a large surface parking lot',
         desc: 'Blocks of parking reserved for organizers, sponsors, fleets, employees or large attendee groups — one solution for access, allocation and arrival.', cap: 'Blocks of spaces', best: 'Large groups and fleets',
         fits: ['arrival'] },
-      { name: 'Event activation', group: 'LIVE EXPERIENCE', img: '/media/renders/event-popup-launch.webp', pos: '55% 50%', note: 'CONCEPT RENDER', alt: 'Concept render of a car launch pop-up inside a parking garage',
+      { name: 'Event activation', group: 'LIVE EXPERIENCE', img: '/media/photos/stock-car-event.webp?v=d303b124', pos: '55% 50%', note: 'STOCK PHOTO', alt: 'Crowd filming a car at a live automotive event at night (stock photo)',
         desc: 'Branded spaces and consumer experiences in the parking or event footprint — product demos, sampling, hospitality and content capture.', cap: 'Small · full activation · takeover', best: 'Launches, sampling, test drives',
         fits: ['live'] },
-      { name: 'Sponsorship', group: 'LIVE EXPERIENCE', img: '/media/renders/event-game-day.webp', pos: '50% 50%', note: 'CONCEPT RENDER', alt: 'Concept render of fans walking from a parking garage to a stadium at sunset',
+      { name: 'Sponsorship', group: 'LIVE EXPERIENCE', img: '/media/photos/stock-tailgate.webp?v=bdd01506', pos: '50% 50%', note: 'STOCK PHOTO', alt: 'Friends tailgating beside pickup trucks in a lot (stock photo)',
         desc: 'Custom packages that combine brand rights with media, parking, shuttle and activation inventory across the attendee journey.', cap: 'Custom packages', best: 'Game days, tailgates, festivals',
         fits: ['live'] }
     ];
@@ -147,7 +147,7 @@ export default class EventsPage extends React.Component {
         {/* HERO */}
         <div style={{ background: "#05080F" }}>
           <section className="alm-hero" data-scrub="exit" style={{ position: "relative", minHeight: "860px", background: "#05080F", color: "#FFFFFF", overflow: "hidden" }}>
-            <video className="alm-hero-media" ref={v.vidRef} src="/media/video/garage-car.mp4" poster="/media/video/garage-car-poster.webp" autoPlay muted loop playsInline preload="auto" aria-hidden="true" style={{ position: "absolute", inset: "0", width: "100%", height: "100%", objectFit: "cover", objectPosition: "50% 55%" }} />
+            <video className="alm-hero-media" ref={v.vidRef} src="/media/video/garage-car.mp4?v=20843b73" poster="/media/video/garage-car-poster.webp?v=494a528b" autoPlay muted loop playsInline preload="auto" aria-hidden="true" style={{ position: "absolute", inset: "0", width: "100%", height: "100%", objectFit: "cover", objectPosition: "50% 55%" }} />
             <div style={{ position: "absolute", inset: "0", background: "linear-gradient(180deg, rgba(5,8,15,0.45) 0%, rgba(5,8,15,0.2) 38%, rgba(5,8,15,0.92) 100%)" }} />
             <div className="alm-hero-copy" style={{ position: "relative", maxWidth: "1360px", minHeight: "860px", margin: "0 auto", padding: "0 28px 64px", boxSizing: "border-box", display: "flex", flexDirection: "column", justifyContent: "flex-end" }}>
               <div className="alm-rise" style={{ display: "flex", alignItems: "center", gap: "10px", fontSize: "15px", fontWeight: "600", letterSpacing: "-0.005em", color: "#FBAE4F" }}><span style={{ width: "7px", height: "7px", background: "#FBAE4F", borderRadius: "50%" }} />Events &amp; venues</div>

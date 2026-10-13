@@ -70,7 +70,7 @@ export default class Nav extends React.Component {
         <div className="alm-nav-bar" ref={v.barRef} style={{ position: "relative", background: "rgba(11,18,32,0.92)", backdropFilter: "saturate(180%) blur(20px)", WebkitBackdropFilter: "saturate(180%) blur(20px)", borderBottom: "1px solid rgba(255,255,255,0.06)" }}>
           <div style={{ maxWidth: "1360px", margin: "0 auto", padding: "0 28px", minHeight: "68px", display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "space-between", gap: "8px 28px" }}>
             <A href="/" aria-label="A Lot Media home" style={{ display: "inline-flex", padding: "14px 0" }}>
-              <img src="/media/brand/alm-logo.png" alt="A Lot Media" style={{ height: "34px", width: "auto", display: "block" }} />
+              <img src="/media/brand/alm-logo.png?v=6fceb514" alt="A Lot Media" style={{ height: "34px", width: "auto", display: "block" }} />
             </A>
             <nav className="alm-nav-links" aria-label="Primary" style={{ flex: "1 1 560px", minWidth: "0", display: "flex", justifyContent: "flex-end", alignItems: "center", gap: "2px", overflowX: "auto" }}>
               {(v.biz || []).map((l, lI) => (

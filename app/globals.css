@@ -196,9 +196,9 @@ html.alm-motion .alm-hs.alm-hs-on .alm-hs-btns { display: none !important; }
 html.alm-motion .alm-hs.alm-hs-on .alm-hs-bar { display: block; }
 .alm-hs-bar i { display: block; height: 100%; background: #0B1220; transform-origin: 0 50%; transform: scaleX(var(--p, 0)); }
 
-/* phone header: logo + CTA on one row, sections scroll sideways beneath */
-@media (max-width: 760px) {
-  .alm-nav-util { display: none; }
+/* phone and tablet header: logo + CTA on one row, sections scroll sideways beneath */
+@media (max-width: 760px) { .alm-nav-util { display: none; } }
+@media (max-width: 1180px) {
   .alm-nav-links { order: 3; flex: 1 1 100% !important; justify-content: flex-start !important; margin: 0 -12px; padding-bottom: 6px; scrollbar-width: none; }
   .alm-nav-links::-webkit-scrollbar { display: none; }
   .alm-ncta { order: 2; }

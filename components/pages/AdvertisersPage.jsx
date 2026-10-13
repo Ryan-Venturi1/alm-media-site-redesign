@@ -61,30 +61,30 @@ export default class AdvertisersPage extends React.Component {
     var summary = (!a.length && !v.length) ? 'Everyone who parks — pick a filter to narrow it down.' :
       ((a.length ? 'Drivers by ' + a.join(', ').toLowerCase() : 'All drivers') + (v.length ? ', parking at ' + v.join(', ').toLowerCase() + '.' : ', across every venue type.'));
     var logoIds = [
-      ['Chase', '/media/logos/chase.png'], ['Clorox', '/media/logos/clorox.png'], ['McCormick', '/media/logos/mccormick.png'],
-      ['Corcoran', '/media/logos/corcoran.png'], ['AriZona', '/media/logos/arizona.png'], ['Avail', '/media/logos/avail.png'],
-      ['ÖDD', '/media/logos/odd.png'], ['Citibank', '/media/logos/citibank.png'], ['Anheuser-Busch', '/media/logos/anheuser-busch.png'], ['Allstate', '/media/logos/allstate.png'],
-      ['Panera Bread', '/media/logos/panera.png'], ['eBay', '/media/logos/ebay.png'], ['Gatorade', '/media/logos/gatorade.png'],
-      ['General Mills', '/media/logos/general-mills.png'], ['New York Yankees', '/media/logos/yankees.png'], ['Live Nation', '/media/logos/live-nation.png'],
-      ['Optum', '/media/logos/optum.png'], ['Renault', '/media/logos/renault.png'], ['Rimowa', '/media/logos/rimowa.png'],
-      ['The Peninsula Hotels', '/media/logos/peninsula-hotels.png'], ['Hartford HealthCare', '/media/logos/hartford-healthcare.png'], ['NetApp', '/media/logos/netapp.png'],
-      ['Bumble', '/media/logos/bumble.png'], ['FILA', '/media/logos/fila.png'], ['Lucky Charms', '/media/logos/lucky-charms.png'],
-      ['Getaround', '/media/logos/getaround.png'], ['Blank Street', '/media/logos/blank-street.png'], ['CubeSmart', '/media/logos/cubesmart.png'],
-      ['IFC Center', '/media/logos/ifc-center.png'], ['Pinehurst', '/media/logos/pinehurst.png'], ['VNS Health', '/media/logos/vns-health.png'],
-      ['Big Apple Circus', '/media/logos/big-apple-circus.png'], ['STP', '/media/logos/stp.png'], ['Lucas Oil', '/media/logos/lucas-oil.png'],
-      ['Recess', '/media/logos/recess.png'], ['Vertex', '/media/logos/vertex.png'], ['Moke', '/media/logos/moke.png'],
-      ['A Beautiful Noise', '/media/logos/a-beautiful-noise.png'], ['Dr. Barbara Sturm', '/media/logos/barbara-sturm.png'], ['Chubbies', '/media/logos/chubbies.png'],
-      ['GoHealth Urgent Care', '/media/logos/gohealth.png'], ['Greg Yüna', '/media/logos/greg-yuna.png'], ['Malibu Mylk', '/media/logos/malibu-mylk.png'],
-      ['Marlo Laz', '/media/logos/marlo-laz.png'], ['OANDA', '/media/logos/oanda.png'], ['Planned Parenthood', '/media/logos/planned-parenthood.png'],
-      ['PulsePoint', '/media/logos/pulsepoint.png'], ['Rise Brewing Co.', '/media/logos/rise.png'], ['Sophia', '/media/logos/sophia.png'],
-      ['Summers', '/media/logos/summers.png'], ['Sweet Home Alabama', '/media/logos/sweet-home-alabama.png'], ['Temptations', '/media/logos/temptations.png'],
-      ['UC Riverside', '/media/logos/uc-riverside.png'], ['Urban Air', '/media/logos/urban-air.png'], ['Wizest', '/media/logos/wizest.png']
+      ['Chase', '/media/logos/chase.png?v=36175c78'], ['Clorox', '/media/logos/clorox.png?v=94b22c30'], ['McCormick', '/media/logos/mccormick.png?v=6482d04f'],
+      ['Corcoran', '/media/logos/corcoran.png?v=612f3cb7'], ['AriZona', '/media/logos/arizona.png?v=d155c443'], ['Avail', '/media/logos/avail.png?v=0248d690'],
+      ['ÖDD', '/media/logos/odd.png?v=da197040'], ['Citibank', '/media/logos/citibank.png?v=4e895247'], ['Anheuser-Busch', '/media/logos/anheuser-busch.png?v=46d09486'], ['Allstate', '/media/logos/allstate.png?v=ddd0329f'],
+      ['Panera Bread', '/media/logos/panera.png?v=5633a8b9'], ['eBay', '/media/logos/ebay.png?v=07a76120'], ['Gatorade', '/media/logos/gatorade.png?v=c1888be6'],
+      ['General Mills', '/media/logos/general-mills.png?v=20a2b94e'], ['New York Yankees', '/media/logos/yankees.png?v=1860f7ef'], ['Live Nation', '/media/logos/live-nation.png?v=0184e138'],
+      ['Optum', '/media/logos/optum.png?v=972ba8e4'], ['Renault', '/media/logos/renault.png?v=e4c6584d'], ['Rimowa', '/media/logos/rimowa.png?v=8a9dad9f'],
+      ['The Peninsula Hotels', '/media/logos/peninsula-hotels.png?v=a252e99f'], ['Hartford HealthCare', '/media/logos/hartford-healthcare.png?v=d63767e1'], ['NetApp', '/media/logos/netapp.png?v=5e24d22a'],
+      ['Bumble', '/media/logos/bumble.png?v=70070fb5'], ['FILA', '/media/logos/fila.png?v=eaa1cdc1'], ['Lucky Charms', '/media/logos/lucky-charms.png?v=e81a2cd1'],
+      ['Getaround', '/media/logos/getaround.png?v=214c8213'], ['Blank Street', '/media/logos/blank-street.png?v=2c18d517'], ['CubeSmart', '/media/logos/cubesmart.png?v=fb3ad9e1'],
+      ['IFC Center', '/media/logos/ifc-center.png?v=a68e9a22'], ['Pinehurst', '/media/logos/pinehurst.png?v=149ccd10'], ['VNS Health', '/media/logos/vns-health.png?v=70e65c7c'],
+      ['Big Apple Circus', '/media/logos/big-apple-circus.png?v=e0b67887'], ['STP', '/media/logos/stp.png?v=bf97bbb4'], ['Lucas Oil', '/media/logos/lucas-oil.png?v=76cae19d'],
+      ['Recess', '/media/logos/recess.png?v=709c3d68'], ['Vertex', '/media/logos/vertex.png?v=6888bc26'], ['Moke', '/media/logos/moke.png?v=f2751c10'],
+      ['A Beautiful Noise', '/media/logos/a-beautiful-noise.png?v=4209fb83'], ['Dr. Barbara Sturm', '/media/logos/barbara-sturm.png?v=487b3939'], ['Chubbies', '/media/logos/chubbies.png?v=4823392f'],
+      ['GoHealth Urgent Care', '/media/logos/gohealth.png?v=52d395d4'], ['Greg Yüna', '/media/logos/greg-yuna.png?v=36598325'], ['Malibu Mylk', '/media/logos/malibu-mylk.png?v=0d9f734e'],
+      ['Marlo Laz', '/media/logos/marlo-laz.png?v=4fb3e784'], ['OANDA', '/media/logos/oanda.png?v=42ca2a90'], ['Planned Parenthood', '/media/logos/planned-parenthood.png?v=41440419'],
+      ['PulsePoint', '/media/logos/pulsepoint.png?v=274f1425'], ['Rise Brewing Co.', '/media/logos/rise.png?v=abdc745b'], ['Sophia', '/media/logos/sophia.png?v=63763d12'],
+      ['Summers', '/media/logos/summers.png?v=30c80830'], ['Sweet Home Alabama', '/media/logos/sweet-home-alabama.png?v=2681a39d'], ['Temptations', '/media/logos/temptations.png?v=feab304c'],
+      ['UC Riverside', '/media/logos/uc-riverside.png?v=89f47f66'], ['Urban Air', '/media/logos/urban-air.png?v=22d2fba9'], ['Wizest', '/media/logos/wizest.png?v=a2db4400']
     ];
     var sol = [
-      { no: '01', name: 'Static', chip: 'COAST TO COAST', chipBg: '#E3E5EA', img: '/media/photos/compass-wallscape.webp', pos: '50% 50%', alt: 'Compass real estate wallscape on a garage level', href: '/formats#static', cta: 'Static formats', desc: 'Wallscapes, elevator wraps, gate arms, branded tickets and full garage takeovers — designed, printed and installed for you.', dark: false },
-      { no: '02', name: 'Digital', chip: 'LIVE IN NY & CT', chipBg: '#8FDCE8', img: '/media/photos/phone-at-digital-panel.webp', pos: '30% 50%', alt: 'Man using his phone beside a digital panel', href: '/formats#digital', cta: 'Digital formats', desc: 'Rate boards, interactive panels and motion-enabled signage — full-motion video and audio, unlimited creative updates, content that switches by time of day.', dark: false },
-      { no: '03', name: 'Events & venues', chip: 'NEXT GROWTH ENGINE', chipBg: '#FBAE4F', dark: true, img: '/media/renders/event-popup-launch.webp', pos: '55% 50%', alt: 'Concept render of a car launch pop-up inside a parking garage', href: '/events', cta: 'Events & venues', desc: 'Pop-ups, product displays and vehicle test drives, VIP park-and-shuttle, and game-day takeovers in the lots where the audience arrives.', dark: false },
-      { no: '04', name: 'Market domination', chip: 'GARAGE TAKEOVER', chipBg: '#FBAE4F', img: '/media/photos/msk-garage-entrance.webp', pos: '50% 50%', alt: 'Garage entrance with digital panel and branded wayfinding', href: '#targeting', cta: 'Own a market', desc: 'Every surface in a location at once — gate arms, tickets, walls, elevators and screens — placed where your audience parks.', dark: true }
+      { no: '01', name: 'Static', chip: 'COAST TO COAST', chipBg: '#E3E5EA', img: '/media/photos/compass-wallscape.webp?v=7a9f7052', pos: '50% 50%', alt: 'Compass real estate wallscape on a garage level', href: '/formats#static', cta: 'Static formats', desc: 'Wallscapes, elevator wraps, gate arms, branded tickets and full garage takeovers — designed, printed and installed for you.', dark: false },
+      { no: '02', name: 'Digital', chip: 'LIVE IN NY & CT', chipBg: '#8FDCE8', img: '/media/photos/phone-at-digital-panel.webp?v=f3e056f2', pos: '30% 50%', alt: 'Man using his phone beside a digital panel', href: '/formats#digital', cta: 'Digital formats', desc: 'Rate boards, interactive panels and motion-enabled signage — full-motion video and audio, unlimited creative updates, content that switches by time of day.', dark: false },
+      { no: '03', name: 'Events & venues', chip: 'NEXT GROWTH ENGINE', chipBg: '#FBAE4F', dark: true, img: '/media/photos/stock-car-event.webp?v=d303b124', pos: '55% 50%', alt: 'Crowd filming a car at a live automotive event at night (stock photo)', href: '/events', cta: 'Events & venues', desc: 'Pop-ups, product displays and vehicle test drives, VIP park-and-shuttle, and game-day takeovers in the lots where the audience arrives.', dark: false },
+      { no: '04', name: 'Market domination', chip: 'GARAGE TAKEOVER', chipBg: '#FBAE4F', img: '/media/photos/msk-garage-entrance.webp?v=a0e27476', pos: '50% 50%', alt: 'Garage entrance with digital panel and branded wayfinding', href: '#targeting', cta: 'Own a market', desc: 'Every surface in a location at once — gate arms, tickets, walls, elevators and screens — placed where your audience parks.', dark: true }
     ];
     return {
       tl: { pct: pct.toFixed(1), points: pts },
@@ -107,7 +107,7 @@ export default class AdvertisersPage extends React.Component {
         {/* HERO */}
         <div style={{ background: "#05080F" }}>
           <section className="alm-hero" data-scrub="exit" style={{ position: "relative", minHeight: "760px", background: "#0B1220", overflow: "hidden", color: "#FFFFFF" }}>
-            <img className="alm-ken alm-hero-media" src="/media/photos/panera-now-open.webp" alt="Drivers walking past a Panera Bread ad on an A Lot Media digital panel" style={{ position: "absolute", inset: "0", width: "100%", height: "100%", objectFit: "cover", objectPosition: "60% 45%" }} />
+            <img className="alm-ken alm-hero-media" src="/media/photos/panera-now-open.webp?v=2fa97a26" alt="Drivers walking past a Panera Bread ad on an A Lot Media digital panel" style={{ position: "absolute", inset: "0", width: "100%", height: "100%", objectFit: "cover", objectPosition: "60% 45%" }} />
             <div style={{ position: "absolute", inset: "0", background: "linear-gradient(90deg, rgba(11,18,32,0.9) 0%, rgba(11,18,32,0.55) 50%, rgba(11,18,32,0.1) 100%)" }} />
             <div className="alm-hero-copy" style={{ position: "relative", maxWidth: "1360px", minHeight: "760px", margin: "0 auto", padding: "0 28px 72px", boxSizing: "border-box", display: "flex", flexDirection: "column", justifyContent: "flex-end" }}>
               <div className="alm-rise" style={{ display: "flex", alignItems: "center", gap: "10px", fontSize: "15px", fontWeight: "600", letterSpacing: "-0.005em", opacity: "0.72" }}><span style={{ width: "7px", height: "7px", background: "#FBAE4F", borderRadius: "50%" }} />Advertise with A Lot Media</div>

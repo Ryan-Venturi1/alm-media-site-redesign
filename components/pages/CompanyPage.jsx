@@ -19,55 +19,55 @@ export default class CompanyPage extends React.Component {
     var B = '';
     var gf = st.gf || 'all';
     var all = [
-      ['/media/photos/lucid-digital-panel.webp', 'LUCID · DIGITAL PANEL · PHOTO EDITED', 'digital', 2, '40% 50%'],
-      ['/media/photos/mt-bank-ddrb.webp', 'M&T BANK · RATE BOARD', 'digital', 1, '40% 50%'],
-      ['/media/photos/bmw-digital-panel.webp', 'BMW · DIGITAL PANEL', 'digital', 1, '30% 50%'],
-      ['/media/photos/united-digital-panel.webp', 'UNITED · DIGITAL PANEL', 'digital', 1, '30% 50%'],
-      ['/media/photos/hartford-healthcare-wallscape.webp', 'HARTFORD HEALTHCARE · WALLSCAPE', 'static', 1, '50% 50%'],
-      ['/media/photos/panera-now-open.webp', 'PANERA BREAD · DIGITAL PANEL', 'digital', 1, '60% 50%'],
-      ['/media/photos/hartford-healthcare-elevator-wraps.webp', 'HARTFORD HEALTHCARE · ELEVATOR WRAP', 'static', 2, '50% 50%'],
-      ['/media/photos/a-beautiful-noise-panel.webp', 'A BEAUTIFUL NOISE · DIGITAL PANEL', 'digital', 1, '50% 40%'],
-      ['/media/photos/msk-garage-entrance.webp', 'MSK · GARAGE ENTRANCE', 'digital', 1, '50% 50%'],
-      ['/media/photos/getaround-elevator-wrap.webp', 'GETAROUND · ELEVATOR WRAP', 'static', 2, '50% 50%'],
-      ['/media/photos/recess-digital-panel.webp', 'RECESS · DIGITAL PANEL', 'digital', 1, '50% 50%'],
-      ['/media/photos/compass-wallscape.webp', 'COMPASS · WALLSCAPE', 'static', 1, '50% 50%'],
-      ['/media/photos/ddrb-connecticut.webp', 'RATE BOARD · CONNECTICUT', 'digital', 2, '50% 34%'],
-      ['/media/photos/panera-garage-lobby.webp', 'PANERA BREAD · GARAGE LOBBY', 'digital', 1, '50% 50%'],
-      ['/media/photos/hartford-healthcare-entrance-wallscape.webp', 'HARTFORD HEALTHCARE · ENTRANCE', 'static', 1, '50% 50%'],
-      ['/media/photos/blank-street-interactive-panel.webp', 'BLANK STREET · INTERACTIVE', 'digital', 1, '30% 50%'],
-      ['/media/photos/ibm-digital-panel.webp', 'IBM · DIGITAL PANEL', 'digital', 1, '60% 50%'],
-      ['/media/photos/shake-shack-panel.webp', 'SHAKE SHACK · DIGITAL PANEL', 'digital', 1, '70% 50%'],
-      ['/media/photos/ddrb-rate-board.webp', 'RATE BOARD · LIVE RATES', 'digital', 2, '50% 35%'],
-      ['/media/photos/big-apple-circus-panel.webp', 'BIG APPLE CIRCUS · DIGITAL PANEL', 'digital', 1, '50% 50%'],
-      ['/media/photos/fontainebleau-lobby-panel.webp', 'FONTAINEBLEAU · LOBBY PANEL', 'digital', 1, '50% 50%'],
-      ['/media/photos/rimowa-lobby-panel.webp', 'RIMOWA · LOBBY PANEL', 'digital', 1, '30% 50%'],
-      ['/media/photos/nyc-dot-safety-panel.webp', 'NYC DOT · SAFETY CAMPAIGN', 'digital', 1, '40% 50%'],
-      ['/media/photos/nyc-dot-office-panels.webp', 'NYC DOT · GARAGE OFFICE', 'digital', 2, '50% 50%'],
-      ['/media/photos/hartford-healthcare-kiosk.webp', 'HARTFORD HEALTHCARE · KIOSK', 'digital', 1, '60% 50%'],
-      ['/media/photos/lucid-garage-panel.webp', 'LUCID · GARAGE · PHOTO EDITED', 'digital', 1, '60% 50%'],
-      ['/media/photos/big-apple-circus-classic-car.webp', 'BIG APPLE CIRCUS · GARAGE', 'digital', 1, '60% 50%'],
-      ['/media/photos/ramp-digital-panel.webp', 'RAMP · DIGITAL PANEL', 'digital', 2, '50% 40%'],
-      ['/media/photos/hartford-healthcare-banner.webp', 'HARTFORD HEALTHCARE · BANNER', 'static', 1, '50% 50%'],
-      ['/media/photos/checkerboard-lobby-panel.webp', 'DR. BARBARA STURM · DIGITAL PANEL', 'digital', 1, '50% 50%'],
-      ['/media/photos/msk-digital-panel.webp', 'MSK · DIGITAL PANEL', 'digital', 1, '50% 50%'],
-      ['/media/photos/a-beautiful-noise-posters.webp', 'A BEAUTIFUL NOISE · STATIC POSTERS', 'static', 1, '50% 50%'],
-      ['/media/photos/digital-panel-cashier.webp', 'DIGITAL PANEL · CASHIER', 'digital', 1, '50% 50%'],
-      ['/media/photos/love-com-digital-panel.webp', 'LOVE.COM · DIGITAL PANEL', 'digital', 1, '50% 50%'],
-      ['/media/photos/hartford-healthcare-display.webp', 'HARTFORD HEALTHCARE · DISPLAY', 'digital', 1, '50% 50%'],
-      ['/media/photos/customer-service-panel.webp', 'MSK · CUSTOMER SERVICE', 'digital', 1, '50% 50%'],
-      ['/media/photos/blank-street-engagement.webp', 'BLANK STREET · ENGAGEMENT', 'digital', 1, '50% 50%']
+      ['/media/photos/lucid-digital-panel.webp?v=0437d0e2', 'LUCID · DIGITAL PANEL · PHOTO EDITED', 'digital', 2, '40% 50%'],
+      ['/media/photos/mt-bank-ddrb.webp?v=9afe12a0', 'M&T BANK · RATE BOARD', 'digital', 1, '40% 50%'],
+      ['/media/photos/bmw-digital-panel.webp?v=7d1522e8', 'BMW · DIGITAL PANEL', 'digital', 1, '30% 50%'],
+      ['/media/photos/united-digital-panel.webp?v=f8d1849b', 'UNITED · DIGITAL PANEL', 'digital', 1, '30% 50%'],
+      ['/media/photos/hartford-healthcare-wallscape.webp?v=0b3f98d9', 'HARTFORD HEALTHCARE · WALLSCAPE', 'static', 1, '50% 50%'],
+      ['/media/photos/panera-now-open.webp?v=2fa97a26', 'PANERA BREAD · DIGITAL PANEL', 'digital', 1, '60% 50%'],
+      ['/media/photos/hartford-healthcare-elevator-wraps.webp?v=20725f9d', 'HARTFORD HEALTHCARE · ELEVATOR WRAP', 'static', 2, '50% 50%'],
+      ['/media/photos/a-beautiful-noise-panel.webp?v=2610293c', 'A BEAUTIFUL NOISE · DIGITAL PANEL', 'digital', 1, '50% 40%'],
+      ['/media/photos/msk-garage-entrance.webp?v=a0e27476', 'MSK · GARAGE ENTRANCE', 'digital', 1, '50% 50%'],
+      ['/media/photos/getaround-elevator-wrap.webp?v=b5366622', 'GETAROUND · ELEVATOR WRAP', 'static', 2, '50% 50%'],
+      ['/media/photos/recess-digital-panel.webp?v=4bc61cf2', 'RECESS · DIGITAL PANEL', 'digital', 1, '50% 50%'],
+      ['/media/photos/compass-wallscape.webp?v=7a9f7052', 'COMPASS · WALLSCAPE', 'static', 1, '50% 50%'],
+      ['/media/photos/ddrb-connecticut.webp?v=088e4141', 'RATE BOARD · CONNECTICUT', 'digital', 2, '50% 34%'],
+      ['/media/photos/panera-garage-lobby.webp?v=7bffbb07', 'PANERA BREAD · GARAGE LOBBY', 'digital', 1, '50% 50%'],
+      ['/media/photos/hartford-healthcare-entrance-wallscape.webp?v=04dc2f7b', 'HARTFORD HEALTHCARE · ENTRANCE', 'static', 1, '50% 50%'],
+      ['/media/photos/blank-street-interactive-panel.webp?v=6f1265ae', 'BLANK STREET · INTERACTIVE', 'digital', 1, '30% 50%'],
+      ['/media/photos/ibm-digital-panel.webp?v=1985ec8c', 'IBM · DIGITAL PANEL', 'digital', 1, '60% 50%'],
+      ['/media/photos/shake-shack-panel.webp?v=8eddff83', 'SHAKE SHACK · DIGITAL PANEL', 'digital', 1, '70% 50%'],
+      ['/media/photos/ddrb-rate-board.webp?v=088e4141', 'RATE BOARD · LIVE RATES', 'digital', 2, '50% 35%'],
+      ['/media/photos/big-apple-circus-panel.webp?v=4197fb93', 'BIG APPLE CIRCUS · DIGITAL PANEL', 'digital', 1, '50% 50%'],
+      ['/media/photos/fontainebleau-lobby-panel.webp?v=22d6fc68', 'FONTAINEBLEAU · LOBBY PANEL', 'digital', 1, '50% 50%'],
+      ['/media/photos/rimowa-lobby-panel.webp?v=d9ba2d8e', 'RIMOWA · LOBBY PANEL', 'digital', 1, '30% 50%'],
+      ['/media/photos/nyc-dot-safety-panel.webp?v=345b9ce9', 'NYC DOT · SAFETY CAMPAIGN', 'digital', 1, '40% 50%'],
+      ['/media/photos/nyc-dot-office-panels.webp?v=37f4e8e2', 'NYC DOT · GARAGE OFFICE', 'digital', 2, '50% 50%'],
+      ['/media/photos/hartford-healthcare-kiosk.webp?v=d538280e', 'HARTFORD HEALTHCARE · KIOSK', 'digital', 1, '60% 50%'],
+      ['/media/photos/lucid-garage-panel.webp?v=ac78bd77', 'LUCID · GARAGE · PHOTO EDITED', 'digital', 1, '60% 50%'],
+      ['/media/photos/big-apple-circus-classic-car.webp?v=5027f676', 'BIG APPLE CIRCUS · GARAGE', 'digital', 1, '60% 50%'],
+      ['/media/photos/ramp-digital-panel.webp?v=182a3933', 'RAMP · DIGITAL PANEL', 'digital', 2, '50% 40%'],
+      ['/media/photos/hartford-healthcare-banner.webp?v=c86a9b67', 'HARTFORD HEALTHCARE · BANNER', 'static', 1, '50% 50%'],
+      ['/media/photos/checkerboard-lobby-panel.webp?v=18fa5976', 'DR. BARBARA STURM · DIGITAL PANEL', 'digital', 1, '50% 50%'],
+      ['/media/photos/msk-digital-panel.webp?v=d366be44', 'MSK · DIGITAL PANEL', 'digital', 1, '50% 50%'],
+      ['/media/photos/a-beautiful-noise-posters.webp?v=88fee631', 'A BEAUTIFUL NOISE · STATIC POSTERS', 'static', 1, '50% 50%'],
+      ['/media/photos/digital-panel-cashier.webp?v=9a35069a', 'DIGITAL PANEL · CASHIER', 'digital', 1, '50% 50%'],
+      ['/media/photos/love-com-digital-panel.webp?v=afe0da0c', 'LOVE.COM · DIGITAL PANEL', 'digital', 1, '50% 50%'],
+      ['/media/photos/hartford-healthcare-display.webp?v=de776ef4', 'HARTFORD HEALTHCARE · DISPLAY', 'digital', 1, '50% 50%'],
+      ['/media/photos/customer-service-panel.webp?v=cd1cabc1', 'MSK · CUSTOMER SERVICE', 'digital', 1, '50% 50%'],
+      ['/media/photos/blank-street-engagement.webp?v=af6880da', 'BLANK STREET · ENGAGEMENT', 'digital', 1, '50% 50%']
     ];
     var list = all.filter(function (p) { return gf === 'all' || p[2] === gf; });
     var idx = st.lb == null ? -1 : st.lb;
     var cur = idx >= 0 && idx < list.length ? list[idx] : null;
     var fdefs = [['all', 'ALL'], ['digital', 'DIGITAL'], ['static', 'STATIC']];
     var stack = [
-      ['01', 'Manufacturing', 'Digital signage built by our sister companies, MetroClick and faytech.', '/media/photos/ddrb-connecticut.webp', '50% 34%'],
-      ['02', 'Software', 'An in-house development team and a custom-built content management system.', '/media/photos/blank-street-interactive-panel.webp', '30% 50%'],
-      ['03', 'Printing', 'Large-format printing for wallscapes, wraps and tickets.', '/media/photos/hartford-healthcare-banner.webp', '50% 50%'],
-      ['04', 'Design', 'A creative team that designs for the parking context.', '/media/photos/recess-digital-panel.webp', '70% 50%'],
-      ['05', 'Installation', 'Designing and installing since 2016.', '/media/photos/hartford-healthcare-entrance-wallscape.webp', '50% 50%'],
-      ['06', 'Sales', 'An in-house ad sales team, plus programmatic exchanges.', '/media/photos/bmw-digital-panel.webp', '30% 50%']
+      ['01', 'Manufacturing', 'Digital signage built by our sister companies, MetroClick and faytech.', '/media/photos/ddrb-connecticut.webp?v=088e4141', '50% 34%'],
+      ['02', 'Software', 'An in-house development team and a custom-built content management system.', '/media/photos/blank-street-interactive-panel.webp?v=6f1265ae', '30% 50%'],
+      ['03', 'Printing', 'Large-format printing for wallscapes, wraps and tickets.', '/media/photos/hartford-healthcare-banner.webp?v=c86a9b67', '50% 50%'],
+      ['04', 'Design', 'A creative team that designs for the parking context.', '/media/photos/recess-digital-panel.webp?v=4bc61cf2', '70% 50%'],
+      ['05', 'Installation', 'Designing and installing since 2016.', '/media/photos/hartford-healthcare-entrance-wallscape.webp?v=04dc2f7b', '50% 50%'],
+      ['06', 'Sales', 'An in-house ad sales team, plus programmatic exchanges.', '/media/photos/bmw-digital-panel.webp?v=7d1522e8', '30% 50%']
     ];
     return {
       stack: stack.map(function (s) { return { no: s[0], title: s[1], desc: s[2], img: B + s[3], pos: s[4] }; }),
@@ -113,7 +113,7 @@ export default class CompanyPage extends React.Component {
             </div>
           </div>
           <div className="alm-rise" style={{ maxWidth: "1360px", margin: "64px auto 0", height: "620px", borderRadius: "18px", overflow: "hidden", background: "#0B1220", animationDelay: ".3s" }}>
-            <img src="/media/photos/glass-lobby-panel.webp" alt="Glass-walled garage lobby with an A Lot Media digital panel and people walking" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} loading="lazy" decoding="async" />
+            <img src="/media/photos/glass-lobby-panel.webp?v=6d8d0735" alt="Glass-walled garage lobby with an A Lot Media digital panel and people walking" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} loading="lazy" decoding="async" />
           </div>
         </section>
         {/* STACK */}
@@ -177,7 +177,7 @@ export default class CompanyPage extends React.Component {
             <div style={{ marginTop: "48px", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: "16px" }}>
               <div className="alm-tile alm-in" style={{ borderRadius: "16px", overflow: "hidden", background: "#FFFFFF" }}>
                 <div style={{ height: "260px", overflow: "hidden" }}>
-                  <img src="/media/markets/hartford.webp" alt="Hartford skyline" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} loading="lazy" decoding="async" />
+                  <img src="/media/markets/hartford.webp?v=a1857c29" alt="Hartford skyline" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} loading="lazy" decoding="async" />
                 </div>
                 <div style={{ padding: "28px" }}>
                   <div style={{ fontSize: "28px", fontWeight: "650", letterSpacing: "-0.02em" }}>Hartford</div>
@@ -186,7 +186,7 @@ export default class CompanyPage extends React.Component {
               </div>
               <div className="alm-tile alm-in" style={{ borderRadius: "16px", overflow: "hidden", background: "#FFFFFF" }}>
                 <div style={{ height: "260px", overflow: "hidden" }}>
-                  <img src="/media/markets/la.webp" alt="Los Angeles city lights at night" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} loading="lazy" decoding="async" />
+                  <img src="/media/markets/la.webp?v=59df333e" alt="Los Angeles city lights at night" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} loading="lazy" decoding="async" />
                 </div>
                 <div style={{ padding: "28px" }}>
                   <div style={{ fontSize: "28px", fontWeight: "650", letterSpacing: "-0.02em" }}>Los Angeles</div>
@@ -195,7 +195,7 @@ export default class CompanyPage extends React.Component {
               </div>
               <div className="alm-tile alm-in" style={{ borderRadius: "16px", overflow: "hidden", background: "#FFFFFF" }}>
                 <div style={{ height: "260px", overflow: "hidden" }}>
-                  <img src="/media/markets/chicago.webp" alt="Chicago skyline at night" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} loading="lazy" decoding="async" />
+                  <img src="/media/markets/chicago.webp?v=c1fc7d1b" alt="Chicago skyline at night" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} loading="lazy" decoding="async" />
                 </div>
                 <div style={{ padding: "28px" }}>
                   <div style={{ fontSize: "28px", fontWeight: "650", letterSpacing: "-0.02em" }}>Chicago</div>
@@ -204,7 +204,7 @@ export default class CompanyPage extends React.Component {
               </div>
               <div className="alm-tile alm-in" style={{ borderRadius: "16px", overflow: "hidden", background: "#FFFFFF" }}>
                 <div style={{ height: "260px", overflow: "hidden" }}>
-                  <img src="/media/markets/nyc.webp" alt="Empire State Building at night" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} loading="lazy" decoding="async" />
+                  <img src="/media/markets/nyc.webp?v=ceab88a6" alt="Empire State Building at night" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} loading="lazy" decoding="async" />
                 </div>
                 <div style={{ padding: "28px" }}>
                   <div style={{ fontSize: "28px", fontWeight: "650", letterSpacing: "-0.02em" }}>New York</div>

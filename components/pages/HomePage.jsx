@@ -69,52 +69,52 @@ export default class HomePage extends React.Component {
         chipFg: live || stat ? '#0B1220' : '#FFFFFF' };
     };
     var all = [
-      mk('New York', 'NY', 'DIGITAL LIVE', '/media/markets/nyc.webp'),
-      mk('Hartford', 'CT', 'DIGITAL LIVE', '/media/markets/hartford.webp'),
-      mk('Los Angeles', 'CA', 'STATIC', '/media/markets/la.webp'),
-      mk('Chicago', 'IL', 'STATIC', '/media/markets/chicago.webp'),
-      mk('Miami', 'FL', 'STATIC', '/media/markets/miami.webp'),
-      mk('Austin', 'TX', 'STATIC', '/media/markets/austin.webp'),
-      mk('Boston', 'MA', 'STATIC', '/media/markets/boston.webp'),
-      mk('Washington', 'DC', 'SERVED', '/media/markets/dc.webp'),
-      mk('Atlanta', 'GA', 'SERVED', '/media/markets/atlanta.webp'),
-      mk('Nashville', 'TN', 'SERVED', '/media/markets/nashville.webp'),
-      mk('Detroit', 'MI', 'SERVED', '/media/markets/detroit.webp')
+      mk('New York', 'NY', 'DIGITAL LIVE', '/media/markets/nyc.webp?v=ceab88a6'),
+      mk('Hartford', 'CT', 'DIGITAL LIVE', '/media/markets/hartford.webp?v=a1857c29'),
+      mk('Los Angeles', 'CA', 'STATIC', '/media/markets/la.webp?v=59df333e'),
+      mk('Chicago', 'IL', 'STATIC', '/media/markets/chicago.webp?v=c1fc7d1b'),
+      mk('Miami', 'FL', 'STATIC', '/media/markets/miami.webp?v=599c78ee'),
+      mk('Austin', 'TX', 'STATIC', '/media/markets/austin.webp?v=5e92badf'),
+      mk('Boston', 'MA', 'STATIC', '/media/markets/boston.webp?v=e3730036'),
+      mk('Washington', 'DC', 'SERVED', '/media/markets/dc.webp?v=7b36c5f4'),
+      mk('Atlanta', 'GA', 'SERVED', '/media/markets/atlanta.webp?v=466f3c23'),
+      mk('Nashville', 'TN', 'SERVED', '/media/markets/nashville.webp?v=a608fc0a'),
+      mk('Detroit', 'MI', 'SERVED', '/media/markets/detroit.webp?v=24ce01a5')
     ];
     var fdefs = [['all', 'ALL MARKETS'], ['digital', 'DIGITAL LIVE'], ['static', 'STATIC'], ['served', 'SERVED']];
     var fmts = [
-      { name: 'Gate arms & entry', biz: 'STATIC', stage: '01 · ARRIVE', img: '/media/renders/gate-arm-wrap.webp', pos: '50% 50%', href: '/formats#gatearm', desc: 'The first thing every driver sees, twice a visit.', alt: 'Concept render of an orange and navy branded gate arm wrap', render: true },
-      { name: 'Branded tickets', biz: 'STATIC', stage: '01 · ARRIVE', img: '/media/renders/branded-ticket.webp', pos: '45% 50%', href: '/formats#ticket', desc: 'A message in every driver’s hand until they leave.', alt: 'Concept render of a driver taking a branded parking ticket', render: true },
-      { name: 'Rate boards', biz: 'DIGITAL', stage: '02 · PARK', img: '/media/photos/ddrb-connecticut.webp', pos: '50% 35%', href: '/formats#ddrb', desc: 'Live pricing up top, full-motion advertising below.', alt: 'A Lot Media digital rate board' },
-      { name: 'Wallscapes', biz: 'STATIC', stage: '02 · PARK', img: '/media/photos/hartford-healthcare-wallscape.webp', pos: '50% 50%', href: '/formats#wallscape', desc: 'Large-format walls drivers face as they park.', alt: 'Hartford HealthCare wallscape' },
-      { name: 'Digital panels', biz: 'DIGITAL', stage: '03 · WALK', img: '/media/photos/blank-street-interactive-panel.webp', pos: '35% 50%', href: '/formats#panel', desc: 'Interactive screens — tap, scan and redeem.', alt: 'Man tapping his phone on an interactive digital panel' },
-      { name: 'Elevator wraps', biz: 'STATIC', stage: '03 · WALK', img: '/media/photos/hartford-healthcare-elevator-wraps.webp', pos: '50% 50%', href: '/formats#elevator', desc: 'Branded doors at the pause before the destination.', alt: 'Elevator door wraps' },
-      { name: 'Events & venues', biz: 'EVENTS', stage: '04 · ACTIVATE', img: '/media/renders/event-popup-launch.webp', pos: '55% 50%', href: '/events', desc: 'Activations, VIP park & shuttle and game-day packages.', alt: 'Concept render of a car launch pop-up inside a parking garage', render: true }
+      { name: 'Gate arms & entry', biz: 'STATIC', stage: '01 · ARRIVE', img: '/media/renders/gate-arm-wrap.webp?v=1dedea94', pos: '50% 50%', href: '/formats#gatearm', desc: 'The first thing every driver sees, twice a visit.', alt: 'Concept render of an orange and navy branded gate arm wrap', render: true },
+      { name: 'Branded tickets', biz: 'STATIC', stage: '01 · ARRIVE', img: '/media/renders/branded-ticket.webp?v=6c7f672f', pos: '45% 50%', href: '/formats#ticket', desc: 'A message in every driver’s hand until they leave.', alt: 'Concept render of a driver taking a branded parking ticket', render: true },
+      { name: 'Rate boards', biz: 'DIGITAL', stage: '02 · PARK', img: '/media/photos/ddrb-connecticut.webp?v=088e4141', pos: '50% 35%', href: '/formats#ddrb', desc: 'Live pricing up top, full-motion advertising below.', alt: 'A Lot Media digital rate board' },
+      { name: 'Wallscapes', biz: 'STATIC', stage: '02 · PARK', img: '/media/photos/hartford-healthcare-wallscape.webp?v=0b3f98d9', pos: '50% 50%', href: '/formats#wallscape', desc: 'Large-format walls drivers face as they park.', alt: 'Hartford HealthCare wallscape' },
+      { name: 'Digital panels', biz: 'DIGITAL', stage: '03 · WALK', img: '/media/photos/blank-street-interactive-panel.webp?v=6f1265ae', pos: '35% 50%', href: '/formats#panel', desc: 'Interactive screens — tap, scan and redeem.', alt: 'Man tapping his phone on an interactive digital panel' },
+      { name: 'Elevator wraps', biz: 'STATIC', stage: '03 · WALK', img: '/media/photos/hartford-healthcare-elevator-wraps.webp?v=20725f9d', pos: '50% 50%', href: '/formats#elevator', desc: 'Branded doors at the pause before the destination.', alt: 'Elevator door wraps' },
+      { name: 'Events & venues', biz: 'EVENTS', stage: '04 · ACTIVATE', img: '/media/photos/stock-car-event.webp?v=d303b124', pos: '55% 50%', href: '/events', desc: 'Activations, VIP park & shuttle and game-day packages.', alt: 'Crowd filming a car at a live automotive event at night (stock photo)', stock: true }
     ];
     var pillars = [
-      { no: '01', name: 'STATIC MEDIA', label: 'Static media', dot: '#FFFFFF', img: '/media/photos/hartford-healthcare-wallscape.webp', pos: '50% 50%', href: '/formats#static',
+      { no: '01', name: 'STATIC MEDIA', label: 'Static media', dot: '#FFFFFF', img: '/media/photos/story-static.webp?v=c6498426', pos: '80% 50%', href: '/formats#static',
         alt: 'Hartford HealthCare wallscape inside a parking garage', head: 'Walls that own the garage.',
         desc: 'Large-format print drivers face every time they park — designed, printed and installed for you, with branded tickets and full garage takeovers.',
-        items: ['Wallscapes', 'Elevator wraps', 'Gate arms', 'Tickets', 'Takeovers'], cta: 'Explore static', note: 'REAL INSTALL' },
-      { no: '02', name: 'DIGITAL', label: 'Digital', dot: '#8FDCE8', img: '/media/photos/ddrb-connecticut.webp', pos: '50% 30%', href: '/formats#digital',
+        items: ['Wallscapes', 'Elevator wraps', 'Gate arms', 'Tickets', 'Takeovers'], cta: 'Explore static', note: 'REAL INSTALL · SCENE EXTENDED' },
+      { no: '02', name: 'DIGITAL', label: 'Digital', dot: '#8FDCE8', img: '/media/photos/story-digital.webp?v=5c60c382', pos: '76% 50%', href: '/formats#digital',
         alt: 'A Lot Media Digital Dynamic Rate Board installed in Connecticut', head: 'Screens that sell in real time.',
         desc: 'Digital Dynamic Rate Boards™ and interactive panels — live pricing up top, full-motion video and audio below, updated from a phone.',
-        items: ['Rate boards', 'Interactive panels', 'Wayfinders'], cta: 'Explore digital', note: 'REAL INSTALL · CT' },
-      { no: '03', name: 'EVENTS & VENUES', label: 'Events & venues', dot: '#FBAE4F', img: '/media/renders/event-night-market.webp', pos: '50% 50%', href: '/events', tag: 'NEXT GROWTH ENGINE',
-        alt: 'Concept render of a festival on a parking garage rooftop', head: 'The lot is the venue.',
+        items: ['Rate boards', 'Interactive panels', 'Wayfinders'], cta: 'Explore digital', note: 'REAL INSTALL · CT · SCENE EXTENDED' },
+      { no: '03', name: 'EVENTS & VENUES', label: 'Events & venues', dot: '#FBAE4F', img: '/media/photos/stock-car-meet.webp?v=cd9b08be', pos: '50% 50%', href: '/events', tag: 'NEXT GROWTH ENGINE',
+        alt: 'Crowd at an evening car meet in a parking lot (stock photo)', head: 'The lot is the venue.',
         desc: 'Brand activations, VIP park-and-shuttle, bulk parking and game-day takeovers — staged in the lots and garages where the audience already arrives.',
-        items: ['Activations', 'VIP park & shuttle', 'Game day'], cta: 'Explore events', note: 'CONCEPT RENDER' }
+        items: ['Activations', 'VIP park & shuttle', 'Game day'], cta: 'Explore events', note: 'STOCK PHOTO' }
     ];
     var evData = [
-      { title: 'Brand activations', img: '/media/renders/event-popup-launch.webp', pos: '55% 50%', alt: 'Concept render of a car launch pop-up inside a parking garage',
+      { title: 'Brand activations', img: '/media/photos/stock-car-event.webp?v=d303b124', pos: '55% 50%', alt: 'Crowd filming a car at a live automotive event at night (stock photo)',
         desc: 'Pop-ups, brand activations, product displays and vehicle test drives — staged where the audience already arrives by car.',
         who: 'Brands, agencies and experiential producers', give: 'The space, tents, power, vehicles and on-site signage',
         ex: ['Pop-ups', 'Product displays', 'Test drives', 'Music festivals'] },
-      { title: 'VIP parking & shuttle', img: '/media/renders/rooftop-event.webp', pos: '50% 50%', alt: 'Concept render of a branded rooftop parking event with a hospitality tent',
+      { title: 'VIP parking & shuttle', img: '/media/photos/stock-rooftop-tent.webp?v=b0f4fddd', pos: '50% 50%', alt: 'Guests under a lit canopy at an evening rooftop event (stock photo)',
         desc: 'Reserved VIP parking, shuttles, tents, generators and signage for headline events — and bulk parking when the crowd is bigger than the venue.',
         who: 'Event producers, agencies, venues and sponsors', give: 'Reserved spaces, shuttles, tents, generators, signage',
         ex: ['VIP parking', 'Shuttles', 'Bulk parking', 'Sponsorships'] },
-      { title: 'Game day & tailgates', img: '/media/renders/event-game-day.webp', pos: '50% 50%', alt: 'Concept render of fans walking from a parking garage to a stadium at sunset',
+      { title: 'Game day & tailgates', img: '/media/photos/stock-tailgate.webp?v=bdd01506', pos: '50% 50%', alt: 'Friends tailgating beside pickup trucks in a lot (stock photo)',
         desc: 'On game day the lot becomes the venue: a full location takeover with activation, sponsorship and multiple media around the crowd — plus event pricing on the rate boards.',
         who: 'Teams, venues, sponsors and promoters', give: 'Location takeover, activation, event pricing on rate boards, branded media',
         ex: ['Game days', 'Tailgates', 'Sponsor takeovers', 'Event pricing'] }
@@ -135,7 +135,7 @@ export default class HomePage extends React.Component {
         var on = f[0] === filter;
         return { label: f[1], bg: on ? '#FBAE4F' : 'transparent', fg: on ? '#0B1220' : '#FFFFFF', bd: on ? '#FBAE4F' : 'rgba(255,255,255,0.35)', pick: function () { self.setState({ filter: f[0] }); } };
       }),
-      formats: fmts.map(function (f) { return { biz: f.biz, bizDot: f.biz === 'DIGITAL' ? '#3FB6C8' : (f.biz === 'EVENTS' ? '#FBAE4F' : '#0B1220'), name: f.name, stage: f.stage, img: B + f.img, pos: f.pos, href: f.href, desc: f.desc, alt: f.alt, render: !!f.render }; }),
+      formats: fmts.map(function (f) { return { biz: f.biz, bizDot: f.biz === 'DIGITAL' ? '#3FB6C8' : (f.biz === 'EVENTS' ? '#FBAE4F' : '#0B1220'), name: f.name, stage: f.stage, img: B + f.img, pos: f.pos, href: f.href, desc: f.desc, alt: f.alt, render: !!(f.render || f.stock), renderLabel: f.stock ? 'STOCK PHOTO' : 'RENDER' }; }),
       pillars: pillars.map(function (p) {
         return { no: p.no, name: p.name, label: p.label, dot: p.dot, img: B + p.img, pos: p.pos, href: p.href, alt: p.alt, head: p.head, desc: p.desc,
           items: p.items.map(function (t) { return { t: t }; }), cta: p.cta, note: p.note, tag: p.tag || '',
@@ -170,7 +170,7 @@ export default class HomePage extends React.Component {
         {/* HERO */}
         <div style={{ background: "#05080F" }}>
           <section className="alm-hero" data-scrub="exit" style={{ position: "relative", minHeight: "820px", background: "#0B1220", overflow: "hidden", color: "#FFFFFF" }}>
-            <video className="alm-hero-media" ref={v.vidRef} src="/media/video/nyc-bridge.mp4" poster="/media/video/nyc-bridge-poster.webp" autoPlay muted loop playsInline preload="auto" aria-hidden="true" style={{ position: "absolute", inset: "0", width: "100%", height: "100%", objectFit: "cover", objectPosition: "50% 50%" }} />
+            <video className="alm-hero-media" ref={v.vidRef} src="/media/video/nyc-bridge.mp4?v=456cb73c" poster="/media/video/nyc-bridge-poster.webp?v=62fd5747" autoPlay muted loop playsInline preload="auto" aria-hidden="true" style={{ position: "absolute", inset: "0", width: "100%", height: "100%", objectFit: "cover", objectPosition: "50% 50%" }} />
             <div style={{ position: "absolute", inset: "0", background: "linear-gradient(180deg, rgba(11,18,32,0.55) 0%, rgba(11,18,32,0.10) 38%, rgba(11,18,32,0.88) 100%)" }} />
             <div className="alm-hero-copy" style={{ position: "relative", maxWidth: "1360px", minHeight: "820px", margin: "0 auto", padding: "0 28px 56px", boxSizing: "border-box", display: "flex", flexDirection: "column", justifyContent: "flex-end" }}>
               <div className="alm-rise" style={{ display: "flex", alignItems: "center", gap: "10px", fontSize: "17px", fontWeight: "600", letterSpacing: "-0.01em", color: "#FBAE4F" }}><span style={{ width: "7px", height: "7px", background: "#FBAE4F", borderRadius: "50%" }} />America’s parking media network</div>
@@ -391,7 +391,7 @@ export default class HomePage extends React.Component {
                   <div style={{ position: "absolute", left: "22px", bottom: "20px", display: "flex", alignItems: "center", gap: "10px" }}>
                     <span style={{ padding: "7px 12px", borderRadius: "999px", background: "#FBAE4F", color: "#0B1220", fontSize: "11px", fontWeight: "600", letterSpacing: "0.1em" }}>{v.evCur?.title}</span>
                   </div>
-                  <div style={{ position: "absolute", right: "20px", bottom: "22px", fontFamily: "'Geist Mono', monospace", fontSize: "10px", letterSpacing: "0.1em", color: "rgba(255,255,255,0.6)" }}>CONCEPT RENDER</div>
+                  <div style={{ position: "absolute", right: "20px", bottom: "22px", fontFamily: "'Geist Mono', monospace", fontSize: "10px", letterSpacing: "0.1em", color: "rgba(255,255,255,0.6)" }}>STOCK PHOTOS</div>
                 </div>
               </div>
             </div>
@@ -446,23 +446,54 @@ export default class HomePage extends React.Component {
                   <div style={{ marginTop: "12px", fontSize: "17px", lineHeight: "1.5", color: "#5B6474" }}>parking locations in the network, across 400+ cities.</div>
                 </div>
               </div>
-              <div className="alm-in alm-span2" style={{ minHeight: "300px", padding: "36px", borderRadius: "28px", background: "#FFFFFF", display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
-                <div style={{ fontSize: "15px", fontWeight: "600", color: "#5B6474" }}>Revenue engines</div>
+              <div className="alm-in alm-span2" style={{ padding: "36px", borderRadius: "28px", background: "#FFFFFF", display: "flex", flexDirection: "column", gap: "28px" }}>
                 <div>
-                  <div style={{ display: "flex", gap: "6px", marginBottom: "18px" }}>
-                    <span style={{ flex: "1", height: "8px", borderRadius: "4px", background: "#0B1220" }} />
-                    <span style={{ flex: "1", height: "8px", borderRadius: "4px", background: "#8FDCE8" }} />
-                    <span style={{ flex: "1.3", height: "8px", borderRadius: "4px", background: "#FBAE4F" }} />
+                  <div style={{ fontSize: "15px", fontWeight: "600", color: "#5B6474" }}>Revenue engines</div>
+                  <div style={{ marginTop: "14px", fontSize: "26px", fontWeight: "600", lineHeight: "1.1", letterSpacing: "-0.02em" }}>Static, digital and events.</div>
+                  <div style={{ marginTop: "8px", fontSize: "17px", lineHeight: "1.5", color: "#5B6474" }}>Three ways to earn from the same footprint.</div>
+                </div>
+                <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(140px, 1fr))", gap: "20px" }}>
+                  <div style={{ minWidth: "0" }}>
+                    <div style={{ height: "6px", borderRadius: "3px", background: "#0B1220" }} />
+                    <div style={{ marginTop: "14px", display: "flex", alignItems: "center", gap: "8px", fontSize: "17px", fontWeight: "650", letterSpacing: "-0.01em" }}><span style={{ width: "7px", height: "7px", borderRadius: "50%", background: "#0B1220" }} />Static</div>
+                    <div style={{ marginTop: "8px", fontSize: "14px", lineHeight: "1.55", color: "#5B6474" }}>Wallscapes, elevator wraps, gate arms, tickets, takeovers</div>
                   </div>
-                  <div style={{ fontSize: "26px", fontWeight: "600", lineHeight: "1.1", letterSpacing: "-0.02em" }}>Static, digital and events.</div>
-                  <div style={{ marginTop: "10px", fontSize: "17px", lineHeight: "1.5", color: "#5B6474" }}>Three ways to earn from the same footprint.</div>
+                  <div style={{ minWidth: "0" }}>
+                    <div style={{ height: "6px", borderRadius: "3px", background: "#8FDCE8" }} />
+                    <div style={{ marginTop: "14px", display: "flex", alignItems: "center", gap: "8px", fontSize: "17px", fontWeight: "650", letterSpacing: "-0.01em" }}><span style={{ width: "7px", height: "7px", borderRadius: "50%", background: "#3FB6C8" }} />Digital</div>
+                    <div style={{ marginTop: "8px", fontSize: "14px", lineHeight: "1.55", color: "#5B6474" }}>Rate boards, interactive panels, wayfinders</div>
+                  </div>
+                  <div style={{ minWidth: "0" }}>
+                    <div style={{ height: "6px", borderRadius: "3px", background: "#FBAE4F" }} />
+                    <div style={{ marginTop: "14px", display: "flex", alignItems: "center", gap: "8px", fontSize: "17px", fontWeight: "650", letterSpacing: "-0.01em" }}><span style={{ width: "7px", height: "7px", borderRadius: "50%", background: "#FBAE4F" }} />Events</div>
+                    <div style={{ marginTop: "8px", fontSize: "14px", lineHeight: "1.55", color: "#5B6474" }}>Activations, VIP park &amp; shuttle, game day</div>
+                  </div>
                 </div>
               </div>
-              <div className="alm-in alm-span2" style={{ minHeight: "300px", padding: "36px", borderRadius: "28px", background: "#FFFFFF", display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
-                <div style={{ fontSize: "15px", fontWeight: "600", color: "#5B6474" }}>Vertically integrated</div>
+              <div className="alm-in alm-span2" style={{ padding: "36px", borderRadius: "28px", background: "#FFFFFF", display: "flex", flexDirection: "column", gap: "28px" }}>
                 <div>
-                  <div style={{ fontSize: "26px", fontWeight: "600", lineHeight: "1.1", letterSpacing: "-0.02em" }}>From the screen to the sale.</div>
-                  <div style={{ marginTop: "10px", fontSize: "17px", lineHeight: "1.5", color: "#5B6474" }}>Signage manufacturing, large-format printing and our CMS through sister companies MetroClick and faytech; software, ad sales and installs in-house.</div>
+                  <div style={{ fontSize: "15px", fontWeight: "600", color: "#5B6474" }}>Vertically integrated</div>
+                  <div style={{ marginTop: "14px", fontSize: "26px", fontWeight: "600", lineHeight: "1.1", letterSpacing: "-0.02em" }}>From the screen to the sale.</div>
+                  <div style={{ marginTop: "8px", fontSize: "17px", lineHeight: "1.5", color: "#5B6474" }}>Hardware, print and CMS from our sister companies; software, ad sales and installs in-house.</div>
+                </div>
+                <div style={{ display: "grid", gap: "16px" }}>
+                  <div>
+                    <div style={{ fontFamily: "'Geist Mono', monospace", fontSize: "11px", letterSpacing: "0.12em", color: "#8A93A3" }}>SISTER COMPANIES · METROCLICK &amp; FAYTECH</div>
+                    <div style={{ marginTop: "10px", display: "flex", flexWrap: "wrap", gap: "6px" }}>
+                      <span style={{ padding: "7px 12px", borderRadius: "999px", background: "#F1F3F6", color: "#0B1220", fontSize: "13px", fontWeight: "600", whiteSpace: "nowrap" }}>Signage manufacturing</span>
+                      <span style={{ padding: "7px 12px", borderRadius: "999px", background: "#F1F3F6", color: "#0B1220", fontSize: "13px", fontWeight: "600", whiteSpace: "nowrap" }}>Large-format printing</span>
+                      <span style={{ padding: "7px 12px", borderRadius: "999px", background: "#F1F3F6", color: "#0B1220", fontSize: "13px", fontWeight: "600", whiteSpace: "nowrap" }}>CMS</span>
+                    </div>
+                  </div>
+                  <div style={{ height: "1px", background: "rgba(11,18,32,0.08)" }} />
+                  <div>
+                    <div style={{ fontFamily: "'Geist Mono', monospace", fontSize: "11px", letterSpacing: "0.12em", color: "#8A93A3" }}>IN-HOUSE · A LOT MEDIA</div>
+                    <div style={{ marginTop: "10px", display: "flex", flexWrap: "wrap", gap: "6px" }}>
+                      <span style={{ padding: "7px 12px", borderRadius: "999px", background: "#0B1220", color: "#FFFFFF", fontSize: "13px", fontWeight: "600", whiteSpace: "nowrap" }}>Software</span>
+                      <span style={{ padding: "7px 12px", borderRadius: "999px", background: "#0B1220", color: "#FFFFFF", fontSize: "13px", fontWeight: "600", whiteSpace: "nowrap" }}>Ad sales</span>
+                      <span style={{ padding: "7px 12px", borderRadius: "999px", background: "#0B1220", color: "#FFFFFF", fontSize: "13px", fontWeight: "600", whiteSpace: "nowrap" }}>Installs</span>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -477,7 +508,7 @@ export default class HomePage extends React.Component {
         {/* FROM ABOVE (DRONE) */}
         <section style={{ position: "relative", minHeight: "780px", overflow: "hidden", background: "#05080F", color: "#FFFFFF" }}>
           <div className="alm-expand" data-scrub="enter" style={{ position: "absolute", inset: "0", overflow: "hidden" }}>
-            <video className="alm-par" data-scrub="cover" ref={v.vidRef} src="/media/video/lot-topdown.mp4" poster="/media/video/lot-topdown-poster.webp" muted loop playsInline preload="none" aria-hidden="true" style={{ position: "absolute", inset: "0", width: "100%", height: "100%", objectFit: "cover" }} />
+            <video className="alm-par" data-scrub="cover" ref={v.vidRef} src="/media/video/lot-topdown.mp4?v=7f6f7152" poster="/media/video/lot-topdown-poster.webp?v=271bcca6" muted loop playsInline preload="none" aria-hidden="true" style={{ position: "absolute", inset: "0", width: "100%", height: "100%", objectFit: "cover" }} />
             <div style={{ position: "absolute", inset: "0", background: "linear-gradient(180deg, rgba(11,18,32,0.72) 0%, rgba(11,18,32,0.35) 45%, rgba(11,18,32,0.82) 100%)" }} />
           </div>
           <div className="alm-in" style={{ position: "relative", maxWidth: "1360px", minHeight: "780px", margin: "0 auto", padding: "96px 28px", boxSizing: "border-box", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", textAlign: "center" }}>
@@ -500,7 +531,7 @@ export default class HomePage extends React.Component {
             </div>
             <div style={{ marginTop: "56px", display: "flex", flexWrap: "wrap", gap: "16px" }}>
               <figure className="alm-tile alm-wipe" style={{ margin: "0", flex: "2 1 640px", height: "560px", position: "relative", overflow: "hidden", borderRadius: "16px", background: "#0B1220" }}>
-                <img src="/media/photos/lucid-digital-panel.webp" alt="Travelers with luggage walking past a Lucid ad on an A Lot Media digital panel in a parking garage" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "40% 50%", display: "block" }} loading="lazy" decoding="async" />
+                <img src="/media/photos/lucid-digital-panel.webp?v=0437d0e2" alt="Travelers with luggage walking past a Lucid ad on an A Lot Media digital panel in a parking garage" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "40% 50%", display: "block" }} loading="lazy" decoding="async" />
                 <figcaption style={{ position: "absolute", left: "0", right: "0", bottom: "0", padding: "80px 28px 24px", background: "linear-gradient(180deg, rgba(11,18,32,0) 0%, rgba(11,18,32,0.82) 100%)", color: "#FFFFFF" }}>
                   <div style={{ display: "inline-flex", alignItems: "center", gap: "10px", marginBottom: "10px", fontSize: "15px", fontWeight: "600", letterSpacing: "-0.005em", opacity: "0.72" }}><span style={{ width: "7px", height: "7px", background: "#8FDCE8", borderRadius: "50%" }} />Digital</div>
                   <div style={{ fontSize: "22px", fontWeight: "650", letterSpacing: "-0.02em" }}>Lucid</div>
@@ -508,7 +539,7 @@ export default class HomePage extends React.Component {
                 </figcaption>
               </figure>
               <figure className="alm-tile alm-wipe" style={{ margin: "0", flex: "1 1 320px", height: "560px", position: "relative", overflow: "hidden", borderRadius: "16px", background: "#0B1220" }}>
-                <img src="/media/photos/united-digital-panel.webp" alt="United for Business ad on an A Lot Media digital panel beside a white sports car" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "30% 50%", display: "block" }} loading="lazy" decoding="async" />
+                <img src="/media/photos/united-digital-panel.webp?v=f8d1849b" alt="United for Business ad on an A Lot Media digital panel beside a white sports car" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "30% 50%", display: "block" }} loading="lazy" decoding="async" />
                 <figcaption style={{ position: "absolute", left: "0", right: "0", bottom: "0", padding: "80px 28px 24px", background: "linear-gradient(180deg, rgba(11,18,32,0) 0%, rgba(11,18,32,0.82) 100%)", color: "#FFFFFF" }}>
                   <div style={{ display: "inline-flex", alignItems: "center", gap: "10px", marginBottom: "10px", fontSize: "15px", fontWeight: "600", letterSpacing: "-0.005em", opacity: "0.72" }}><span style={{ width: "7px", height: "7px", background: "#8FDCE8", borderRadius: "50%" }} />Digital</div>
                   <div style={{ fontSize: "22px", fontWeight: "650", letterSpacing: "-0.02em" }}>United</div>
@@ -516,7 +547,7 @@ export default class HomePage extends React.Component {
                 </figcaption>
               </figure>
               <figure className="alm-tile alm-wipe" style={{ margin: "0", flex: "1 1 320px", height: "420px", position: "relative", overflow: "hidden", borderRadius: "16px", background: "#0B1220" }}>
-                <img src="/media/photos/panera-now-open.webp" alt="Panera Bread now-open ad on an A Lot Media digital panel with drivers nearby" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "60% 50%", display: "block" }} loading="lazy" decoding="async" />
+                <img src="/media/photos/panera-now-open.webp?v=2fa97a26" alt="Panera Bread now-open ad on an A Lot Media digital panel with drivers nearby" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "60% 50%", display: "block" }} loading="lazy" decoding="async" />
                 <figcaption style={{ position: "absolute", left: "0", right: "0", bottom: "0", padding: "80px 28px 24px", background: "linear-gradient(180deg, rgba(11,18,32,0) 0%, rgba(11,18,32,0.82) 100%)", color: "#FFFFFF" }}>
                   <div style={{ display: "inline-flex", alignItems: "center", gap: "10px", marginBottom: "10px", fontSize: "15px", fontWeight: "600", letterSpacing: "-0.005em", opacity: "0.72" }}><span style={{ width: "7px", height: "7px", background: "#8FDCE8", borderRadius: "50%" }} />Digital</div>
                   <div style={{ fontSize: "22px", fontWeight: "650", letterSpacing: "-0.02em" }}>Panera Bread</div>
@@ -524,7 +555,7 @@ export default class HomePage extends React.Component {
                 </figcaption>
               </figure>
               <figure className="alm-tile alm-wipe" style={{ margin: "0", flex: "1 1 320px", height: "420px", position: "relative", overflow: "hidden", borderRadius: "16px", background: "#0B1220" }}>
-                <img src="/media/photos/a-beautiful-noise-panel.webp" alt="A Beautiful Noise Broadway musical ad on a digital panel next to the garage cashier" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "50% 40%", display: "block" }} loading="lazy" decoding="async" />
+                <img src="/media/photos/a-beautiful-noise-panel.webp?v=2610293c" alt="A Beautiful Noise Broadway musical ad on a digital panel next to the garage cashier" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "50% 40%", display: "block" }} loading="lazy" decoding="async" />
                 <figcaption style={{ position: "absolute", left: "0", right: "0", bottom: "0", padding: "80px 28px 24px", background: "linear-gradient(180deg, rgba(11,18,32,0) 0%, rgba(11,18,32,0.82) 100%)", color: "#FFFFFF" }}>
                   <div style={{ display: "inline-flex", alignItems: "center", gap: "10px", marginBottom: "10px", fontSize: "15px", fontWeight: "600", letterSpacing: "-0.005em", opacity: "0.72" }}><span style={{ width: "7px", height: "7px", background: "#8FDCE8", borderRadius: "50%" }} />Digital</div>
                   <div style={{ fontSize: "22px", fontWeight: "650", letterSpacing: "-0.02em" }}>A Beautiful Noise</div>
@@ -532,7 +563,7 @@ export default class HomePage extends React.Component {
                 </figcaption>
               </figure>
               <figure className="alm-tile alm-wipe" style={{ margin: "0", flex: "1 1 320px", height: "420px", position: "relative", overflow: "hidden", borderRadius: "16px", background: "#0B1220" }}>
-                <img src="/media/photos/hartford-healthcare-wallscape.webp" alt="Hartford HealthCare wallscape inside a parking garage" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} loading="lazy" decoding="async" />
+                <img src="/media/photos/hartford-healthcare-wallscape.webp?v=0b3f98d9" alt="Hartford HealthCare wallscape inside a parking garage" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} loading="lazy" decoding="async" />
                 <figcaption style={{ position: "absolute", left: "0", right: "0", bottom: "0", padding: "80px 28px 24px", background: "linear-gradient(180deg, rgba(11,18,32,0) 0%, rgba(11,18,32,0.82) 100%)", color: "#FFFFFF" }}>
                   <div style={{ display: "inline-flex", alignItems: "center", gap: "10px", marginBottom: "10px", fontSize: "15px", fontWeight: "600", letterSpacing: "-0.005em", opacity: "0.72" }}><span style={{ width: "7px", height: "7px", background: "#FFFFFF", borderRadius: "50%" }} />Static</div>
                   <div style={{ fontSize: "22px", fontWeight: "650", letterSpacing: "-0.02em" }}>Hartford HealthCare</div>
@@ -540,7 +571,7 @@ export default class HomePage extends React.Component {
                 </figcaption>
               </figure>
               <figure className="alm-tile alm-wipe" style={{ margin: "0", flex: "1 1 320px", height: "560px", position: "relative", overflow: "hidden", borderRadius: "16px", background: "#0B1220" }}>
-                <img src="/media/photos/hartford-healthcare-elevator-wraps.webp" alt="Hartford HealthCare LifeStar helicopter elevator door wraps" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} loading="lazy" decoding="async" />
+                <img src="/media/photos/hartford-healthcare-elevator-wraps.webp?v=20725f9d" alt="Hartford HealthCare LifeStar helicopter elevator door wraps" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} loading="lazy" decoding="async" />
                 <figcaption style={{ position: "absolute", left: "0", right: "0", bottom: "0", padding: "80px 28px 24px", background: "linear-gradient(180deg, rgba(11,18,32,0) 0%, rgba(11,18,32,0.82) 100%)", color: "#FFFFFF" }}>
                   <div style={{ display: "inline-flex", alignItems: "center", gap: "10px", marginBottom: "10px", fontSize: "15px", fontWeight: "600", letterSpacing: "-0.005em", opacity: "0.72" }}><span style={{ width: "7px", height: "7px", background: "#FFFFFF", borderRadius: "50%" }} />Static</div>
                   <div style={{ fontSize: "22px", fontWeight: "650", letterSpacing: "-0.02em" }}>Hartford HealthCare</div>
@@ -548,7 +579,7 @@ export default class HomePage extends React.Component {
                 </figcaption>
               </figure>
               <figure className="alm-tile alm-wipe" style={{ margin: "0", flex: "2 1 640px", height: "560px", position: "relative", overflow: "hidden", borderRadius: "16px", background: "#0B1220" }}>
-                <img src="/media/photos/msk-garage-entrance.webp" alt="Car pulling into a garage past an A Lot Media digital panel and branded wayfinding" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} loading="lazy" decoding="async" />
+                <img src="/media/photos/msk-garage-entrance.webp?v=a0e27476" alt="Car pulling into a garage past an A Lot Media digital panel and branded wayfinding" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} loading="lazy" decoding="async" />
                 <figcaption style={{ position: "absolute", left: "0", right: "0", bottom: "0", padding: "80px 28px 24px", background: "linear-gradient(180deg, rgba(11,18,32,0) 0%, rgba(11,18,32,0.82) 100%)", color: "#FFFFFF" }}>
                   <div style={{ display: "inline-flex", alignItems: "center", gap: "10px", marginBottom: "10px", fontSize: "15px", fontWeight: "600", letterSpacing: "-0.005em", opacity: "0.72" }}><span style={{ width: "7px", height: "7px", background: "#8FDCE8", borderRadius: "50%" }} />Digital</div>
                   <div style={{ fontSize: "22px", fontWeight: "650", letterSpacing: "-0.02em" }}>Memorial Sloan Kettering</div>
@@ -596,7 +627,7 @@ export default class HomePage extends React.Component {
               </li>
             </ul>
             <div style={{ marginTop: "48px", display: "flex", flexWrap: "wrap", gap: "16px 32px", alignItems: "center", justifyContent: "space-between" }}>
-              <A className="alm-link" href="/real-estate#ddrb" style={{ display: "inline-flex", alignItems: "center", gap: "14px", fontSize: "15px", fontWeight: "600", color: "#FFFFFF" }}><span style={{ width: "56px", height: "72px", borderRadius: "12px", overflow: "hidden", background: "#0B1220", flex: "0 0 auto" }}><img src="/media/photos/ddrb-connecticut.webp" alt="Real A Lot Media rate board installed in Connecticut" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "50% 30%", display: "block" }} loading="lazy" decoding="async" /></span> See one installed in Connecticut <span className="alm-arrow" style={{ display: "inline-block", color: "#FBAE4F" }}>→</span></A>
+              <A className="alm-link" href="/real-estate#ddrb" style={{ display: "inline-flex", alignItems: "center", gap: "14px", fontSize: "15px", fontWeight: "600", color: "#FFFFFF" }}><span style={{ width: "56px", height: "72px", borderRadius: "12px", overflow: "hidden", background: "#0B1220", flex: "0 0 auto" }}><img src="/media/photos/ddrb-connecticut.webp?v=088e4141" alt="Real A Lot Media rate board installed in Connecticut" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "50% 30%", display: "block" }} loading="lazy" decoding="async" /></span> See one installed in Connecticut <span className="alm-arrow" style={{ display: "inline-block", color: "#FBAE4F" }}>→</span></A>
               <span style={{ fontFamily: "'Geist Mono', monospace", fontSize: "11px", letterSpacing: "0.08em", color: "rgba(255,255,255,0.45)" }}>PRODUCT RENDER · LIVE SCREEN DEMO</span>
             </div>
           </div>
@@ -624,7 +655,7 @@ export default class HomePage extends React.Component {
                       <img src={f.img} alt={f.alt} style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: f.pos, display: "block" }} loading="lazy" decoding="async" />
                       {f.render ? (
                         <>
-                          <span style={{ position: "absolute", top: "14px", left: "14px", padding: "5px 10px", borderRadius: "999px", background: "rgba(11,18,32,0.72)", color: "#FFFFFF", fontSize: "10px", fontWeight: "600", letterSpacing: "0.1em" }}>RENDER</span>
+                          <span style={{ position: "absolute", top: "14px", left: "14px", padding: "5px 10px", borderRadius: "999px", background: "rgba(11,18,32,0.72)", color: "#FFFFFF", fontSize: "10px", fontWeight: "600", letterSpacing: "0.1em" }}>{f.renderLabel}</span>
                         </>
                       ) : null}
                     </div>
@@ -686,11 +717,11 @@ export default class HomePage extends React.Component {
           </div>
         </section>
         {/* AUDIENCES */}
-        <section style={{ padding: "0 28px 128px" }}>
+        <section style={{ padding: "120px 28px 128px" }}>
           <div style={{ maxWidth: "1360px", margin: "0 auto", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "16px" }}>
             <A className="alm-tile alm-link alm-in" href="/advertisers" style={{ display: "flex", flexDirection: "column", background: "#FFFFFF", borderRadius: "16px", overflow: "hidden", fontSize: "15px", letterSpacing: "-0.005em", fontWeight: "600" }}>
               <div style={{ height: "300px", overflow: "hidden" }}>
-                <img src="/media/photos/ibm-digital-panel.webp" alt="Commuters passing an IBM ad on an A Lot Media digital panel in a parking garage" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "60% 50%", display: "block" }} loading="lazy" decoding="async" />
+                <img src="/media/photos/ibm-digital-panel.webp?v=1985ec8c" alt="Commuters passing an IBM ad on an A Lot Media digital panel in a parking garage" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "60% 50%", display: "block" }} loading="lazy" decoding="async" />
               </div>
               <div style={{ padding: "32px", display: "flex", flexDirection: "column", gap: "14px", flex: "1" }}>
                 <div style={{ fontSize: "12px", fontWeight: "600", letterSpacing: "0.14em", color: "#8A5300" }}>FOR ADVERTISERS</div>
@@ -701,7 +732,7 @@ export default class HomePage extends React.Component {
             </A>
             <A className="alm-tile alm-link alm-in" href="/real-estate" style={{ display: "flex", flexDirection: "column", background: "#FFFFFF", borderRadius: "16px", overflow: "hidden", fontSize: "15px", letterSpacing: "-0.005em", fontWeight: "600" }}>
               <div style={{ height: "300px", overflow: "hidden" }}>
-                <img src="/media/photos/stock-garage.webp" alt="Empty concrete parking garage level lit by overhead lights" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} loading="lazy" decoding="async" />
+                <img src="/media/photos/stock-garage.webp?v=28875991" alt="Empty concrete parking garage level lit by overhead lights" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} loading="lazy" decoding="async" />
               </div>
               <div style={{ padding: "32px", display: "flex", flexDirection: "column", gap: "14px", flex: "1" }}>
                 <div style={{ fontSize: "12px", fontWeight: "600", letterSpacing: "0.14em", color: "#8A5300" }}>FOR PROPERTY OWNERS</div>
@@ -712,8 +743,8 @@ export default class HomePage extends React.Component {
             </A>
             <A className="alm-tile alm-link alm-in" href="/events#book" style={{ display: "flex", flexDirection: "column", background: "#FFFFFF", borderRadius: "16px", overflow: "hidden", fontSize: "15px", letterSpacing: "-0.005em", fontWeight: "600" }}>
               <div style={{ position: "relative", height: "300px", overflow: "hidden" }}>
-                <img src="/media/renders/rooftop-event.webp" alt="Concept render of a branded rooftop parking event at dusk" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} loading="lazy" decoding="async" />
-                <span style={{ position: "absolute", top: "14px", left: "14px", padding: "5px 10px", borderRadius: "999px", background: "rgba(11,18,32,0.72)", color: "#FFFFFF", fontSize: "10px", fontWeight: "600", letterSpacing: "0.1em" }}>RENDER</span>
+                <img src="/media/photos/stock-rooftop-tent.webp?v=b0f4fddd" alt="Guests under a lit canopy at an evening rooftop event (stock photo)" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} loading="lazy" decoding="async" />
+                <span style={{ position: "absolute", top: "14px", left: "14px", padding: "5px 10px", borderRadius: "999px", background: "rgba(11,18,32,0.72)", color: "#FFFFFF", fontSize: "10px", fontWeight: "600", letterSpacing: "0.1em" }}>STOCK PHOTO</span>
               </div>
               <div style={{ padding: "32px", display: "flex", flexDirection: "column", gap: "14px", flex: "1" }}>
                 <div style={{ fontSize: "12px", fontWeight: "600", letterSpacing: "0.14em", color: "#8A5300" }}>FOR EVENT ORGANIZERS</div>
@@ -724,7 +755,7 @@ export default class HomePage extends React.Component {
             </A>
             <A className="alm-tile alm-link alm-in" href="/investors" style={{ display: "flex", flexDirection: "column", background: "#FFFFFF", borderRadius: "16px", overflow: "hidden", fontSize: "15px", letterSpacing: "-0.005em", fontWeight: "600" }}>
               <div style={{ height: "300px", overflow: "hidden" }}>
-                <img src="/media/photos/stock-aerial.webp" alt="Aerial view of a large parking lot filled with cars" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} loading="lazy" decoding="async" />
+                <img src="/media/photos/stock-aerial.webp?v=1f2e8bf5" alt="Aerial view of a large parking lot filled with cars" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} loading="lazy" decoding="async" />
               </div>
               <div style={{ padding: "32px", display: "flex", flexDirection: "column", gap: "14px", flex: "1" }}>
                 <div style={{ fontSize: "12px", fontWeight: "600", letterSpacing: "0.14em", color: "#8A5300" }}>FOR INVESTORS</div>
@@ -766,21 +797,21 @@ export default class HomePage extends React.Component {
                 <div style={{ marginTop: "24px", fontSize: "11px", fontWeight: "600", letterSpacing: "0.14em", color: "#4E586A" }}>FORMATS</div>
                 <div style={{ marginTop: "10px", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(150px, 1fr))", gap: "8px" }}>
                   <div style={{ borderRadius: "18px", overflow: "hidden", border: "2px solid #FBAE4F" }}>
-                    <img src="/media/photos/ddrb-connecticut.webp" alt="" style={{ width: "100%", height: "90px", objectFit: "cover", objectPosition: "50% 35%", display: "block" }} loading="lazy" decoding="async" />
+                    <img src="/media/photos/ddrb-connecticut.webp?v=088e4141" alt="" style={{ width: "100%", height: "90px", objectFit: "cover", objectPosition: "50% 35%", display: "block" }} loading="lazy" decoding="async" />
                     <div style={{ padding: "10px 12px" }}>
                       <div style={{ fontSize: "14px", fontWeight: "600" }}>Rate boards</div>
                       <div style={{ fontSize: "12px", color: "#4E586A" }}>Digital</div>
                     </div>
                   </div>
                   <div style={{ borderRadius: "18px", overflow: "hidden", border: "1.5px solid #E3E5EA" }}>
-                    <img src="/media/photos/hartford-healthcare-elevator-wraps.webp" alt="" style={{ width: "100%", height: "90px", objectFit: "cover", display: "block" }} loading="lazy" decoding="async" />
+                    <img src="/media/photos/hartford-healthcare-elevator-wraps.webp?v=20725f9d" alt="" style={{ width: "100%", height: "90px", objectFit: "cover", display: "block" }} loading="lazy" decoding="async" />
                     <div style={{ padding: "10px 12px" }}>
                       <div style={{ fontSize: "14px", fontWeight: "600" }}>Elevator wraps</div>
                       <div style={{ fontSize: "12px", color: "#4E586A" }}>Static</div>
                     </div>
                   </div>
                   <div style={{ borderRadius: "18px", overflow: "hidden", border: "1.5px solid #E3E5EA" }}>
-                    <img src="/media/photos/hartford-healthcare-wallscape.webp" alt="" style={{ width: "100%", height: "90px", objectFit: "cover", display: "block" }} loading="lazy" decoding="async" />
+                    <img src="/media/photos/hartford-healthcare-wallscape.webp?v=0b3f98d9" alt="" style={{ width: "100%", height: "90px", objectFit: "cover", display: "block" }} loading="lazy" decoding="async" />
                     <div style={{ padding: "10px 12px" }}>
                       <div style={{ fontSize: "14px", fontWeight: "600" }}>Wallscapes</div>
                       <div style={{ fontSize: "12px", color: "#4E586A" }}>Static</div>
