@@ -68,7 +68,7 @@ export default class FormatsPage extends React.Component {
           live: !!f.live, still: !f.live,
           groupStart: !!g, gid: g ? g[0] : '', gno: g ? g[1] : '', gName: g ? g[2] : '', gDesc: g ? g[3] : '', gDot: g ? g[4] : '', gNumColor: g ? g[5] : '', gTag: g ? 'BUSINESS ' + g[1] : '',
           img: f.img ? B + f.img : '', pos: f.pos || '50% 50%', alt: f.alt || '', caption: f.caption || '',
-          specs: f.specs.map(function (s) { return { k: s[0], v: s[1] }; }),
+          specs: f.specs.map(function (s) { return { k: s[0], v: s[1].replace(/ · /g, '\u00A0· ') }; }),
           cta: f.cta, ctaHref: f.ctaHref,
           bg: dark ? '#0B1220' : '#F5F5F7',
           fg: dark ? '#FFFFFF' : '#0B1220',
@@ -91,16 +91,16 @@ export default class FormatsPage extends React.Component {
       <div className="alm-root" style={{ background: "#F5F5F7", color: "#0B1220", fontFamily: "'Montserrat', system-ui, sans-serif", overflowX: "hidden", WebkitFontSmoothing: "antialiased" }}>
         <Nav active="formats" />
         {/* HERO */}
-        <section style={{ padding: "104px 28px 72px" }}>
+        <section className="alm-pt" style={{ padding: "104px 28px 72px" }}>
           <div style={{ maxWidth: "1360px", margin: "0 auto" }}>
             <div className="alm-rise" style={{ display: "flex", alignItems: "center", gap: "10px", fontSize: "15px", fontWeight: "600", letterSpacing: "-0.005em", opacity: "0.72" }}><span style={{ width: "7px", height: "7px", background: "#FBAE4F", borderRadius: "50%" }} />Formats &amp; specs · three businesses</div>
             <h1 className="alm-rise" style={{ margin: "22px 0 0", maxWidth: "1200px", fontSize: "clamp(44px, 7vw, 112px)", lineHeight: "1", letterSpacing: "-0.035em", fontWeight: "600", animationDelay: ".1s" }}>Static. Digital.<br /><span style={{ color: "#8A5300" }}>Events.</span></h1>
             <div className="alm-rise" style={{ marginTop: "32px", display: "flex", flexWrap: "wrap", gap: "24px 64px", alignItems: "flex-end", justifyContent: "space-between", animationDelay: ".2s" }}>
               <p style={{ margin: "0", maxWidth: "600px", fontSize: "19px", lineHeight: "1.55", fontWeight: "400", color: "#4E586A" }}>Three businesses on one footprint: printed media on the walls, digital screens at the gate, and the space itself for events. Every placement is designed, installed and sold by us — buy one, or own the whole journey.</p>
-              <nav aria-label="Jump to a format" style={{ display: "flex", flexWrap: "wrap", gap: "8px", maxWidth: "640px" }}>
+              <nav className="m-fmt-chips" aria-label="Jump to a format" style={{ display: "flex", flexWrap: "wrap", gap: "8px", maxWidth: "640px" }}>
                 {(v.formats || []).map((f, fI) => (
                   <Fragment key={fI}>
-                    <A className="alm-chip" href={`#${f.kind}`} style={{ display: "inline-flex", alignItems: "center", minHeight: "44px", padding: "0 16px", borderRadius: "999px", border: "2px solid #0B1220", fontSize: "12px", fontWeight: "600", letterSpacing: "0.08em" }}>{f.short}</A>
+                    <A className="alm-chip m-fmt-chip" href={`#${f.kind}`} style={{ display: "inline-flex", alignItems: "center", minHeight: "44px", padding: "0 16px", borderRadius: "999px", border: "2px solid #0B1220", fontSize: "12px", fontWeight: "600", letterSpacing: "0.08em" }}>{f.short}</A>
                   </Fragment>
                 ))}
               </nav>
@@ -116,13 +116,13 @@ export default class FormatsPage extends React.Component {
           <div style={{ position: "relative", height: "100%", maxWidth: "1360px", margin: "0 auto", padding: "0 28px", display: "flex", flexDirection: "column", justifyContent: "center", gap: "22px" }}>
             <div style={{ display: "flex", alignItems: "center", gap: "10px", fontSize: "15px", fontWeight: "600", letterSpacing: "-0.005em", color: "#FBAE4F" }}><span style={{ width: "7px", height: "7px", background: "#FBAE4F", borderRadius: "50%" }} />The parking journey</div>
             <h2 className="alm-in" style={{ margin: "0", maxWidth: "900px", fontSize: "clamp(36px, 5.4vw, 84px)", lineHeight: "1", letterSpacing: "-0.035em", fontWeight: "600" }}>Every level<br />is inventory.</h2>
-            <div style={{ display: "flex", flexWrap: "wrap", gap: "10px 28px", fontFamily: "'Geist Mono', monospace", fontSize: "13px", letterSpacing: "0.12em", color: "#C9D0DB" }}>
+            <div className="m-fmt-journey" style={{ display: "flex", flexWrap: "wrap", gap: "10px 28px", fontFamily: "'Geist Mono', monospace", fontSize: "13px", letterSpacing: "0.12em", color: "#C9D0DB" }}>
               <span>01 ARRIVE</span>
-              <span style={{ color: "#FBAE4F" }}>→</span>
+              <span className="m-fmt-arr" style={{ color: "#FBAE4F" }}>→</span>
               <span>02 PARK</span>
-              <span style={{ color: "#FBAE4F" }}>→</span>
+              <span className="m-fmt-arr" style={{ color: "#FBAE4F" }}>→</span>
               <span>03 WALK</span>
-              <span style={{ color: "#FBAE4F" }}>→</span>
+              <span className="m-fmt-arr" style={{ color: "#FBAE4F" }}>→</span>
               <span>04 ACTIVATE</span>
             </div>
           </div>
@@ -133,13 +133,13 @@ export default class FormatsPage extends React.Component {
           <Fragment key={fI}>
             {f.groupStart ? (
               <>
-                <div id={f.gid} style={{ padding: "88px 28px 56px", background: "#FFFFFF", borderTop: "1px solid rgba(11,18,32,0.08)" }}>
+                <div className="m-fmt-gwrap" id={f.gid} style={{ padding: "88px 28px 56px", background: "#FFFFFF", borderTop: "1px solid rgba(11,18,32,0.08)" }}>
                   <div style={{ maxWidth: "1360px", margin: "0 auto", display: "flex", flexWrap: "wrap", gap: "20px 64px", alignItems: "flex-end", justifyContent: "space-between" }}>
-                    <div style={{ display: "flex", alignItems: "baseline", gap: "22px" }}>
+                    <div className="m-fmt-ghead" style={{ display: "flex", alignItems: "baseline", gap: "22px" }}>
                       <span style={{ fontSize: "clamp(64px, 8vw, 128px)", fontWeight: "600", lineHeight: "1", letterSpacing: "-0.035em", color: f.gNumColor }}>{f.gno}</span>
                       <div>
                         <div style={{ display: "flex", alignItems: "center", gap: "10px", fontSize: "12px", fontWeight: "600", letterSpacing: "0.14em", color: "#4E586A" }}><span style={{ width: "7px", height: "7px", background: f.gDot, outline: "1px solid rgba(11,18,32,0.25)", borderRadius: "50%" }} />{f.gTag}</div>
-                        <div style={{ marginTop: "10px", fontSize: "clamp(34px, 4.4vw, 68px)", fontWeight: "600", lineHeight: "1", letterSpacing: "-0.035em" }}>{f.gName}</div>
+                        <div className="m-fmt-gname" style={{ marginTop: "10px", fontSize: "clamp(34px, 4.4vw, 68px)", fontWeight: "600", lineHeight: "1", letterSpacing: "-0.035em" }}>{f.gName}</div>
                       </div>
                     </div>
                     <p style={{ margin: "0", maxWidth: "460px", fontSize: "17px", lineHeight: "1.6", fontWeight: "400", color: "#4E586A" }}>{f.gDesc}</p>
@@ -147,8 +147,8 @@ export default class FormatsPage extends React.Component {
                 </div>
               </>
             ) : null}
-            <section id={f.kind} style={{ padding: "96px 28px", background: f.bg, color: f.fg }}>
-              <div style={{ maxWidth: "1360px", margin: "0 auto", display: "flex", flexWrap: "wrap", flexDirection: f.dir, gap: "56px", alignItems: "center" }}>
+            <section className="alm-pt alm-pb" id={f.kind} style={{ padding: "96px 28px", background: f.bg, color: f.fg }}>
+              <div className="m-fmt-row" style={{ maxWidth: "1360px", margin: "0 auto", display: "flex", flexWrap: "wrap", flexDirection: f.dir, gap: "56px", alignItems: "center" }}>
                 <div style={{ flex: "999 1 600px", minWidth: "0" }}>
                   {f.live ? (
                     <>
@@ -159,9 +159,9 @@ export default class FormatsPage extends React.Component {
                   ) : null}
                   {f.still ? (
                     <>
-                      <figure className="alm-tile alm-wipe" style={{ margin: "0", position: "relative", height: "620px", borderRadius: "18px", overflow: "hidden", background: "#0B1220" }}>
+                      <figure className="alm-tile alm-wipe m-fmt-fig" style={{ margin: "0", position: "relative", height: "620px", borderRadius: "18px", overflow: "hidden", background: "#0B1220" }}>
                         <img src={f.img} alt={f.alt} style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: f.pos, display: "block" }} loading="lazy" decoding="async" />
-                        <figcaption style={{ position: "absolute", left: "16px", bottom: "16px", padding: "8px 14px", borderRadius: "999px", background: "rgba(11,18,32,0.72)", color: "#FFFFFF", fontSize: "12px", fontWeight: "700", letterSpacing: "0.04em" }}>{f.caption}</figcaption>
+                        <figcaption className="m-fmt-cap" style={{ position: "absolute", left: "16px", bottom: "16px", padding: "8px 14px", borderRadius: "999px", background: "rgba(11,18,32,0.72)", color: "#FFFFFF", fontSize: "12px", fontWeight: "700", letterSpacing: "0.04em" }}>{f.caption}</figcaption>
                       </figure>
                     </>
                   ) : null}
@@ -181,7 +181,7 @@ export default class FormatsPage extends React.Component {
                       </Fragment>
                     ))}
                   </dl>
-                  <div style={{ display: "flex", gap: "12px", flexWrap: "wrap", marginTop: "8px" }}>
+                  <div className="m-fmt-btns" style={{ display: "flex", gap: "12px", flexWrap: "wrap", marginTop: "8px" }}>
                     <A className="alm-btn" href={f.ctaHref} style={{ display: "inline-flex", alignItems: "center", minHeight: "54px", padding: "0 26px", borderRadius: "999px", background: "#FBAE4F", color: "#0B1220", fontWeight: "600", fontSize: "15px", letterSpacing: "-0.005em" }}>{f.cta}</A>
                     <A className="alm-btn" href="/contact" style={{ display: "inline-flex", alignItems: "center", minHeight: "54px", padding: "0 26px", borderRadius: "999px", border: `2px solid ${f.fg}`, fontWeight: "600", fontSize: "15px", letterSpacing: "-0.005em" }}>Ask about specs</A>
                   </div>
@@ -191,13 +191,13 @@ export default class FormatsPage extends React.Component {
           </Fragment>
         ))}
         {/* COMPARISON */}
-        <section style={{ padding: "120px 28px" }}>
+        <section className="alm-pt alm-pb" style={{ padding: "120px 28px" }}>
           <div style={{ maxWidth: "1360px", margin: "0 auto" }}>
             <div style={{ display: "flex", flexWrap: "wrap", gap: "24px 64px", alignItems: "flex-end", justifyContent: "space-between" }}>
               <h2 className="alm-in" style={{ margin: "0", fontSize: "clamp(38px, 5.2vw, 80px)", lineHeight: "1", letterSpacing: "-0.035em", fontWeight: "600" }}>Compare every format.</h2>
               <A className="alm-btn" href="/plan" style={{ display: "inline-flex", alignItems: "center", minHeight: "54px", padding: "0 26px", borderRadius: "999px", background: "#0B1220", color: "#FFFFFF", fontWeight: "600", fontSize: "15px", letterSpacing: "-0.005em" }}>Build a plan</A>
             </div>
-            <div style={{ marginTop: "48px", overflowX: "auto", borderTop: "3px solid #0B1220" }}>
+            <div className="m-fmt-table" style={{ marginTop: "48px", overflowX: "auto", borderTop: "3px solid #0B1220" }}>
               <table style={{ width: "100%", minWidth: "900px", borderCollapse: "collapse", fontSize: "15px" }}>
                 <thead>
                   <tr style={{ textAlign: "left" }}>
@@ -235,6 +235,28 @@ export default class FormatsPage extends React.Component {
                   </tr>
                 </tbody>
               </table>
+            </div>
+            <div className="m-fmt-clist" style={{ display: "none" }}>
+              {(v.formats || []).map((f, fI) => (
+                <Fragment key={fI}>
+                  <div style={{ padding: "20px 0", borderBottom: "1px solid rgba(11,18,32,0.12)" }}>
+                    <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: "16px" }}>
+                      <A href={`#${f.kind}`} style={{ display: "inline-block", padding: "11px 0", margin: "-11px 0", fontSize: "17px", fontWeight: "700", lineHeight: "1.3", letterSpacing: "-0.01em" }}>{f.name}</A>
+                      <span style={{ flex: "none", marginTop: "1px", fontSize: "11px", fontWeight: "600", letterSpacing: "0.08em", padding: "6px 10px", borderRadius: "999px", background: f.ssBg, color: f.ssFg }}>{f.ss}</span>
+                    </div>
+                    <div style={{ marginTop: "8px", fontSize: "12px", fontWeight: "600", letterSpacing: "0.1em", textTransform: "uppercase", color: "#0B1220" }}>{f.type} <span style={{ color: "#8B95A7" }}>·</span> {f.stageName}</div>
+                    <div style={{ marginTop: "6px", fontSize: "15px", lineHeight: "1.5", fontWeight: "500", color: "#4E586A" }}>{f.best}</div>
+                  </div>
+                </Fragment>
+              ))}
+              <div style={{ padding: "20px 0", borderBottom: "1px solid rgba(11,18,32,0.12)" }}>
+                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: "16px" }}>
+                  <span style={{ fontSize: "17px", fontWeight: "700", lineHeight: "1.3", letterSpacing: "-0.01em" }}>Garage takeover</span>
+                  <span style={{ flex: "none", marginTop: "1px", fontSize: "11px", fontWeight: "600", letterSpacing: "0.08em", padding: "6px 10px", borderRadius: "999px", background: "#E3E5EA", color: "#0B1220" }}>WITH OUR TEAM</span>
+                </div>
+                <div style={{ marginTop: "8px", fontSize: "12px", fontWeight: "600", letterSpacing: "0.1em", textTransform: "uppercase", color: "#0B1220" }}>Static + digital <span style={{ color: "#8B95A7" }}>·</span> Whole journey</div>
+                <div style={{ marginTop: "6px", fontSize: "15px", lineHeight: "1.5", fontWeight: "500", color: "#4E586A" }}>Launches, market domination</div>
+              </div>
             </div>
           </div>
         </section>

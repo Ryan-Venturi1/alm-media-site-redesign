@@ -181,7 +181,7 @@ export default class LiveBoard extends React.Component {
         </div>
         {v.showCaption ? (
           <>
-            <div style={{ position: "absolute", left: "16px", bottom: "16px", display: "inline-flex", alignItems: "center", gap: "8px", padding: "8px 14px", borderRadius: "999px", background: "rgba(11,18,32,0.72)", color: "#FFFFFF", fontSize: "12px", fontWeight: "700", letterSpacing: "0.04em", backdropFilter: "blur(8px)", WebkitBackdropFilter: "blur(8px)" }}><span style={{ width: "7px", height: "7px", borderRadius: "50%", background: "#FF453A", opacity: v.dot, transition: "opacity .3s" }} /> {v.v?.caption}</div>
+            <div className="m-lb-cap" style={{ position: "absolute", left: "16px", bottom: "16px", display: "inline-flex", alignItems: "center", gap: "8px", padding: "8px 14px", borderRadius: "999px", background: "rgba(11,18,32,0.72)", color: "#FFFFFF", fontSize: "12px", fontWeight: "700", letterSpacing: "0.04em", backdropFilter: "blur(8px)", WebkitBackdropFilter: "blur(8px)" }}><span style={{ width: "7px", height: "7px", borderRadius: "50%", background: "#FF453A", opacity: v.dot, transition: "opacity .3s" }} /> {v.v?.caption}</div>
           </>
         ) : null}
       </div>

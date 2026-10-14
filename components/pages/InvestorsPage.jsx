@@ -90,54 +90,54 @@ export default class InvestorsPage extends React.Component {
         <Nav active="investors" />
         {/* HERO */}
         <div style={{ background: "#05080F" }}>
-          <section className="alm-hero" data-scrub="exit" style={{ position: "relative", minHeight: "820px", background: "#0B1220", color: "#FFFFFF", overflow: "hidden" }}>
-            <video className="alm-hero-media" ref={v.vidRef} src="/media/video/highway-night.mp4?v=0f116ba5" poster="/media/video/highway-night-poster.webp?v=cdef3b33" autoPlay muted loop playsInline preload="auto" aria-hidden="true" style={{ position: "absolute", inset: "0", width: "100%", height: "100%", objectFit: "cover", objectPosition: "50% 40%" }} />
-            <div style={{ position: "absolute", inset: "0", background: "linear-gradient(180deg, rgba(11,18,32,0.5) 0%, rgba(11,18,32,0.35) 40%, rgba(11,18,32,0.94) 100%)" }} />
-            <div className="alm-hero-copy" style={{ position: "relative", maxWidth: "1360px", minHeight: "820px", margin: "0 auto", padding: "0 28px 72px", boxSizing: "border-box", display: "flex", flexDirection: "column", justifyContent: "flex-end" }}>
+          <section className="alm-hero m-inv-hero" data-scrub="exit" style={{ position: "relative", minHeight: "820px", background: "#0B1220", color: "#FFFFFF", overflow: "hidden" }}>
+            <video className="alm-hero-media m-inv-hero-media" ref={v.vidRef} src="/media/video/highway-night.mp4?v=0f116ba5" poster="/media/video/highway-night-poster.webp?v=cdef3b33" autoPlay muted loop playsInline preload="auto" aria-hidden="true" style={{ position: "absolute", inset: "0", width: "100%", height: "100%", objectFit: "cover", objectPosition: "50% 40%" }} />
+            <div className="m-inv-hero-shade" style={{ position: "absolute", inset: "0", background: "linear-gradient(180deg, rgba(11,18,32,0.5) 0%, rgba(11,18,32,0.35) 40%, rgba(11,18,32,0.94) 100%)" }} />
+            <div className="alm-hero-copy m-inv-hero-copy" style={{ position: "relative", maxWidth: "1360px", minHeight: "820px", margin: "0 auto", padding: "0 28px 72px", boxSizing: "border-box", display: "flex", flexDirection: "column", justifyContent: "flex-end" }}>
               <div className="alm-rise" style={{ display: "flex", alignItems: "center", gap: "10px", fontSize: "15px", fontWeight: "600", letterSpacing: "-0.005em", opacity: "0.72" }}><span style={{ width: "7px", height: "7px", background: "#FBAE4F", borderRadius: "50%" }} />Investor relations</div>
               <h1 className="alm-rise" style={{ margin: "22px 0 0", maxWidth: "1240px", fontSize: "clamp(44px, 7.2vw, 116px)", lineHeight: "1", letterSpacing: "-0.035em", fontWeight: "600", animationDelay: ".1s" }}>The media layer of <span style={{ color: "#FBAE4F" }}>America’s parking.</span></h1>
               <div className="alm-rise" style={{ marginTop: "32px", display: "flex", flexWrap: "wrap", gap: "24px 48px", alignItems: "flex-end", justifyContent: "space-between", animationDelay: ".2s" }}>
-                <p style={{ margin: "0", maxWidth: "620px", fontSize: "19px", lineHeight: "1.55", fontWeight: "400", color: "#E4E8EF" }}>A vertically integrated out-of-home network across 12,000 parking locations — screens, print and CMS through our sister companies MetroClick and faytech, software and ad sales in-house.</p>
-                <div style={{ display: "flex", gap: "12px", flexWrap: "wrap" }}>
+                <p className="m-inv-hero-p" style={{ margin: "0", maxWidth: "620px", fontSize: "19px", lineHeight: "1.55", fontWeight: "400", color: "#E4E8EF" }}>A vertically integrated out-of-home network across 12,000 parking locations — screens, print and CMS through our sister companies MetroClick and faytech, software and ad sales in-house.</p>
+                <div className="m-inv-hero-cta" style={{ display: "flex", gap: "12px", flexWrap: "wrap" }}>
                   <A className="alm-btn" href="#access" style={{ display: "inline-flex", alignItems: "center", minHeight: "56px", padding: "0 26px", borderRadius: "999px", background: "#FBAE4F", color: "#0B1220", fontWeight: "600", fontSize: "15px", letterSpacing: "-0.005em" }}>Request the data room</A>
                   <A className="alm-btn" href="#thesis" style={{ display: "inline-flex", alignItems: "center", minHeight: "56px", padding: "0 26px", borderRadius: "999px", border: "2px solid #FFFFFF", color: "#FFFFFF", fontWeight: "600", fontSize: "15px", letterSpacing: "-0.005em" }}>Read the thesis</A>
                 </div>
               </div>
-              <div style={{ position: "absolute", right: "28px", bottom: "24px", fontFamily: "'Geist Mono', monospace", fontSize: "11px", letterSpacing: "0.08em", color: "rgba(255,255,255,0.55)" }}>STOCK DRONE FOOTAGE</div>
+              <div className="m-inv-credit" style={{ position: "absolute", right: "28px", bottom: "24px", fontFamily: "'Geist Mono', monospace", fontSize: "11px", letterSpacing: "0.08em", color: "rgba(255,255,255,0.55)" }}>STOCK DRONE FOOTAGE</div>
             </div>
           </section>
         </div>
         {/* MARKET OPPORTUNITY */}
-        <section style={{ padding: "140px 28px 40px" }}>
+        <section className="alm-pt" style={{ padding: "140px 28px 40px" }}>
           <div style={{ maxWidth: "1240px", margin: "0 auto" }}>
-            <div style={{ textAlign: "center" }}>
+            <div className="m-inv-opp-head" style={{ textAlign: "center" }}>
               <div style={{ display: "inline-flex", alignItems: "center", gap: "10px", fontSize: "17px", fontWeight: "600", letterSpacing: "-0.01em", color: "#A85C00" }}><span style={{ width: "7px", height: "7px", background: "#FBAE4F", borderRadius: "50%" }} />The opportunity</div>
               <h2 className="alm-in" style={{ margin: "16px auto 0", maxWidth: "960px", fontSize: "clamp(40px, 6vw, 88px)", lineHeight: "1", letterSpacing: "-0.04em", fontWeight: "600" }}>Every trip ends<br />in a parking space.</h2>
-              <p className="alm-in" style={{ margin: "24px auto 0", maxWidth: "680px", fontSize: "21px", lineHeight: "1.5", fontWeight: "400", color: "#5B6474" }}>Drivers spend up to ten minutes there — three million cars a day across our network. We’re turning that moment into a national media platform, starting with the screens already live.</p>
+              <p className="alm-in m-inv-opp-p" style={{ margin: "24px auto 0", maxWidth: "680px", fontSize: "21px", lineHeight: "1.5", fontWeight: "400", color: "#5B6474" }}>Drivers spend up to ten minutes there — three million cars a day across our network. We’re turning that moment into a national media platform, starting with the screens already live.</p>
             </div>
             <div style={{ marginTop: "64px", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: "16px" }}>
-              <div className="alm-in" style={{ padding: "36px", minHeight: "260px", borderRadius: "28px", background: "#0B1220", color: "#FFFFFF", display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
+              <div className="alm-in alm-autoh m-inv-oppcard" style={{ padding: "36px", minHeight: "260px", borderRadius: "28px", background: "#0B1220", color: "#FFFFFF", display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
                 <div style={{ fontSize: "15px", fontWeight: "600", color: "#A3ACBC" }}>Installed today</div>
                 <div>
                   <div style={{ fontSize: "clamp(56px, 5.4vw, 84px)", fontWeight: "600", lineHeight: "0.95", letterSpacing: "-0.05em", background: "linear-gradient(90deg, #FBAE4F, #FFE1B8)", WebkitBackgroundClip: "text", backgroundClip: "text", color: "transparent" }}>110+</div>
                   <div style={{ marginTop: "10px", fontSize: "16px", lineHeight: "1.5", color: "#C9D0DB" }}>digital units in New York and Connecticut.</div>
                 </div>
               </div>
-              <div className="alm-in" style={{ padding: "36px", minHeight: "260px", borderRadius: "28px", background: "#FFFFFF", display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
+              <div className="alm-in alm-autoh m-inv-oppcard" style={{ padding: "36px", minHeight: "260px", borderRadius: "28px", background: "#FFFFFF", display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
                 <div style={{ fontSize: "15px", fontWeight: "600", color: "#5B6474" }}>Planned</div>
                 <div>
                   <div style={{ fontSize: "clamp(56px, 5.4vw, 84px)", fontWeight: "600", lineHeight: "0.95", letterSpacing: "-0.05em" }}>1,000</div>
                   <div style={{ marginTop: "10px", fontSize: "16px", lineHeight: "1.5", color: "#5B6474" }}>more units for the top 35 US media markets.</div>
                 </div>
               </div>
-              <div className="alm-in" style={{ padding: "36px", minHeight: "260px", borderRadius: "28px", background: "#FFFFFF", display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
+              <div className="alm-in alm-autoh m-inv-oppcard" style={{ padding: "36px", minHeight: "260px", borderRadius: "28px", background: "#FFFFFF", display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
                 <div style={{ fontSize: "15px", fontWeight: "600", color: "#5B6474" }}>Partner value</div>
                 <div>
                   <div style={{ fontSize: "clamp(56px, 5.4vw, 84px)", fontWeight: "600", lineHeight: "0.95", letterSpacing: "-0.05em", color: "#1D7F92" }}>$1.5M+</div>
                   <div style={{ marginTop: "10px", fontSize: "16px", lineHeight: "1.5", color: "#5B6474" }}>created for our parking partners.</div>
                 </div>
               </div>
-              <div className="alm-in" style={{ padding: "36px", minHeight: "260px", borderRadius: "28px", background: "#FFFFFF", display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
+              <div className="alm-in alm-autoh m-inv-oppcard" style={{ padding: "36px", minHeight: "260px", borderRadius: "28px", background: "#FFFFFF", display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
                 <div style={{ fontSize: "15px", fontWeight: "600", color: "#5B6474" }}>Why now</div>
                 <ul style={{ margin: "0", padding: "0", listStyle: "none", display: "grid", gap: "12px", fontSize: "16px", lineHeight: "1.45", fontWeight: "500" }}>
                   <li style={{ display: "flex", gap: "10px" }}><span style={{ color: "#FBAE4F" }}>●</span>Digital screens open the door to programmatic buying</li>
@@ -149,10 +149,10 @@ export default class InvestorsPage extends React.Component {
           </div>
         </section>
         {/* METRICS */}
-        <section style={{ padding: "104px 28px" }}>
+        <section className="alm-pt alm-pb" style={{ padding: "104px 28px" }}>
           <div style={{ maxWidth: "1360px", margin: "0 auto" }}>
             <div style={{ display: "flex", alignItems: "center", gap: "10px", fontSize: "15px", fontWeight: "600", letterSpacing: "-0.005em", opacity: "0.72" }}><span style={{ width: "7px", height: "7px", background: "#FBAE4F", borderRadius: "50%" }} />At a glance</div>
-            <div style={{ marginTop: "40px", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: "48px 32px" }}>
+            <div className="m-inv-glance" style={{ marginTop: "40px", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: "48px 32px" }}>
               <div style={{ borderTop: "3px solid #0B1220", paddingTop: "20px" }}>
                 <div style={{ fontSize: "clamp(48px, 5vw, 76px)", fontWeight: "600", lineHeight: "0.95", letterSpacing: "-0.035em" }}>12,000</div>
                 <div style={{ marginTop: "10px", fontSize: "12px", fontWeight: "600", letterSpacing: "0.14em", color: "#4E586A" }}>PARKING LOCATIONS</div>
@@ -178,8 +178,8 @@ export default class InvestorsPage extends React.Component {
                 <div style={{ marginTop: "10px", fontSize: "12px", fontWeight: "600", letterSpacing: "0.14em", color: "#4E586A" }}>DESIGNING &amp; INSTALLING SINCE</div>
               </div>
             </div>
-            <div style={{ marginTop: "48px", padding: "32px", borderRadius: "18px", background: "#0B1220", color: "#FFFFFF", display: "flex", flexWrap: "wrap", gap: "24px 48px", alignItems: "center", justifyContent: "space-between" }}>
-              <div style={{ display: "flex", flexWrap: "wrap", gap: "24px 48px" }}>
+            <div className="m-inv-sum" style={{ marginTop: "48px", padding: "32px", borderRadius: "18px", background: "#0B1220", color: "#FFFFFF", display: "flex", flexWrap: "wrap", gap: "24px 48px", alignItems: "center", justifyContent: "space-between" }}>
+              <div className="m-inv-sum-grid" style={{ display: "flex", flexWrap: "wrap", gap: "24px 48px" }}>
                 <div>
                   <div style={{ fontSize: "11px", fontWeight: "600", letterSpacing: "0.14em", color: "#8B95A7" }}>DIGITAL UNITS INSTALLED</div>
                   <div style={{ marginTop: "6px", fontSize: "28px", fontWeight: "650", letterSpacing: "-0.02em" }}>110+</div>
@@ -202,7 +202,7 @@ export default class InvestorsPage extends React.Component {
           </div>
         </section>
         {/* THREE ENGINES */}
-        <section style={{ padding: "24px 28px 128px" }}>
+        <section className="alm-pb" style={{ padding: "24px 28px 128px" }}>
           <div style={{ maxWidth: "1360px", margin: "0 auto" }}>
             <div style={{ display: "flex", flexWrap: "wrap", gap: "24px 64px", alignItems: "flex-end", justifyContent: "space-between" }}>
               <div>
@@ -211,8 +211,8 @@ export default class InvestorsPage extends React.Component {
               </div>
               <p style={{ margin: "0", maxWidth: "440px", fontSize: "17px", lineHeight: "1.6", fontWeight: "400", color: "#4E586A" }}>The same locations monetize three ways — and every product can be packaged together or sold on its own.</p>
             </div>
-            <div style={{ marginTop: "48px", padding: "32px", borderRadius: "18px", background: "#FFFFFF" }}>
-              <div style={{ display: "grid", gridTemplateColumns: "minmax(120px, 160px) 1fr", gap: "16px 24px", alignItems: "center" }}>
+            <div className="m-inv-barcard" style={{ marginTop: "48px", padding: "32px", borderRadius: "18px", background: "#FFFFFF" }}>
+              <div className="m-inv-bars" style={{ display: "grid", gridTemplateColumns: "minmax(120px, 160px) 1fr", gap: "16px 24px", alignItems: "center" }}>
                 <div style={{ fontSize: "11px", fontWeight: "600", letterSpacing: "0.14em", color: "#4E586A" }}>TODAY</div>
                 <div style={{ display: "flex", gap: "4px", height: "44px" }}>
                   <div style={{ flex: "1", minWidth: "0", borderRadius: "4px", background: "#0B1220", color: "#FFFFFF", display: "flex", alignItems: "center", padding: "0 14px", fontSize: "12px", fontWeight: "600", letterSpacing: "0.1em", overflow: "hidden" }}>STATIC</div>
@@ -229,9 +229,9 @@ export default class InvestorsPage extends React.Component {
                   </div>
                 </div>
               </div>
-              <div style={{ marginTop: "16px", fontFamily: "'Geist Mono', monospace", fontSize: "11px", letterSpacing: "0.08em", color: "#8A93A3" }}>DIRECTIONAL · NOT TO SCALE · DETAIL IN THE DATA ROOM</div>
+              <div className="m-inv-cap" style={{ marginTop: "16px", fontFamily: "'Geist Mono', monospace", fontSize: "11px", letterSpacing: "0.08em", color: "#8A93A3" }}>DIRECTIONAL · NOT TO SCALE · DETAIL IN THE DATA ROOM</div>
             </div>
-            <div style={{ marginTop: "16px", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "16px" }}>
+            <div style={{ marginTop: "16px", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 300px), 1fr))", gap: "16px" }}>
               {(v.engines || []).map((e, eI) => (
                 <Fragment key={eI}>
                   <article className="alm-tile alm-in" style={{ display: "flex", flexDirection: "column", borderRadius: "18px", overflow: "hidden", background: e.bg, color: e.fg, boxShadow: e.ring }}>
@@ -242,12 +242,12 @@ export default class InvestorsPage extends React.Component {
                           <span style={{ position: "absolute", top: "14px", left: "14px", padding: "6px 11px", borderRadius: "999px", background: "#FBAE4F", color: "#0B1220", fontSize: "11px", fontWeight: "600", letterSpacing: "0.1em" }}>{e.tag}</span>
                         </>
                       ) : null}
-                      <span style={{ position: "absolute", right: "12px", bottom: "12px", fontFamily: "'Geist Mono', monospace", fontSize: "10px", letterSpacing: "0.1em", color: "rgba(255,255,255,0.75)" }}>{e.note}</span>
+                      <span className="m-inv-note" style={{ position: "absolute", right: "12px", bottom: "12px", fontFamily: "'Geist Mono', monospace", fontSize: "10px", letterSpacing: "0.1em", color: "rgba(255,255,255,0.75)" }}>{e.note}</span>
                     </div>
-                    <div style={{ padding: "30px", display: "flex", flexDirection: "column", gap: "14px", flex: "1" }}>
+                    <div className="m-inv-engbody" style={{ padding: "30px", display: "flex", flexDirection: "column", gap: "14px", flex: "1" }}>
                       <div style={{ display: "flex", alignItems: "center", gap: "10px", fontSize: "12px", fontWeight: "600", letterSpacing: "0.14em" }}><span style={{ width: "7px", height: "7px", background: e.dot, outline: "1px solid rgba(127,127,127,0.4)", borderRadius: "50%" }} />{e.no} · {e.name}</div>
                       <div style={{ fontSize: "28px", fontWeight: "650", lineHeight: "1.08", letterSpacing: "-0.02em" }}>{e.head}</div>
-                      <dl style={{ margin: "6px 0 0", display: "grid", gridTemplateColumns: "minmax(0, 1fr) minmax(0, 2fr)", borderTop: `1px solid ${e.line}` }}>
+                      <dl className="m-inv-dl" style={{ margin: "6px 0 0", display: "grid", gridTemplateColumns: "minmax(0, 1fr) minmax(0, 2fr)", borderTop: `1px solid ${e.line}` }}>
                         <dt style={{ padding: "12px 0", borderBottom: `1px solid ${e.line}`, fontSize: "11px", fontWeight: "600", letterSpacing: "0.12em", opacity: "0.7" }}>HOW IT EARNS</dt>
                         <dd style={{ margin: "0", padding: "12px 0", borderBottom: `1px solid ${e.line}`, fontSize: "14px", fontWeight: "600", lineHeight: "1.5" }}>{e.earn}</dd>
                         <dt style={{ padding: "12px 0", borderBottom: `1px solid ${e.line}`, fontSize: "11px", fontWeight: "600", letterSpacing: "0.12em", opacity: "0.7" }}>WHY IT SCALES</dt>
@@ -261,7 +261,7 @@ export default class InvestorsPage extends React.Component {
           </div>
         </section>
         {/* THESIS */}
-        <section id="thesis" style={{ padding: "128px 28px", background: "#0B1220", color: "#FFFFFF" }}>
+        <section className="alm-pt alm-pb" id="thesis" style={{ padding: "128px 28px", background: "#0B1220", color: "#FFFFFF" }}>
           <div style={{ maxWidth: "1360px", margin: "0 auto" }}>
             <div style={{ display: "flex", alignItems: "center", gap: "10px", fontSize: "15px", fontWeight: "600", letterSpacing: "-0.005em", opacity: "0.72" }}><span style={{ width: "7px", height: "7px", background: "#FBAE4F", borderRadius: "50%" }} />The thesis</div>
             <h2 className="alm-in" style={{ margin: "22px 0 0", maxWidth: "1000px", fontSize: "clamp(38px, 5.2vw, 80px)", lineHeight: "1", letterSpacing: "-0.035em", fontWeight: "600" }}>Why we win.</h2>
@@ -290,7 +290,7 @@ export default class InvestorsPage extends React.Component {
           </div>
         </section>
         {/* FLYWHEEL */}
-        <section style={{ padding: "128px 28px" }}>
+        <section className="alm-pt alm-pb" style={{ padding: "128px 28px" }}>
           <div style={{ maxWidth: "1360px", margin: "0 auto", display: "flex", flexWrap: "wrap", gap: "56px", alignItems: "center" }}>
             <div style={{ flex: "1 1 400px" }}>
               <div style={{ display: "flex", alignItems: "center", gap: "10px", fontSize: "15px", fontWeight: "600", letterSpacing: "-0.005em", opacity: "0.72" }}><span style={{ width: "7px", height: "7px", background: "#FBAE4F", borderRadius: "50%" }} />The flywheel</div>
@@ -301,14 +301,14 @@ export default class InvestorsPage extends React.Component {
               <ol style={{ margin: "0", padding: "0", listStyle: "none", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: "12px" }}>
                 {(v.wheel || []).map((w, wI) => (
                   <Fragment key={wI}>
-                    <li style={{ padding: "28px", borderRadius: "18px", background: w.bg, color: w.fg, transition: "background .5s ease, color .5s ease", minHeight: "170px", display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
+                    <li className="m-inv-wheel" style={{ padding: "28px", borderRadius: "18px", background: w.bg, color: w.fg, transition: "background .5s ease, color .5s ease", minHeight: "170px", display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
                       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
                         <span style={{ fontFamily: "'Geist Mono', monospace", fontSize: "13px", fontWeight: "600" }}>{w.no}</span>
                         <span style={{ fontSize: "22px", fontWeight: "650", letterSpacing: "-0.02em" }}>{w.arrow}</span>
                       </div>
                       <div style={{ marginTop: "16px" }}>
                         <div style={{ fontSize: "22px", fontWeight: "650", lineHeight: "1.08", letterSpacing: "-0.02em" }}>{w.title}</div>
-                        <div style={{ marginTop: "8px", fontSize: "14px", fontWeight: "600", opacity: "0.85" }}>{w.desc}</div>
+                        <div className="m-inv-wdesc" style={{ marginTop: "8px", fontSize: "14px", fontWeight: "600", opacity: "0.85" }}>{w.desc}</div>
                       </div>
                     </li>
                   </Fragment>
@@ -318,11 +318,11 @@ export default class InvestorsPage extends React.Component {
           </div>
         </section>
         {/* ROADMAP */}
-        <section style={{ padding: "128px 28px", background: "#344567", color: "#FFFFFF" }}>
+        <section className="alm-pt alm-pb" style={{ padding: "128px 28px", background: "#344567", color: "#FFFFFF" }}>
           <div style={{ maxWidth: "1360px", margin: "0 auto" }}>
             <div style={{ display: "flex", alignItems: "center", gap: "10px", fontSize: "15px", fontWeight: "600", letterSpacing: "-0.005em", opacity: "0.72" }}><span style={{ width: "7px", height: "7px", background: "#FBAE4F", borderRadius: "50%" }} />Roadmap</div>
             <h2 className="alm-in" style={{ margin: "22px 0 0", maxWidth: "1000px", fontSize: "clamp(38px, 5.2vw, 80px)", lineHeight: "1", letterSpacing: "-0.035em", fontWeight: "600" }}>From installer to platform.</h2>
-            <ol style={{ margin: "64px 0 0", padding: "0", listStyle: "none", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(190px, 1fr))", gap: "0", borderTop: "3px solid #FBAE4F" }}>
+            <ol className="m-inv-road" style={{ margin: "64px 0 0", padding: "0", listStyle: "none", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(190px, 1fr))", gap: "0", borderTop: "3px solid #FBAE4F" }}>
               <li style={{ padding: "28px 24px 0 0" }}>
                 <div style={{ fontSize: "36px", fontWeight: "650", color: "#FBAE4F", letterSpacing: "-0.02em" }}>2016</div>
                 <div style={{ marginTop: "12px", fontSize: "18px", fontWeight: "700" }}>Founded</div>
@@ -357,11 +357,11 @@ export default class InvestorsPage extends React.Component {
           </div>
         </section>
         {/* PROOF */}
-        <section style={{ padding: "128px 28px" }}>
+        <section className="alm-pt alm-pb" style={{ padding: "128px 28px" }}>
           <div style={{ maxWidth: "1360px", margin: "0 auto" }}>
             <h2 className="alm-in" style={{ margin: "0", maxWidth: "900px", fontSize: "clamp(38px, 5.2vw, 80px)", lineHeight: "1", letterSpacing: "-0.035em", fontWeight: "600" }}>Proof in the field.</h2>
-            <p style={{ margin: "16px 0 0", fontFamily: "'Geist Mono', monospace", fontSize: "11px", letterSpacing: "0.08em", color: "#8A93A3" }}>REAL INSTALLATIONS · PHOTOS RETOUCHED FOR LIGHT AND CLEAN-UP · ADS UNALTERED</p>
-            <div style={{ marginTop: "48px", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "16px" }}>
+            <p className="m-inv-cap" style={{ margin: "16px 0 0", fontFamily: "'Geist Mono', monospace", fontSize: "11px", letterSpacing: "0.08em", color: "#8A93A3" }}>REAL INSTALLATIONS · PHOTOS RETOUCHED FOR LIGHT AND CLEAN-UP · ADS UNALTERED</p>
+            <div style={{ marginTop: "48px", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 300px), 1fr))", gap: "16px" }}>
               <figure className="alm-tile alm-wipe" style={{ margin: "0", height: "380px", borderRadius: "16px", overflow: "hidden", position: "relative", background: "#0B1220" }}>
                 <img src="/media/photos/lucid-garage-panel-unedited.webp?v=63c8d27f" alt="Drivers walking past a Lucid ad on an A Lot Media digital panel in a New York garage" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "65% 50%", display: "block" }} loading="lazy" decoding="async" />
                 <figcaption style={{ position: "absolute", left: "16px", bottom: "16px", padding: "8px 14px", borderRadius: "999px", background: "rgba(11,18,32,0.72)", color: "#FFFFFF", fontSize: "12px", fontWeight: "700" }}>LUCID · DIGITAL · NEW YORK</figcaption>
@@ -375,7 +375,7 @@ export default class InvestorsPage extends React.Component {
                 <figcaption style={{ position: "absolute", left: "16px", bottom: "16px", padding: "8px 14px", borderRadius: "999px", background: "rgba(11,18,32,0.72)", color: "#FFFFFF", fontSize: "12px", fontWeight: "700" }}>RATE BOARD · CONNECTICUT</figcaption>
               </figure>
             </div>
-            <div style={{ marginTop: "16px", display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(150px, 1fr))", gap: "1px", background: "rgba(11,18,32,0.08)", border: "1px solid rgba(11,18,32,0.08)" }}>
+            <div className="m-inv-logos" style={{ marginTop: "16px", display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(150px, 1fr))", gap: "1px", background: "rgba(11,18,32,0.08)", border: "1px solid rgba(11,18,32,0.08)" }}>
               {(v.logos || []).map((lg, lgI) => (
                 <Fragment key={lgI}>
                   <div className="alm-in" style={{ background: "#F5F5F7", height: "104px", display: "flex", alignItems: "center", justifyContent: "center", padding: "16px", boxSizing: "border-box" }}>
@@ -387,14 +387,14 @@ export default class InvestorsPage extends React.Component {
           </div>
         </section>
         {/* LEADERSHIP */}
-        <section style={{ padding: "0 28px 128px" }}>
+        <section className="alm-pb" style={{ padding: "0 28px 128px" }}>
           <div style={{ maxWidth: "1360px", margin: "0 auto" }}>
             <div style={{ display: "flex", flexWrap: "wrap", gap: "24px 64px", alignItems: "flex-end", justifyContent: "space-between" }}>
               <h2 className="alm-in" style={{ margin: "0", fontSize: "clamp(38px, 5.2vw, 80px)", lineHeight: "1", letterSpacing: "-0.035em", fontWeight: "600" }}>The team.</h2>
               <p style={{ margin: "0", maxWidth: "460px", fontSize: "17px", lineHeight: "1.6", fontWeight: "400", color: "#4E586A" }}>Operators from parking, place-based media and display technology — advised by the people who built LAZ Parking and National CineMedia.</p>
             </div>
             <div style={{ marginTop: "48px", fontSize: "12px", fontWeight: "600", letterSpacing: "0.14em", color: "#4E586A" }}>LEADERSHIP</div>
-            <div style={{ marginTop: "16px", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(340px, 1fr))", gap: "16px" }}>
+            <div style={{ marginTop: "16px", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 340px), 1fr))", gap: "16px" }}>
               {(v.leaders || []).map((p, pI) => (
                 <Fragment key={pI}>
                   <article className="alm-in" style={{ padding: "26px", borderRadius: "16px", background: "#FFFFFF", display: "flex", flexDirection: "column", gap: "14px" }}>
@@ -422,7 +422,7 @@ export default class InvestorsPage extends React.Component {
                         <div style={{ marginTop: "4px", fontSize: "13px", fontWeight: "700", letterSpacing: "0.06em", color: "#FBAE4F" }}>{p.role}</div>
                       </div>
                     </div>
-                    <p style={{ margin: "0", fontSize: "14px", lineHeight: "1.6", fontWeight: "400", color: "#C9D0DB" }}>{p.bio}</p>
+                    <p className="m-inv-advbio" style={{ margin: "0", fontSize: "14px", lineHeight: "1.6", fontWeight: "400", color: "#C9D0DB" }}>{p.bio}</p>
                   </article>
                 </Fragment>
               ))}
@@ -430,14 +430,14 @@ export default class InvestorsPage extends React.Component {
           </div>
         </section>
         {/* ACCESS */}
-        <section id="access" style={{ padding: "128px 28px", background: "#0B1220", color: "#FFFFFF" }}>
+        <section className="alm-pt alm-pb" id="access" style={{ padding: "128px 28px", background: "#0B1220", color: "#FFFFFF" }}>
           <div style={{ maxWidth: "1360px", margin: "0 auto", display: "flex", flexWrap: "wrap", gap: "64px" }}>
             <div style={{ flex: "1 1 380px" }}>
               <div style={{ display: "flex", alignItems: "center", gap: "10px", fontSize: "15px", fontWeight: "600", letterSpacing: "-0.005em", opacity: "0.72" }}><span style={{ width: "7px", height: "7px", background: "#FBAE4F", borderRadius: "50%" }} />Data room</div>
               <h2 className="alm-in" style={{ margin: "22px 0 0", fontSize: "clamp(38px, 5vw, 72px)", lineHeight: "1", letterSpacing: "-0.035em", fontWeight: "600" }}>Request investor access.</h2>
               <p style={{ margin: "24px 0 0", fontSize: "18px", lineHeight: "1.6", fontWeight: "400", color: "#C9D0DB" }}>Financials, unit economics and the deployment pipeline are shared under NDA. Or email team@alotmedia.com.</p>
             </div>
-            <div style={{ flex: "999 1 560px", minWidth: "0", padding: "40px", borderRadius: "18px", background: "#FFFFFF", color: "#0B1220" }}>
+            <div className="m-inv-form" style={{ flex: "999 1 560px", minWidth: "0", padding: "40px", borderRadius: "18px", background: "#FFFFFF", color: "#0B1220" }}>
               {v.sent ? (
                 <>
                   <div style={{ minHeight: "320px", display: "flex", flexDirection: "column", justifyContent: "center", gap: "16px" }}>

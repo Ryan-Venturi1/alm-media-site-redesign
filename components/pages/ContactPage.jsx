@@ -43,26 +43,26 @@ export default class ContactPage extends React.Component {
     return (
       <div className="alm-root" style={{ background: "#F5F5F7", color: "#0B1220", fontFamily: "'Montserrat', system-ui, sans-serif", overflowX: "hidden", WebkitFontSmoothing: "antialiased" }}>
         <Nav active="contact" />
-        <section style={{ padding: "96px 28px 128px" }}>
+        <section className="alm-pt alm-pb" style={{ padding: "96px 28px 128px" }}>
           <div style={{ maxWidth: "1360px", margin: "0 auto", display: "flex", flexWrap: "wrap", gap: "56px" }}>
             <div style={{ flex: "1 1 420px", display: "flex", flexDirection: "column" }}>
               <div className="alm-rise" style={{ display: "flex", alignItems: "center", gap: "10px", fontSize: "15px", fontWeight: "600", letterSpacing: "-0.005em", opacity: "0.72" }}><span style={{ width: "7px", height: "7px", background: "#FBAE4F", borderRadius: "50%" }} />Contact</div>
               <h1 className="alm-rise" style={{ margin: "22px 0 0", fontSize: "clamp(48px, 6.4vw, 104px)", lineHeight: "1", letterSpacing: "-0.035em", fontWeight: "600", animationDelay: ".1s" }}>Let’s talk.</h1>
               <p className="alm-rise" style={{ margin: "24px 0 0", maxWidth: "480px", fontSize: "18px", lineHeight: "1.6", fontWeight: "400", color: "#4E586A", animationDelay: ".2s" }}>Tell us who you are and we’ll route you to the right team — sales, real estate or investor relations.</p>
               <div style={{ marginTop: "40px", display: "flex", flexDirection: "column", borderTop: "3px solid #0B1220" }}>
-                <A href="tel:18607169084" style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "22px 0", borderBottom: "1px solid rgba(11,18,32,0.14)" }}>
+                <A href="tel:18607169084" className="m-ct-row" style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "22px 0", borderBottom: "1px solid rgba(11,18,32,0.14)" }}>
                   <span style={{ fontSize: "12px", fontWeight: "600", letterSpacing: "0.14em", color: "#4E586A" }}>CALL</span>
-                  <span style={{ fontSize: "22px", fontWeight: "650", letterSpacing: "-0.02em" }}>1.860.716.9084</span>
+                  <span className="m-ct-val" style={{ fontSize: "22px", fontWeight: "650", letterSpacing: "-0.02em" }}>1.860.716.9084</span>
                 </A>
-                <A href="mailto:team@alotmedia.com" style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "22px 0", borderBottom: "1px solid rgba(11,18,32,0.14)" }}>
+                <A href="mailto:team@alotmedia.com" className="m-ct-row" style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "22px 0", borderBottom: "1px solid rgba(11,18,32,0.14)" }}>
                   <span style={{ fontSize: "12px", fontWeight: "600", letterSpacing: "0.14em", color: "#4E586A" }}>EMAIL</span>
-                  <span style={{ fontSize: "22px", fontWeight: "650", letterSpacing: "-0.02em" }}>team@alotmedia.com</span>
+                  <span className="m-ct-val" style={{ fontSize: "22px", fontWeight: "650", letterSpacing: "-0.02em" }}>team@alotmedia.com</span>
                 </A>
               </div>
               <div style={{ marginTop: "32px", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(150px, 1fr))", gap: "20px" }}>
                 <div>
                   <div style={{ fontSize: "16px", fontWeight: "700" }}>Hartford</div>
-                  <div style={{ marginTop: "6px", fontSize: "14px", lineHeight: "1.55", fontWeight: "500", color: "#4E586A" }}>1 Financial Plaza, 14th Fl<br />CT 06103</div>
+                  <div style={{ marginTop: "6px", fontSize: "14px", lineHeight: "1.55", fontWeight: "500", color: "#4E586A" }}>1 Financial Plaza, <span className="m-ct-nb">14th Fl</span><br />CT 06103</div>
                 </div>
                 <div>
                   <div style={{ fontSize: "16px", fontWeight: "700" }}>Los Angeles</div>
@@ -81,7 +81,7 @@ export default class ContactPage extends React.Component {
                 <img src="/media/photos/stock-nyc-trails.webp?v=99f803ae" alt="Manhattan skyline with highway light trails at night" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} loading="lazy" decoding="async" />
               </div>
             </div>
-            <div style={{ flex: "1 1 560px", minWidth: "0", padding: "40px", borderRadius: "18px", background: "#FFFFFF" }}>
+            <div className="m-ct-card" style={{ flex: "1 1 560px", minWidth: "0", padding: "40px", borderRadius: "18px", background: "#FFFFFF" }}>
               {v.sent ? (
                 <>
                   <div style={{ minHeight: "600px", display: "flex", flexDirection: "column", justifyContent: "center", gap: "16px" }}>
@@ -100,7 +100,7 @@ export default class ContactPage extends React.Component {
                 <>
                   <form onSubmit={v.submit}>
                     <div style={{ fontSize: "12px", fontWeight: "600", letterSpacing: "0.14em" }}>I’M A…</div>
-                    <div role="radiogroup" aria-label="Who you are" style={{ marginTop: "14px", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(150px, 1fr))", gap: "8px" }}>
+                    <div className="m-ct-routes" role="radiogroup" aria-label="Who you are" style={{ marginTop: "14px", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(150px, 1fr))", gap: "8px" }}>
                       {(v.routes || []).map((r, rI) => (
                         <Fragment key={rI}>
                           <button type="button" role="radio" aria-checked={r.checked} onClick={r.pick} style={{ minHeight: "84px", padding: "14px 16px", borderRadius: "18px", border: `2px solid ${r.bd}`, background: r.bg, color: r.fg, fontFamily: "'Montserrat', sans-serif", textAlign: "left", cursor: "pointer" }}>
@@ -110,7 +110,7 @@ export default class ContactPage extends React.Component {
                         </Fragment>
                       ))}
                     </div>
-                    <div style={{ marginTop: "28px", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: "18px 20px" }}>
+                    <div className="m-ct-fields" style={{ marginTop: "28px", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: "18px 20px" }}>
                       <label style={{ display: "flex", flexDirection: "column", gap: "8px", fontSize: "14px", fontWeight: "600", letterSpacing: "0" }}>Full name<input className="alm-input" type="text" style={{ minHeight: "52px", padding: "0 16px", borderRadius: "12px", border: "2px solid #D5DAE3", fontFamily: "'Montserrat', sans-serif", fontSize: "15px", fontWeight: "400" }} name="full_name" /></label>
                       <label style={{ display: "flex", flexDirection: "column", gap: "8px", fontSize: "14px", fontWeight: "600", letterSpacing: "0" }}>Work email<input className="alm-input" type="email" style={{ minHeight: "52px", padding: "0 16px", borderRadius: "12px", border: "2px solid #D5DAE3", fontFamily: "'Montserrat', sans-serif", fontSize: "15px", fontWeight: "400" }} name="work_email" /></label>
                       <label style={{ display: "flex", flexDirection: "column", gap: "8px", fontSize: "12px", fontWeight: "600", letterSpacing: "0.1em" }}>{v.route?.f1}<input className="alm-input" type="text" placeholder={v.route?.p1} style={{ minHeight: "52px", padding: "0 16px", borderRadius: "12px", border: "2px solid #D5DAE3", fontFamily: "'Montserrat', sans-serif", fontSize: "15px", fontWeight: "400" }} name={(v.route?.f1 || "detail").toLowerCase().replace(/ /g, "_")} /></label>

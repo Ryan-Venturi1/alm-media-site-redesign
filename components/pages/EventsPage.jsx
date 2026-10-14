@@ -118,7 +118,7 @@ export default class EventsPage extends React.Component {
           match: true, op: dim ? 0.38 : 1, ring: match ? '0 0 0 3px #FBAE4F, 0 24px 60px rgba(11,18,32,0.14)' : 'none' };
       }),
       past: [
-        { type: 'VIP PARK & SHUTTLE', when: 'JUNE 2026', big: 'NY · MIA · DAL · LA', name: 'Four-city VIP arrival program', where: 'New York · Miami · Dallas · Los Angeles',
+        { type: 'VIP PARK & SHUTTLE', when: 'JUNE 2026', big: 'NY\u00a0· MIA\u00a0· DAL\u00a0· LA', name: 'Four-city VIP arrival program', where: 'New\u00a0York\u00a0· Miami\u00a0· Dallas\u00a0· Los\u00a0Angeles',
           desc: 'VIP parking, shuttle pick-up and drop-off, tents, vehicles, generators, signage, displays and barricades for a national brand program.' },
         { type: 'EVENT SITE', when: 'JULY 2026', big: 'Austin', name: 'Drone show launch site', where: 'Downtown Austin, TX',
           desc: 'A downtown Austin location turned into the launch site for a sponsored drone show.' }
@@ -148,13 +148,13 @@ export default class EventsPage extends React.Component {
         <div style={{ background: "#05080F" }}>
           <section className="alm-hero" data-scrub="exit" style={{ position: "relative", minHeight: "860px", background: "#05080F", color: "#FFFFFF", overflow: "hidden" }}>
             <video className="alm-hero-media" ref={v.vidRef} src="/media/video/garage-car.mp4?v=20843b73" poster="/media/video/garage-car-poster.webp?v=494a528b" autoPlay muted loop playsInline preload="auto" aria-hidden="true" style={{ position: "absolute", inset: "0", width: "100%", height: "100%", objectFit: "cover", objectPosition: "50% 55%" }} />
-            <div style={{ position: "absolute", inset: "0", background: "linear-gradient(180deg, rgba(5,8,15,0.45) 0%, rgba(5,8,15,0.2) 38%, rgba(5,8,15,0.92) 100%)" }} />
+            <div className="m-evt-shade" style={{ position: "absolute", inset: "0", background: "linear-gradient(180deg, rgba(5,8,15,0.45) 0%, rgba(5,8,15,0.2) 38%, rgba(5,8,15,0.92) 100%)" }} />
             <div className="alm-hero-copy" style={{ position: "relative", maxWidth: "1360px", minHeight: "860px", margin: "0 auto", padding: "0 28px 64px", boxSizing: "border-box", display: "flex", flexDirection: "column", justifyContent: "flex-end" }}>
               <div className="alm-rise" style={{ display: "flex", alignItems: "center", gap: "10px", fontSize: "15px", fontWeight: "600", letterSpacing: "-0.005em", color: "#FBAE4F" }}><span style={{ width: "7px", height: "7px", background: "#FBAE4F", borderRadius: "50%" }} />Events &amp; venues</div>
               <h1 className="alm-rise" style={{ margin: "22px 0 0", fontSize: "clamp(56px, 9.4vw, 150px)", lineHeight: "1", letterSpacing: "-0.035em", fontWeight: "600", animationDelay: ".1s" }}>The lot is<br /><span style={{ color: "#FBAE4F" }}>the venue.</span></h1>
               <div className="alm-rise" style={{ marginTop: "32px", display: "flex", flexWrap: "wrap", gap: "24px 48px", alignItems: "flex-end", justifyContent: "space-between", animationDelay: ".2s" }}>
                 <p style={{ margin: "0", maxWidth: "560px", fontSize: "20px", lineHeight: "1.5", fontWeight: "400", color: "#E4E8EF" }}>Parking lots and garages where the audience already arrives — with the parking, access and media in place. Activate a brand, move your VIPs, or own the crowd on game day.</p>
-                <div style={{ display: "flex", gap: "12px", flexWrap: "wrap" }}>
+                <div className="m-evt-ctas" style={{ display: "flex", gap: "12px", flexWrap: "wrap" }}>
                   <A className="alm-btn" href="#book" style={{ display: "inline-flex", alignItems: "center", minHeight: "56px", padding: "0 26px", borderRadius: "999px", background: "#FBAE4F", color: "#0B1220", fontWeight: "600", fontSize: "15px", letterSpacing: "-0.005em" }}>Plan an event</A>
                   <A className="alm-btn" href="#venues" style={{ display: "inline-flex", alignItems: "center", minHeight: "56px", padding: "0 26px", borderRadius: "999px", border: "2px solid #FFFFFF", color: "#FFFFFF", fontWeight: "600", fontSize: "15px", letterSpacing: "-0.005em" }}>See all products</A>
                 </div>
@@ -175,7 +175,7 @@ export default class EventsPage extends React.Component {
           </section>
         </div>
         {/* STATEMENT (fills as you read) */}
-        <section style={{ padding: "128px 28px 24px" }}>
+        <section className="alm-pt" style={{ padding: "128px 28px 24px" }}>
           <div style={{ maxWidth: "1180px", margin: "0 auto" }}>
             <p style={{ margin: "0", fontSize: "clamp(34px, 4.8vw, 72px)", lineHeight: "1.1", letterSpacing: "-0.035em", fontWeight: "600", color: "#0B1220" }}>
               <span className="alm-fill" data-scrub="text">The space is already built. The audience already arrives by car. The parking is already solved. All that’s missing is your brand.</span>
@@ -183,20 +183,20 @@ export default class EventsPage extends React.Component {
           </div>
         </section>
         {/* THREE WAYS */}
-        <section style={{ padding: "104px 28px 40px" }}>
+        <section className="alm-pt" style={{ padding: "104px 28px 40px" }}>
           <div style={{ maxWidth: "1360px", margin: "0 auto", display: "flex", flexWrap: "wrap", gap: "24px 64px", alignItems: "flex-end", justifyContent: "space-between" }}>
             <div>
               <div style={{ display: "flex", alignItems: "center", gap: "10px", fontSize: "15px", fontWeight: "600", letterSpacing: "-0.005em", opacity: "0.72" }}><span style={{ width: "7px", height: "7px", background: "#FBAE4F", borderRadius: "50%" }} />Three ways to put parking to work</div>
-              <h2 className="alm-in" style={{ margin: "22px 0 0", maxWidth: "900px", fontSize: "clamp(38px, 5.2vw, 80px)", lineHeight: "1", letterSpacing: "-0.035em", fontWeight: "600" }}>Activate it. Arrive in style.<br />Own game day.</h2>
+              <h2 className="alm-in" style={{ margin: "22px 0 0", maxWidth: "900px", fontSize: "clamp(38px, 5.2vw, 80px)", lineHeight: "1", letterSpacing: "-0.035em", fontWeight: "600" }}><span className="m-evt-l">Activate it.</span> <span className="m-evt-l">Arrive in style.</span><br className="m-evt-br" />Own game day.</h2>
             </div>
             <p style={{ margin: "0", maxWidth: "440px", fontSize: "17px", lineHeight: "1.6", fontWeight: "400", color: "#4E586A" }}>Every product can be packaged together or sold on its own — and every event can come with static, digital and mobile media around it.</p>
           </div>
         </section>
         {(v.models || []).map((m, mI) => (
           <Fragment key={mI}>
-            <section id={m.id} style={{ padding: "56px 28px" }}>
+            <section className="m-evt-model" id={m.id} style={{ padding: "56px 28px" }}>
               <div style={{ maxWidth: "1360px", margin: "0 auto", display: "flex", flexWrap: "wrap", flexDirection: m.dir, gap: "40px 64px", alignItems: "center" }}>
-                <figure className="alm-tile alm-wipe" style={{ flex: "1.35 1 600px", minWidth: "0", margin: "0", position: "relative", height: "620px", borderRadius: "18px", overflow: "hidden", background: "#0B1220" }}>
+                <figure className="alm-tile alm-wipe m-evt-fig" style={{ flex: "1.35 1 600px", minWidth: "0", margin: "0", position: "relative", height: "620px", borderRadius: "18px", overflow: "hidden", background: "#0B1220" }}>
                   <img src={m.img} alt={m.alt} style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: m.pos, display: "block" }} loading="lazy" decoding="async" />
                   <figcaption style={{ position: "absolute", left: "16px", bottom: "16px", padding: "8px 14px", borderRadius: "999px", background: "rgba(11,18,32,0.72)", color: "#FFFFFF", fontSize: "12px", fontWeight: "700", letterSpacing: "0.04em" }}>{m.caption}</figcaption>
                 </figure>
@@ -232,7 +232,7 @@ export default class EventsPage extends React.Component {
           </Fragment>
         ))}
         {/* GAME DAY PRICING */}
-        <section style={{ marginTop: "72px", padding: "120px 28px", background: "#0B1220", color: "#FFFFFF" }}>
+        <section className="alm-pt alm-pb m-evt-gd" style={{ marginTop: "72px", padding: "120px 28px", background: "#0B1220", color: "#FFFFFF" }}>
           <div style={{ maxWidth: "1360px", margin: "0 auto", display: "flex", flexWrap: "wrap", gap: "48px 72px", alignItems: "center" }}>
             <div className="alm-lift" data-scrub="enter" style={{ flex: "1 1 520px", minWidth: "0", borderRadius: "18px", overflow: "hidden", boxShadow: "0 40px 100px rgba(0,0,0,0.45)" }}>
               <LiveBoard />
@@ -259,14 +259,14 @@ export default class EventsPage extends React.Component {
           </div>
         </section>
         {/* VENUE FINDER */}
-        <section id="venues" style={{ padding: "128px 28px" }}>
+        <section className="alm-pt alm-pb" id="venues" style={{ padding: "128px 28px" }}>
           <div style={{ maxWidth: "1360px", margin: "0 auto" }}>
             <div style={{ display: "flex", flexWrap: "wrap", gap: "24px 64px", alignItems: "flex-end", justifyContent: "space-between" }}>
               <div>
                 <div style={{ display: "flex", alignItems: "center", gap: "10px", fontSize: "15px", fontWeight: "600", letterSpacing: "-0.005em", opacity: "0.72" }}><span style={{ width: "7px", height: "7px", background: "#FBAE4F", borderRadius: "50%" }} />The product portfolio</div>
                 <h2 className="alm-in" style={{ margin: "22px 0 0", maxWidth: "900px", fontSize: "clamp(38px, 5.2vw, 80px)", lineHeight: "1", letterSpacing: "-0.035em", fontWeight: "600" }}>Seven products.<br />Package them or pick one.</h2>
               </div>
-              <div role="group" aria-label="Filter products" style={{ display: "flex", flexWrap: "wrap", gap: "8px", maxWidth: "680px" }}>
+              <div className="m-evt-chips" role="group" aria-label="Filter products" style={{ display: "flex", flexWrap: "wrap", gap: "8px", maxWidth: "680px" }}>
                 {(v.kinds || []).map((k, kI) => (
                   <Fragment key={kI}>
                     <button type="button" aria-pressed={k.pressed} onClick={k.pick} style={{ minHeight: "44px", padding: "0 16px", borderRadius: "999px", border: "2px solid #0B1220", background: k.bg, color: k.fg, fontFamily: "'Montserrat', sans-serif", fontSize: "12px", fontWeight: "600", letterSpacing: "0.08em", cursor: "pointer", transition: "background .2s ease, color .2s ease" }}>{k.label}</button>
@@ -285,7 +285,7 @@ export default class EventsPage extends React.Component {
                           <span style={{ position: "absolute", top: "14px", left: "14px", padding: "6px 11px", borderRadius: "999px", background: "#FBAE4F", color: "#0B1220", fontSize: "11px", fontWeight: "600", letterSpacing: "0.1em" }}>{v.group}</span>
                         </>
                       ) : null}
-                      <span style={{ position: "absolute", right: "12px", bottom: "12px", fontFamily: "'Geist Mono', monospace", fontSize: "10px", letterSpacing: "0.1em", color: "rgba(255,255,255,0.75)" }}>{v.note}</span>
+                      <span className="m-evt-note" style={{ position: "absolute", right: "12px", bottom: "12px", fontFamily: "'Geist Mono', monospace", fontSize: "10px", letterSpacing: "0.1em", color: "rgba(255,255,255,0.75)" }}>{v.note}</span>
                     </div>
                     <div style={{ padding: "24px", display: "flex", flexDirection: "column", gap: "12px", flex: "1" }}>
                       <div style={{ fontSize: "24px", fontWeight: "650", lineHeight: "1.08", letterSpacing: "-0.02em" }}>{v.name}</div>
@@ -304,7 +304,7 @@ export default class EventsPage extends React.Component {
           </div>
         </section>
         {/* WHY */}
-        <section style={{ padding: "120px 28px", background: "#0B1220", color: "#FFFFFF" }}>
+        <section className="alm-pt alm-pb" style={{ padding: "120px 28px", background: "#0B1220", color: "#FFFFFF" }}>
           <div style={{ maxWidth: "1360px", margin: "0 auto" }}>
             <div style={{ display: "flex", alignItems: "center", gap: "10px", fontSize: "15px", fontWeight: "600", letterSpacing: "-0.005em", opacity: "0.72" }}><span style={{ width: "7px", height: "7px", background: "#FBAE4F", borderRadius: "50%" }} />Why a parking venue</div>
             <h2 className="alm-in" style={{ margin: "22px 0 0", maxWidth: "960px", fontSize: "clamp(38px, 5.2vw, 80px)", lineHeight: "1", letterSpacing: "-0.035em", fontWeight: "600" }}>The audience is <span style={{ color: "#FBAE4F" }}>already parked.</span></h2>
@@ -333,13 +333,13 @@ export default class EventsPage extends React.Component {
           </div>
         </section>
         {/* RECENT EVENTS (placeholders) */}
-        <section style={{ padding: "128px 28px 64px" }}>
+        <section className="alm-pt m-evt-recent" style={{ padding: "128px 28px 64px" }}>
           <div style={{ maxWidth: "1360px", margin: "0 auto" }}>
             <div style={{ display: "flex", flexWrap: "wrap", gap: "24px 64px", alignItems: "flex-end", justifyContent: "space-between" }}>
               <h2 className="alm-in" style={{ margin: "0", maxWidth: "820px", fontSize: "clamp(38px, 5.2vw, 80px)", lineHeight: "1", letterSpacing: "-0.035em", fontWeight: "600" }}>Recent work.</h2>
               <p style={{ margin: "0", maxWidth: "420px", fontSize: "15px", lineHeight: "1.6", fontWeight: "400", color: "#4E586A" }}>Event programs we delivered in 2026. Client names are confidential; ask us for details.</p>
             </div>
-            <div style={{ marginTop: "48px", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "16px" }}>
+            <div style={{ marginTop: "48px", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 300px), 1fr))", gap: "16px" }}>
               {(v.past || []).map((p, pI) => (
                 <Fragment key={pI}>
                   <article className="alm-in" style={{ borderRadius: "18px", overflow: "hidden", background: "#FFFFFF" }}>
@@ -348,7 +348,7 @@ export default class EventsPage extends React.Component {
                         <span style={{ color: "#FBAE4F" }}>{p.type}</span>
                         <span style={{ color: "#A3ACBC" }}>{p.when}</span>
                       </div>
-                      <div style={{ fontSize: "clamp(40px, 4.4vw, 64px)", fontWeight: "600", lineHeight: "0.95", letterSpacing: "-0.04em" }}>{p.big}</div>
+                      <div className="m-evt-big" style={{ fontSize: "clamp(40px, 4.4vw, 64px)", fontWeight: "600", lineHeight: "0.95", letterSpacing: "-0.04em" }}>{p.big}</div>
                     </div>
                     <div style={{ padding: "22px 28px 28px" }}>
                       <div style={{ fontSize: "22px", fontWeight: "650", letterSpacing: "-0.02em" }}>{p.name}</div>
@@ -362,7 +362,7 @@ export default class EventsPage extends React.Component {
           </div>
         </section>
         {/* PROCESS */}
-        <section style={{ padding: "96px 28px 128px" }}>
+        <section className="alm-pt alm-pb" style={{ padding: "96px 28px 128px" }}>
           <div style={{ maxWidth: "1360px", margin: "0 auto" }}>
             <h2 className="alm-in" style={{ margin: "0", maxWidth: "900px", fontSize: "clamp(38px, 5.2vw, 80px)", lineHeight: "1", letterSpacing: "-0.035em", fontWeight: "600" }}>How an event comes together.</h2>
             <div role="tablist" aria-label="Event steps" style={{ marginTop: "56px", display: "flex", flexWrap: "wrap", gap: "0", borderTop: "3px solid #0B1220" }}>
@@ -385,7 +385,7 @@ export default class EventsPage extends React.Component {
           </div>
         </section>
         {/* INQUIRY */}
-        <section id="book" style={{ padding: "128px 28px", background: "#344567", color: "#FFFFFF" }}>
+        <section className="alm-pt alm-pb" id="book" style={{ padding: "128px 28px", background: "#344567", color: "#FFFFFF" }}>
           <div style={{ maxWidth: "1360px", margin: "0 auto", display: "flex", flexWrap: "wrap", gap: "64px" }}>
             <div style={{ flex: "1 1 380px" }}>
               <div style={{ display: "flex", alignItems: "center", gap: "10px", fontSize: "15px", fontWeight: "600", letterSpacing: "-0.005em", opacity: "0.72" }}><span style={{ width: "7px", height: "7px", background: "#FBAE4F", borderRadius: "50%" }} />Plan an event</div>
@@ -393,7 +393,7 @@ export default class EventsPage extends React.Component {
               <p style={{ margin: "24px 0 0", fontSize: "18px", lineHeight: "1.6", fontWeight: "400", color: "#D5DAE3" }}>{v.bk?.sub} Prefer to talk? Call 1.860.716.9084.</p>
               <div style={{ marginTop: "32px", paddingTop: "24px", borderTop: "1px solid rgba(255,255,255,0.2)", fontSize: "15px", lineHeight: "1.6", fontWeight: "400", color: "#D5DAE3" }}>Own a garage or lot? <A href="/real-estate#streams" style={{ color: "#FBAE4F", fontWeight: "600" }}>Host events on your property →</A></div>
             </div>
-            <div style={{ flex: "999 1 560px", minWidth: "0", padding: "40px", borderRadius: "18px", background: "#FFFFFF", color: "#0B1220" }}>
+            <div className="m-evt-card" style={{ flex: "999 1 560px", minWidth: "0", padding: "40px", borderRadius: "18px", background: "#FFFFFF", color: "#0B1220" }}>
               {v.sent ? (
                 <>
                   <div style={{ minHeight: "460px", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "flex-start", gap: "16px" }}>
@@ -410,17 +410,17 @@ export default class EventsPage extends React.Component {
               ) : null}
               {v.notSent ? (
                 <>
-                  <div role="radiogroup" aria-label="What do you need?" style={{ display: "flex", flexWrap: "wrap", gap: "6px", padding: "6px", borderRadius: "20px", background: "#EEF0F3" }}>
+                  <div className="m-evt-seg" role="radiogroup" aria-label="What do you need?" style={{ display: "flex", flexWrap: "wrap", gap: "6px", padding: "6px", borderRadius: "20px", background: "#EEF0F3" }}>
                     {(v.bkTabs || []).map((b, bI) => (
                       <Fragment key={bI}>
                         <button type="button" role="radio" aria-checked={b.sel} onClick={b.pick} style={{ flex: "1 1 150px", minHeight: "48px", padding: "0 14px", borderRadius: "999px", border: "0", background: b.bg, color: b.fg, boxShadow: b.sh, fontFamily: "'Montserrat', sans-serif", fontSize: "15px", fontWeight: "600", letterSpacing: "-0.005em", cursor: "pointer" }}>{b.label}</button>
                       </Fragment>
                     ))}
                   </div>
-                  <form onSubmit={v.submit} style={{ marginTop: "24px", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(230px, 1fr))", gap: "18px 20px" }}>
+                  <form className="m-evt-form" onSubmit={v.submit} style={{ marginTop: "24px", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(230px, 1fr))", gap: "18px 20px" }}>
                     <fieldset style={{ gridColumn: "1 / -1", margin: "0", padding: "0", border: "0", display: "flex", flexDirection: "column", gap: "10px" }}>
                       <legend style={{ padding: "0", marginBottom: "10px", fontSize: "12px", fontWeight: "600", letterSpacing: "0.1em" }}>{v.bk?.typeLabel}</legend>
-                      <div style={{ display: "flex", flexWrap: "wrap", gap: "8px" }}>
+                      <div className="m-evt-types" style={{ display: "flex", flexWrap: "wrap", gap: "8px" }}>
                         {(v.bk?.types || []).map((o, oI) => (
                           <Fragment key={oI}>
                             <button type="button" aria-pressed={o.pressed} onClick={o.pick} style={{ minHeight: "44px", padding: "0 16px", borderRadius: "999px", border: `2px solid ${o.bd}`, background: o.bg, color: "#0B1220", fontFamily: "'Montserrat', sans-serif", fontSize: "13px", fontWeight: "700", cursor: "pointer" }}>{o.t}</button>

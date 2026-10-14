@@ -90,13 +90,13 @@ export default class CompanyPage extends React.Component {
       <div className="alm-root" style={{ background: "#F5F5F7", color: "#0B1220", fontFamily: "'Montserrat', system-ui, sans-serif", overflowX: "hidden", WebkitFontSmoothing: "antialiased" }}>
         <Nav active="company" />
         {/* HERO */}
-        <section style={{ padding: "104px 28px 0" }}>
+        <section className="alm-pt" style={{ padding: "104px 28px 0" }}>
           <div style={{ maxWidth: "1360px", margin: "0 auto" }}>
             <div className="alm-rise" style={{ display: "flex", alignItems: "center", gap: "10px", fontSize: "15px", fontWeight: "600", letterSpacing: "-0.005em", opacity: "0.72" }}><span style={{ width: "7px", height: "7px", background: "#FBAE4F", borderRadius: "50%" }} />About A Lot Media</div>
             <h1 className="alm-rise" style={{ margin: "22px 0 0", maxWidth: "1240px", fontSize: "clamp(44px, 7.2vw, 116px)", lineHeight: "1", letterSpacing: "-0.035em", fontWeight: "600", animationDelay: ".1s" }}>We build the media <span style={{ color: "#8A5300" }}>where America parks.</span></h1>
             <div className="alm-rise" style={{ marginTop: "32px", display: "flex", flexWrap: "wrap", gap: "24px 64px", justifyContent: "space-between", animationDelay: ".2s" }}>
-              <p style={{ margin: "0", maxWidth: "620px", fontSize: "19px", lineHeight: "1.6", fontWeight: "400", color: "#4E586A" }}>Since 2016, A Lot Media has designed and installed advertising inside parking lots and garages — and we were the first company to bring interactive touch screen technology to parking facilities. Today the network spans 12,000 locations in 400+ cities, with offices in Hartford, Los Angeles, Chicago and New York.</p>
-              <div style={{ display: "flex", gap: "40px", flexWrap: "wrap" }}>
+              <p className="m-co-hero-p" style={{ margin: "0", maxWidth: "620px", fontSize: "19px", lineHeight: "1.6", fontWeight: "400", color: "#4E586A" }}>Since 2016, A Lot Media has designed and installed advertising inside parking lots and garages — and we were the first company to bring interactive touch screen technology to parking facilities. Today the network spans 12,000 locations in 400+ cities, with offices in Hartford, Los Angeles, Chicago and New York.</p>
+              <div className="m-co-stats" style={{ display: "flex", gap: "40px", flexWrap: "wrap" }}>
                 <div>
                   <div style={{ fontSize: "48px", fontWeight: "600", lineHeight: "1", letterSpacing: "-0.035em" }}>2016</div>
                   <div style={{ marginTop: "6px", fontSize: "12px", fontWeight: "600", letterSpacing: "0.14em", color: "#4E586A" }}>FOUNDED</div>
@@ -112,12 +112,12 @@ export default class CompanyPage extends React.Component {
               </div>
             </div>
           </div>
-          <div className="alm-rise" style={{ maxWidth: "1360px", margin: "64px auto 0", height: "620px", borderRadius: "18px", overflow: "hidden", background: "#0B1220", animationDelay: ".3s" }}>
+          <div className="alm-rise m-co-heroimg" style={{ maxWidth: "1360px", margin: "64px auto 0", height: "620px", borderRadius: "18px", overflow: "hidden", background: "#0B1220", animationDelay: ".3s" }}>
             <img src="/media/photos/glass-lobby-panel.webp?v=6d8d0735" alt="Glass-walled garage lobby with an A Lot Media digital panel and people walking" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} loading="lazy" decoding="async" />
           </div>
         </section>
         {/* STACK */}
-        <section style={{ padding: "128px 28px" }}>
+        <section className="alm-pt alm-pb" style={{ padding: "128px 28px" }}>
           <div style={{ maxWidth: "1360px", margin: "0 auto" }}>
             <div style={{ display: "flex", flexWrap: "wrap", gap: "24px 64px", alignItems: "flex-end", justifyContent: "space-between" }}>
               <h2 className="alm-in" style={{ margin: "0", maxWidth: "900px", fontSize: "clamp(38px, 5.2vw, 80px)", lineHeight: "1", letterSpacing: "-0.035em", fontWeight: "600" }}>One company.<br />Every layer.</h2>
@@ -126,13 +126,13 @@ export default class CompanyPage extends React.Component {
             <ol style={{ margin: "56px 0 0", padding: "0", listStyle: "none", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: "12px" }}>
               {(v.stack || []).map((s, sI) => (
                 <Fragment key={sI}>
-                  <li className="alm-tile alm-wipe" style={{ position: "relative", height: "360px", borderRadius: "16px", overflow: "hidden", background: "#0B1220", color: "#FFFFFF" }}>
+                  <li className="alm-tile alm-wipe m-co-stack" style={{ position: "relative", height: "360px", borderRadius: "16px", overflow: "hidden", background: "#0B1220", color: "#FFFFFF" }}>
                     <img src={s.img} alt="" style={{ position: "absolute", inset: "0", width: "100%", height: "100%", objectFit: "cover", objectPosition: s.pos, opacity: "0.9" }} loading="lazy" decoding="async" />
                     <div style={{ position: "absolute", inset: "0", background: "linear-gradient(180deg, rgba(11,18,32,0.15) 20%, rgba(11,18,32,0.92) 100%)" }} />
                     <div style={{ position: "absolute", left: "20px", right: "20px", bottom: "20px" }}>
                       <div style={{ fontFamily: "'Geist Mono', monospace", fontSize: "12px", color: "#FBAE4F" }}>{s.no}</div>
                       <div style={{ marginTop: "8px", fontSize: "22px", fontWeight: "650", letterSpacing: "-0.02em" }}>{s.title}</div>
-                      <div style={{ marginTop: "6px", fontSize: "14px", lineHeight: "1.5", fontWeight: "500", color: "#D5DAE3" }}>{s.desc}</div>
+                      <div className="m-co-stack-desc" style={{ marginTop: "6px", fontSize: "14px", lineHeight: "1.5", fontWeight: "500", color: "#D5DAE3" }}>{s.desc}</div>
                     </div>
                   </li>
                 </Fragment>
@@ -141,13 +141,13 @@ export default class CompanyPage extends React.Component {
           </div>
         </section>
         {/* GALLERY */}
-        <section id="gallery" style={{ padding: "128px 28px", background: "#0B1220", color: "#FFFFFF" }}>
+        <section className="alm-pt alm-pb" id="gallery" style={{ padding: "128px 28px", background: "#0B1220", color: "#FFFFFF" }}>
           <div style={{ maxWidth: "1360px", margin: "0 auto" }}>
             <div style={{ display: "flex", flexWrap: "wrap", gap: "24px 48px", alignItems: "flex-end", justifyContent: "space-between" }}>
               <div>
                 <div style={{ display: "flex", alignItems: "center", gap: "10px", fontSize: "15px", fontWeight: "600", letterSpacing: "-0.005em", opacity: "0.72" }}><span style={{ width: "7px", height: "7px", background: "#FBAE4F", borderRadius: "50%" }} />Gallery</div>
                 <h2 className="alm-in" style={{ margin: "22px 0 0", fontSize: "clamp(38px, 5.2vw, 80px)", lineHeight: "1", letterSpacing: "-0.035em", fontWeight: "600" }}>In the network.</h2>
-                <p style={{ margin: "16px 0 0", fontFamily: "'Geist Mono', monospace", fontSize: "11px", letterSpacing: "0.08em", color: "rgba(255,255,255,0.55)" }}>REAL INSTALLATIONS · PHOTOS RETOUCHED</p>
+                <p className="m-co-cap" style={{ margin: "16px 0 0", fontFamily: "'Geist Mono', monospace", fontSize: "11px", letterSpacing: "0.08em", color: "rgba(255,255,255,0.55)" }}>REAL INSTALLATIONS · PHOTOS RETOUCHED</p>
               </div>
               <div role="group" aria-label="Filter gallery" style={{ display: "flex", flexWrap: "wrap", gap: "8px" }}>
                 {(v.gfilters || []).map((g, gI) => (
@@ -157,13 +157,13 @@ export default class CompanyPage extends React.Component {
                 ))}
               </div>
             </div>
-            <div style={{ marginTop: "48px", display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))", gridAutoRows: "240px", gridAutoFlow: "dense", gap: "12px" }}>
+            <div className="m-co-grid" style={{ marginTop: "48px", display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))", gridAutoRows: "240px", gridAutoFlow: "dense", gap: "12px" }}>
               {(v.photos || []).map((p, pI) => (
                 <Fragment key={pI}>
-                  <button className="alm-tile alm-wipe" type="button" onClick={p.open} aria-label={`Open photo: ${p.caption}`} style={{ position: "relative", padding: "0", border: "0", borderRadius: "16px", overflow: "hidden", background: "#121B2E", cursor: "zoom-in", gridRow: `span ${p.span}` }}>
+                  <button className="alm-tile alm-wipe m-co-tile" type="button" onClick={p.open} aria-label={`Open photo: ${p.caption}`} style={{ position: "relative", padding: "0", border: "0", borderRadius: "16px", overflow: "hidden", background: "#121B2E", cursor: "zoom-in", gridRow: `span ${p.span}` }}>
                     <img src={p.src} alt={p.caption} style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: p.pos, display: "block" }} loading="lazy" decoding="async" />
                     {' '}
-                    <span style={{ position: "absolute", left: "12px", bottom: "12px", padding: "6px 12px", borderRadius: "999px", background: "rgba(11,18,32,0.72)", color: "#FFFFFF", fontFamily: "'Montserrat', sans-serif", fontSize: "11px", fontWeight: "600", letterSpacing: "0.06em" }}>{p.caption}</span>
+                    <span className="m-co-tlabel" style={{ position: "absolute", left: "12px", bottom: "12px", padding: "6px 12px", borderRadius: "999px", background: "rgba(11,18,32,0.72)", color: "#FFFFFF", fontFamily: "'Montserrat', sans-serif", fontSize: "11px", fontWeight: "600", letterSpacing: "0.06em" }}>{p.caption}</span>
                   </button>
                 </Fragment>
               ))}
@@ -171,42 +171,42 @@ export default class CompanyPage extends React.Component {
           </div>
         </section>
         {/* OFFICES */}
-        <section style={{ padding: "128px 28px" }}>
+        <section className="alm-pt alm-pb" style={{ padding: "128px 28px" }}>
           <div style={{ maxWidth: "1360px", margin: "0 auto" }}>
             <h2 className="alm-in" style={{ margin: "0", fontSize: "clamp(38px, 5.2vw, 80px)", lineHeight: "1", letterSpacing: "-0.035em", fontWeight: "600" }}>Offices</h2>
-            <div style={{ marginTop: "48px", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: "16px" }}>
+            <div className="m-co-offices" style={{ marginTop: "48px", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: "16px" }}>
               <div className="alm-tile alm-in" style={{ borderRadius: "16px", overflow: "hidden", background: "#FFFFFF" }}>
-                <div style={{ height: "260px", overflow: "hidden" }}>
+                <div className="m-co-offimg" style={{ height: "260px", overflow: "hidden" }}>
                   <img src="/media/markets/hartford.webp?v=a1857c29" alt="Hartford skyline" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} loading="lazy" decoding="async" />
                 </div>
-                <div style={{ padding: "28px" }}>
+                <div className="m-co-offtext" style={{ padding: "28px" }}>
                   <div style={{ fontSize: "28px", fontWeight: "650", letterSpacing: "-0.02em" }}>Hartford</div>
                   <div style={{ marginTop: "8px", fontSize: "16px", fontWeight: "400", color: "#4E586A" }}>1 Financial Plaza, 14th Floor<br />Hartford, CT 06103</div>
                 </div>
               </div>
               <div className="alm-tile alm-in" style={{ borderRadius: "16px", overflow: "hidden", background: "#FFFFFF" }}>
-                <div style={{ height: "260px", overflow: "hidden" }}>
+                <div className="m-co-offimg" style={{ height: "260px", overflow: "hidden" }}>
                   <img src="/media/markets/la.webp?v=59df333e" alt="Los Angeles city lights at night" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} loading="lazy" decoding="async" />
                 </div>
-                <div style={{ padding: "28px" }}>
+                <div className="m-co-offtext" style={{ padding: "28px" }}>
                   <div style={{ fontSize: "28px", fontWeight: "650", letterSpacing: "-0.02em" }}>Los Angeles</div>
                   <div style={{ marginTop: "8px", fontSize: "16px", fontWeight: "400", color: "#4E586A" }}>1335 Flower St<br />Los Angeles, CA 90015</div>
                 </div>
               </div>
               <div className="alm-tile alm-in" style={{ borderRadius: "16px", overflow: "hidden", background: "#FFFFFF" }}>
-                <div style={{ height: "260px", overflow: "hidden" }}>
+                <div className="m-co-offimg" style={{ height: "260px", overflow: "hidden" }}>
                   <img src="/media/markets/chicago.webp?v=c1fc7d1b" alt="Chicago skyline at night" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} loading="lazy" decoding="async" />
                 </div>
-                <div style={{ padding: "28px" }}>
+                <div className="m-co-offtext" style={{ padding: "28px" }}>
                   <div style={{ fontSize: "28px", fontWeight: "650", letterSpacing: "-0.02em" }}>Chicago</div>
                   <div style={{ marginTop: "8px", fontSize: "16px", fontWeight: "400", color: "#4E586A" }}>33 W Monroe St<br />Chicago, IL 60603</div>
                 </div>
               </div>
               <div className="alm-tile alm-in" style={{ borderRadius: "16px", overflow: "hidden", background: "#FFFFFF" }}>
-                <div style={{ height: "260px", overflow: "hidden" }}>
+                <div className="m-co-offimg" style={{ height: "260px", overflow: "hidden" }}>
                   <img src="/media/markets/nyc.webp?v=ceab88a6" alt="Empire State Building at night" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} loading="lazy" decoding="async" />
                 </div>
-                <div style={{ padding: "28px" }}>
+                <div className="m-co-offtext" style={{ padding: "28px" }}>
                   <div style={{ fontSize: "28px", fontWeight: "650", letterSpacing: "-0.02em" }}>New York</div>
                   <div style={{ marginTop: "8px", fontSize: "16px", fontWeight: "400", color: "#4E586A" }}>231 W 29th St<br />New York, NY 10001</div>
                 </div>
@@ -215,25 +215,25 @@ export default class CompanyPage extends React.Component {
           </div>
         </section>
         {/* CAREERS */}
-        <section style={{ padding: "0 28px 128px" }}>
-          <div style={{ maxWidth: "1360px", margin: "0 auto", padding: "56px", borderRadius: "18px", background: "#FBAE4F", display: "flex", flexWrap: "wrap", gap: "24px 48px", alignItems: "center", justifyContent: "space-between" }}>
+        <section className="alm-pb" style={{ padding: "0 28px 128px" }}>
+          <div className="m-co-cta" style={{ maxWidth: "1360px", margin: "0 auto", padding: "56px", borderRadius: "18px", background: "#FBAE4F", display: "flex", flexWrap: "wrap", gap: "24px 48px", alignItems: "center", justifyContent: "space-between" }}>
             <div>
-              <div style={{ fontSize: "clamp(30px, 3.6vw, 52px)", fontWeight: "600", lineHeight: "0.95", letterSpacing: "-0.035em" }}>Together we can do a lot.</div>
+              <div className="m-co-cta-h" style={{ fontSize: "clamp(30px, 3.6vw, 52px)", fontWeight: "600", lineHeight: "0.95", letterSpacing: "-0.035em" }}>Together we can do a lot.</div>
               <div style={{ marginTop: "12px", fontSize: "17px", fontWeight: "600" }}>Advertisers, property owners, partners and future teammates — we’d love to hear from you.</div>
             </div>
-            <A className="alm-btn" href="/contact" style={{ display: "inline-flex", alignItems: "center", minHeight: "56px", padding: "0 26px", borderRadius: "999px", background: "#0B1220", color: "#FFFFFF", fontWeight: "600", fontSize: "15px", letterSpacing: "-0.005em" }}>Get in touch</A>
+            <A className="alm-btn m-co-cta-btn" href="/contact" style={{ display: "inline-flex", alignItems: "center", minHeight: "56px", padding: "0 26px", borderRadius: "999px", background: "#0B1220", color: "#FFFFFF", fontWeight: "600", fontSize: "15px", letterSpacing: "-0.005em" }}>Get in touch</A>
           </div>
         </section>
         <Footer />
         {v.lightbox ? (
           <>
-            <div className="alm-fade" role="dialog" aria-modal="true" aria-label="Photo viewer" style={{ position: "fixed", inset: "0", zIndex: "50", background: "rgba(7,12,23,0.94)", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", padding: "24px", boxSizing: "border-box" }}>
-              <img src={v.lb?.src} alt={v.lb?.caption} style={{ maxWidth: "100%", maxHeight: "80%", objectFit: "contain", borderRadius: "16px" }} loading="lazy" decoding="async" />
-              <div style={{ marginTop: "20px", display: "flex", gap: "16px", alignItems: "center", flexWrap: "wrap", justifyContent: "center", color: "#FFFFFF" }}>
-                <button type="button" aria-label="Previous photo" onClick={v.prev} style={{ width: "52px", height: "52px", borderRadius: "50%", border: "2px solid #FFFFFF", background: "transparent", color: "#FFFFFF", fontSize: "20px", cursor: "pointer" }}>←</button>
-                <div style={{ fontSize: "14px", fontWeight: "600", letterSpacing: "0.08em", minWidth: "220px", textAlign: "center" }}>{v.lb?.caption}</div>
-                <button type="button" aria-label="Next photo" onClick={v.next} style={{ width: "52px", height: "52px", borderRadius: "50%", border: "2px solid #FFFFFF", background: "transparent", color: "#FFFFFF", fontSize: "20px", cursor: "pointer" }}>→</button>
-                <button type="button" onClick={v.close} style={{ minHeight: "52px", padding: "0 20px", borderRadius: "999px", border: "0", background: "#FBAE4F", color: "#0B1220", fontFamily: "'Montserrat', sans-serif", fontWeight: "600", fontSize: "15px", letterSpacing: "-0.005em", cursor: "pointer" }}>Close</button>
+            <div className="alm-fade m-co-lb" role="dialog" aria-modal="true" aria-label="Photo viewer" style={{ position: "fixed", inset: "0", zIndex: "50", background: "rgba(7,12,23,0.94)", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", padding: "24px", boxSizing: "border-box" }}>
+              <img className="m-co-lb-img" src={v.lb?.src} alt={v.lb?.caption} style={{ maxWidth: "100%", maxHeight: "80%", objectFit: "contain", borderRadius: "16px" }} loading="lazy" decoding="async" />
+              <div className="m-co-lb-bar" style={{ marginTop: "20px", display: "flex", gap: "16px", alignItems: "center", flexWrap: "wrap", justifyContent: "center", color: "#FFFFFF" }}>
+                <button className="m-co-lb-prev" type="button" aria-label="Previous photo" onClick={v.prev} style={{ width: "52px", height: "52px", borderRadius: "50%", border: "2px solid #FFFFFF", background: "transparent", color: "#FFFFFF", fontSize: "20px", cursor: "pointer" }}>←</button>
+                <div className="m-co-lb-cap" style={{ fontSize: "14px", fontWeight: "600", letterSpacing: "0.08em", minWidth: "220px", textAlign: "center" }}>{v.lb?.caption}</div>
+                <button className="m-co-lb-next" type="button" aria-label="Next photo" onClick={v.next} style={{ width: "52px", height: "52px", borderRadius: "50%", border: "2px solid #FFFFFF", background: "transparent", color: "#FFFFFF", fontSize: "20px", cursor: "pointer" }}>→</button>
+                <button className="m-co-lb-close" type="button" onClick={v.close} style={{ minHeight: "52px", padding: "0 20px", borderRadius: "999px", border: "0", background: "#FBAE4F", color: "#0B1220", fontFamily: "'Montserrat', sans-serif", fontWeight: "600", fontSize: "15px", letterSpacing: "-0.005em", cursor: "pointer" }}>Close</button>
               </div>
             </div>
           </>

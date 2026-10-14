@@ -39,10 +39,16 @@ export default class AdvertisersPage extends React.Component {
       { left: 60, time: '4:00', label: 'Elevator wrap' },
       { left: 78, time: '6:00', label: 'Digital panel' },
       { left: 97, time: '10:00', label: 'Exit gate' }
-    ].map(function (p) {
+    ].map(function (p, i) {
       var hit = pct >= p.left - 1;
-      return { left: p.left, time: p.time, label: p.label, dot: hit ? '#FBAE4F' : '#C9CDD6', labelColor: hit ? '#0B1220' : '#8B95A7', timeColor: hit ? '#8A5300' : '#8B95A7' };
+      return { left: p.left, top: (3 + i * 94 / 6).toFixed(2), time: p.time, label: p.label, dot: hit ? '#FBAE4F' : '#C9CDD6', labelColor: hit ? '#0B1220' : '#8B95A7', timeColor: hit ? '#8A5300' : '#8B95A7' };
     });
+    // phone timeline: rows are evenly spaced, so map progress onto them stop by stop
+    var knots = [[0, 0]].concat(pts.map(function (p) { return [p.left, +p.top]; }), [[100, 100]]);
+    var vpct = 100;
+    for (var k = 1; k < knots.length; k++) {
+      if (pct <= knots[k][0]) { var a0 = knots[k - 1], a1 = knots[k]; vpct = a0[1] + (a1[1] - a0[1]) * (pct - a0[0]) / ((a1[0] - a0[0]) || 1); break; }
+    }
     var toggle = function (label) {
       return function () {
         var cur = Object.assign({}, (self.state && self.state.sel) || sel);
@@ -87,7 +93,7 @@ export default class AdvertisersPage extends React.Component {
       { no: '04', name: 'Market domination', chip: 'GARAGE TAKEOVER', chipBg: '#FBAE4F', img: '/media/photos/msk-garage-entrance.webp?v=a0e27476', pos: '50% 50%', alt: 'Garage entrance with digital panel and branded wayfinding', href: '#targeting', cta: 'Own a market', desc: 'Every surface in a location at once — gate arms, tickets, walls, elevators and screens — placed where your audience parks.', dark: true }
     ];
     return {
-      tl: { pct: pct.toFixed(1), points: pts },
+      tl: { pct: pct.toFixed(1), vpct: vpct.toFixed(1), points: pts },
       audience: aud.map(chip),
       venues: ven.map(chip),
       summary: summary,
@@ -106,14 +112,14 @@ export default class AdvertisersPage extends React.Component {
         <Nav active="advertisers" />
         {/* HERO */}
         <div style={{ background: "#05080F" }}>
-          <section className="alm-hero" data-scrub="exit" style={{ position: "relative", minHeight: "760px", background: "#0B1220", overflow: "hidden", color: "#FFFFFF" }}>
-            <img className="alm-ken alm-hero-media" src="/media/photos/panera-now-open.webp?v=2fa97a26" alt="Drivers walking past a Panera Bread ad on an A Lot Media digital panel" style={{ position: "absolute", inset: "0", width: "100%", height: "100%", objectFit: "cover", objectPosition: "60% 45%" }} />
-            <div style={{ position: "absolute", inset: "0", background: "linear-gradient(90deg, rgba(11,18,32,0.9) 0%, rgba(11,18,32,0.55) 50%, rgba(11,18,32,0.1) 100%)" }} />
-            <div className="alm-hero-copy" style={{ position: "relative", maxWidth: "1360px", minHeight: "760px", margin: "0 auto", padding: "0 28px 72px", boxSizing: "border-box", display: "flex", flexDirection: "column", justifyContent: "flex-end" }}>
+          <section className="alm-hero m-adv-hero" data-scrub="exit" style={{ position: "relative", minHeight: "760px", background: "#0B1220", overflow: "hidden", color: "#FFFFFF" }}>
+            <img className="alm-ken alm-hero-media m-adv-hero-img" src="/media/photos/panera-now-open.webp?v=2fa97a26" alt="Drivers walking past a Panera Bread ad on an A Lot Media digital panel" style={{ position: "absolute", inset: "0", width: "100%", height: "100%", objectFit: "cover", objectPosition: "60% 45%" }} />
+            <div className="m-adv-hero-shade" style={{ position: "absolute", inset: "0", background: "linear-gradient(90deg, rgba(11,18,32,0.9) 0%, rgba(11,18,32,0.55) 50%, rgba(11,18,32,0.1) 100%)" }} />
+            <div className="alm-hero-copy m-adv-hero-copy" style={{ position: "relative", maxWidth: "1360px", minHeight: "760px", margin: "0 auto", padding: "0 28px 72px", boxSizing: "border-box", display: "flex", flexDirection: "column", justifyContent: "flex-end" }}>
               <div className="alm-rise" style={{ display: "flex", alignItems: "center", gap: "10px", fontSize: "15px", fontWeight: "600", letterSpacing: "-0.005em", opacity: "0.72" }}><span style={{ width: "7px", height: "7px", background: "#FBAE4F", borderRadius: "50%" }} />Advertise with A Lot Media</div>
-              <h1 className="alm-rise" style={{ margin: "22px 0 0", maxWidth: "980px", fontSize: "clamp(44px, 6.6vw, 104px)", lineHeight: "1", letterSpacing: "-0.035em", fontWeight: "600", animationDelay: ".1s" }}>The captive audience <span style={{ color: "#FBAE4F" }}>out-of-home forgot.</span></h1>
-              <p className="alm-rise" style={{ margin: "28px 0 0", maxWidth: "600px", fontSize: "19px", lineHeight: "1.55", fontWeight: "400", color: "#E4E8EF", animationDelay: ".2s" }}>Drivers spend up to ten minutes inside our locations — parking, walking, waiting for the elevator. No skip button, no scroll, steps from where they spend.</p>
-              <div className="alm-rise" style={{ marginTop: "32px", display: "flex", gap: "12px", flexWrap: "wrap", animationDelay: ".3s" }}>
+              <h1 className="alm-rise" style={{ margin: "22px 0 0", maxWidth: "980px", fontSize: "clamp(44px, 6.6vw, 104px)", lineHeight: "1", letterSpacing: "-0.035em", fontWeight: "600", animationDelay: ".1s" }}>The captive audience <span style={{ color: "#FBAE4F" }}><span className="m-adv-nw">out-of-home</span> forgot.</span></h1>
+              <p className="alm-rise m-adv-hero-p" style={{ margin: "28px 0 0", maxWidth: "600px", fontSize: "19px", lineHeight: "1.55", fontWeight: "400", color: "#E4E8EF", animationDelay: ".2s" }}>Drivers spend up to ten minutes inside our locations — parking, walking, waiting for the elevator. No skip button, no scroll, steps from where they spend.</p>
+              <div className="alm-rise m-adv-hero-btns" style={{ marginTop: "32px", display: "flex", gap: "12px", flexWrap: "wrap", animationDelay: ".3s" }}>
                 <A className="alm-btn" href="/plan" style={{ display: "inline-flex", alignItems: "center", minHeight: "56px", padding: "0 26px", borderRadius: "999px", background: "#FBAE4F", color: "#0B1220", fontWeight: "600", fontSize: "15px", letterSpacing: "-0.005em" }}>Plan a campaign</A>
                 <A className="alm-btn" href="/contact" style={{ display: "inline-flex", alignItems: "center", minHeight: "56px", padding: "0 26px", borderRadius: "999px", border: "2px solid #FFFFFF", color: "#FFFFFF", fontWeight: "600", fontSize: "15px", letterSpacing: "-0.005em" }}>Talk to sales</A>
               </div>
@@ -121,13 +127,13 @@ export default class AdvertisersPage extends React.Component {
           </section>
         </div>
         {/* DWELL TIMELINE */}
-        <section style={{ padding: "112px 28px" }}>
+        <section className="alm-pt alm-pb" style={{ padding: "112px 28px" }}>
           <div style={{ maxWidth: "1360px", margin: "0 auto" }}>
             <div style={{ display: "flex", flexWrap: "wrap", gap: "24px 64px", alignItems: "flex-end", justifyContent: "space-between" }}>
               <h2 className="alm-in" style={{ margin: "0", maxWidth: "820px", fontSize: "clamp(38px, 5.2vw, 80px)", lineHeight: "1", letterSpacing: "-0.035em", fontWeight: "600" }}>One visit.<br />Seven brand moments.</h2>
-              <div style={{ fontFamily: "'Geist Mono', monospace", fontSize: "12px", letterSpacing: "0.1em", color: "#4E586A" }}>ILLUSTRATIVE JOURNEY · UP TO 10 MIN DWELL</div>
+              <div className="m-adv-tl-note" style={{ fontFamily: "'Geist Mono', monospace", fontSize: "12px", letterSpacing: "0.1em", color: "#4E586A" }}>ILLUSTRATIVE JOURNEY · UP TO 10 MIN DWELL</div>
             </div>
-            <div style={{ marginTop: "64px", overflowX: "auto" }}>
+            <div className="m-adv-tl-h" style={{ marginTop: "64px", overflowX: "auto" }}>
               <div style={{ position: "relative", height: "150px", minWidth: "900px", margin: "0 56px" }}>
                 <div style={{ position: "absolute", left: "0", right: "0", top: "52px", height: "6px", background: "#E3E5EA" }} />
                 <div style={{ position: "absolute", left: "0", top: "52px", height: "6px", background: "#FBAE4F", width: `${v.tl?.pct}%`, transition: "width .12s linear" }} />
@@ -149,16 +155,40 @@ export default class AdvertisersPage extends React.Component {
                 ))}
               </div>
             </div>
+            <div className="m-adv-vtl" style={{ display: "none" }}>
+              <div style={{ position: "relative", height: "420px" }}>
+                <div style={{ position: "absolute", left: "19px", top: "0", bottom: "0", width: "4px", borderRadius: "2px", background: "#E3E5EA" }} />
+                <div style={{ position: "absolute", left: "19px", top: "0", width: "4px", borderRadius: "2px", height: `${v.tl?.vpct}%`, background: "#FBAE4F", transition: "height .12s linear" }} />
+                {(v.tl?.points || []).map((pt, ptI) => (
+                  <Fragment key={ptI}>
+                    <div style={{ position: "absolute", left: "0", right: "0", top: `${pt.top}%`, transform: "translateY(-50%)", display: "flex", alignItems: "center" }}>
+                      <div style={{ flex: "0 0 42px", display: "flex", justifyContent: "center" }}>
+                        <div style={{ width: "18px", height: "18px", borderRadius: "50%", border: `4px solid ${pt.dot}`, background: "#F5F5F7", boxSizing: "border-box", transition: "border-color .3s" }} />
+                      </div>
+                      <div style={{ flex: "0 0 64px", marginLeft: "22px", fontFamily: "'Geist Mono', monospace", fontSize: "13px", fontWeight: "600", color: pt.timeColor, transition: "color .3s" }}>{pt.time}</div>
+                      <div style={{ fontSize: "15px", fontWeight: "600", letterSpacing: "0.04em", lineHeight: "1.3", textTransform: "uppercase", color: pt.labelColor, transition: "color .3s" }}>{pt.label}</div>
+                    </div>
+                  </Fragment>
+                ))}
+                <div aria-hidden="true" style={{ position: "absolute", left: "21px", top: `${v.tl?.vpct}%`, transform: "translate(-50%, -50%)", transition: "top .12s linear", width: "42px", height: "42px", borderRadius: "50%", background: "#0B1220", display: "flex", alignItems: "center", justifyContent: "center", boxShadow: "0 0 0 8px rgba(251,174,79,0.35)" }}>
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FBAE4F" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                    <path d="M5 17h14v-5l-2-5H7l-2 5v5Z" />
+                    <circle cx="8" cy="17" r="1.5" />
+                    <circle cx="16" cy="17" r="1.5" />
+                  </svg>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
         {/* SOLUTIONS */}
-        <section style={{ padding: "0 28px 128px" }}>
+        <section className="alm-pb" style={{ padding: "0 28px 128px" }}>
           <div style={{ maxWidth: "1360px", margin: "0 auto" }}>
             <div style={{ display: "flex", flexWrap: "wrap", gap: "24px 64px", alignItems: "flex-end", justifyContent: "space-between" }}>
               <h2 className="alm-in" style={{ margin: "0", maxWidth: "820px", fontSize: "clamp(38px, 5.2vw, 80px)", lineHeight: "1", letterSpacing: "-0.035em", fontWeight: "600" }}>Four ways to show up.</h2>
-              <A className="alm-link" href="/formats" style={{ fontSize: "15px", fontWeight: "600", letterSpacing: "-0.005em" }}>EVERY FORMAT &amp; SPEC <span className="alm-arrow" style={{ display: "inline-block" }}>→</span></A>
+              <A className="alm-link m-adv-tap" href="/formats" style={{ fontSize: "15px", fontWeight: "600", letterSpacing: "-0.005em" }}>EVERY FORMAT &amp; SPEC <span className="alm-arrow" style={{ display: "inline-block" }}>→</span></A>
             </div>
-            <div style={{ marginTop: "56px", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "16px" }}>
+            <div className="m-adv-mt" style={{ marginTop: "56px", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 300px), 1fr))", gap: "16px" }}>
               {(v.solutions || []).map((s, sI) => (
                 <Fragment key={sI}>
                   <A className="alm-tile alm-link alm-in" href={s.href} style={{ display: "flex", flexDirection: "column", background: s.bg, color: s.fg, borderRadius: "16px", overflow: "hidden", fontSize: "15px", letterSpacing: "-0.005em", fontWeight: "600" }}>
@@ -181,12 +211,12 @@ export default class AdvertisersPage extends React.Component {
           </div>
         </section>
         {/* TARGETING */}
-        <section id="targeting" style={{ padding: "128px 28px", background: "#0B1220", color: "#FFFFFF" }}>
+        <section className="alm-pt alm-pb" id="targeting" style={{ padding: "128px 28px", background: "#0B1220", color: "#FFFFFF" }}>
           <div style={{ maxWidth: "1360px", margin: "0 auto" }}>
             <div style={{ display: "flex", alignItems: "center", gap: "10px", fontSize: "15px", fontWeight: "600", letterSpacing: "-0.005em", opacity: "0.72" }}><span style={{ width: "7px", height: "7px", background: "#FBAE4F", borderRadius: "50%" }} />Targeting</div>
             <h2 className="alm-in" style={{ margin: "22px 0 0", maxWidth: "980px", fontSize: "clamp(38px, 5.2vw, 80px)", lineHeight: "1", letterSpacing: "-0.035em", fontWeight: "600" }}>Buy the people,<br /><span style={{ color: "#FBAE4F" }}>not the postcode.</span></h2>
             <p style={{ margin: "28px 0 0", maxWidth: "620px", fontSize: "18px", lineHeight: "1.6", fontWeight: "400", color: "#C9D0DB" }}>Every location is profiled against Geopath, DOT and US Census data, Wi-Fi beacons and on-site counts. Pick what matters and we match the locations.</p>
-            <div style={{ marginTop: "56px", display: "flex", flexWrap: "wrap", gap: "24px", alignItems: "stretch" }}>
+            <div className="m-adv-mt" style={{ marginTop: "56px", display: "flex", flexWrap: "wrap", gap: "24px", alignItems: "stretch" }}>
               <div style={{ flex: "999 1 600px", minWidth: "0", display: "flex", flexDirection: "column", gap: "36px" }}>
                 <div>
                   <div style={{ fontSize: "12px", fontWeight: "600", letterSpacing: "0.14em", color: "#8B95A7" }}>AUDIENCE</div>
@@ -209,7 +239,7 @@ export default class AdvertisersPage extends React.Component {
                   </div>
                 </div>
               </div>
-              <div style={{ flex: "1 1 360px", padding: "36px", borderRadius: "18px", background: "#FFFFFF", color: "#0B1220", display: "flex", flexDirection: "column", gap: "20px" }}>
+              <div className="m-adv-aud" style={{ flex: "1 1 360px", padding: "36px", borderRadius: "18px", background: "#FFFFFF", color: "#0B1220", display: "flex", flexDirection: "column", gap: "20px" }}>
                 <div style={{ fontSize: "12px", fontWeight: "600", letterSpacing: "0.14em", color: "#4E586A" }}>YOUR AUDIENCE</div>
                 <div style={{ fontSize: "24px", fontWeight: "600", lineHeight: "1.25", letterSpacing: "-0.01em" }}>{v.summary}</div>
                 <div style={{ height: "2px", background: "#0B1220" }} />
@@ -227,10 +257,10 @@ export default class AdvertisersPage extends React.Component {
           </div>
         </section>
         {/* WHY PARKING */}
-        <section style={{ padding: "128px 28px" }}>
+        <section className="alm-pt alm-pb" style={{ padding: "128px 28px" }}>
           <div style={{ maxWidth: "1360px", margin: "0 auto" }}>
             <h2 className="alm-in" style={{ margin: "0", maxWidth: "900px", fontSize: "clamp(38px, 5.2vw, 80px)", lineHeight: "1", letterSpacing: "-0.035em", fontWeight: "600" }}>Why parking beats the billboard.</h2>
-            <div style={{ marginTop: "64px", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "48px 40px" }}>
+            <div className="m-adv-why" style={{ marginTop: "64px", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 300px), 1fr))", gap: "48px 40px" }}>
               <div style={{ borderTop: "3px solid #0B1220", paddingTop: "28px" }}>
                 <div style={{ fontSize: "clamp(64px, 7vw, 104px)", fontWeight: "600", lineHeight: "1", letterSpacing: "-0.035em" }}>10<span style={{ fontSize: "0.4em" }}>MIN</span></div>
                 <div style={{ marginTop: "20px", fontSize: "20px", fontWeight: "650", letterSpacing: "-0.02em" }}>Captive</div>
@@ -250,11 +280,11 @@ export default class AdvertisersPage extends React.Component {
           </div>
         </section>
         {/* PROCESS */}
-        <section style={{ padding: "128px 28px", background: "#344567", color: "#FFFFFF" }}>
+        <section className="alm-pt alm-pb" style={{ padding: "128px 28px", background: "#344567", color: "#FFFFFF" }}>
           <div style={{ maxWidth: "1360px", margin: "0 auto" }}>
             <div style={{ display: "flex", alignItems: "center", gap: "10px", fontSize: "15px", fontWeight: "600", letterSpacing: "-0.005em", opacity: "0.72" }}><span style={{ width: "7px", height: "7px", background: "#FBAE4F", borderRadius: "50%" }} />How a campaign runs</div>
             <h2 className="alm-in" style={{ margin: "22px 0 0", maxWidth: "900px", fontSize: "clamp(38px, 5.2vw, 80px)", lineHeight: "1", letterSpacing: "-0.035em", fontWeight: "600" }}>Brief to install,<br />handled end to end.</h2>
-            <ol style={{ margin: "64px 0 0", padding: "0", listStyle: "none", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(210px, 1fr))", gap: "40px 32px" }}>
+            <ol className="m-adv-steps" style={{ margin: "64px 0 0", padding: "0", listStyle: "none", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(210px, 1fr))", gap: "40px 32px" }}>
               <li style={{ borderTop: "3px solid #FBAE4F", paddingTop: "24px" }}>
                 <div style={{ fontSize: "44px", fontWeight: "600", color: "#FBAE4F", lineHeight: "1", letterSpacing: "-0.035em" }}>01</div>
                 <div style={{ marginTop: "18px", fontSize: "20px", fontWeight: "650", letterSpacing: "-0.02em" }}>Brief</div>
@@ -284,27 +314,27 @@ export default class AdvertisersPage extends React.Component {
           </div>
         </section>
         {/* LOGOS + CASE */}
-        <section style={{ padding: "128px 28px" }}>
+        <section className="alm-pt alm-pb" style={{ padding: "128px 28px" }}>
           <div style={{ maxWidth: "1360px", margin: "0 auto" }}>
             <div style={{ display: "flex", flexWrap: "wrap", gap: "24px 64px", alignItems: "flex-end", justifyContent: "space-between" }}>
               <h2 className="alm-in" style={{ margin: "0", maxWidth: "900px", fontSize: "clamp(38px, 5.2vw, 80px)", lineHeight: "1", letterSpacing: "-0.035em", fontWeight: "600" }}>Trusted by brands<br />that move markets.</h2>
               <p style={{ margin: "0", maxWidth: "420px", fontSize: "17px", lineHeight: "1.6", fontWeight: "400", color: "#4E586A" }}>A selection of advertisers who have run on the network — alongside Coca-Cola, Ford, Samsung, Toyota, IKEA, Adidas and more.</p>
             </div>
-            <div style={{ marginTop: "56px", display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(160px, 1fr))", gap: "1px", background: "rgba(11,18,32,0.08)", border: "1px solid rgba(11,18,32,0.08)" }}>
+            <div className="m-adv-logos" style={{ marginTop: "56px", display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(160px, 1fr))", gap: "1px", background: "rgba(11,18,32,0.08)", border: "1px solid rgba(11,18,32,0.08)" }}>
               {(v.logos || []).map((lg, lgI) => (
                 <Fragment key={lgI}>
-                  <div className="alm-in" style={{ background: "#F5F5F7", height: "112px", display: "flex", alignItems: "center", justifyContent: "center", padding: "18px", boxSizing: "border-box" }}>
-                    <img src={lg.src} alt={lg.name} style={{ maxWidth: "72%", maxHeight: "42px", width: "auto", height: "auto", objectFit: "contain", opacity: "0.82", display: "block" }} loading="lazy" decoding="async" />
+                  <div className="alm-in m-adv-logo" style={{ background: "#F5F5F7", height: "112px", display: "flex", alignItems: "center", justifyContent: "center", padding: "18px", boxSizing: "border-box" }}>
+                    <img className="m-adv-logo-img" src={lg.src} alt={lg.name} style={{ maxWidth: "72%", maxHeight: "42px", width: "auto", height: "auto", objectFit: "contain", opacity: "0.82", display: "block" }} loading="lazy" decoding="async" />
                   </div>
                 </Fragment>
               ))}
             </div>
             <div style={{ marginTop: "16px", display: "flex", flexWrap: "wrap", gap: "16px" }}>
-              <div style={{ flex: "2 1 560px", padding: "44px", borderRadius: "16px", background: "#0B1220", color: "#FFFFFF", display: "flex", flexDirection: "column", gap: "18px" }}>
+              <div className="m-adv-case" style={{ flex: "2 1 560px", padding: "44px", borderRadius: "16px", background: "#0B1220", color: "#FFFFFF", display: "flex", flexDirection: "column", gap: "18px" }}>
                 <div style={{ fontSize: "12px", fontWeight: "600", letterSpacing: "0.14em", color: "#FBAE4F" }}>CASE STUDY · CONNECTICUT</div>
                 <div style={{ fontSize: "clamp(28px, 3vw, 44px)", fontWeight: "600", lineHeight: "0.98", letterSpacing: "-0.035em" }}>Hartford HealthCare</div>
                 <p style={{ margin: "0", maxWidth: "640px", fontSize: "16px", lineHeight: "1.6", fontWeight: "400", color: "#C9D0DB" }}>Hartford HealthCare signed with A Lot Media in 2019 for 30 garages around Connecticut, to reach CEOs and decision makers — and competitors’ areas — across the state. They loved the campaign and renewed for five more years.</p>
-                <div style={{ display: "flex", flexWrap: "wrap", gap: "40px", marginTop: "8px" }}>
+                <div className="m-adv-case-stats" style={{ display: "flex", flexWrap: "wrap", gap: "40px", marginTop: "8px" }}>
                   <div>
                     <div style={{ fontSize: "36px", fontWeight: "650", color: "#FBAE4F", letterSpacing: "-0.02em" }}>30</div>
                     <div style={{ fontSize: "12px", fontWeight: "600", letterSpacing: "0.12em", color: "#8B95A7" }}>GARAGES ACROSS CT</div>
@@ -319,8 +349,8 @@ export default class AdvertisersPage extends React.Component {
                   </div>
                 </div>
               </div>
-              <A className="alm-btn" href="/contact" style={{ flex: "1 1 320px", padding: "44px", borderRadius: "999px", background: "#FBAE4F", color: "#0B1220", display: "flex", flexDirection: "column", justifyContent: "space-between", gap: "24px", minHeight: "280px" }}>
-                <div style={{ fontSize: "clamp(28px, 2.6vw, 40px)", fontWeight: "600", lineHeight: "0.98", letterSpacing: "-0.035em" }}>Put your brand in front of three million drivers a day.</div>
+              <A className="alm-btn alm-autoh alm-pill-cta m-adv-cta" href="/contact" style={{ flex: "1 1 320px", padding: "44px", borderRadius: "999px", background: "#FBAE4F", color: "#0B1220", display: "flex", flexDirection: "column", justifyContent: "space-between", gap: "24px", minHeight: "280px" }}>
+                <div className="m-adv-cta-h" style={{ fontSize: "clamp(28px, 2.6vw, 40px)", fontWeight: "600", lineHeight: "0.98", letterSpacing: "-0.035em" }}>Put your brand in front of three million drivers a day.</div>
                 <div style={{ fontSize: "15px", fontWeight: "600", letterSpacing: "-0.005em" }}>Talk to sales →</div>
               </A>
             </div>

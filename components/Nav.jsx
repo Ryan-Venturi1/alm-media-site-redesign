@@ -44,7 +44,31 @@ export default class Nav extends React.Component {
         head: function (el) { self.head = el; }
       };
     }
-    return { biz: biz.map(map), links: items.map(map), barRef: this._refs.bar, headRef: this._refs.head };
+    var st = this.state || {};
+    var open = !!st.menu;
+    if (!this._menu) {
+      this._menu = {
+        open: function () { self.setState({ menu: true }); },
+        close: function () { self.setState({ menu: false }); }
+      };
+    }
+    var menuMain = biz.concat(items).map(function (it) {
+      var on = it.ids.indexOf(active) !== -1;
+      return { label: it.label, href: it.href, dot: it.dot || 'rgba(255,255,255,0.28)', color: on ? '#FBAE4F' : '#FFFFFF' };
+    });
+    var menuMore = [
+      { label: 'Advertisers', href: '/advertisers' },
+      { label: 'Event organizers', href: '/events#book' },
+      { label: 'Company & gallery', href: '/company' },
+      { label: 'News & FAQ', href: '/insights' },
+      { label: 'Contact', href: '/contact' },
+      { label: 'Formats & specs', href: '/formats' }
+    ];
+    return {
+      biz: biz.map(map), links: items.map(map), barRef: this._refs.bar, headRef: this._refs.head,
+      menuOpen: open, menuExpanded: open ? 'true' : 'false', openMenu: this._menu.open, closeMenu: this._menu.close,
+      menuMain: menuMain, menuMore: menuMore
+    };
   }
 
   render() {
@@ -85,10 +109,48 @@ export default class Nav extends React.Component {
                 </Fragment>
               ))}
             </nav>
-            <A className="alm-ncta" href="/plan" style={{ display: "inline-flex", alignItems: "center", minHeight: "40px", padding: "0 20px", borderRadius: "999px", background: "#FBAE4F", color: "#0B1220", fontWeight: "600", fontSize: "14px", textDecoration: "none", whiteSpace: "nowrap" }}>Plan a campaign</A>
+            <div className="alm-nav-end" style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+              <A className="alm-ncta" href="/plan" style={{ display: "inline-flex", alignItems: "center", minHeight: "40px", padding: "0 20px", borderRadius: "999px", background: "#FBAE4F", color: "#0B1220", fontWeight: "600", fontSize: "14px", textDecoration: "none", whiteSpace: "nowrap" }}>Plan a campaign</A>
+              <button type="button" className="alm-nav-menu" aria-label="Open menu" aria-expanded={v.menuExpanded} onClick={v.openMenu} style={{ display: "none", alignItems: "center", justifyContent: "center", width: "44px", height: "44px", padding: "0", border: "0", borderRadius: "999px", background: "rgba(255,255,255,0.1)", color: "#FFFFFF", cursor: "pointer" }}>
+                <span aria-hidden="true" style={{ display: "flex", flexDirection: "column", gap: "5px" }}>
+                  <span style={{ display: "block", width: "18px", height: "2px", borderRadius: "1px", background: "#FFFFFF" }} />
+                  <span style={{ display: "block", width: "18px", height: "2px", borderRadius: "1px", background: "#FFFFFF" }} />
+                </span>
+              </button>
+            </div>
           </div>
           <span className="alm-nav-prog" aria-hidden="true" />
         </div>
+        {v.menuOpen ? (
+          <>
+            <div className="alm-msheet" role="dialog" aria-modal="true" aria-label="Menu" style={{ position: "fixed", inset: "0", zIndex: "3000", display: "flex", flexDirection: "column", background: "#070C17", color: "#FFFFFF", overflowY: "auto" }}>
+              <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: "12px", minHeight: "68px", padding: "0 20px 0 28px", borderBottom: "1px solid rgba(255,255,255,0.08)" }}>
+                <A href="/" aria-label="A Lot Media home" onClick={v.closeMenu} style={{ display: "inline-flex", padding: "14px 0" }}>
+                  <img src="/media/brand/alm-logo.png?v=6fceb514" alt="A Lot Media" style={{ height: "30px", width: "auto", display: "block" }} />
+                </A>
+                <button type="button" aria-label="Close menu" onClick={v.closeMenu} style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", width: "44px", height: "44px", padding: "0", border: "0", borderRadius: "999px", background: "rgba(255,255,255,0.1)", color: "#FFFFFF", fontSize: "22px", lineHeight: "1", cursor: "pointer" }}>×</button>
+              </div>
+              <nav aria-label="Menu" style={{ padding: "20px 28px 8px", display: "flex", flexDirection: "column" }}>
+                {(v.menuMain || []).map((m, mI) => (
+                  <Fragment key={mI}>
+                    <A href={m.href} onClick={v.closeMenu} style={{ display: "flex", alignItems: "center", gap: "12px", padding: "14px 0", borderBottom: "1px solid rgba(255,255,255,0.08)", color: m.color, fontSize: "26px", fontWeight: "600", letterSpacing: "-0.03em", textDecoration: "none" }}><span style={{ width: "8px", height: "8px", borderRadius: "50%", background: m.dot }} />{m.label}</A>
+                  </Fragment>
+                ))}
+              </nav>
+              <nav aria-label="More" style={{ padding: "16px 28px 0", display: "grid", gridTemplateColumns: "1fr 1fr", gap: "4px 16px" }}>
+                {(v.menuMore || []).map((m, mI) => (
+                  <Fragment key={mI}>
+                    <A href={m.href} onClick={v.closeMenu} style={{ padding: "12px 0", color: "rgba(255,255,255,0.72)", fontSize: "15px", fontWeight: "500", textDecoration: "none" }}>{m.label}</A>
+                  </Fragment>
+                ))}
+              </nav>
+              <div style={{ marginTop: "auto", padding: "28px", display: "grid", gap: "10px" }}>
+                <A href="/plan" onClick={v.closeMenu} style={{ display: "flex", alignItems: "center", justifyContent: "center", minHeight: "54px", borderRadius: "999px", background: "#FBAE4F", color: "#0B1220", fontWeight: "600", fontSize: "16px", textDecoration: "none" }}>Plan a campaign</A>
+                <A href="tel:18607169084" style={{ display: "flex", alignItems: "center", justifyContent: "center", minHeight: "54px", borderRadius: "999px", border: "1.5px solid rgba(255,255,255,0.4)", color: "#FFFFFF", fontWeight: "600", fontSize: "16px", textDecoration: "none" }}>Call 1.860.716.9084</A>
+              </div>
+            </div>
+          </>
+        ) : null}
       </header>
     );
   }

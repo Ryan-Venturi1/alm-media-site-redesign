@@ -200,7 +200,7 @@ export default class HomePage extends React.Component {
         {/* BRAND MARQUEE */}
         <LogoMarquee tone="dark" rows="2" />
         {/* STATS */}
-        <section ref={v.statsRef} style={{ padding: "104px 28px 40px" }}>
+        <section className="alm-pt" ref={v.statsRef} style={{ padding: "104px 28px 40px" }}>
           <div style={{ maxWidth: "1360px", margin: "0 auto" }}>
             <div style={{ display: "flex", flexWrap: "wrap", gap: "16px", alignItems: "baseline", justifyContent: "space-between" }}>
               <div style={{ display: "flex", alignItems: "center", gap: "10px", fontSize: "15px", fontWeight: "600", letterSpacing: "-0.005em", opacity: "0.72" }}><span style={{ width: "7px", height: "7px", background: "#FBAE4F", borderRadius: "50%" }} />The network, by the numbers</div>
@@ -226,7 +226,7 @@ export default class HomePage extends React.Component {
           </div>
         </section>
         {/* STATEMENT (fills as you read) */}
-        <section style={{ padding: "112px 28px 96px" }}>
+        <section className="alm-pt alm-pb" style={{ padding: "112px 28px 96px" }}>
           <div style={{ maxWidth: "1180px", margin: "0 auto" }}>
             <p style={{ margin: "0", fontSize: "clamp(34px, 4.8vw, 72px)", lineHeight: "1.1", letterSpacing: "-0.035em", fontWeight: "600", color: "#0B1220" }}>
               <span className="alm-fill" data-scrub="text">Every trip ends in a parking space. Three million times a day, in more than 400 cities, we turn that moment into media, revenue and live experiences.</span>
@@ -243,7 +243,7 @@ export default class HomePage extends React.Component {
               </div>
               <p style={{ margin: "0", maxWidth: "440px", fontSize: "17px", lineHeight: "1.6", fontWeight: "400", color: "#4E586A" }}>Printed media on the walls, digital screens at the gate, and the space itself — booked for launches, festivals and game days.</p>
             </div>
-            <div className="alm-static-only" style={{ marginTop: "56px", paddingBottom: "128px", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(340px, 1fr))", gap: "16px" }}>
+            <div className="alm-static-only" style={{ marginTop: "56px", paddingBottom: "128px", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 340px), 1fr))", gap: "16px" }}>
               {(v.pillars || []).map((pl, plI) => (
                 <Fragment key={plI}>
                   <A className="alm-tile alm-link alm-in" href={pl.href} style={{ position: "relative", display: "block", height: "660px", borderRadius: "18px", overflow: "hidden", background: "#0B1220", color: "#FFFFFF", boxShadow: pl.ring, fontSize: "15px", letterSpacing: "-0.005em", fontWeight: "600" }}>
@@ -287,7 +287,7 @@ export default class HomePage extends React.Component {
                 <img className="alm-story-img" src={pl.img} alt={pl.alt} style={{ objectPosition: pl.pos }} loading="lazy" decoding="async" />
               </Fragment>
             ))}
-            <div style={{ position: "absolute", inset: "0", background: "linear-gradient(90deg, rgba(5,8,15,0.84) 0%, rgba(5,8,15,0.42) 52%, rgba(5,8,15,0.08) 100%), linear-gradient(180deg, rgba(5,8,15,0.6) 0%, rgba(5,8,15,0) 28%, rgba(5,8,15,0) 52%, rgba(5,8,15,0.92) 100%)" }} />
+            <div className="m-home-story-shade" style={{ position: "absolute", inset: "0", background: "linear-gradient(90deg, rgba(5,8,15,0.84) 0%, rgba(5,8,15,0.42) 52%, rgba(5,8,15,0.08) 100%), linear-gradient(180deg, rgba(5,8,15,0.6) 0%, rgba(5,8,15,0) 28%, rgba(5,8,15,0) 52%, rgba(5,8,15,0.92) 100%)" }} />
             <div style={{ position: "absolute", inset: "0", maxWidth: "1360px", margin: "0 auto", padding: "104px 28px 56px", boxSizing: "border-box", display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
               <div style={{ display: "flex", flexWrap: "wrap", gap: "20px 48px", justifyContent: "space-between", alignItems: "flex-start" }}>
                 <div style={{ display: "flex", alignItems: "center", gap: "10px", fontSize: "15px", fontWeight: "600", letterSpacing: "-0.005em", color: "rgba(255,255,255,0.78)" }}><span style={{ width: "7px", height: "7px", background: "#FBAE4F", borderRadius: "50%" }} />One footprint · three businesses</div>
@@ -340,7 +340,7 @@ export default class HomePage extends React.Component {
           </div>
         </section>
         {/* EVENTS & VENUES SHOWCASE */}
-        <section id="events" style={{ padding: "128px 28px", background: "#05080F", color: "#FFFFFF", overflow: "hidden" }}>
+        <section className="alm-pt alm-pb" id="events" style={{ padding: "128px 28px", background: "#05080F", color: "#FFFFFF", overflow: "hidden" }}>
           <div style={{ maxWidth: "1360px", margin: "0 auto" }}>
             <div style={{ display: "flex", flexWrap: "wrap", gap: "24px 64px", alignItems: "flex-end", justifyContent: "space-between" }}>
               <div>
@@ -381,7 +381,7 @@ export default class HomePage extends React.Component {
                 </div>
               </div>
               <div style={{ flex: "1.6 1 560px", minWidth: "0" }}>
-                <div className="alm-wipe" style={{ position: "relative", height: "100%", minHeight: "560px", borderRadius: "18px", overflow: "hidden", background: "#0B1220" }}>
+                <div className="alm-wipe m-home-evimg" style={{ position: "relative", height: "100%", minHeight: "560px", borderRadius: "18px", overflow: "hidden", background: "#0B1220" }}>
                   {(v.evImgs || []).map((im, imI) => (
                     <Fragment key={imI}>
                       <img src={im.src} alt={im.alt} aria-hidden={im.hidden} style={{ position: "absolute", inset: "0", width: "100%", height: "100%", objectFit: "cover", objectPosition: im.pos, display: "block", opacity: im.op, transform: `scale(${im.sc})`, transition: "opacity .9s ease, transform 7s linear" }} loading="lazy" decoding="async" />
@@ -416,7 +416,7 @@ export default class HomePage extends React.Component {
           </div>
         </section>
         {/* INVESTOR CASE (bento) */}
-        <section style={{ padding: "140px 28px 128px", background: "#F5F5F7" }}>
+        <section className="alm-pt alm-pb" style={{ padding: "140px 28px 128px", background: "#F5F5F7" }}>
           <div style={{ maxWidth: "1240px", margin: "0 auto" }}>
             <div style={{ textAlign: "center" }}>
               <div style={{ display: "inline-flex", alignItems: "center", gap: "10px", fontSize: "17px", fontWeight: "600", letterSpacing: "-0.01em", color: "#A85C00" }}><span style={{ width: "7px", height: "7px", background: "#FBAE4F", borderRadius: "50%" }} />For investors</div>
@@ -424,7 +424,7 @@ export default class HomePage extends React.Component {
               <p className="alm-in" style={{ margin: "24px auto 0", maxWidth: "660px", fontSize: "21px", lineHeight: "1.5", fontWeight: "400", color: "#5B6474" }}>Parking is where every trip ends — and where drivers spend up to ten minutes. The footprint, the hardware and the brands are already in place.</p>
             </div>
             <div style={{ marginTop: "64px", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(270px, 1fr))", gap: "16px" }}>
-              <div className="alm-in alm-span2" style={{ minHeight: "340px", padding: "40px", borderRadius: "28px", background: "#0B1220", color: "#FFFFFF", display: "flex", flexDirection: "column", justifyContent: "space-between", position: "relative", overflow: "hidden" }}>
+              <div className="alm-in alm-span2 alm-autoh" style={{ minHeight: "340px", padding: "40px", borderRadius: "28px", background: "#0B1220", color: "#FFFFFF", display: "flex", flexDirection: "column", justifyContent: "space-between", position: "relative", overflow: "hidden" }}>
                 <div aria-hidden="true" style={{ position: "absolute", right: "-120px", top: "-120px", width: "420px", height: "420px", background: "radial-gradient(closest-side, rgba(251,174,79,0.35), rgba(251,174,79,0))", pointerEvents: "none" }} />
                 <div style={{ position: "relative", fontSize: "15px", fontWeight: "600", color: "#A3ACBC" }}>Digital units installed in New York and Connecticut</div>
                 <div style={{ position: "relative" }}>
@@ -432,14 +432,14 @@ export default class HomePage extends React.Component {
                   <div style={{ marginTop: "14px", fontSize: "18px", lineHeight: "1.5", color: "#C9D0DB" }}>With another 1,000 planned for the top 35 media markets in the US.</div>
                 </div>
               </div>
-              <div className="alm-in" style={{ minHeight: "340px", padding: "36px", borderRadius: "28px", background: "#FFFFFF", display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
+              <div className="alm-in alm-autoh" style={{ minHeight: "340px", padding: "36px", borderRadius: "28px", background: "#FFFFFF", display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
                 <div style={{ fontSize: "15px", fontWeight: "600", color: "#5B6474" }}>Dwell time</div>
                 <div>
                   <div style={{ fontSize: "clamp(64px, 6.4vw, 96px)", fontWeight: "600", lineHeight: "0.95", letterSpacing: "-0.05em", color: "#1D7F92" }}>10<span style={{ fontSize: "0.4em", letterSpacing: "0" }}>MIN</span></div>
                   <div style={{ marginTop: "12px", fontSize: "17px", lineHeight: "1.5", color: "#5B6474" }}>Industry-leading dwell times of up to ten minutes with the ads we place.</div>
                 </div>
               </div>
-              <div className="alm-in" style={{ minHeight: "300px", padding: "36px", borderRadius: "28px", background: "#FFFFFF", display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
+              <div className="alm-in alm-autoh" style={{ minHeight: "300px", padding: "36px", borderRadius: "28px", background: "#FFFFFF", display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
                 <div style={{ fontSize: "15px", fontWeight: "600", color: "#5B6474" }}>Our footprint</div>
                 <div>
                   <div style={{ fontSize: "clamp(56px, 5.6vw, 84px)", fontWeight: "600", lineHeight: "0.95", letterSpacing: "-0.05em" }}>12,000</div>
@@ -520,7 +520,7 @@ export default class HomePage extends React.Component {
           <div style={{ position: "absolute", right: "28px", bottom: "22px", fontFamily: "'Geist Mono', monospace", fontSize: "11px", letterSpacing: "0.08em", color: "rgba(255,255,255,0.55)" }}>STOCK DRONE FOOTAGE</div>
         </section>
         {/* IN THE NETWORK */}
-        <section style={{ padding: "96px 28px 120px" }}>
+        <section className="alm-pt alm-pb" style={{ padding: "96px 28px 120px" }}>
           <div style={{ maxWidth: "1360px", margin: "0 auto" }}>
             <div style={{ display: "flex", flexWrap: "wrap", gap: "24px 64px", alignItems: "flex-end", justifyContent: "space-between" }}>
               <div>
@@ -530,15 +530,15 @@ export default class HomePage extends React.Component {
               <p style={{ margin: "0", maxWidth: "420px", fontSize: "17px", lineHeight: "1.6", fontWeight: "400", color: "#4E586A" }}>Live A Lot Media installations across our static and digital networks — the moment between parking the car and getting where you’re going.<br /><span style={{ fontFamily: "'Geist Mono', monospace", fontSize: "11px", letterSpacing: "0.08em", color: "#8A93A3" }}>REAL INSTALLATIONS · PHOTOS RETOUCHED</span></p>
             </div>
             <div style={{ marginTop: "56px", display: "flex", flexWrap: "wrap", gap: "16px" }}>
-              <figure className="alm-tile alm-wipe" style={{ margin: "0", flex: "2 1 640px", height: "560px", position: "relative", overflow: "hidden", borderRadius: "16px", background: "#0B1220" }}>
-                <img src="/media/photos/lucid-digital-panel.webp?v=0437d0e2" alt="Travelers with luggage walking past a Lucid ad on an A Lot Media digital panel in a parking garage" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "40% 50%", display: "block" }} loading="lazy" decoding="async" />
+              <figure className="alm-tile alm-wipe m-home-place" style={{ margin: "0", flex: "2 1 640px", height: "560px", position: "relative", overflow: "hidden", borderRadius: "16px", background: "#0B1220" }}>
+                <img className="m-home-lucid" src="/media/photos/lucid-digital-panel.webp?v=0437d0e2" alt="Travelers with luggage walking past a Lucid ad on an A Lot Media digital panel in a parking garage" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "40% 50%", display: "block" }} loading="lazy" decoding="async" />
                 <figcaption style={{ position: "absolute", left: "0", right: "0", bottom: "0", padding: "80px 28px 24px", background: "linear-gradient(180deg, rgba(11,18,32,0) 0%, rgba(11,18,32,0.82) 100%)", color: "#FFFFFF" }}>
                   <div style={{ display: "inline-flex", alignItems: "center", gap: "10px", marginBottom: "10px", fontSize: "15px", fontWeight: "600", letterSpacing: "-0.005em", opacity: "0.72" }}><span style={{ width: "7px", height: "7px", background: "#8FDCE8", borderRadius: "50%" }} />Digital</div>
                   <div style={{ fontSize: "22px", fontWeight: "650", letterSpacing: "-0.02em" }}>Lucid</div>
                   <div style={{ marginTop: "4px", fontSize: "14px", fontWeight: "600", color: "#D5DAE3" }}>Digital panel · garage lobby · photo edited</div>
                 </figcaption>
               </figure>
-              <figure className="alm-tile alm-wipe" style={{ margin: "0", flex: "1 1 320px", height: "560px", position: "relative", overflow: "hidden", borderRadius: "16px", background: "#0B1220" }}>
+              <figure className="alm-tile alm-wipe m-home-place" style={{ margin: "0", flex: "1 1 320px", height: "560px", position: "relative", overflow: "hidden", borderRadius: "16px", background: "#0B1220" }}>
                 <img src="/media/photos/united-digital-panel.webp?v=f8d1849b" alt="United for Business ad on an A Lot Media digital panel beside a white sports car" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "30% 50%", display: "block" }} loading="lazy" decoding="async" />
                 <figcaption style={{ position: "absolute", left: "0", right: "0", bottom: "0", padding: "80px 28px 24px", background: "linear-gradient(180deg, rgba(11,18,32,0) 0%, rgba(11,18,32,0.82) 100%)", color: "#FFFFFF" }}>
                   <div style={{ display: "inline-flex", alignItems: "center", gap: "10px", marginBottom: "10px", fontSize: "15px", fontWeight: "600", letterSpacing: "-0.005em", opacity: "0.72" }}><span style={{ width: "7px", height: "7px", background: "#8FDCE8", borderRadius: "50%" }} />Digital</div>
@@ -546,7 +546,7 @@ export default class HomePage extends React.Component {
                   <div style={{ marginTop: "4px", fontSize: "14px", fontWeight: "600", color: "#D5DAE3" }}>Digital panel</div>
                 </figcaption>
               </figure>
-              <figure className="alm-tile alm-wipe" style={{ margin: "0", flex: "1 1 320px", height: "420px", position: "relative", overflow: "hidden", borderRadius: "16px", background: "#0B1220" }}>
+              <figure className="alm-tile alm-wipe m-home-place" style={{ margin: "0", flex: "1 1 320px", height: "420px", position: "relative", overflow: "hidden", borderRadius: "16px", background: "#0B1220" }}>
                 <img src="/media/photos/panera-now-open.webp?v=2fa97a26" alt="Panera Bread now-open ad on an A Lot Media digital panel with drivers nearby" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "60% 50%", display: "block" }} loading="lazy" decoding="async" />
                 <figcaption style={{ position: "absolute", left: "0", right: "0", bottom: "0", padding: "80px 28px 24px", background: "linear-gradient(180deg, rgba(11,18,32,0) 0%, rgba(11,18,32,0.82) 100%)", color: "#FFFFFF" }}>
                   <div style={{ display: "inline-flex", alignItems: "center", gap: "10px", marginBottom: "10px", fontSize: "15px", fontWeight: "600", letterSpacing: "-0.005em", opacity: "0.72" }}><span style={{ width: "7px", height: "7px", background: "#8FDCE8", borderRadius: "50%" }} />Digital</div>
@@ -554,7 +554,7 @@ export default class HomePage extends React.Component {
                   <div style={{ marginTop: "4px", fontSize: "14px", fontWeight: "600", color: "#D5DAE3" }}>Digital panel · new store launch</div>
                 </figcaption>
               </figure>
-              <figure className="alm-tile alm-wipe" style={{ margin: "0", flex: "1 1 320px", height: "420px", position: "relative", overflow: "hidden", borderRadius: "16px", background: "#0B1220" }}>
+              <figure className="alm-tile alm-wipe m-home-place" style={{ margin: "0", flex: "1 1 320px", height: "420px", position: "relative", overflow: "hidden", borderRadius: "16px", background: "#0B1220" }}>
                 <img src="/media/photos/a-beautiful-noise-panel.webp?v=2610293c" alt="A Beautiful Noise Broadway musical ad on a digital panel next to the garage cashier" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "50% 40%", display: "block" }} loading="lazy" decoding="async" />
                 <figcaption style={{ position: "absolute", left: "0", right: "0", bottom: "0", padding: "80px 28px 24px", background: "linear-gradient(180deg, rgba(11,18,32,0) 0%, rgba(11,18,32,0.82) 100%)", color: "#FFFFFF" }}>
                   <div style={{ display: "inline-flex", alignItems: "center", gap: "10px", marginBottom: "10px", fontSize: "15px", fontWeight: "600", letterSpacing: "-0.005em", opacity: "0.72" }}><span style={{ width: "7px", height: "7px", background: "#8FDCE8", borderRadius: "50%" }} />Digital</div>
@@ -562,7 +562,7 @@ export default class HomePage extends React.Component {
                   <div style={{ marginTop: "4px", fontSize: "14px", fontWeight: "600", color: "#D5DAE3" }}>Digital panel · Broadway</div>
                 </figcaption>
               </figure>
-              <figure className="alm-tile alm-wipe" style={{ margin: "0", flex: "1 1 320px", height: "420px", position: "relative", overflow: "hidden", borderRadius: "16px", background: "#0B1220" }}>
+              <figure className="alm-tile alm-wipe m-home-place" style={{ margin: "0", flex: "1 1 320px", height: "420px", position: "relative", overflow: "hidden", borderRadius: "16px", background: "#0B1220" }}>
                 <img src="/media/photos/hartford-healthcare-wallscape.webp?v=0b3f98d9" alt="Hartford HealthCare wallscape inside a parking garage" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} loading="lazy" decoding="async" />
                 <figcaption style={{ position: "absolute", left: "0", right: "0", bottom: "0", padding: "80px 28px 24px", background: "linear-gradient(180deg, rgba(11,18,32,0) 0%, rgba(11,18,32,0.82) 100%)", color: "#FFFFFF" }}>
                   <div style={{ display: "inline-flex", alignItems: "center", gap: "10px", marginBottom: "10px", fontSize: "15px", fontWeight: "600", letterSpacing: "-0.005em", opacity: "0.72" }}><span style={{ width: "7px", height: "7px", background: "#FFFFFF", borderRadius: "50%" }} />Static</div>
@@ -570,7 +570,7 @@ export default class HomePage extends React.Component {
                   <div style={{ marginTop: "4px", fontSize: "14px", fontWeight: "600", color: "#D5DAE3" }}>Wallscape</div>
                 </figcaption>
               </figure>
-              <figure className="alm-tile alm-wipe" style={{ margin: "0", flex: "1 1 320px", height: "560px", position: "relative", overflow: "hidden", borderRadius: "16px", background: "#0B1220" }}>
+              <figure className="alm-tile alm-wipe m-home-place" style={{ margin: "0", flex: "1 1 320px", height: "560px", position: "relative", overflow: "hidden", borderRadius: "16px", background: "#0B1220" }}>
                 <img src="/media/photos/hartford-healthcare-elevator-wraps.webp?v=20725f9d" alt="Hartford HealthCare LifeStar helicopter elevator door wraps" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} loading="lazy" decoding="async" />
                 <figcaption style={{ position: "absolute", left: "0", right: "0", bottom: "0", padding: "80px 28px 24px", background: "linear-gradient(180deg, rgba(11,18,32,0) 0%, rgba(11,18,32,0.82) 100%)", color: "#FFFFFF" }}>
                   <div style={{ display: "inline-flex", alignItems: "center", gap: "10px", marginBottom: "10px", fontSize: "15px", fontWeight: "600", letterSpacing: "-0.005em", opacity: "0.72" }}><span style={{ width: "7px", height: "7px", background: "#FFFFFF", borderRadius: "50%" }} />Static</div>
@@ -578,7 +578,7 @@ export default class HomePage extends React.Component {
                   <div style={{ marginTop: "4px", fontSize: "14px", fontWeight: "600", color: "#D5DAE3" }}>Elevator wraps</div>
                 </figcaption>
               </figure>
-              <figure className="alm-tile alm-wipe" style={{ margin: "0", flex: "2 1 640px", height: "560px", position: "relative", overflow: "hidden", borderRadius: "16px", background: "#0B1220" }}>
+              <figure className="alm-tile alm-wipe m-home-place" style={{ margin: "0", flex: "2 1 640px", height: "560px", position: "relative", overflow: "hidden", borderRadius: "16px", background: "#0B1220" }}>
                 <img src="/media/photos/msk-garage-entrance.webp?v=a0e27476" alt="Car pulling into a garage past an A Lot Media digital panel and branded wayfinding" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} loading="lazy" decoding="async" />
                 <figcaption style={{ position: "absolute", left: "0", right: "0", bottom: "0", padding: "80px 28px 24px", background: "linear-gradient(180deg, rgba(11,18,32,0) 0%, rgba(11,18,32,0.82) 100%)", color: "#FFFFFF" }}>
                   <div style={{ display: "inline-flex", alignItems: "center", gap: "10px", marginBottom: "10px", fontSize: "15px", fontWeight: "600", letterSpacing: "-0.005em", opacity: "0.72" }}><span style={{ width: "7px", height: "7px", background: "#8FDCE8", borderRadius: "50%" }} />Digital</div>
@@ -593,7 +593,7 @@ export default class HomePage extends React.Component {
           </div>
         </section>
         {/* DDRB PRODUCT (Apple-style) */}
-        <section style={{ position: "relative", background: "#000000", color: "#FFFFFF", overflow: "hidden", padding: "140px 28px 128px" }}>
+        <section className="alm-pt alm-pb" style={{ position: "relative", background: "#000000", color: "#FFFFFF", overflow: "hidden", padding: "140px 28px 128px" }}>
           <div aria-hidden="true" style={{ position: "absolute", left: "50%", top: "46%", width: "1100px", height: "900px", transform: "translate(-50%, -50%)", background: "radial-gradient(closest-side, rgba(63,120,255,0.16), rgba(0,0,0,0) 70%)", pointerEvents: "none" }} />
           <div style={{ position: "relative", maxWidth: "980px", margin: "0 auto", textAlign: "center" }}>
             <div style={{ display: "inline-flex", alignItems: "center", gap: "10px", fontSize: "17px", fontWeight: "600", letterSpacing: "-0.01em", color: "#8FDCE8" }}><span style={{ width: "7px", height: "7px", background: "#8FDCE8", borderRadius: "50%" }} />Digital Dynamic Rate Board™</div>
@@ -633,7 +633,7 @@ export default class HomePage extends React.Component {
           </div>
         </section>
         {/* FORMATS ROW (holds and scrolls sideways in page view) */}
-        <section className="alm-hs" data-scrub="pin" style={{ padding: "128px 0 120px" }}>
+        <section className="alm-hs alm-pt alm-pb" data-scrub="pin" style={{ padding: "128px 0 120px" }}>
           <div className="alm-hs-stick">
             <div style={{ maxWidth: "1360px", margin: "0 auto", padding: "0 28px", width: "100%", boxSizing: "border-box" }}>
               <div style={{ display: "flex", flexWrap: "wrap", gap: "24px 64px", alignItems: "flex-end", justifyContent: "space-between" }}>
@@ -680,7 +680,7 @@ export default class HomePage extends React.Component {
           </div>
         </section>
         {/* MARKETS */}
-        <section style={{ padding: "128px 28px", background: "#0B1220", color: "#FFFFFF" }}>
+        <section className="alm-pt alm-pb" style={{ padding: "128px 28px", background: "#0B1220", color: "#FFFFFF" }}>
           <div style={{ maxWidth: "1360px", margin: "0 auto" }}>
             <div style={{ display: "flex", flexWrap: "wrap", gap: "24px 64px", alignItems: "flex-end", justifyContent: "space-between" }}>
               <div>
@@ -695,17 +695,17 @@ export default class HomePage extends React.Component {
                 ))}
               </div>
             </div>
-            <div style={{ marginTop: "48px", display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(250px, 1fr))", gap: "12px" }}>
+            <div className="m-home-mkts" style={{ marginTop: "48px", display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(250px, 1fr))", gap: "12px" }}>
               {(v.markets || []).map((m, mI) => (
                 <Fragment key={mI}>
-                  <A className="alm-tile alm-in" href="/locations" style={{ position: "relative", height: "340px", borderRadius: "16px", overflow: "hidden", background: "#121B2E", display: "block" }}>
+                  <A className="alm-tile alm-in m-home-mkt" href="/locations" style={{ position: "relative", height: "340px", borderRadius: "16px", overflow: "hidden", background: "#121B2E", display: "block" }}>
                     <img src={m.img} alt={`${m.name} skyline`} style={{ position: "absolute", inset: "0", width: "100%", height: "100%", objectFit: "cover", display: "block" }} loading="lazy" decoding="async" />
                     <div style={{ position: "absolute", inset: "0", background: "linear-gradient(180deg, rgba(11,18,32,0.05) 30%, rgba(11,18,32,0.88) 100%)" }} />
-                    <div style={{ position: "absolute", left: "20px", right: "20px", top: "18px", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+                    <div className="m-home-mkt-top" style={{ position: "absolute", left: "20px", right: "20px", top: "18px", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
                       <span style={{ fontFamily: "'Geist Mono', monospace", fontSize: "11px", letterSpacing: "0.12em", color: "rgba(255,255,255,0.8)" }}>{m.state}</span>
                       <span style={{ fontSize: "11px", fontWeight: "600", letterSpacing: "0.08em", padding: "6px 10px", borderRadius: "999px", background: m.chipBg, color: m.chipFg }}>{m.status}</span>
                     </div>
-                    <div style={{ position: "absolute", left: "20px", right: "20px", bottom: "20px", fontSize: "26px", fontWeight: "650", lineHeight: "1.08", letterSpacing: "-0.02em" }}>{m.name}</div>
+                    <div className="m-home-mkt-name" style={{ position: "absolute", left: "20px", right: "20px", bottom: "20px", fontSize: "26px", fontWeight: "650", lineHeight: "1.08", letterSpacing: "-0.02em" }}>{m.name}</div>
                   </A>
                 </Fragment>
               ))}
@@ -717,8 +717,8 @@ export default class HomePage extends React.Component {
           </div>
         </section>
         {/* AUDIENCES */}
-        <section style={{ padding: "120px 28px 128px" }}>
-          <div style={{ maxWidth: "1360px", margin: "0 auto", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "16px" }}>
+        <section className="alm-pt alm-pb" style={{ padding: "120px 28px 128px" }}>
+          <div style={{ maxWidth: "1360px", margin: "0 auto", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 300px), 1fr))", gap: "16px" }}>
             <A className="alm-tile alm-link alm-in" href="/advertisers" style={{ display: "flex", flexDirection: "column", background: "#FFFFFF", borderRadius: "16px", overflow: "hidden", fontSize: "15px", letterSpacing: "-0.005em", fontWeight: "600" }}>
               <div style={{ height: "300px", overflow: "hidden" }}>
                 <img src="/media/photos/ibm-digital-panel.webp?v=1985ec8c" alt="Commuters passing an IBM ad on an A Lot Media digital panel in a parking garage" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "60% 50%", display: "block" }} loading="lazy" decoding="async" />
@@ -767,7 +767,7 @@ export default class HomePage extends React.Component {
           </div>
         </section>
         {/* SELF SERVE */}
-        <section style={{ padding: "128px 28px" }}>
+        <section className="alm-pt alm-pb" style={{ padding: "128px 28px" }}>
           <div style={{ maxWidth: "1360px", margin: "0 auto", display: "flex", flexWrap: "wrap", gap: "64px", alignItems: "center" }}>
             <div style={{ flex: "1 1 420px" }}>
               <div style={{ display: "flex", alignItems: "center", gap: "10px", fontSize: "15px", fontWeight: "600", letterSpacing: "-0.005em", opacity: "0.72" }}><span style={{ width: "7px", height: "7px", background: "#FBAE4F", borderRadius: "50%" }} />Plan a campaign</div>

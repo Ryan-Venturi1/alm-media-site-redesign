@@ -126,7 +126,7 @@ export default class PlanPage extends React.Component {
             </div>
             <div style={{ fontSize: "15px", fontWeight: "400", color: "#4E586A", maxWidth: "420px" }}>Build your request in four steps. Our team confirms availability and rates and comes back with a proposal. <A href="/contact" style={{ fontWeight: "600", color: "#0B1220", textDecoration: "underline" }}>Prefer a planner?</A></div>
           </div>
-          <ol style={{ maxWidth: "1360px", margin: "40px auto 0", padding: "0", listStyle: "none", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(160px, 1fr))", gap: "8px" }}>
+          <ol className="m-plan-steps" style={{ maxWidth: "1360px", margin: "40px auto 0", padding: "0", listStyle: "none", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(160px, 1fr))", gap: "8px" }}>
             {(v.steps || []).map((s, sI) => (
               <Fragment key={sI}>
                 <li>
@@ -139,29 +139,29 @@ export default class PlanPage extends React.Component {
             ))}
           </ol>
         </section>
-        <section style={{ padding: "8px 28px 128px" }}>
+        <section className="alm-pb m-plan-body" style={{ padding: "8px 28px 128px" }}>
           <div style={{ maxWidth: "1360px", margin: "0 auto", display: "flex", flexWrap: "wrap", gap: "32px", alignItems: "flex-start" }}>
             <div style={{ flex: "999 1 640px", minWidth: "0" }}>
               {v.is?.markets ? (
                 <>
                   <div>
                     <div style={{ display: "flex", flexWrap: "wrap", gap: "12px", justifyContent: "space-between", alignItems: "baseline" }}>
-                      <h2 className="alm-in" style={{ margin: "0", fontSize: "30px", fontWeight: "650", letterSpacing: "-0.02em" }}>Where should you run?</h2>
+                      <h2 className="alm-in m-plan-h2" style={{ margin: "0", fontSize: "30px", fontWeight: "650", letterSpacing: "-0.02em" }}>Where should you run?</h2>
                       <div style={{ fontSize: "14px", fontWeight: "600", color: "#4E586A" }}>Select one or more markets</div>
                     </div>
-                    <div style={{ marginTop: "24px", display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(210px, 1fr))", gap: "12px" }}>
+                    <div className="m-plan-mkts" style={{ marginTop: "24px", display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(210px, 1fr))", gap: "12px" }}>
                       {(v.markets || []).map((m, mI) => (
                         <Fragment key={mI}>
-                          <button className="alm-pick" type="button" aria-pressed={m.pressed} onClick={m.toggle} style={{ position: "relative", height: "180px", padding: "0", borderRadius: "18px", overflow: "hidden", border: `3px solid ${m.bd}`, background: "#0B1220", cursor: "pointer", textAlign: "left", fontFamily: "'Montserrat', sans-serif", boxShadow: m.shadow }}>
+                          <button className="alm-pick m-plan-mkt" type="button" aria-pressed={m.pressed} onClick={m.toggle} style={{ position: "relative", height: "180px", padding: "0", borderRadius: "18px", overflow: "hidden", border: `3px solid ${m.bd}`, background: "#0B1220", cursor: "pointer", textAlign: "left", fontFamily: "'Montserrat', sans-serif", boxShadow: m.shadow }}>
                             <img src={m.img} alt="" style={{ position: "absolute", inset: "0", width: "100%", height: "100%", objectFit: "cover", opacity: "0.85" }} loading="lazy" decoding="async" />
                             {' '}
                             <span style={{ position: "absolute", inset: "0", background: "linear-gradient(180deg, rgba(11,18,32,0.05) 30%, rgba(11,18,32,0.85) 100%)" }} />
                             {' '}
-                            <span style={{ position: "absolute", top: "12px", left: "12px", fontSize: "10px", fontWeight: "600", letterSpacing: "0.08em", padding: "5px 9px", borderRadius: "999px", background: m.chipBg, color: "#0B1220" }}>{m.status}</span>
+                            <span className="m-plan-chip" style={{ position: "absolute", top: "12px", left: "12px", fontSize: "10px", fontWeight: "600", letterSpacing: "0.08em", padding: "5px 9px", borderRadius: "999px", background: m.chipBg, color: "#0B1220" }}>{m.status}</span>
                             {' '}
-                            <span style={{ position: "absolute", top: "10px", right: "10px", width: "30px", height: "30px", borderRadius: "50%", background: m.checkBg, border: "2px solid #FFFFFF", display: "flex", alignItems: "center", justifyContent: "center", color: "#0B1220", fontSize: "16px", fontWeight: "700" }}>{m.check}</span>
+                            <span className="m-plan-check" style={{ position: "absolute", top: "10px", right: "10px", width: "30px", height: "30px", borderRadius: "50%", background: m.checkBg, border: "2px solid #FFFFFF", display: "flex", alignItems: "center", justifyContent: "center", color: "#0B1220", fontSize: "16px", fontWeight: "700" }}>{m.check}</span>
                             {' '}
-                            <span style={{ position: "absolute", left: "14px", bottom: "12px", color: "#FFFFFF", fontSize: "20px", fontWeight: "650", lineHeight: "1.08", letterSpacing: "-0.02em" }}>{m.name}</span>
+                            <span className="m-plan-name" style={{ position: "absolute", left: "14px", bottom: "12px", color: "#FFFFFF", fontSize: "20px", fontWeight: "650", lineHeight: "1.08", letterSpacing: "-0.02em" }}>{m.name}</span>
                           </button>
                         </Fragment>
                       ))}
@@ -173,22 +173,22 @@ export default class PlanPage extends React.Component {
                 <>
                   <div>
                     <div style={{ display: "flex", flexWrap: "wrap", gap: "12px", justifyContent: "space-between", alignItems: "baseline" }}>
-                      <h2 className="alm-in" style={{ margin: "0", fontSize: "30px", fontWeight: "650", letterSpacing: "-0.02em" }}>Choose your formats</h2>
+                      <h2 className="alm-in m-plan-h2" style={{ margin: "0", fontSize: "30px", fontWeight: "650", letterSpacing: "-0.02em" }}>Choose your formats</h2>
                       <div style={{ fontSize: "14px", fontWeight: "600", color: "#4E586A" }}>Digital runs in New York &amp; Connecticut</div>
                     </div>
-                    <div style={{ marginTop: "24px", display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(240px, 1fr))", gap: "12px" }}>
+                    <div className="m-plan-fmts" style={{ marginTop: "24px", display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(240px, 1fr))", gap: "12px" }}>
                       {(v.formats || []).map((f, fI) => (
                         <Fragment key={fI}>
-                          <button className="alm-pick" type="button" aria-pressed={f.pressed} onClick={f.toggle} style={{ padding: "0", borderRadius: "18px", overflow: "hidden", border: `3px solid ${f.bd}`, background: "#FFFFFF", cursor: "pointer", textAlign: "left", fontFamily: "'Montserrat', sans-serif", color: "#0B1220", opacity: f.op, boxShadow: f.shadow }}>
-                            <div style={{ height: "150px", overflow: "hidden", background: "#0B1220" }}>
+                          <button className="alm-pick m-plan-fmt" type="button" aria-pressed={f.pressed} onClick={f.toggle} style={{ padding: "0", borderRadius: "18px", overflow: "hidden", border: `3px solid ${f.bd}`, background: "#FFFFFF", cursor: "pointer", textAlign: "left", fontFamily: "'Montserrat', sans-serif", color: "#0B1220", opacity: f.op, boxShadow: f.shadow }}>
+                            <div className="m-plan-fmt-img" style={{ height: "150px", overflow: "hidden", background: "#0B1220" }}>
                               <img src={f.img} alt="" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: f.pos, display: "block" }} loading="lazy" decoding="async" />
                             </div>
-                            <div style={{ padding: "16px 18px 18px" }}>
+                            <div className="m-plan-fmt-txt" style={{ padding: "16px 18px 18px" }}>
                               <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: "8px" }}>
-                                <span style={{ fontSize: "17px", fontWeight: "700" }}>{f.name}</span>
-                                <span style={{ width: "26px", height: "26px", borderRadius: "50%", background: f.checkBg, border: "2px solid #0B1220", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "14px", fontWeight: "700" }}>{f.check}</span>
+                                <span className="m-plan-fmt-name" style={{ fontSize: "17px", fontWeight: "700" }}>{f.name}</span>
+                                <span className="m-plan-fmt-check" style={{ width: "26px", height: "26px", borderRadius: "50%", background: f.checkBg, border: "2px solid #0B1220", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "14px", fontWeight: "700" }}>{f.check}</span>
                               </div>
-                              <div style={{ marginTop: "6px", fontSize: "13px", fontWeight: "600", color: "#4E586A" }}>{f.meta}</div>
+                              <div className="m-plan-fmt-meta" style={{ marginTop: "6px", fontSize: "13px", fontWeight: "600", color: "#4E586A" }}>{f.meta}</div>
                             </div>
                           </button>
                         </Fragment>
@@ -199,13 +199,13 @@ export default class PlanPage extends React.Component {
               ) : null}
               {v.is?.flight ? (
                 <>
-                  <div style={{ padding: "36px", borderRadius: "18px", background: "#FFFFFF" }}>
-                    <h2 className="alm-in" style={{ margin: "0", fontSize: "30px", fontWeight: "650", letterSpacing: "-0.02em" }}>Flight &amp; budget</h2>
+                  <div className="m-plan-card" style={{ padding: "36px", borderRadius: "18px", background: "#FFFFFF" }}>
+                    <h2 className="alm-in m-plan-h2" style={{ margin: "0", fontSize: "30px", fontWeight: "650", letterSpacing: "-0.02em" }}>Flight &amp; budget</h2>
                     <div style={{ marginTop: "28px", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: "20px" }}>
-                      <label style={{ display: "flex", flexDirection: "column", gap: "8px", fontSize: "14px", fontWeight: "600", letterSpacing: "0" }}>Start date <input className="alm-input" type="date" value={v.start} onChange={v.setStart} style={{ minHeight: "54px", padding: "0 14px", borderRadius: "12px", border: "2px solid #D5DAE3", fontFamily: "'Montserrat', sans-serif", fontSize: "16px", fontWeight: "600", color: "#0B1220" }} name="start_date" /></label>
+                      <label className="m-plan-lbl" style={{ display: "flex", flexDirection: "column", gap: "8px", fontSize: "14px", fontWeight: "600", letterSpacing: "0" }}>Start date <input className="alm-input" type="date" value={v.start} onChange={v.setStart} style={{ minHeight: "54px", padding: "0 14px", borderRadius: "12px", border: "2px solid #D5DAE3", fontFamily: "'Montserrat', sans-serif", fontSize: "16px", fontWeight: "600", color: "#0B1220" }} name="start_date" /></label>
                       <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
                         <div style={{ fontSize: "12px", fontWeight: "600", letterSpacing: "0.1em" }}>DURATION</div>
-                        <div role="radiogroup" aria-label="Duration" style={{ display: "flex", flexWrap: "wrap", gap: "8px" }}>
+                        <div className="m-plan-dur" role="radiogroup" aria-label="Duration" style={{ display: "flex", flexWrap: "wrap", gap: "8px" }}>
                           {(v.durations || []).map((d, dI) => (
                             <Fragment key={dI}>
                               <button type="button" role="radio" aria-checked={d.checked} onClick={d.pick} style={{ minHeight: "54px", padding: "0 18px", borderRadius: "999px", border: `2px solid ${d.bd}`, background: d.bg, color: d.fg, fontFamily: "'Montserrat', sans-serif", fontSize: "15px", fontWeight: "600", cursor: "pointer" }}>{d.label}</button>
@@ -229,7 +229,7 @@ export default class PlanPage extends React.Component {
               ) : null}
               {v.is?.review ? (
                 <>
-                  <div style={{ padding: "36px", borderRadius: "18px", background: "#FFFFFF" }}>
+                  <div className="m-plan-card" style={{ padding: "36px", borderRadius: "18px", background: "#FFFFFF" }}>
                     {v.submitted ? (
                       <>
                         <div style={{ minHeight: "420px", display: "flex", flexDirection: "column", justifyContent: "center", gap: "16px" }}>
@@ -247,8 +247,8 @@ export default class PlanPage extends React.Component {
                     {v.notSubmitted ? (
                       <>
                         <form onSubmit={v.submit}>
-                          <h2 className="alm-in" style={{ margin: "0", fontSize: "30px", fontWeight: "650", letterSpacing: "-0.02em" }}>Creative &amp; contact</h2>
-                          <div style={{ marginTop: "24px", padding: "28px 24px", borderRadius: "18px", background: "#F5F5F7", display: "flex", gap: "18px", alignItems: "flex-start" }}>
+                          <h2 className="alm-in m-plan-h2" style={{ margin: "0", fontSize: "30px", fontWeight: "650", letterSpacing: "-0.02em" }}>Creative &amp; contact</h2>
+                          <div className="m-plan-note" style={{ marginTop: "24px", padding: "28px 24px", borderRadius: "18px", background: "#F5F5F7", display: "flex", gap: "18px", alignItems: "flex-start" }}>
                             <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#0B1220" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" style={{ flex: "0 0 auto" }}>
                               <rect x="3" y="5" width="18" height="14" rx="2" />
                               <path d="M3 7l9 6 9-6" />
@@ -262,7 +262,7 @@ export default class PlanPage extends React.Component {
                             <label style={{ display: "flex", flexDirection: "column", gap: "8px", fontSize: "14px", fontWeight: "600", letterSpacing: "0" }}>Company<input className="alm-input" type="text" placeholder="Brand or agency" style={{ minHeight: "52px", padding: "0 14px", borderRadius: "12px", border: "2px solid #D5DAE3", fontFamily: "'Montserrat', sans-serif", fontSize: "15px", fontWeight: "400" }} name="company" /></label>
                             <label style={{ display: "flex", flexDirection: "column", gap: "8px", fontSize: "14px", fontWeight: "600", letterSpacing: "0" }}>Work email<input className="alm-input" type="email" placeholder="you@company.com" style={{ minHeight: "52px", padding: "0 14px", borderRadius: "12px", border: "2px solid #D5DAE3", fontFamily: "'Montserrat', sans-serif", fontSize: "15px", fontWeight: "400" }} name="work_email" /></label>
                           </div>
-                          <label style={{ marginTop: "18px", display: "flex", gap: "12px", alignItems: "center", fontSize: "14px", fontWeight: "600", color: "#4E586A" }}><input type="checkbox" style={{ width: "20px", height: "20px", accentColor: "#FBAE4F" }} name="design_help" />I’d like the A Lot Media design team to produce creative</label>
+                          <label className="m-plan-chk" style={{ marginTop: "18px", display: "flex", gap: "12px", alignItems: "center", fontSize: "14px", fontWeight: "600", color: "#4E586A" }}><input type="checkbox" style={{ width: "20px", height: "20px", accentColor: "#FBAE4F" }} name="design_help" />I’d like the A Lot Media design team to produce creative</label>
                           {' '}
                           <button type="submit" className="alm-btn" style={{ marginTop: "28px", width: "100%", minHeight: "60px", borderRadius: "999px", border: "0", background: "#FBAE4F", color: "#0B1220", fontFamily: "'Montserrat', sans-serif", fontWeight: "600", fontSize: "15px", letterSpacing: "-0.005em", cursor: "pointer" }}>Send plan request</button>
                         </form>
@@ -271,16 +271,16 @@ export default class PlanPage extends React.Component {
                   </div>
                 </>
               ) : null}
-              <div style={{ marginTop: "24px", display: "flex", justifyContent: "space-between", gap: "12px" }}>
+              <div className="m-plan-nav" style={{ marginTop: "24px", display: "flex", justifyContent: "space-between", gap: "12px" }}>
                 <button type="button" onClick={v.back} style={{ minHeight: "54px", padding: "0 26px", borderRadius: "999px", border: "2px solid #0B1220", background: "transparent", color: "#0B1220", fontFamily: "'Montserrat', sans-serif", fontWeight: "600", fontSize: "15px", letterSpacing: "-0.005em", cursor: "pointer", opacity: v.backOp }}>← Back</button>
                 {v.showNext ? (
                   <>
-                    <button type="button" className="alm-btn" onClick={v.next} style={{ minHeight: "54px", padding: "0 26px", borderRadius: "999px", border: "0", background: "#0B1220", color: "#FFFFFF", fontFamily: "'Montserrat', sans-serif", fontWeight: "600", fontSize: "15px", letterSpacing: "-0.005em", cursor: "pointer" }}>{v.nextLabel} →</button>
+                    <button type="button" className="alm-btn m-plan-next" onClick={v.next} style={{ minHeight: "54px", padding: "0 26px", borderRadius: "999px", border: "0", background: "#0B1220", color: "#FFFFFF", fontFamily: "'Montserrat', sans-serif", fontWeight: "600", fontSize: "15px", letterSpacing: "-0.005em", cursor: "pointer" }}>{v.nextLabel} →</button>
                   </>
                 ) : null}
               </div>
             </div>
-            <aside aria-label="Plan summary" style={{ flex: "1 1 340px", minWidth: "0", padding: "32px", borderRadius: "8px", background: "#0B1220", color: "#FFFFFF" }}>
+            <aside className="m-plan-sum" aria-label="Plan summary" style={{ flex: "1 1 340px", minWidth: "0", padding: "32px", borderRadius: "8px", background: "#0B1220", color: "#FFFFFF" }}>
               <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
                 <div style={{ fontSize: "13px", fontWeight: "600", letterSpacing: "0.14em", color: "#FBAE4F" }}>YOUR PLAN</div>
                 <div style={{ fontFamily: "'Geist Mono', monospace", fontSize: "11px", color: "#8B95A7" }}>DRAFT</div>

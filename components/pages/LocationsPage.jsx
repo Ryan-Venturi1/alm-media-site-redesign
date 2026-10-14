@@ -64,11 +64,11 @@ export default class LocationsPage extends React.Component {
       <div className="alm-root" style={{ background: "#F5F5F7", color: "#0B1220", fontFamily: "'Montserrat', system-ui, sans-serif", overflowX: "hidden", WebkitFontSmoothing: "antialiased" }}>
         <Nav active="network" />
         {/* HERO + MAP */}
-        <section style={{ padding: "96px 28px 80px", background: "#0B1220", color: "#FFFFFF" }}>
+        <section className="alm-pt" style={{ padding: "96px 28px 80px", background: "#0B1220", color: "#FFFFFF" }}>
           <div style={{ maxWidth: "1360px", margin: "0 auto" }}>
             <div className="alm-rise" style={{ display: "flex", alignItems: "center", gap: "10px", fontSize: "15px", fontWeight: "600", letterSpacing: "-0.005em", opacity: "0.72" }}><span style={{ width: "7px", height: "7px", background: "#FBAE4F", borderRadius: "50%" }} />Locations</div>
             <h1 className="alm-rise" style={{ margin: "22px 0 0", maxWidth: "1200px", fontSize: "clamp(44px, 7vw, 112px)", lineHeight: "1", letterSpacing: "-0.035em", fontWeight: "600", animationDelay: ".1s" }}>12,000 locations.<br /><span style={{ color: "#FBAE4F" }}>400+ cities. 40 states.</span></h1>
-            <div className="alm-rise" role="search" style={{ marginTop: "40px", display: "flex", alignItems: "center", gap: "12px", maxWidth: "760px", minHeight: "68px", padding: "8px 8px 8px 24px", boxSizing: "border-box", borderRadius: "999px", background: "#FFFFFF", color: "#0B1220", animationDelay: ".2s" }}>
+            <div className="alm-rise m-loc-search" role="search" style={{ marginTop: "40px", display: "flex", alignItems: "center", gap: "12px", maxWidth: "760px", minHeight: "68px", padding: "8px 8px 8px 24px", boxSizing: "border-box", borderRadius: "999px", background: "#FFFFFF", color: "#0B1220", animationDelay: ".2s" }}>
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0B1220" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                 <circle cx="11" cy="11" r="7" />
                 <path d="M20 20l-3.5-3.5" />
@@ -79,8 +79,8 @@ export default class LocationsPage extends React.Component {
               </label>
               <A className="alm-btn" href="#directory" style={{ flex: "0 0 auto", display: "inline-flex", alignItems: "center", minHeight: "52px", padding: "0 26px", borderRadius: "999px", background: "#0B1220", color: "#FFFFFF", fontWeight: "600", fontSize: "15px", letterSpacing: "-0.005em" }}>{v.resultLabel}</A>
             </div>
-            <div style={{ marginTop: "56px" }}>
-              <svg viewBox="0 0 1000 620" style={{ width: "100%", height: "auto", display: "block" }} role="img" aria-label="Map of A Lot Media markets across the United States">
+            <div className="m-loc-mapwrap" style={{ marginTop: "56px" }}>
+              <svg className="m-loc-map" viewBox="0 0 1000 620" style={{ width: "100%", height: "auto", display: "block" }} role="img" aria-label="Map of A Lot Media markets across the United States">
                 <defs>
                   <pattern id="nwDots" width="9" height="9" patternunits="userSpaceOnUse">
                     <circle cx="4.5" cy="4.5" r="1.4" fill="#2B3954" />
@@ -134,7 +134,7 @@ export default class LocationsPage extends React.Component {
                   <text x="127" y="384">LOS ANGELES</text>
                 </g>
               </svg>
-              <div style={{ marginTop: "12px", display: "flex", gap: "24px", flexWrap: "wrap", fontSize: "13px", fontWeight: "700", color: "#C9D0DB" }}>
+              <div className="m-loc-legend" style={{ marginTop: "12px", display: "flex", gap: "24px", flexWrap: "wrap", fontSize: "13px", fontWeight: "700", color: "#C9D0DB" }}>
                 <span style={{ display: "inline-flex", alignItems: "center", gap: "8px" }}><span style={{ width: "11px", height: "11px", borderRadius: "50%", background: "#FBAE4F" }} />Digital network live</span>
                 <span style={{ display: "inline-flex", alignItems: "center", gap: "8px" }}><span style={{ width: "11px", height: "11px", borderRadius: "50%", background: "#FFFFFF" }} />Static inventory</span>
                 <span style={{ display: "inline-flex", alignItems: "center", gap: "8px" }}><span style={{ width: "11px", height: "11px", borderRadius: "50%", border: "2px solid #FFFFFF", boxSizing: "border-box" }} />Market served</span>
@@ -144,11 +144,11 @@ export default class LocationsPage extends React.Component {
           </div>
         </section>
         {/* DIRECTORY */}
-        <section id="directory" style={{ padding: "112px 28px" }}>
+        <section className="alm-pt alm-pb" id="directory" style={{ padding: "112px 28px" }}>
           <div style={{ maxWidth: "1360px", margin: "0 auto" }}>
             <div style={{ display: "flex", flexWrap: "wrap", gap: "24px 48px", alignItems: "flex-end", justifyContent: "space-between" }}>
               <h2 className="alm-in" style={{ margin: "0", fontSize: "clamp(38px, 5.2vw, 80px)", lineHeight: "1", letterSpacing: "-0.035em", fontWeight: "600" }}>Market directory</h2>
-              <div role="group" aria-label="Filter markets" style={{ display: "flex", flexWrap: "wrap", gap: "8px" }}>
+              <div className="m-loc-filters" role="group" aria-label="Filter markets" style={{ display: "flex", flexWrap: "wrap", gap: "8px" }}>
                 {(v.filters || []).map((fl, flI) => (
                   <Fragment key={flI}>
                     <button type="button" aria-pressed={fl.pressed} onClick={fl.pick} style={{ minHeight: "46px", padding: "0 18px", borderRadius: "999px", border: "2px solid #0B1220", background: fl.bg, color: fl.fg, fontFamily: "'Montserrat', sans-serif", fontSize: "12px", fontWeight: "600", letterSpacing: "0.1em", cursor: "pointer" }}>{fl.label}</button>
@@ -158,7 +158,7 @@ export default class LocationsPage extends React.Component {
             </div>
             {v.empty ? (
               <>
-                <div style={{ marginTop: "40px", padding: "48px", borderRadius: "18px", background: "#FFFFFF", display: "flex", flexWrap: "wrap", gap: "24px", alignItems: "center", justifyContent: "space-between" }}>
+                <div className="m-loc-empty" style={{ marginTop: "40px", padding: "48px", borderRadius: "18px", background: "#FFFFFF", display: "flex", flexWrap: "wrap", gap: "24px", alignItems: "center", justifyContent: "space-between" }}>
                   <div>
                     <div style={{ fontSize: "24px", fontWeight: "650", letterSpacing: "-0.02em" }}>No flagship market matches “{v.q}”.</div>
                     <div style={{ marginTop: "8px", fontSize: "16px", fontWeight: "400", color: "#4E586A" }}>We have locations in 400+ cities — ask us about inventory there.</div>
@@ -170,11 +170,11 @@ export default class LocationsPage extends React.Component {
             <div style={{ marginTop: "40px", display: "flex", flexDirection: "column", borderTop: "3px solid #0B1220" }}>
               {(v.markets || []).map((m, mI) => (
                 <Fragment key={mI}>
-                  <div className="alm-tile alm-in" style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: "20px 32px", padding: "20px 0", borderBottom: "1px solid rgba(11,18,32,0.14)" }}>
-                    <div style={{ flex: "0 0 180px", height: "110px", borderRadius: "16px", overflow: "hidden", background: "#0B1220" }}>
+                  <div className="alm-tile alm-in m-loc-row" style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: "20px 32px", padding: "20px 0", borderBottom: "1px solid rgba(11,18,32,0.14)" }}>
+                    <div className="m-loc-thumb" style={{ flex: "0 0 180px", height: "110px", borderRadius: "16px", overflow: "hidden", background: "#0B1220" }}>
                       <img src={m.img} alt={`${m.name} skyline`} style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} loading="lazy" decoding="async" />
                     </div>
-                    <div style={{ flex: "1 1 220px", minWidth: "0" }}>
+                    <div className="m-loc-info" style={{ flex: "1 1 220px", minWidth: "0" }}>
                       <div style={{ fontFamily: "'Geist Mono', monospace", fontSize: "12px", color: "#4E586A" }}>{m.state}</div>
                       <div style={{ marginTop: "4px", fontSize: "28px", fontWeight: "650", lineHeight: "1.08", letterSpacing: "-0.02em" }}>{m.name}</div>
                       {m.office ? (
@@ -183,15 +183,15 @@ export default class LocationsPage extends React.Component {
                         </>
                       ) : null}
                     </div>
-                    <div style={{ flex: "1 1 260px", display: "flex", flexWrap: "wrap", gap: "6px" }}>
+                    <div className="m-loc-fmts" style={{ flex: "1 1 260px", display: "flex", flexWrap: "wrap", gap: "6px" }}>
                       {(m.formats || []).map((fm, fmI) => (
                         <Fragment key={fmI}>
                           <span style={{ padding: "7px 11px", borderRadius: "999px", background: "#FFFFFF", border: "1px solid rgba(11,18,32,0.14)", fontSize: "12px", fontWeight: "700" }}>{fm}</span>
                         </Fragment>
                       ))}
                     </div>
-                    <span style={{ flex: "0 0 auto", fontSize: "11px", fontWeight: "600", letterSpacing: "0.08em", padding: "7px 12px", borderRadius: "999px", background: m.chipBg, color: m.chipFg }}>{m.status}</span>
-                    <A className="alm-btn" href="/plan" style={{ flex: "0 0 auto", display: "inline-flex", alignItems: "center", minHeight: "48px", padding: "0 18px", borderRadius: "999px", border: "2px solid #0B1220", fontSize: "15px", fontWeight: "600", letterSpacing: "-0.005em" }}>Plan here →</A>
+                    <span className="m-loc-status" style={{ flex: "0 0 auto", fontSize: "11px", fontWeight: "600", letterSpacing: "0.08em", padding: "7px 12px", borderRadius: "999px", background: m.chipBg, color: m.chipFg }}>{m.status}</span>
+                    <A className="alm-btn m-loc-plan" href="/plan" style={{ flex: "0 0 auto", display: "inline-flex", alignItems: "center", minHeight: "48px", padding: "0 18px", borderRadius: "999px", border: "2px solid #0B1220", fontSize: "15px", fontWeight: "600", letterSpacing: "-0.005em" }}>Plan here →</A>
                   </div>
                 </Fragment>
               ))}
@@ -199,10 +199,10 @@ export default class LocationsPage extends React.Component {
           </div>
         </section>
         {/* VENUES */}
-        <section style={{ padding: "112px 28px", background: "#344567", color: "#FFFFFF" }}>
+        <section className="alm-pt alm-pb" style={{ padding: "112px 28px", background: "#344567", color: "#FFFFFF" }}>
           <div style={{ maxWidth: "1360px", margin: "0 auto", display: "flex", flexWrap: "wrap", gap: "48px 64px", alignItems: "flex-start" }}>
             <h2 className="alm-in" style={{ flex: "1 1 380px", margin: "0", fontSize: "clamp(38px, 5vw, 72px)", lineHeight: "1", letterSpacing: "-0.035em", fontWeight: "600" }}>Where the network lives.</h2>
-            <ul style={{ flex: "2 1 560px", margin: "0", padding: "0", listStyle: "none", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", borderTop: "3px solid #FBAE4F" }}>
+            <ul className="m-loc-venues" style={{ flex: "2 1 560px", margin: "0", padding: "0", listStyle: "none", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", borderTop: "3px solid #FBAE4F" }}>
               <li style={{ padding: "22px 0", borderBottom: "1px solid rgba(255,255,255,0.16)", fontSize: "22px", fontWeight: "650", letterSpacing: "-0.02em" }}>Class A offices</li>
               <li style={{ padding: "22px 0", borderBottom: "1px solid rgba(255,255,255,0.16)", fontSize: "22px", fontWeight: "650", letterSpacing: "-0.02em" }}>Universities</li>
               <li style={{ padding: "22px 0", borderBottom: "1px solid rgba(255,255,255,0.16)", fontSize: "22px", fontWeight: "650", letterSpacing: "-0.02em" }}>Shopping malls</li>
@@ -215,13 +215,13 @@ export default class LocationsPage extends React.Component {
           </div>
         </section>
         {/* EXPANSION */}
-        <section style={{ padding: "112px 28px" }}>
+        <section className="alm-pt alm-pb" style={{ padding: "112px 28px" }}>
           <div style={{ maxWidth: "1360px", margin: "0 auto", display: "flex", flexWrap: "wrap", gap: "32px 64px", alignItems: "center", justifyContent: "space-between" }}>
             <div style={{ maxWidth: "760px" }}>
               <h2 className="alm-in" style={{ margin: "0", fontSize: "clamp(34px, 4.4vw, 64px)", lineHeight: "0.95", letterSpacing: "-0.035em", fontWeight: "600" }}>New markets open every quarter.</h2>
               <p style={{ margin: "20px 0 0", fontSize: "18px", lineHeight: "1.6", fontWeight: "400", color: "#4E586A" }}>Need a city that isn’t listed? Tell us where your audience parks and we’ll map the inventory.</p>
             </div>
-            <div style={{ display: "flex", gap: "12px", flexWrap: "wrap" }}>
+            <div className="m-loc-ctas" style={{ display: "flex", gap: "12px", flexWrap: "wrap" }}>
               <A className="alm-btn" href="/contact" style={{ display: "inline-flex", alignItems: "center", minHeight: "56px", padding: "0 26px", borderRadius: "999px", background: "#0B1220", color: "#FFFFFF", fontWeight: "600", fontSize: "15px", letterSpacing: "-0.005em" }}>Request a market</A>
               <A className="alm-btn" href="/real-estate" style={{ display: "inline-flex", alignItems: "center", minHeight: "56px", padding: "0 26px", borderRadius: "999px", border: "2px solid #0B1220", fontWeight: "600", fontSize: "15px", letterSpacing: "-0.005em" }}>Add your property</A>
             </div>

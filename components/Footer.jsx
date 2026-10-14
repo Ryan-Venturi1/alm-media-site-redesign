@@ -22,7 +22,7 @@ export default class Footer extends React.Component {
         <div style={{ position: "relative", overflow: "hidden", background: "#0B1220" }}>
           <img src="/media/photos/stock-nyc-trails.webp?v=99f803ae" alt="" style={{ position: "absolute", inset: "0", width: "100%", height: "100%", objectFit: "cover", objectPosition: "50% 60%" }} loading="lazy" decoding="async" />
           <div style={{ position: "absolute", inset: "0", background: "linear-gradient(90deg, rgba(7,12,23,0.92) 0%, rgba(7,12,23,0.6) 55%, rgba(7,12,23,0.35) 100%)" }} />
-          <div style={{ position: "relative", maxWidth: "1360px", margin: "0 auto", padding: "128px 28px", display: "flex", flexWrap: "wrap", gap: "32px 64px", alignItems: "flex-end", justifyContent: "space-between" }}>
+          <div className="alm-ft-cta" style={{ position: "relative", maxWidth: "1360px", margin: "0 auto", padding: "128px 28px", display: "flex", flexWrap: "wrap", gap: "32px 64px", alignItems: "flex-end", justifyContent: "space-between" }}>
             <h2 style={{ margin: "0", maxWidth: "860px", fontSize: "clamp(36px, 5vw, 76px)", lineHeight: "1", letterSpacing: "-0.035em", fontWeight: "600" }}>Put your brand where <span style={{ color: "#FBAE4F" }}>3,000,000 cars</span> park every day.</h2>
             <div style={{ display: "flex", gap: "12px", flexWrap: "wrap" }}>
               <A href="/plan" style={{ display: "inline-flex", alignItems: "center", minHeight: "56px", padding: "0 26px", borderRadius: "999px", background: "#FBAE4F", color: "#0B1220", fontWeight: "600", fontSize: "15px", letterSpacing: "-0.005em", textDecoration: "none" }}>Plan a campaign</A>
@@ -31,7 +31,7 @@ export default class Footer extends React.Component {
           </div>
         </div>
         <div style={{ maxWidth: "1360px", margin: "0 auto", padding: "80px 28px 40px" }}>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))", gap: "48px 32px" }}>
+          <div className="alm-ft-grid" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))", gap: "48px 32px" }}>
             <div style={{ display: "flex", flexDirection: "column", gap: "18px" }}>
               <img src="/media/brand/alm-logo.png?v=6fceb514" alt="A Lot Media" style={{ height: "48px", width: "auto", alignSelf: "flex-start" }} loading="lazy" decoding="async" />
               <p style={{ margin: "0", fontSize: "14px", lineHeight: "1.65", fontWeight: "500", color: "#A3ACBC" }}>The premier out-of-home advertising company specializing in parking lots and garages. Designing and installing since 2016.</p>
@@ -63,7 +63,7 @@ export default class Footer extends React.Component {
               <A href="/insights" style={{ color: "#D5DAE3", textDecoration: "none" }}>FAQ &amp; glossary</A>
               <A href="/contact" style={{ color: "#D5DAE3", textDecoration: "none" }}>Contact</A>
             </nav>
-            <div style={{ display: "flex", flexDirection: "column", gap: "16px", fontSize: "14px" }}>
+            <div className="alm-ft-off" style={{ display: "flex", flexDirection: "column", gap: "16px", fontSize: "14px" }}>
               <div style={{ fontSize: "12px", fontWeight: "600", letterSpacing: "0.14em", color: "#FBAE4F", marginBottom: "4px" }}>OFFICES</div>
               <div style={{ lineHeight: "1.55" }}>
                 <div style={{ fontWeight: "600" }}>Hartford</div>
@@ -83,7 +83,7 @@ export default class Footer extends React.Component {
               </div>
             </div>
           </div>
-          <div style={{ marginTop: "72px", paddingTop: "28px", borderTop: "1px solid rgba(255,255,255,0.10)", display: "flex", flexWrap: "wrap", gap: "16px 32px", justifyContent: "space-between", fontSize: "13px", fontWeight: "500", color: "#8B95A7" }}>
+          <div className="alm-ft-legal" style={{ marginTop: "72px", paddingTop: "28px", borderTop: "1px solid rgba(255,255,255,0.10)", display: "flex", flexWrap: "wrap", gap: "16px 32px", justifyContent: "space-between", fontSize: "13px", fontWeight: "500", color: "#8B95A7" }}>
             <div style={{ display: "flex", flexWrap: "wrap", gap: "8px 24px" }}>
               <span>© 2026 A Lot Media</span>
               <A href="/privacy-policy" style={{ color: "#8B95A7", textDecoration: "none" }}>Privacy policy</A>

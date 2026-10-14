@@ -201,7 +201,7 @@ html.alm-motion .alm-hs.alm-hs-on .alm-hs-bar { display: block; }
 @media (max-width: 1180px) {
   .alm-nav-links { order: 3; flex: 1 1 100% !important; justify-content: flex-start !important; margin: 0 -12px; padding-bottom: 6px; scrollbar-width: none; }
   .alm-nav-links::-webkit-scrollbar { display: none; }
-  .alm-ncta { order: 2; }
+  .alm-nav-end { order: 2; }
   html.alm-motion .alm-nav-bar.is-fixed .alm-nav-links { display: none !important; }
 }
 
@@ -219,3 +219,445 @@ html.alm-motion .alm-hs.alm-hs-on .alm-hs-bar { display: block; }
 
 /* Legal pages: the table of contents follows you on wide screens only */
 @media (min-width: 900px){.alm-legal-toc{position:sticky;top:24px}}
+
+/* ===== Phone layout (shared) ===== */
+@media (max-width: 760px){
+  .alm-nav-links{display:none !important}
+  .alm-nav-menu{display:inline-flex !important}
+  .alm-ncta{min-height:44px !important;padding:0 16px !important}
+}
+html:has(.alm-msheet){overflow:hidden}
+@media (max-width: 600px){
+  .alm-pt{padding-top:72px !important}
+  .alm-pb{padding-bottom:72px !important}
+  .alm-autoh{min-height:0 !important;justify-content:flex-start !important;gap:24px}
+  .alm-ft-cta{padding-top:72px !important;padding-bottom:72px !important}
+  .alm-ft-grid{grid-template-columns:1fr 1fr !important;gap:36px 20px !important}
+  .alm-ft-grid > :first-child,.alm-ft-off{grid-column:1 / -1}
+  .alm-ft-off{display:grid !important;grid-template-columns:1fr 1fr;gap:16px 20px !important}
+  .alm-ft-off > :first-child{grid-column:1 / -1}
+  .alm-ft-grid nav{gap:0 !important}
+  .alm-ft-grid nav a{padding:8px 0}
+  .alm-ft-legal{margin-top:48px !important}
+  .alm-pill-cta{border-radius:28px !important}
+}
+
+
+/* legal pages on phones: comfortable tap targets in the contents list */
+@media (max-width: 600px) { .alm-legal-toc a { display: block; padding: 9px 0; } }
+
+/* >>> page phone layouts (generated from the canvas) >>> */
+/* ===== Phone layout: Advertisers ===== */
+@media (max-width: 600px){
+  /* hero: poster on top, copy on a dark fade below it */
+  .m-adv-hero{min-height:0 !important}
+  .m-adv-hero-img{bottom:auto !important;height:440px !important;object-position:72% 50% !important}
+  .m-adv-hero-shade{background:linear-gradient(180deg,rgba(11,18,32,0.45) 0px,rgba(11,18,32,0) 96px,rgba(11,18,32,0) 210px,rgba(11,18,32,0.88) 360px,#0B1220 440px) !important}
+  .m-adv-hero-copy{min-height:0 !important;padding-top:308px !important;padding-bottom:56px !important}
+  .m-adv-hero-copy > h1{margin-top:16px !important}
+  .m-adv-nw{white-space:nowrap}
+  .m-adv-hero-p{font-size:17px !important;margin-top:20px !important}
+  .m-adv-hero-btns{flex-wrap:nowrap !important;gap:10px !important;margin-top:28px !important}
+  .m-adv-hero-btns > a{flex:1 1 0;justify-content:center;padding:0 12px !important;white-space:nowrap}
+  /* timeline: vertical on phones */
+  .m-adv-tl-note{letter-spacing:0.05em !important}
+  .m-adv-tl-h{display:none !important}
+  .m-adv-vtl{display:block !important;margin-top:40px}
+  /* section rhythm */
+  .m-adv-mt{margin-top:40px !important}
+  .m-adv-tap{display:inline-block;padding:13px 0;margin:-13px 0}
+  .m-adv-aud{padding:28px 24px !important}
+  .m-adv-why{margin-top:40px !important;gap:40px !important}
+  /* process: number beside each step */
+  .m-adv-steps{margin-top:40px !important;gap:28px !important}
+  .m-adv-steps > li{display:grid;grid-template-columns:60px minmax(0,1fr);padding-top:20px !important}
+  .m-adv-steps > li > :first-child{grid-row:1 / span 2;font-size:34px !important}
+  .m-adv-steps > li > :nth-child(2){margin-top:2px !important}
+  /* logo wall: compact 3-up grid, last row filled */
+  .m-adv-logos{margin-top:40px !important;grid-template-columns:repeat(3,minmax(0,1fr)) !important}
+  .m-adv-logo{height:72px !important;padding:10px 8px !important}
+  .m-adv-logo-img{max-height:30px !important;max-width:82% !important}
+  .m-adv-logos > :last-child:nth-child(3n+1){grid-column:1 / -1}
+  .m-adv-logos > :last-child:nth-child(3n+2){grid-column:span 2}
+  /* case study + CTA */
+  .m-adv-case{padding:32px 24px !important}
+  .m-adv-case-stats{gap:24px 36px !important}
+  .m-adv-cta{padding:32px 28px !important;gap:28px !important}
+  .m-adv-cta-h{line-height:1.05 !important}
+}
+/* ===== end phone layout: Advertisers ===== */
+/* ===== Phone layout: Company ===== */
+@media (max-width: 600px){
+  /* hero */
+  .m-co-hero-p{font-size:17px !important;line-height:1.6 !important}
+  .m-co-stats{display:grid !important;grid-template-columns:repeat(3,minmax(0,1fr));gap:0 !important;width:100%;margin-top:8px;padding-top:20px;border-top:1px solid rgba(11,18,32,0.12)}
+  .m-co-stats > div{padding:0 12px;border-left:1px solid rgba(11,18,32,0.12)}
+  .m-co-stats > div:first-child{padding-left:0;border-left:0}
+  .m-co-stats > div > div:first-child{font-size:34px !important}
+  .m-co-stats > div > div:last-child{margin-top:8px !important;font-size:11px !important;letter-spacing:0.1em !important;line-height:1.4}
+  .m-co-heroimg{height:auto !important;aspect-ratio:4 / 5;margin-top:40px !important}
+  .m-co-heroimg img{object-position:50% 75% !important;transform:scale(1.2);transform-origin:50% 88%}
+  /* every layer: shorter cards so the full signage stays in frame */
+  .m-co-stack{height:280px !important}
+  .m-co-stack-desc{font-size:15px !important}
+  /* gallery: 2-up square thumbnails, captions live in the viewer */
+  .m-co-cap{color:rgba(255,255,255,0.7) !important}
+  .m-co-grid{grid-template-columns:repeat(2,minmax(0,1fr)) !important;grid-auto-rows:auto !important;gap:8px !important;margin-top:32px !important}
+  .m-co-tile{grid-row:auto !important;aspect-ratio:1 / 1;border-radius:12px !important}
+  .m-co-tlabel{display:none !important}
+  /* photo viewer */
+  .m-co-lb{padding:72px 16px 24px !important;z-index:1001 !important}
+  .m-co-lb-img{max-height:calc(100% - 150px) !important;margin:auto 0;border-radius:12px !important}
+  .m-co-lb-bar{display:grid !important;grid-template-columns:52px minmax(0,1fr) 52px;grid-template-areas:"cap cap cap" "prev . next";gap:16px 12px !important;width:100%;margin-top:16px !important}
+  .m-co-lb-cap{grid-area:cap;min-width:0 !important;font-size:13px !important;line-height:1.45}
+  .m-co-lb-prev{grid-area:prev}
+  .m-co-lb-next{grid-area:next}
+  .m-co-lb-close{position:absolute;top:14px;right:14px;width:44px;height:44px;min-height:44px !important;padding:0 !important;border-radius:50% !important;background:rgba(255,255,255,0.16) !important;font-size:0 !important}
+  .m-co-lb-close::before,.m-co-lb-close::after{content:"";position:absolute;left:50%;top:50%;width:18px;height:2px;margin:-1px 0 0 -9px;border-radius:1px;background:#FFFFFF;transform:rotate(45deg)}
+  .m-co-lb-close::after{transform:rotate(-45deg)}
+  /* offices */
+  .m-co-offices{gap:12px !important}
+  .m-co-offimg{height:auto !important;aspect-ratio:16 / 9}
+  .m-co-offtext{padding:22px 24px 24px !important}
+  .m-co-offtext > div:first-child{font-size:24px !important}
+  /* closing card */
+  .m-co-cta{padding:32px 24px !important;gap:24px !important}
+  .m-co-cta-h{line-height:1.08 !important}
+  .m-co-cta-h + div{line-height:1.45}
+  .m-co-cta-btn{width:100%;justify-content:center}
+}
+@media (max-width: 360px){
+  .m-co-stats > div{padding:0 10px}
+  .m-co-stats > div > div:first-child{font-size:28px !important}
+  .m-co-stats > div > div:last-child{font-size:10px !important;letter-spacing:0.08em !important}
+}
+/* ===== end phone layout: Company ===== */
+/* ===== Phone layout: Contact ===== */
+@media (max-width: 600px){
+  /* call / email rows: values sized to fit narrow phones */
+  .m-ct-row{gap:16px;padding:20px 0 !important}
+  .m-ct-val{font-size:18px !important}
+  .m-ct-nb{white-space:nowrap}
+  /* form card: roomier fields, 2x2 audience picker, one label style, 16px inputs */
+  .m-ct-card{padding:24px 20px !important}
+  .m-ct-routes{grid-template-columns:1fr 1fr !important}
+  .m-ct-routes > button{display:flex;flex-direction:column;justify-content:flex-start;min-height:76px !important;padding:12px 10px 12px 12px !important;border-radius:16px !important}
+  .m-ct-routes > button > div:first-child{font-size:14px !important}
+  .m-ct-fields{margin-top:24px !important}
+  .m-ct-fields label{font-size:12px !important;letter-spacing:0.1em !important;text-transform:uppercase}
+  .m-ct-fields .alm-input{font-size:16px !important;text-transform:none;letter-spacing:0}
+}
+/* ===== end phone layout: Contact ===== */
+/* ===== Phone layout: Events ===== */
+@media (max-width: 600px){
+  /* hero: deeper scrim behind the headline; the two CTAs share a row (stack full-width on narrow phones) */
+  .m-evt-shade{background:linear-gradient(180deg, rgba(5,8,15,0.72) 0%, rgba(5,8,15,0.64) 34%, rgba(5,8,15,0.6) 56%, rgba(5,8,15,0.94) 100%) !important}
+  .m-evt-ctas{width:100%}
+  .m-evt-ctas a{flex:1 1 auto;justify-content:center;padding:0 18px !important}
+  /* three ways: one sentence per line, 4:3 photos, tighter rhythm */
+  .m-evt-l{display:block}
+  .m-evt-br{display:none}
+  .m-evt-model{padding-top:36px !important;padding-bottom:36px !important}
+  .m-evt-model > div{row-gap:28px !important}
+  .m-evt-fig{flex:0 0 100% !important;height:auto !important;aspect-ratio:4 / 3;max-height:420px}
+  #vip .m-evt-fig img{object-position:50% 85% !important}
+  #gameday .m-evt-fig img{object-position:62% 80% !important}
+  .m-evt-gd{margin-top:36px !important}
+  /* product filter: one swipeable row, no scrollbar */
+  .m-evt-chips{flex-wrap:nowrap !important;overflow-x:auto;scrollbar-width:none;width:calc(100% + 56px);max-width:none !important;margin:0 -28px;padding:0 28px;box-sizing:border-box;scroll-padding:0 28px}
+  .m-evt-chips::-webkit-scrollbar{display:none}
+  .m-evt-chips > button{flex:0 0 auto;white-space:nowrap}
+  /* photo credit labels get a dark pill so they read on bright photos */
+  .m-evt-note{padding:4px 8px;border-radius:999px;background:rgba(11,18,32,0.62);color:#FFFFFF !important;-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+  /* recent work */
+  .m-evt-recent{padding-bottom:24px !important}
+  .m-evt-big{text-wrap:balance}
+  /* booking form: roomier fields, one label style, 16px inputs, 2-up type chips */
+  .m-evt-card{padding:20px !important}
+  .m-evt-form label,.m-evt-form legend{font-size:12px !important;letter-spacing:0.1em !important;text-transform:uppercase}
+  .m-evt-form .alm-input{font-size:16px !important;text-transform:none}
+  .m-evt-types{display:grid !important;grid-template-columns:1fr 1fr}
+  .m-evt-types > button{padding:6px 10px !important;min-height:48px !important;border-radius:14px !important;line-height:1.2}
+  .m-evt-types > button:last-child:nth-child(odd){grid-column:1 / -1}
+}
+/* ===== end phone layout: Events ===== */
+/* ===== Phone layout: Formats ===== */
+@media (max-width: 600px){
+  /* hero chips: one swipeable row, edge to edge */
+  .m-fmt-chips{flex:none !important;flex-wrap:nowrap !important;max-width:none !important;width:calc(100% + 56px);margin:0 -28px;padding:2px 28px;box-sizing:border-box;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+  .m-fmt-chips::-webkit-scrollbar{display:none}
+  .m-fmt-chip{flex:0 0 auto;white-space:nowrap}
+  /* parking-journey band: 2 x 2, no arrows */
+  .m-fmt-journey{display:grid !important;grid-template-columns:1fr 1fr;gap:12px 16px !important}
+  .m-fmt-arr{display:none}
+  /* business intros: number stacked above the heading */
+  .m-fmt-gwrap{padding:64px 28px 48px !important}
+  .m-fmt-ghead{flex-direction:column;align-items:flex-start !important;gap:20px !important}
+  .m-fmt-gname{font-size:32px !important}
+  /* format rows: shorter photos framed on the ad */
+  .m-fmt-row{gap:32px !important}
+  .m-fmt-fig{height:auto !important;aspect-ratio:4 / 3}
+  #gatearm .m-fmt-fig{aspect-ratio:16 / 10}
+  #elevator .m-fmt-fig img{object-position:50% 48% !important}
+  #panel .m-fmt-fig img{object-position:58% 50% !important}
+  .m-fmt-cap{left:12px !important;bottom:12px !important;max-width:calc(100% - 24px);box-sizing:border-box;padding:7px 12px !important;font-size:11px !important;letter-spacing:0.03em !important}
+  .m-fmt-btns{flex-direction:column}
+  .m-fmt-btns > a{justify-content:center}
+  /* compare: stacked list instead of the wide table */
+  .m-fmt-table{display:none !important}
+  .m-fmt-clist{display:block !important;margin-top:40px;border-top:3px solid #0B1220}
+}
+/* ===== end phone layout: Formats ===== */
+/* ===== Phone layout: Insights ===== */
+@media (max-width: 600px){
+  /* section links: one row */
+  .m-ins-seg{flex-wrap:nowrap !important;gap:6px !important}
+  .m-ins-seg a{flex:1 1 auto;justify-content:center;padding:0 10px !important;letter-spacing:0.04em !important;white-space:nowrap}
+  /* featured case study */
+  .m-ins-featimg{flex:1 1 100% !important;min-height:0 !important;aspect-ratio:4 / 3}
+  .m-ins-feattext{flex:1 1 100% !important;padding:24px 24px 28px !important;gap:24px !important}
+  .m-ins-feath{font-size:25px !important;line-height:1.08 !important;letter-spacing:-0.03em !important}
+  /* article cards: compact rows */
+  .m-ins-posts{gap:10px !important}
+  .m-ins-post{flex-direction:row !important;align-items:stretch;border-radius:14px !important}
+  .m-ins-postimg{flex:0 0 108px;height:auto !important;min-height:128px}
+  .m-ins-posttext{padding:16px 18px !important;gap:6px !important;min-width:0}
+  .m-ins-posth{font-size:17px !important;line-height:1.2 !important}
+  .m-ins-ans{padding-right:12px !important}
+  /* newsletter card */
+  .m-ins-news{padding:32px 24px !important;gap:24px !important}
+  .m-ins-news-h{line-height:1.08 !important}
+  .m-ins-news-h + div{line-height:1.5}
+  .m-ins-form{flex:1 1 100% !important;max-width:none !important}
+  .m-ins-form label{flex:1 1 100% !important}
+  .m-ins-form input{font-size:16px !important}
+  .m-ins-form button{flex:1 1 100%}
+}
+@media (max-width: 380px){
+  .m-ins-seg a{padding:0 8px !important;font-size:11px !important;letter-spacing:0.03em !important}
+}
+@media (max-width: 345px){
+  .m-ins-seg{flex-wrap:wrap !important}
+}
+/* ===== end phone layout: Insights ===== */
+/* ===== Phone layout: Investors ===== */
+@media (max-width: 600px){
+  /* hero: sized to its copy, footage as a band on top fading into solid navy behind the text */
+  .m-inv-hero,.m-inv-hero-copy{min-height:0 !important}
+  .m-inv-hero-copy{padding:168px 28px 48px !important}
+  .m-inv-hero-media{top:-72px !important;bottom:auto !important;height:420px !important}
+  .m-inv-hero-shade{background:linear-gradient(180deg,rgba(11,18,32,0.2) 0px,rgba(11,18,32,0.4) 110px,rgba(11,18,32,0.84) 230px,#0B1220 340px) !important}
+  .m-inv-hero-p{font-size:17px !important;line-height:1.55 !important}
+  .m-inv-hero-cta{width:100%;gap:10px !important}
+  .m-inv-hero-cta a{flex:1 1 100%;justify-content:center;min-height:52px !important}
+  .m-inv-credit{top:16px;bottom:auto !important;color:rgba(255,255,255,0.7) !important}
+  /* the opportunity */
+  .m-inv-opp-head{text-align:left !important}
+  .m-inv-opp-head h2{margin-left:0 !important}
+  .m-inv-opp-p{margin-left:0 !important;font-size:18px !important;line-height:1.55 !important}
+  .m-inv-oppcard{padding:28px !important;border-radius:22px !important;gap:18px !important}
+  /* at a glance: 2 x 3 */
+  .m-inv-glance{grid-template-columns:repeat(2,minmax(0,1fr)) !important;gap:36px 20px !important}
+  .m-inv-glance > div{padding-top:16px !important}
+  .m-inv-glance > div > div:first-child{font-size:40px !important}
+  .m-inv-glance > div > div:last-child{font-size:11px !important;letter-spacing:0.12em !important;line-height:1.45}
+  .m-inv-sum{padding:24px !important;gap:20px !important}
+  .m-inv-sum-grid{display:grid !important;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px 16px !important;align-items:end;width:100%}
+  .m-inv-sum-grid > div > div:first-child{line-height:1.45;letter-spacing:0.1em !important}
+  .m-inv-sum-grid > div > div:last-child{font-size:24px !important}
+  /* three engines: labels above full-width bars */
+  .m-inv-barcard{padding:24px 20px !important}
+  .m-inv-bars{grid-template-columns:minmax(0,1fr) !important;gap:8px !important}
+  .m-inv-bars > div:nth-child(3){margin-top:14px}
+  .m-inv-bars > div:nth-child(even){min-width:0}
+  .m-inv-bars > div:nth-child(even) > div{padding:0 8px !important;font-size:11px !important;letter-spacing:0.05em !important;white-space:nowrap}
+  .m-inv-bars .alm-grow{white-space:normal !important;line-height:1.2;gap:6px}
+  .m-inv-cap{font-size:11px !important;line-height:1.6 !important;color:#5F6878 !important}
+  .m-inv-note{font-size:11px !important;color:#FFFFFF !important;text-shadow:0 1px 6px rgba(0,0,0,0.6)}
+  .m-inv-engbody{padding:24px !important}
+  .m-inv-dl{grid-template-columns:minmax(0,1fr) !important}
+  .m-inv-dl dt{border-bottom:0 !important;padding:16px 0 0 !important}
+  .m-inv-dl dd{padding:6px 0 16px !important;font-size:15px !important}
+  /* flywheel: no desktop equal-height gaps */
+  .m-inv-wheel{min-height:0 !important;padding:22px 24px !important;justify-content:flex-start !important}
+  .m-inv-wdesc{font-size:15px !important;line-height:1.45}
+  /* roadmap: vertical timeline */
+  .m-inv-road{border-top:0 !important;margin-top:40px !important;grid-template-columns:minmax(0,1fr) !important}
+  .m-inv-road > li{position:relative;padding:0 0 32px 28px !important;border-left:2px solid rgba(251,174,79,0.5)}
+  .m-inv-road > li:last-child{padding-bottom:0 !important;border-left-color:transparent}
+  .m-inv-road > li::before{content:"";position:absolute;left:-7px;top:12px;width:12px;height:12px;border-radius:50%;background:#FBAE4F}
+  .m-inv-road > li > div:first-child{font-size:30px !important;line-height:1.1}
+  .m-inv-road > li > div:nth-child(2){margin-top:6px !important}
+  /* proof logos: 3 across */
+  .m-inv-logos{grid-template-columns:repeat(3,minmax(0,1fr)) !important}
+  .m-inv-logos > div{height:84px !important;padding:12px !important}
+  .m-inv-logos img{max-height:32px !important;max-width:80% !important}
+  .m-inv-advbio{font-size:15px !important}
+  /* data room form */
+  .m-inv-form{padding:28px 20px !important}
+  .m-inv-form .alm-input{font-size:16px !important}
+}
+@media (max-width: 360px){
+  .m-inv-barcard{padding:22px 16px !important}
+  .m-inv-bars > div:nth-child(even) > div{padding:0 6px !important;font-size:10px !important;letter-spacing:0.03em !important}
+}
+/* ===== end phone layout: Investors ===== */
+/* ===== Phone layout: LiveBoard ===== */
+@media (max-width: 600px){.m-lb-cap{left:10px !important;bottom:10px !important;padding:6px 10px !important;font-size:9.5px !important;letter-spacing:.02em !important;white-space:nowrap;max-width:calc(100% - 20px);overflow:hidden;text-overflow:ellipsis}}
+/* ===== end phone layout: LiveBoard ===== */
+/* ===== Phone layout: Main ===== */
+@media (max-width: 600px){
+  .alm-story-img{height:54% !important;bottom:auto !important}
+  .m-home-story-shade{background:linear-gradient(180deg,rgba(5,8,15,0.6) 0%,rgba(5,8,15,0) 20%,rgba(5,8,15,0) 34%,rgba(5,8,15,0.88) 50%,#05080F 57%) !important}
+  .m-home-evimg{min-height:0 !important;height:auto !important;aspect-ratio:4/3}
+  .m-home-place{height:340px !important;flex-basis:100% !important}
+  .m-home-lucid{object-position:14% 50% !important}
+  .m-home-mkts{grid-template-columns:1fr 1fr !important;gap:10px !important}
+  .m-home-mkt{height:170px !important;border-radius:14px !important}
+  .m-home-mkt-name{left:14px !important;right:14px !important;bottom:14px !important;font-size:19px !important}
+  .m-home-mkt-top{left:14px !important;right:12px !important;top:12px !important}
+  .m-home-mkt-top span:last-child{font-size:9px !important;padding:4px 7px !important;letter-spacing:.06em !important}
+}
+/* ===== end phone layout: Main ===== */
+/* ===== Phone layout: Network ===== */
+@media (max-width: 600px){
+  /* search: full-width field, browse button beneath */
+  .m-loc-search{display:grid !important;grid-template-columns:auto minmax(0,1fr);row-gap:10px;margin-top:32px !important;min-height:0 !important;padding:0 !important;background:transparent !important;position:relative}
+  .m-loc-search::before{content:"";position:absolute;left:0;right:0;top:0;height:56px;border-radius:999px;background:#FFFFFF}
+  .m-loc-search > svg{position:relative;grid-row:1;align-self:center;margin:0 10px 0 20px}
+  .m-loc-search > label{position:relative;grid-row:1;padding-right:20px}
+  .m-loc-search input{height:56px !important}
+  .m-loc-search > a{grid-column:1 / -1;justify-content:center;min-height:48px !important;background:transparent !important;border:1.5px solid rgba(255,255,255,0.4);color:#FFFFFF !important}
+  /* map: solid landmass, stronger outline, larger markers; names live in the directory below */
+  .m-loc-mapwrap{margin-top:36px !important}
+  .m-loc-map{width:calc(100% + 24px) !important;margin:0 -12px}
+  .m-loc-map > path{fill:#18233B;stroke:rgba(255,255,255,0.34);stroke-width:2.5}
+  .m-loc-map .alm-dash{stroke-width:2.8;stroke-opacity:0.7}
+  .m-loc-map circle[r="6.5"],.m-loc-map circle[r="6"],.m-loc-map circle[r="5"]{transform-box:fill-box;transform-origin:center;transform:scale(1.9)}
+  .m-loc-map rect{transform-box:fill-box;transform-origin:center;transform:scale(1.9)}
+  .m-loc-map circle.alm-ping{stroke-width:3}
+  .m-loc-map g[font-family]{display:none}
+  .m-loc-legend{display:grid !important;grid-template-columns:1fr 1fr;gap:12px 16px !important;margin-top:20px !important}
+  /* directory filters: one row, scrolls if it ever overflows */
+  .m-loc-filters{flex:0 0 auto !important;width:calc(100% + 56px);box-sizing:border-box;margin:0 -28px;padding:0 28px;flex-wrap:nowrap !important;gap:6px !important;overflow-x:auto;scrollbar-width:none}
+  .m-loc-filters::-webkit-scrollbar{display:none}
+  .m-loc-filters > button{flex:1 0 auto;min-height:44px !important;padding:0 10px !important;font-size:11px !important;letter-spacing:0.03em !important;border-width:1.5px !important}
+  .m-loc-empty{padding:28px 24px !important}
+  /* market rows: thumbnail beside the name, chips, status + text link */
+  .m-loc-row{display:grid !important;grid-template-columns:72px minmax(0,1fr) auto;grid-template-areas:"thumb info info" "fmts fmts fmts" "status status plan";gap:0 14px !important;align-items:center !important;padding:18px 0 6px !important}
+  .m-loc-thumb{grid-area:thumb;height:72px !important;border-radius:14px !important;align-self:start}
+  .m-loc-info{grid-area:info}
+  .m-loc-info > div:nth-child(1){font-size:11px !important}
+  .m-loc-info > div:nth-child(2){margin-top:2px !important;font-size:23px !important}
+  .m-loc-info > div:nth-child(3){margin-top:5px !important;font-size:12px !important;line-height:1.35}
+  .m-loc-fmts{grid-area:fmts;margin-top:14px;gap:6px !important}
+  .m-loc-fmts > span{padding:5px 9px !important;font-size:11.5px !important}
+  .m-loc-status{grid-area:status;justify-self:start;margin-top:6px;white-space:nowrap}
+  .m-loc-plan{grid-area:plan;justify-self:end;margin-top:6px;min-height:44px !important;padding:0 !important;border:0 !important}
+  /* venues + expansion */
+  .m-loc-venues > li{padding:16px 0 !important;font-size:19px !important}
+  .m-loc-ctas{width:100%}
+  .m-loc-ctas > a{flex:1 1 100%;justify-content:center}
+}
+/* ===== end phone layout: Network ===== */
+/* ===== Phone layout: Plan ===== */
+@media (max-width: 600px){
+  .m-plan-h2{font-size:26px !important;text-wrap:balance}
+  .m-plan-steps{gap:4px 10px !important;margin-top:32px !important}
+  /* markets: two photo tiles per row */
+  .m-plan-mkts{grid-template-columns:1fr 1fr !important;gap:10px !important;margin-top:20px !important}
+  .m-plan-mkt{height:132px !important;border-radius:16px !important}
+  .m-plan-chip{top:9px !important;left:9px !important;font-size:9px !important;padding:4px 8px !important}
+  .m-plan-check{top:8px !important;right:8px !important;width:26px !important;height:26px !important;font-size:14px !important}
+  .m-plan-name{left:12px !important;right:8px;bottom:10px !important;font-size:16px !important}
+  /* formats: two cards per row, check badge sits on the photo */
+  .m-plan-fmts{grid-template-columns:1fr 1fr !important;gap:10px !important;margin-top:20px !important}
+  .m-plan-fmt{position:relative;display:flex !important;flex-direction:column;justify-content:flex-start;border-radius:16px !important}
+  .m-plan-fmt-img{flex:none;height:108px !important}
+  .m-plan-fmt-txt{padding:12px 12px 14px !important}
+  .m-plan-fmt-name{font-size:15px !important;line-height:1.25}
+  .m-plan-fmt-check{position:absolute;top:8px;right:8px}
+  .m-plan-fmt-meta{font-size:12px !important;line-height:1.4}
+  /* flight & review cards: roomier fields, one label style, 16px inputs */
+  .m-plan-card{padding:24px 20px !important}
+  .m-plan-lbl{font-size:12px !important;letter-spacing:0.1em !important;text-transform:uppercase}
+  .m-plan-card .alm-input{font-size:16px !important;text-transform:none}
+  .m-plan-dur{display:grid !important;grid-template-columns:1fr 1fr}
+  .m-plan-note{flex-direction:column;padding:20px 18px !important;gap:10px !important}
+  .m-plan-chk{min-height:44px}
+  /* back / continue: primary action fills the row */
+  .m-plan-next{flex:1 1 auto}
+  .m-plan-body{padding-bottom:48px !important}
+  .m-plan-sum{padding:24px !important;border-radius:18px !important}
+}
+/* ===== end phone layout: Plan ===== */
+/* ===== Phone layout: PropertyOwners ===== */
+@media (max-width: 600px){
+  /* hero: sized to its content, even shade so copy reads over the footage */
+  .m-re-hero{min-height:0 !important}
+  .m-re-hero-copy{min-height:0 !important;padding:32px 28px 56px !important;justify-content:flex-start !important}
+  .m-re-hero-shade{background:linear-gradient(180deg,rgba(11,18,32,0.6) 0%,rgba(11,18,32,0.78) 55%,rgba(11,18,32,0.94) 100%) !important}
+  .m-re-hero-ctas a{flex:1 1 100%;justify-content:center}
+  .m-re-stats{margin-top:36px !important;display:block !important;border-top:1px solid rgba(255,255,255,0.18)}
+  .m-re-stats > div{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:13px 0;border-bottom:1px solid rgba(255,255,255,0.18)}
+  .m-re-stats > div > div:first-child{font-size:28px !important}
+  .m-re-stats > div > div:last-child{margin-top:0 !important;font-size:11px !important;text-align:right}
+  .m-re-stock{bottom:20px !important}
+  /* how it works */
+  .m-re-steps{margin-top:44px !important;gap:36px !important}
+  .m-re-steps > li > div:first-child{font-size:48px !important}
+  .m-re-steps > li > div:nth-child(2){margin-top:14px !important}
+  /* pricing simulator: 28px thumbs on a 44px hit area */
+  .m-re-sim{padding:26px 22px !important}
+  .m-re-rng{margin-top:2px}
+  .m-re-rng::before{content:"";position:absolute;left:0;right:0;top:19px;height:6px;border-radius:999px;background:#E3E5EA}
+  .m-re-fill{display:block !important;position:absolute;left:0;top:19px;height:6px;border-radius:999px;background:#FBAE4F;pointer-events:none}
+  .m-re-range{-webkit-appearance:none;appearance:none;position:relative;display:block;height:44px;margin:0 !important;padding:0;background:transparent;cursor:pointer}
+  .m-re-range:focus{outline:none}
+  .m-re-range:focus-visible{outline:2px solid #FBAE4F;outline-offset:2px;border-radius:999px}
+  .m-re-range::-webkit-slider-runnable-track{height:6px;background:transparent;border:0}
+  .m-re-range::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:28px;height:28px;margin-top:-11px;border:0;border-radius:50%;background:#FFFFFF;box-shadow:0 0 0 1px rgba(11,18,32,0.1),0 3px 10px rgba(11,18,32,0.3)}
+  .m-re-range::-moz-range-track{height:6px;background:transparent;border:0}
+  .m-re-range::-moz-range-thumb{width:28px;height:28px;border:0;border-radius:50%;background:#FFFFFF;box-shadow:0 0 0 1px rgba(11,18,32,0.1),0 3px 10px rgba(11,18,32,0.3)}
+  /* rate board photos: shorter crops */
+  .m-re-fig1{height:420px !important}
+  .m-re-fig2{height:300px !important}
+  /* hardware table: model + size on one line, environment beneath */
+  .m-re-hw{min-width:0 !important;display:block}
+  .m-re-hw thead,.m-re-hw tbody{display:block}
+  .m-re-hw tr{display:grid;grid-template-columns:minmax(0,1fr) auto;column-gap:16px;align-items:baseline;padding:14px 0}
+  .m-re-hw thead tr{padding:0 0 10px}
+  .m-re-hw th,.m-re-hw td{display:block;padding:0 !important}
+  .m-re-hw tr > :nth-child(2){text-align:right}
+  .m-re-hw tr > :nth-child(3){grid-column:1 / -1;margin-top:3px}
+  /* Device Hub: tiers as one grouped list, features in two columns */
+  .m-re-hub{padding:28px 22px !important}
+  .m-re-tiers{grid-template-columns:1fr !important;gap:0 !important;border-radius:14px;overflow:hidden;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1)}
+  .m-re-tiers > div{padding:13px 16px !important;border:0 !important;border-radius:0 !important;background:transparent !important}
+  .m-re-tiers > div + div{border-top:1px solid rgba(255,255,255,0.1) !important}
+  .m-re-tiers > div > div:last-child{margin-top:2px !important;font-size:14px !important}
+  .m-re-feats{display:grid !important;grid-template-columns:1fr 1fr;gap:8px !important}
+  .m-re-feats > span{display:flex;align-items:center;min-height:40px;box-sizing:border-box;padding:8px 12px !important;border-radius:12px !important;font-size:12.5px !important;line-height:1.3}
+  /* three streams */
+  .m-re-stream-img{height:220px !important}
+  .m-re-stream-body{padding:26px 24px 30px !important}
+  .m-re-stream-body > div:nth-child(2){font-size:26px !important}
+  /* property types: compact two-up tiles */
+  .m-re-types{grid-template-columns:1fr 1fr !important;gap:10px !important;margin-top:28px !important}
+  .m-re-type-img{height:176px !important}
+  .m-re-type-img > div:last-child{left:16px !important;right:12px;bottom:14px !important;font-size:17px !important;line-height:1.2}
+  .m-re-type-ico{height:auto !important;min-height:128px;padding:18px 16px !important;gap:16px}
+  .m-re-type-ico svg{width:30px;height:30px}
+  .m-re-type-ico > div{font-size:17px !important;line-height:1.2}
+  /* who does what: rows instead of a three-column table */
+  .m-re-duties-tbl{display:none !important}
+  .m-re-duties{display:block !important}
+  /* FAQ + assessment form */
+  .m-re-faq-a{padding-right:0 !important}
+  .m-re-assess{gap:40px !important}
+  .m-re-form{padding:28px 22px !important}
+  .m-re-form select.alm-input{background-color:#FFFFFF}
+  .m-re-form .alm-input{font-size:16px !important}
+}
+/* ===== end phone layout: PropertyOwners ===== */
+/* <<< page phone layouts <<< */

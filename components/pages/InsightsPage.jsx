@@ -90,11 +90,11 @@ export default class InsightsPage extends React.Component {
     return (
       <div className="alm-root" style={{ background: "#F5F5F7", color: "#0B1220", fontFamily: "'Montserrat', system-ui, sans-serif", overflowX: "hidden", WebkitFontSmoothing: "antialiased" }}>
         <Nav active="insights" />
-        <section style={{ padding: "104px 28px 64px" }}>
+        <section className="alm-pt" style={{ padding: "104px 28px 64px" }}>
           <div style={{ maxWidth: "1360px", margin: "0 auto" }}>
             <div className="alm-rise" style={{ display: "flex", alignItems: "center", gap: "10px", fontSize: "15px", fontWeight: "600", letterSpacing: "-0.005em", opacity: "0.72" }}><span style={{ width: "7px", height: "7px", background: "#FBAE4F", borderRadius: "50%" }} />Insights</div>
             <h1 className="alm-rise" style={{ margin: "22px 0 0", maxWidth: "1200px", fontSize: "clamp(44px, 7vw, 112px)", lineHeight: "1", letterSpacing: "-0.035em", fontWeight: "600", animationDelay: ".1s" }}>News, resources<br />&amp; answers.</h1>
-            <nav className="alm-rise" aria-label="Insights sections" style={{ marginTop: "32px", display: "flex", flexWrap: "wrap", gap: "8px", animationDelay: ".2s" }}>
+            <nav className="alm-rise m-ins-seg" aria-label="Insights sections" style={{ marginTop: "32px", display: "flex", flexWrap: "wrap", gap: "8px", animationDelay: ".2s" }}>
               <A href="#news" style={{ display: "inline-flex", alignItems: "center", minHeight: "44px", padding: "0 16px", borderRadius: "999px", border: "2px solid #0B1220", fontSize: "12px", fontWeight: "600", letterSpacing: "0.08em" }}>NEWS &amp; RESOURCES</A>
               <A href="#faq" style={{ display: "inline-flex", alignItems: "center", minHeight: "44px", padding: "0 16px", borderRadius: "999px", border: "2px solid #0B1220", fontSize: "12px", fontWeight: "600", letterSpacing: "0.08em" }}>FAQ</A>
               <A href="#glossary" style={{ display: "inline-flex", alignItems: "center", minHeight: "44px", padding: "0 16px", borderRadius: "999px", border: "2px solid #0B1220", fontSize: "12px", fontWeight: "600", letterSpacing: "0.08em" }}>GLOSSARY</A>
@@ -102,31 +102,31 @@ export default class InsightsPage extends React.Component {
           </div>
         </section>
         {/* NEWS */}
-        <section id="news" style={{ padding: "0 28px 128px" }}>
+        <section className="alm-pb" id="news" style={{ padding: "0 28px 128px" }}>
           <div style={{ maxWidth: "1360px", margin: "0 auto" }}>
-            <A className="alm-tile alm-in" href="/advertisers" style={{ display: "flex", flexWrap: "wrap", background: "#0B1220", color: "#FFFFFF", borderRadius: "18px", overflow: "hidden" }}>
-              <div style={{ flex: "3 1 560px", minHeight: "460px", overflow: "hidden" }}>
+            <A className="alm-tile alm-in m-ins-feat" href="/advertisers" style={{ display: "flex", flexWrap: "wrap", background: "#0B1220", color: "#FFFFFF", borderRadius: "18px", overflow: "hidden" }}>
+              <div className="m-ins-featimg" style={{ flex: "3 1 560px", minHeight: "460px", overflow: "hidden" }}>
                 <img src="/media/photos/hartford-healthcare-wallscape.webp?v=0b3f98d9" alt="Hartford HealthCare wallscape inside a Connecticut parking garage" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} loading="lazy" decoding="async" />
               </div>
-              <div style={{ flex: "2 1 380px", padding: "48px", display: "flex", flexDirection: "column", justifyContent: "space-between", gap: "32px" }}>
+              <div className="m-ins-feattext" style={{ flex: "2 1 380px", padding: "48px", display: "flex", flexDirection: "column", justifyContent: "space-between", gap: "32px" }}>
                 <div>
                   <div style={{ fontSize: "12px", fontWeight: "600", letterSpacing: "0.14em", color: "#FBAE4F" }}>FEATURED · CASE STUDY</div>
-                  <div style={{ marginTop: "16px", fontSize: "clamp(28px, 3vw, 44px)", fontWeight: "600", lineHeight: "0.98", letterSpacing: "-0.035em" }}>Hartford HealthCare: 30 Connecticut garages, renewed for five more years.</div>
+                  <div className="m-ins-feath" style={{ marginTop: "16px", fontSize: "clamp(28px, 3vw, 44px)", fontWeight: "600", lineHeight: "0.98", letterSpacing: "-0.035em" }}>Hartford HealthCare: 30 Connecticut garages, renewed for five more years.</div>
                   <p style={{ margin: "16px 0 0", fontSize: "16px", lineHeight: "1.6", fontWeight: "400", color: "#C9D0DB" }}>Signed in 2019 to reach decision makers across the state — and more than $1.5M of value created for our parking partners.</p>
                 </div>
                 <div style={{ fontSize: "15px", fontWeight: "600", letterSpacing: "-0.005em" }}>Read the case study →</div>
               </div>
             </A>
-            <div style={{ marginTop: "16px", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(360px, 1fr))", gap: "16px" }}>
+            <div className="m-ins-posts" style={{ marginTop: "16px", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 360px), 1fr))", gap: "16px" }}>
               {(v.posts || []).map((p, pI) => (
                 <Fragment key={pI}>
-                  <A className="alm-tile alm-in" href={p.href} style={{ display: "flex", flexDirection: "column", background: "#FFFFFF", borderRadius: "16px", overflow: "hidden" }}>
-                    <div style={{ height: "220px", overflow: "hidden", background: "#0B1220" }}>
+                  <A className="alm-tile alm-in m-ins-post" href={p.href} style={{ display: "flex", flexDirection: "column", background: "#FFFFFF", borderRadius: "16px", overflow: "hidden" }}>
+                    <div className="m-ins-postimg" style={{ height: "220px", overflow: "hidden", background: "#0B1220" }}>
                       <img src={p.img} alt="" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: p.pos, display: "block" }} loading="lazy" decoding="async" />
                     </div>
-                    <div style={{ padding: "24px 26px 28px", display: "flex", flexDirection: "column", gap: "10px", flex: "1" }}>
+                    <div className="m-ins-posttext" style={{ padding: "24px 26px 28px", display: "flex", flexDirection: "column", gap: "10px", flex: "1" }}>
                       <div style={{ fontSize: "11px", fontWeight: "600", letterSpacing: "0.14em", color: "#8A5300" }}>{p.cat}</div>
-                      <div style={{ fontSize: "21px", fontWeight: "650", lineHeight: "1.1", letterSpacing: "-0.02em" }}>{p.title}</div>
+                      <div className="m-ins-posth" style={{ fontSize: "21px", fontWeight: "650", lineHeight: "1.1", letterSpacing: "-0.02em" }}>{p.title}</div>
                       <div style={{ marginTop: "auto", paddingTop: "8px", fontSize: "12px", fontWeight: "700", color: "#4E586A" }}>{p.meta}</div>
                     </div>
                   </A>
@@ -134,7 +134,7 @@ export default class InsightsPage extends React.Component {
               ))}
             </div>
             <div style={{ marginTop: "40px", fontSize: "12px", fontWeight: "600", letterSpacing: "0.14em", color: "#4E586A" }}>MORE FROM THE ARCHIVE</div>
-            <ul style={{ margin: "12px 0 0", padding: "0", listStyle: "none", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: "0 40px", borderTop: "2px solid #0B1220" }}>
+            <ul style={{ margin: "12px 0 0", padding: "0", listStyle: "none", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 320px), 1fr))", gap: "0 40px", borderTop: "2px solid #0B1220" }}>
               {(v.archive || []).map((a, aI) => (
                 <Fragment key={aI}>
                   <li style={{ borderBottom: "1px solid rgba(11,18,32,0.14)" }}>
@@ -146,7 +146,7 @@ export default class InsightsPage extends React.Component {
           </div>
         </section>
         {/* FAQ */}
-        <section id="faq" style={{ padding: "128px 28px", background: "#0B1220", color: "#FFFFFF" }}>
+        <section className="alm-pt alm-pb" id="faq" style={{ padding: "128px 28px", background: "#0B1220", color: "#FFFFFF" }}>
           <div style={{ maxWidth: "1360px", margin: "0 auto", display: "flex", flexWrap: "wrap", gap: "48px 64px" }}>
             <div style={{ flex: "1 1 360px" }}>
               <h2 className="alm-in" style={{ margin: "0", fontSize: "clamp(38px, 5.2vw, 80px)", lineHeight: "1", letterSpacing: "-0.035em", fontWeight: "600" }}>Frequently asked.</h2>
@@ -169,7 +169,7 @@ export default class InsightsPage extends React.Component {
                     </button>
                     {q.open ? (
                       <>
-                        <p style={{ margin: "0", padding: "0 60px 24px 0", fontSize: "16px", lineHeight: "1.65", fontWeight: "400", color: "#C9D0DB" }}>{q.a}</p>
+                        <p className="m-ins-ans" style={{ margin: "0", padding: "0 60px 24px 0", fontSize: "16px", lineHeight: "1.65", fontWeight: "400", color: "#C9D0DB" }}>{q.a}</p>
                       </>
                     ) : null}
                   </div>
@@ -179,10 +179,10 @@ export default class InsightsPage extends React.Component {
           </div>
         </section>
         {/* GLOSSARY */}
-        <section id="glossary" style={{ padding: "128px 28px" }}>
+        <section className="alm-pt alm-pb" id="glossary" style={{ padding: "128px 28px" }}>
           <div style={{ maxWidth: "1360px", margin: "0 auto" }}>
             <h2 className="alm-in" style={{ margin: "0", fontSize: "clamp(38px, 5.2vw, 80px)", lineHeight: "1", letterSpacing: "-0.035em", fontWeight: "600" }}>Glossary</h2>
-            <dl style={{ margin: "48px 0 0", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "0 40px", borderTop: "3px solid #0B1220" }}>
+            <dl style={{ margin: "48px 0 0", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 300px), 1fr))", gap: "0 40px", borderTop: "3px solid #0B1220" }}>
               {(v.terms || []).map((t, tI) => (
                 <Fragment key={tI}>
                   <div style={{ padding: "24px 0", borderBottom: "1px solid rgba(11,18,32,0.14)" }}>
@@ -195,10 +195,10 @@ export default class InsightsPage extends React.Component {
           </div>
         </section>
         {/* NEWSLETTER */}
-        <section style={{ padding: "0 28px 128px" }}>
-          <div style={{ maxWidth: "1360px", margin: "0 auto", padding: "56px", borderRadius: "18px", background: "#344567", color: "#FFFFFF", display: "flex", flexWrap: "wrap", gap: "32px 48px", alignItems: "center", justifyContent: "space-between" }}>
+        <section className="alm-pb" style={{ padding: "0 28px 128px" }}>
+          <div className="m-ins-news" style={{ maxWidth: "1360px", margin: "0 auto", padding: "56px", borderRadius: "18px", background: "#344567", color: "#FFFFFF", display: "flex", flexWrap: "wrap", gap: "32px 48px", alignItems: "center", justifyContent: "space-between" }}>
             <div style={{ maxWidth: "560px" }}>
-              <div style={{ fontSize: "clamp(28px, 3.4vw, 48px)", fontWeight: "600", lineHeight: "0.95", letterSpacing: "-0.035em" }}>The parking media briefing.</div>
+              <div className="m-ins-news-h" style={{ fontSize: "clamp(28px, 3.4vw, 48px)", fontWeight: "600", lineHeight: "0.95", letterSpacing: "-0.035em" }}>The parking media briefing.</div>
               <div style={{ marginTop: "12px", fontSize: "16px", fontWeight: "400", color: "#D5DAE3" }}>New markets, formats and campaign news from A Lot Media.</div>
             </div>
             {v.subbed ? (
@@ -208,7 +208,7 @@ export default class InsightsPage extends React.Component {
             ) : null}
             {v.notSubbed ? (
               <>
-                <form onSubmit={v.sub} style={{ flex: "1 1 380px", maxWidth: "520px", display: "flex", gap: "8px", flexWrap: "wrap" }}>
+                <form className="m-ins-form" onSubmit={v.sub} style={{ flex: "1 1 380px", maxWidth: "520px", display: "flex", gap: "8px", flexWrap: "wrap" }}>
                   <label style={{ flex: "1 1 240px", display: "flex" }}>
                     <span style={{ position: "absolute", width: "1px", height: "1px", overflow: "hidden", clip: "rect(0 0 0 0)" }}>Email</span>
                     <input className="alm-input" type="email" placeholder="you@company.com" style={{ flex: "1", minHeight: "56px", padding: "0 18px", borderRadius: "8px", border: "2px solid transparent", fontFamily: "'Montserrat', sans-serif", fontSize: "15px", fontWeight: "400" }} name="email" />

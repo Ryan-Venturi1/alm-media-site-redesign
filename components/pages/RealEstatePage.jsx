@@ -45,6 +45,8 @@ export default class RealEstatePage extends React.Component {
       vidRef: this._vidRef,
       sim: {
         base: base, occ: occ, rate: rate, eventOn: ev ? 'true' : 'false',
+        baseFill: 'calc(14px + (100% - 28px) * ' + ((base - 10) / 50).toFixed(4) + ')',
+        occFill: 'calc(14px + (100% - 28px) * ' + ((occ - 10) / 90).toFixed(4) + ')',
         trackBg: ev ? '#FBAE4F' : '#C9CDD6', knob: ev ? 25 : 3,
         delta: diff === 0 ? 'Same' : (diff > 0 ? '+$' + diff : '−$' + Math.abs(diff)),
         deltaColor: diff > 0 ? '#1F8A4C' : (diff < 0 ? '#B54708' : '#4E586A'),
@@ -63,7 +65,7 @@ export default class RealEstatePage extends React.Component {
         { label: 'Approve event dates', you: Y, alm: N },
         { label: 'Set your parking rates', you: Y, alm: N },
         { label: 'Receive revenue share', you: Y, alm: N }
-      ],
+      ].map(function (d) { d.youFg = d.you === Y ? '#FFFFFF' : 'rgba(255,255,255,0.62)'; d.almFg = d.alm === Y ? '#FBAE4F' : 'rgba(255,255,255,0.62)'; return d; }),
       faqs: faqs.map(function (f, i) {
         var open = i === openIdx;
         return { q: f[0], a: f[1], open: open, expanded: open ? 'true' : 'false', sign: open ? '−' : '+', toggle: function () { self.setState({ faq: open ? -1 : i }); } };
@@ -114,18 +116,18 @@ export default class RealEstatePage extends React.Component {
         <Nav active="owners" />
         {/* HERO */}
         <div style={{ background: "#05080F" }}>
-          <section className="alm-hero" data-scrub="exit" style={{ position: "relative", minHeight: "800px", background: "#0B1220", color: "#FFFFFF", overflow: "hidden" }}>
+          <section className="alm-hero m-re-hero" data-scrub="exit" style={{ position: "relative", minHeight: "800px", background: "#0B1220", color: "#FFFFFF", overflow: "hidden" }}>
             <video className="alm-hero-media" ref={v.vidRef} src="/media/video/garage-level.mp4?v=a3bbeb94" poster="/media/video/garage-level-poster.webp?v=6ffae7a4" autoPlay muted loop playsInline preload="auto" aria-hidden="true" style={{ position: "absolute", inset: "0", width: "100%", height: "100%", objectFit: "cover", objectPosition: "60% 50%" }} />
-            <div style={{ position: "absolute", inset: "0", background: "linear-gradient(90deg, rgba(11,18,32,0.92) 0%, rgba(11,18,32,0.7) 45%, rgba(11,18,32,0.2) 100%)" }} />
-            <div className="alm-hero-copy" style={{ position: "relative", maxWidth: "1360px", minHeight: "800px", margin: "0 auto", padding: "0 28px 72px", boxSizing: "border-box", display: "flex", flexDirection: "column", justifyContent: "flex-end" }}>
+            <div className="m-re-hero-shade" style={{ position: "absolute", inset: "0", background: "linear-gradient(90deg, rgba(11,18,32,0.92) 0%, rgba(11,18,32,0.7) 45%, rgba(11,18,32,0.2) 100%)" }} />
+            <div className="alm-hero-copy m-re-hero-copy" style={{ position: "relative", maxWidth: "1360px", minHeight: "800px", margin: "0 auto", padding: "0 28px 72px", boxSizing: "border-box", display: "flex", flexDirection: "column", justifyContent: "flex-end" }}>
               <div className="alm-rise" style={{ display: "flex", alignItems: "center", gap: "12px", fontSize: "13px", fontWeight: "800", letterSpacing: "0.18em" }}><span style={{ width: "10px", height: "10px", background: "#FBAE4F" }} />FOR GARAGE &amp; LOT OWNERS</div>
               <h1 className="alm-rise" style={{ margin: "22px 0 0", maxWidth: "1000px", fontSize: "clamp(48px, 7.6vw, 120px)", lineHeight: "0.88", letterSpacing: "-0.02em", fontWeight: "900", textTransform: "uppercase", animationDelay: ".1s" }}>More revenue from <span style={{ color: "#FBAE4F" }}>every space.</span></h1>
               <p className="alm-rise" style={{ margin: "28px 0 0", maxWidth: "600px", fontSize: "19px", lineHeight: "1.55", fontWeight: "500", color: "#E4E8EF", animationDelay: ".2s" }}>Join a network of 12,000 locations. We install our equipment, sell the advertising, book your space for events and send you a share of the gross — at no risk to you.</p>
-              <div className="alm-rise" style={{ marginTop: "32px", display: "flex", gap: "12px", flexWrap: "wrap", animationDelay: ".3s" }}>
+              <div className="alm-rise m-re-hero-ctas" style={{ marginTop: "32px", display: "flex", gap: "12px", flexWrap: "wrap", animationDelay: ".3s" }}>
                 <A className="alm-btn" href="#assess" style={{ display: "inline-flex", alignItems: "center", minHeight: "56px", padding: "0 28px", borderRadius: "8px", background: "#FBAE4F", color: "#0B1220", fontWeight: "800", fontSize: "14px", letterSpacing: "0.08em" }}>GET YOUR PROPERTY ASSESSED</A>
                 <A className="alm-btn" href="#ddrb" style={{ display: "inline-flex", alignItems: "center", minHeight: "56px", padding: "0 28px", borderRadius: "8px", border: "2px solid #FFFFFF", color: "#FFFFFF", fontWeight: "800", fontSize: "14px", letterSpacing: "0.08em" }}>SEE THE RATE BOARD</A>
               </div>
-              <div className="alm-rise" style={{ marginTop: "56px", display: "flex", flexWrap: "wrap", gap: "32px 56px", animationDelay: ".4s" }}>
+              <div className="alm-rise m-re-stats" style={{ marginTop: "56px", display: "flex", flexWrap: "wrap", gap: "32px 56px", animationDelay: ".4s" }}>
                 <div>
                   <div style={{ fontSize: "44px", fontWeight: "900", lineHeight: "1" }}>12,000</div>
                   <div style={{ marginTop: "6px", fontSize: "12px", fontWeight: "800", letterSpacing: "0.14em", color: "#C9D0DB" }}>LOCATIONS IN THE NETWORK</div>
@@ -139,18 +141,18 @@ export default class RealEstatePage extends React.Component {
                   <div style={{ marginTop: "6px", fontSize: "12px", fontWeight: "800", letterSpacing: "0.14em", color: "#C9D0DB" }}>NEW REVENUE STREAMS</div>
                 </div>
               </div>
-              <div style={{ position: "absolute", right: "28px", bottom: "24px", fontFamily: "'Geist Mono', monospace", fontSize: "11px", letterSpacing: "0.08em", color: "rgba(255,255,255,0.55)" }}>STOCK FOOTAGE · ILLUSTRATIVE</div>
+              <div className="m-re-stock" style={{ position: "absolute", right: "28px", bottom: "24px", fontFamily: "'Geist Mono', monospace", fontSize: "11px", letterSpacing: "0.08em", color: "rgba(255,255,255,0.55)" }}>STOCK FOOTAGE · ILLUSTRATIVE</div>
             </div>
           </section>
         </div>
         {/* HOW IT WORKS */}
-        <section style={{ padding: "128px 28px" }}>
+        <section className="alm-pt alm-pb" style={{ padding: "128px 28px" }}>
           <div style={{ maxWidth: "1360px", margin: "0 auto" }}>
             <div style={{ display: "flex", flexWrap: "wrap", gap: "24px 64px", alignItems: "flex-end", justifyContent: "space-between" }}>
               <h2 className="alm-in" style={{ margin: "0", maxWidth: "900px", fontSize: "clamp(38px, 5.2vw, 80px)", lineHeight: "1", letterSpacing: "-0.035em", fontWeight: "600" }}>You authorize.<br />We do the rest.</h2>
               <p style={{ margin: "0", maxWidth: "420px", fontSize: "17px", lineHeight: "1.6", fontWeight: "400", color: "#4E586A" }}>One agreement turns unused walls, gates and entrances into a revenue line — without adding work for your team.</p>
             </div>
-            <ol style={{ margin: "64px 0 0", padding: "0", listStyle: "none", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: "48px 32px" }}>
+            <ol className="m-re-steps" style={{ margin: "64px 0 0", padding: "0", listStyle: "none", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: "48px 32px" }}>
               <li style={{ borderTop: "3px solid #0B1220", paddingTop: "24px" }}>
                 <div style={{ fontSize: "64px", fontWeight: "600", lineHeight: "1", color: "#FBAE4F", letterSpacing: "-0.035em" }}>01</div>
                 <div style={{ marginTop: "20px", fontSize: "22px", fontWeight: "650", letterSpacing: "-0.02em" }}>Authorize</div>
@@ -175,7 +177,7 @@ export default class RealEstatePage extends React.Component {
           </div>
         </section>
         {/* DDRB + SIMULATOR */}
-        <section id="ddrb" style={{ padding: "128px 28px", background: "#0B1220", color: "#FFFFFF" }}>
+        <section className="alm-pt alm-pb" id="ddrb" style={{ padding: "128px 28px", background: "#0B1220", color: "#FFFFFF" }}>
           <div style={{ maxWidth: "1360px", margin: "0 auto" }}>
             <div style={{ display: "flex", alignItems: "center", gap: "10px", fontSize: "15px", fontWeight: "600", letterSpacing: "-0.005em", opacity: "0.72" }}><span style={{ width: "7px", height: "7px", background: "#FBAE4F", borderRadius: "50%" }} />Digital Dynamic Rate Board™</div>
             <h2 className="alm-in" style={{ margin: "22px 0 0", maxWidth: "1000px", fontSize: "clamp(38px, 5.2vw, 80px)", lineHeight: "1", letterSpacing: "-0.035em", fontWeight: "600" }}>Price every space <span style={{ color: "#FBAE4F" }}>like it’s worth.</span></h2>
@@ -187,19 +189,21 @@ export default class RealEstatePage extends React.Component {
               </div>
               <div style={{ flex: "1 1 460px", display: "flex", flexDirection: "column", gap: "28px" }}>
                 <p style={{ margin: "0", fontSize: "18px", lineHeight: "1.6", fontWeight: "400", color: "#C9D0DB" }}>Our proprietary system raises rates when demand is high and can lower them when it’s quiet — by time, occupancy, special events and more. Change rates across every location from your phone.</p>
-                <div style={{ padding: "32px", borderRadius: "18px", background: "#FFFFFF", color: "#0B1220" }}>
+                <div className="m-re-sim" style={{ padding: "32px", borderRadius: "18px", background: "#FFFFFF", color: "#0B1220" }}>
                   <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: "12px", flexWrap: "wrap" }}>
                     <div style={{ fontSize: "13px", fontWeight: "700", letterSpacing: "0.12em" }}>TRY IT · PRICING SIMULATOR</div>
                     <div style={{ fontFamily: "'Geist Mono', monospace", fontSize: "11px", color: "#4E586A" }}>ILLUSTRATIVE</div>
                   </div>
                   <label htmlFor="alm-base" style={{ marginTop: "24px", display: "flex", justifyContent: "space-between", fontSize: "12px", fontWeight: "600", letterSpacing: "0.1em" }}>YOUR BASE DAILY RATE <span style={{ fontSize: "16px", letterSpacing: "0" }}>${v.sim?.base}</span></label>
-                  {' '}
-                  <input id="alm-base" type="range" min="10" max="60" step="1" value={v.sim?.base} onInput={v.sim?.setBase} onChange={v.sim?.setBase} style={{ width: "100%", marginTop: "10px" }} />
-                  {' '}
+                  <div className="m-re-rng" style={{ position: "relative" }}>
+                    <span className="m-re-fill" aria-hidden="true" style={{ display: "none", width: v.sim?.baseFill }} />
+                    <input id="alm-base" className="m-re-range" type="range" min="10" max="60" step="1" value={v.sim?.base} onInput={v.sim?.setBase} onChange={v.sim?.setBase} style={{ width: "100%", marginTop: "10px" }} />
+                  </div>
                   <label htmlFor="alm-occ" style={{ marginTop: "18px", display: "flex", justifyContent: "space-between", fontSize: "12px", fontWeight: "600", letterSpacing: "0.1em" }}>OCCUPANCY <span style={{ fontSize: "16px", letterSpacing: "0" }}>{v.sim?.occ}%</span></label>
-                  {' '}
-                  <input id="alm-occ" type="range" min="10" max="100" step="5" value={v.sim?.occ} onInput={v.sim?.setOcc} onChange={v.sim?.setOcc} style={{ width: "100%", marginTop: "10px" }} />
-                  {' '}
+                  <div className="m-re-rng" style={{ position: "relative" }}>
+                    <span className="m-re-fill" aria-hidden="true" style={{ display: "none", width: v.sim?.occFill }} />
+                    <input id="alm-occ" className="m-re-range" type="range" min="10" max="100" step="5" value={v.sim?.occ} onInput={v.sim?.setOcc} onChange={v.sim?.setOcc} style={{ width: "100%", marginTop: "10px" }} />
+                  </div>
                   <button type="button" role="switch" aria-checked={v.sim?.eventOn} onClick={v.sim?.toggleEvent} style={{ marginTop: "20px", display: "flex", alignItems: "center", gap: "12px", padding: "0", border: "0", background: "transparent", fontFamily: "'Montserrat', sans-serif", fontSize: "14px", fontWeight: "600", color: "#0B1220", cursor: "pointer" }}><span style={{ width: "52px", height: "30px", borderRadius: "999px", background: v.sim?.trackBg, position: "relative", transition: "background .25s" }}><span style={{ position: "absolute", top: "3px", left: `${v.sim?.knob}px`, width: "24px", height: "24px", borderRadius: "50%", background: "#FFFFFF", boxShadow: "0 2px 6px rgba(0,0,0,0.25)", transition: "left .25s" }} /></span> Event nearby tonight</button>
                   <div style={{ marginTop: "24px", paddingTop: "20px", borderTop: "2px solid #0B1220", display: "flex", justifyContent: "space-between", alignItems: "flex-end", gap: "16px", flexWrap: "wrap" }}>
                     <div>
@@ -224,7 +228,7 @@ export default class RealEstatePage extends React.Component {
           </div>
         </section>
         {/* DDRB LINEUP */}
-        <section id="lineup" style={{ padding: "128px 28px" }}>
+        <section className="alm-pt alm-pb" id="lineup" style={{ padding: "128px 28px" }}>
           <div style={{ maxWidth: "1360px", margin: "0 auto" }}>
             <div style={{ display: "flex", flexWrap: "wrap", gap: "24px 64px", alignItems: "flex-end", justifyContent: "space-between" }}>
               <div>
@@ -236,7 +240,7 @@ export default class RealEstatePage extends React.Component {
             <div style={{ marginTop: "56px", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))", gap: "16px" }}>
               {(v.configs || []).map((c, cI) => (
                 <Fragment key={cI}>
-                  <div className="alm-in" style={{ padding: "32px 28px", borderRadius: "16px", background: c.bg, color: c.fg, display: "flex", flexDirection: "column", gap: "14px", minHeight: "280px" }}>
+                  <div className="alm-in alm-autoh" style={{ padding: "32px 28px", borderRadius: "16px", background: c.bg, color: c.fg, display: "flex", flexDirection: "column", gap: "14px", minHeight: "280px" }}>
                     <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: "8px" }}>
                       <span style={{ fontFamily: "'Geist Mono', monospace", fontSize: "12px", color: c.mute }}>OPTION {c.no}</span>
                       <span style={{ fontSize: "11px", fontWeight: "600", letterSpacing: "0.08em", padding: "6px 10px", borderRadius: "999px", background: c.chipBg, color: "#0B1220" }}>{c.chip}</span>
@@ -248,11 +252,11 @@ export default class RealEstatePage extends React.Component {
               ))}
             </div>
             <div style={{ marginTop: "16px", display: "flex", flexWrap: "wrap", gap: "16px" }}>
-              <figure className="alm-tile alm-wipe" style={{ margin: "0", flex: "1 1 300px", height: "560px", position: "relative", overflow: "hidden", borderRadius: "16px", background: "#0B1220" }}>
+              <figure className="alm-tile alm-wipe m-re-fig1" style={{ margin: "0", flex: "1 1 300px", height: "560px", position: "relative", overflow: "hidden", borderRadius: "16px", background: "#0B1220" }}>
                 <img src="/media/photos/ddrb-rate-board.webp?v=088e4141" alt="A Lot Media Digital Dynamic Rate Board showing LAZ parking rates at a Connecticut garage" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "50% 35%", display: "block" }} loading="lazy" decoding="async" />
                 <figcaption style={{ position: "absolute", left: "16px", bottom: "16px", padding: "8px 14px", borderRadius: "999px", background: "rgba(11,18,32,0.72)", color: "#FFFFFF", fontSize: "12px", fontWeight: "700", letterSpacing: "0.04em" }}>DDRB + MESSAGING · CONNECTICUT</figcaption>
               </figure>
-              <figure className="alm-tile alm-wipe" style={{ margin: "0", flex: "2 1 600px", height: "560px", position: "relative", overflow: "hidden", borderRadius: "16px", background: "#0B1220" }}>
+              <figure className="alm-tile alm-wipe m-re-fig2" style={{ margin: "0", flex: "2 1 600px", height: "560px", position: "relative", overflow: "hidden", borderRadius: "16px", background: "#0B1220" }}>
                 <img src="/media/photos/mt-bank-ddrb.webp?v=9afe12a0" alt={"Digital Dynamic Rate Board with live rates and an M&T Bank ad beside a garage entry gate"} style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "30% 50%", display: "block" }} loading="lazy" decoding="async" />
                 <figcaption style={{ position: "absolute", left: "16px", bottom: "16px", padding: "8px 14px", borderRadius: "999px", background: "rgba(11,18,32,0.72)", color: "#FFFFFF", fontSize: "12px", fontWeight: "700", letterSpacing: "0.04em" }}>LIVE RATES ABOVE · M&amp;T BANK AD BELOW</figcaption>
               </figure>
@@ -262,7 +266,7 @@ export default class RealEstatePage extends React.Component {
                 <h3 className="alm-in" style={{ margin: "0", fontSize: "clamp(28px, 3vw, 44px)", lineHeight: "1", letterSpacing: "-0.035em", fontWeight: "600" }}>The hardware lineup.</h3>
                 <p style={{ margin: "16px 0 0", maxWidth: "560px", fontSize: "16px", lineHeight: "1.6", fontWeight: "400", color: "#4E586A" }}>Semi-outdoor units for covered areas; full-outdoor units for uncovered surface lots, built to take up to two hours of peak direct sun and extreme weather.</p>
                 <div style={{ marginTop: "28px", overflowX: "auto" }}>
-                  <table style={{ width: "100%", minWidth: "480px", borderCollapse: "collapse", fontSize: "15px" }}>
+                  <table className="m-re-hw" style={{ width: "100%", minWidth: "480px", borderCollapse: "collapse", fontSize: "15px" }}>
                     <thead>
                       <tr style={{ textAlign: "left", borderBottom: "3px solid #0B1220" }}>
                         <th scope="col" style={{ padding: "14px 12px 14px 0", fontSize: "11px", fontWeight: "600", letterSpacing: "0.14em", color: "#4E586A" }}>UNIT</th>
@@ -284,11 +288,11 @@ export default class RealEstatePage extends React.Component {
                   </table>
                 </div>
               </div>
-              <div className="alm-in" style={{ flex: "1 1 380px", minWidth: "0", padding: "36px", borderRadius: "18px", background: "#0B1220", color: "#FFFFFF", display: "flex", flexDirection: "column", gap: "18px" }}>
+              <div className="alm-in m-re-hub" style={{ flex: "1 1 380px", minWidth: "0", padding: "36px", borderRadius: "18px", background: "#0B1220", color: "#FFFFFF", display: "flex", flexDirection: "column", gap: "18px" }}>
                 <div style={{ fontSize: "12px", fontWeight: "600", letterSpacing: "0.14em", color: "#8FDCE8" }}>SOFTWARE</div>
                 <div style={{ fontSize: "clamp(28px, 2.6vw, 40px)", fontWeight: "600", lineHeight: "1", letterSpacing: "-0.035em" }}>Device Hub</div>
                 <p style={{ margin: "0", fontSize: "16px", lineHeight: "1.6", fontWeight: "400", color: "#C9D0DB" }}>Our content and device management system. Every plan includes software updates, remote management and multi-factor security. Higher tiers add active network monitoring, asset creation and faster support.</p>
-                <div style={{ display: "grid", gridTemplateColumns: "repeat(2, minmax(0, 1fr))", gap: "8px" }}>
+                <div className="m-re-tiers" style={{ display: "grid", gridTemplateColumns: "repeat(2, minmax(0, 1fr))", gap: "8px" }}>
                   {(v.tiers || []).map((t, tI) => (
                     <Fragment key={tI}>
                       <div style={{ padding: "14px 16px", borderRadius: "12px", background: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.1)" }}>
@@ -298,7 +302,7 @@ export default class RealEstatePage extends React.Component {
                     </Fragment>
                   ))}
                 </div>
-                <div style={{ display: "flex", flexWrap: "wrap", gap: "6px" }}>
+                <div className="m-re-feats" style={{ display: "flex", flexWrap: "wrap", gap: "6px" }}>
                   {(v.features || []).map((f, fI) => (
                     <Fragment key={fI}>
                       <span style={{ padding: "7px 12px", borderRadius: "999px", border: "1px solid rgba(255,255,255,0.24)", fontSize: "12px", fontWeight: "700" }}>{f.t}</span>
@@ -311,7 +315,7 @@ export default class RealEstatePage extends React.Component {
           </div>
         </section>
         {/* IN THE FIELD */}
-        <section id="field" style={{ padding: "128px 28px", background: "#0B1220", color: "#FFFFFF" }}>
+        <section className="alm-pt alm-pb" id="field" style={{ padding: "128px 28px", background: "#0B1220", color: "#FFFFFF" }}>
           <div style={{ maxWidth: "1360px", margin: "0 auto" }}>
             <div style={{ display: "flex", alignItems: "center", gap: "10px", fontSize: "15px", fontWeight: "600", letterSpacing: "-0.005em", opacity: "0.72" }}><span style={{ width: "7px", height: "7px", background: "#FBAE4F", borderRadius: "50%" }} />In the field</div>
             <h2 className="alm-in" style={{ margin: "22px 0 0", maxWidth: "980px", fontSize: "clamp(38px, 5.2vw, 80px)", lineHeight: "1", letterSpacing: "-0.035em", fontWeight: "600" }}>Owners and operators<br /><span style={{ color: "#FBAE4F" }}>already on board.</span></h2>
@@ -338,37 +342,37 @@ export default class RealEstatePage extends React.Component {
           </div>
         </section>
         {/* THREE STREAMS */}
-        <section id="streams" style={{ padding: "128px 28px" }}>
+        <section className="alm-pt alm-pb" id="streams" style={{ padding: "128px 28px" }}>
           <div style={{ maxWidth: "1360px", margin: "0 auto" }}>
             <h2 className="alm-in" style={{ margin: "0", maxWidth: "1000px", fontSize: "clamp(38px, 5.2vw, 80px)", lineHeight: "1", letterSpacing: "-0.035em", fontWeight: "600" }}>Three new revenue streams from the same space.</h2>
-            <div style={{ marginTop: "56px", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "16px" }}>
-              <div className="alm-tile alm-in" style={{ borderRadius: "16px", overflow: "hidden", background: "#FFFFFF" }}>
-                <div style={{ height: "320px", overflow: "hidden" }}>
+            <div style={{ marginTop: "56px", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 300px), 1fr))", gap: "16px" }}>
+              <div className="alm-tile alm-in m-re-stream" style={{ borderRadius: "16px", overflow: "hidden", background: "#FFFFFF" }}>
+                <div className="m-re-stream-img" style={{ height: "320px", overflow: "hidden" }}>
                   <img src="/media/photos/ddrb-connecticut.webp?v=088e4141" alt="A Lot Media Digital Dynamic Rate Board installed in Connecticut" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "50% 34%", display: "block" }} loading="lazy" decoding="async" />
                 </div>
-                <div style={{ padding: "36px" }}>
+                <div className="m-re-stream-body" style={{ padding: "36px" }}>
                   <div style={{ fontSize: "12px", fontWeight: "600", letterSpacing: "0.14em", color: "#8A5300" }}>STREAM 01</div>
                   <div style={{ marginTop: "12px", fontSize: "30px", fontWeight: "650", lineHeight: "1.08", letterSpacing: "-0.02em" }}>More from every customer</div>
                   <p style={{ margin: "14px 0 0", fontSize: "16px", lineHeight: "1.6", fontWeight: "400", color: "#4E586A" }}>Demand-based pricing captures what each space is worth at that moment — busy weekdays, game nights, holiday weekends.</p>
                 </div>
               </div>
-              <div className="alm-tile alm-in" style={{ borderRadius: "16px", overflow: "hidden", background: "#FFFFFF" }}>
-                <div style={{ height: "320px", overflow: "hidden" }}>
+              <div className="alm-tile alm-in m-re-stream" style={{ borderRadius: "16px", overflow: "hidden", background: "#FFFFFF" }}>
+                <div className="m-re-stream-img" style={{ height: "320px", overflow: "hidden" }}>
                   <img src="/media/photos/hartford-healthcare-entrance-wallscape.webp?v=04dc2f7b" alt="Hartford HealthCare wallscape above a garage entrance" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} loading="lazy" decoding="async" />
                 </div>
-                <div style={{ padding: "36px" }}>
+                <div className="m-re-stream-body" style={{ padding: "36px" }}>
                   <div style={{ fontSize: "12px", fontWeight: "600", letterSpacing: "0.14em", color: "#8A5300" }}>STREAM 02</div>
                   <div style={{ marginTop: "12px", fontSize: "30px", fontWeight: "650", lineHeight: "1.08", letterSpacing: "-0.02em" }}>A new advertising line</div>
                   <p style={{ margin: "14px 0 0", fontSize: "16px", lineHeight: "1.6", fontWeight: "400", color: "#4E586A" }}>Screens, walls, gate arms and elevators sold to national and local brands — you receive a percentage of the gross.</p>
                 </div>
               </div>
-              <div className="alm-tile alm-in" style={{ position: "relative", borderRadius: "16px", overflow: "hidden", background: "#0B1220", color: "#FFFFFF", boxShadow: "inset 0 0 0 3px #FBAE4F" }}>
-                <div style={{ position: "relative", height: "320px", overflow: "hidden" }}>
+              <div className="alm-tile alm-in m-re-stream" style={{ position: "relative", borderRadius: "16px", overflow: "hidden", background: "#0B1220", color: "#FFFFFF", boxShadow: "inset 0 0 0 3px #FBAE4F" }}>
+                <div className="m-re-stream-img" style={{ position: "relative", height: "320px", overflow: "hidden" }}>
                   <img src="/media/photos/stock-car-event.webp?v=d303b124" alt="Crowd filming a car at a live automotive event at night (stock photo)" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "55% 50%", display: "block" }} loading="lazy" decoding="async" />
                   <span style={{ position: "absolute", top: "14px", left: "14px", padding: "6px 11px", borderRadius: "999px", background: "#FBAE4F", color: "#0B1220", fontSize: "11px", fontWeight: "600", letterSpacing: "0.1em" }}>NEW</span>
                   <span style={{ position: "absolute", right: "12px", bottom: "12px", fontFamily: "'Geist Mono', monospace", fontSize: "10px", letterSpacing: "0.1em", color: "rgba(255,255,255,0.7)" }}>STOCK PHOTO</span>
                 </div>
-                <div style={{ padding: "36px" }}>
+                <div className="m-re-stream-body" style={{ padding: "36px" }}>
                   <div style={{ fontSize: "12px", fontWeight: "600", letterSpacing: "0.14em", color: "#FBAE4F" }}>STREAM 03</div>
                   <div style={{ marginTop: "12px", fontSize: "30px", fontWeight: "650", lineHeight: "1.08", letterSpacing: "-0.02em" }}>Your space as a venue</div>
                   <p style={{ margin: "14px 0 0", fontSize: "16px", lineHeight: "1.6", fontWeight: "400", color: "#C9D0DB" }}>Lots, garages and quiet levels booked for brand activations, VIP parking and shuttles, and game-day takeovers — off-peak space turned into event revenue. <A href="/events" style={{ color: "#FBAE4F", fontWeight: "600" }}>How events work →</A></p>
@@ -378,43 +382,43 @@ export default class RealEstatePage extends React.Component {
           </div>
         </section>
         {/* PROPERTY TYPES */}
-        <section style={{ padding: "0 28px 128px" }}>
+        <section className="alm-pb" style={{ padding: "0 28px 128px" }}>
           <div style={{ maxWidth: "1360px", margin: "0 auto" }}>
             <div style={{ display: "flex", flexWrap: "wrap", gap: "24px 64px", alignItems: "flex-end", justifyContent: "space-between" }}>
               <h2 className="alm-in" style={{ margin: "0", maxWidth: "900px", fontSize: "clamp(32px, 4vw, 56px)", lineHeight: "0.95", letterSpacing: "-0.035em", fontWeight: "600" }}>Built for every kind of property.</h2>
             </div>
-            <div style={{ marginTop: "40px", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: "12px" }}>
-              <div className="alm-tile alm-in" style={{ position: "relative", height: "300px", borderRadius: "16px", overflow: "hidden", background: "#0B1220", color: "#FFFFFF" }}>
+            <div className="m-re-types" style={{ marginTop: "40px", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: "12px" }}>
+              <div className="alm-tile alm-in m-re-type-img" style={{ position: "relative", height: "300px", borderRadius: "16px", overflow: "hidden", background: "#0B1220", color: "#FFFFFF" }}>
                 <img src="/media/photos/checkerboard-lobby-panel.webp?v=18fa5976" alt="Garage lobby with checkerboard floor and a digital panel" style={{ position: "absolute", inset: "0", width: "100%", height: "100%", objectFit: "cover" }} loading="lazy" decoding="async" />
                 <div style={{ position: "absolute", inset: "0", background: "linear-gradient(180deg, rgba(11,18,32,0) 40%, rgba(11,18,32,0.88) 100%)" }} />
                 <div style={{ position: "absolute", left: "22px", bottom: "20px", fontSize: "22px", fontWeight: "650", letterSpacing: "-0.02em" }}>Class A offices</div>
               </div>
-              <div className="alm-tile alm-in" style={{ position: "relative", height: "300px", borderRadius: "16px", overflow: "hidden", background: "#0B1220", color: "#FFFFFF" }}>
+              <div className="alm-tile alm-in m-re-type-img" style={{ position: "relative", height: "300px", borderRadius: "16px", overflow: "hidden", background: "#0B1220", color: "#FFFFFF" }}>
                 <img src="/media/photos/glass-lobby-panel.webp?v=6d8d0735" alt="Glass-walled garage lobby with a digital panel" style={{ position: "absolute", inset: "0", width: "100%", height: "100%", objectFit: "cover" }} loading="lazy" decoding="async" />
                 <div style={{ position: "absolute", inset: "0", background: "linear-gradient(180deg, rgba(11,18,32,0) 40%, rgba(11,18,32,0.88) 100%)" }} />
                 <div style={{ position: "absolute", left: "22px", bottom: "20px", fontSize: "22px", fontWeight: "650", letterSpacing: "-0.02em" }}>Residential buildings</div>
               </div>
-              <div style={{ height: "300px", borderRadius: "16px", background: "#344567", color: "#FFFFFF", padding: "24px", boxSizing: "border-box", display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
+              <div className="m-re-type-ico" style={{ height: "300px", borderRadius: "16px", background: "#344567", color: "#FFFFFF", padding: "24px", boxSizing: "border-box", display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
                 <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#FBAE4F" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                   <path d="M3 21h18M5 21V8l7-4 7 4v13M9 21v-6h6v6" />
                 </svg>
                 <div style={{ fontSize: "22px", fontWeight: "650", letterSpacing: "-0.02em" }}>Shopping malls</div>
               </div>
-              <div style={{ height: "300px", borderRadius: "16px", background: "#0B1220", color: "#FFFFFF", padding: "24px", boxSizing: "border-box", display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
+              <div className="m-re-type-ico" style={{ height: "300px", borderRadius: "16px", background: "#0B1220", color: "#FFFFFF", padding: "24px", boxSizing: "border-box", display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
                 <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#FBAE4F" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                   <path d="M3 9a2 2 0 0 0 0 4v4h18v-4a2 2 0 0 1 0-4V5H3v4Z" />
                   <path d="M14 5v12" />
                 </svg>
                 <div style={{ fontSize: "22px", fontWeight: "650", letterSpacing: "-0.02em" }}>Theaters, museums &amp; restaurants</div>
               </div>
-              <div style={{ height: "300px", borderRadius: "16px", background: "#0B1220", color: "#FFFFFF", padding: "24px", boxSizing: "border-box", display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
+              <div className="m-re-type-ico" style={{ height: "300px", borderRadius: "16px", background: "#0B1220", color: "#FFFFFF", padding: "24px", boxSizing: "border-box", display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
                 <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#FBAE4F" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                   <path d="M2 9l10-5 10 5-10 5L2 9Z" />
                   <path d="M6 11v5c3 2 9 2 12 0v-5" />
                 </svg>
                 <div style={{ fontSize: "22px", fontWeight: "650", letterSpacing: "-0.02em" }}>Universities</div>
               </div>
-              <div style={{ height: "300px", borderRadius: "16px", background: "#FBAE4F", color: "#0B1220", padding: "24px", boxSizing: "border-box", display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
+              <div className="m-re-type-ico" style={{ height: "300px", borderRadius: "16px", background: "#FBAE4F", color: "#0B1220", padding: "24px", boxSizing: "border-box", display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
                 <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#0B1220" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                   <rect x="3" y="5" width="18" height="14" rx="2" />
                   <path d="M7 15V9h4a2 2 0 0 1 0 4H7" />
@@ -425,10 +429,10 @@ export default class RealEstatePage extends React.Component {
           </div>
         </section>
         {/* RESPONSIBILITIES */}
-        <section style={{ padding: "128px 28px", background: "#344567", color: "#FFFFFF" }}>
+        <section className="alm-pt alm-pb" style={{ padding: "128px 28px", background: "#344567", color: "#FFFFFF" }}>
           <div style={{ maxWidth: "1360px", margin: "0 auto" }}>
             <h2 className="alm-in" style={{ margin: "0", maxWidth: "900px", fontSize: "clamp(38px, 5.2vw, 80px)", lineHeight: "1", letterSpacing: "-0.035em", fontWeight: "600" }}>Who does what.</h2>
-            <div style={{ marginTop: "56px", overflowX: "auto" }}>
+            <div className="m-re-duties-tbl" style={{ marginTop: "56px", overflowX: "auto" }}>
               <table style={{ width: "100%", minWidth: "720px", borderCollapse: "collapse", fontSize: "16px" }}>
                 <thead>
                   <tr style={{ textAlign: "left", borderBottom: "3px solid #FBAE4F" }}>
@@ -450,10 +454,23 @@ export default class RealEstatePage extends React.Component {
                 </tbody>
               </table>
             </div>
+            <ul className="m-re-duties" style={{ display: "none", margin: "32px 0 0", padding: "0", listStyle: "none", borderTop: "3px solid #FBAE4F" }}>
+              {(v.duties || []).map((d, dI) => (
+                <Fragment key={dI}>
+                  <li style={{ padding: "15px 0 14px", borderBottom: "1px solid rgba(255,255,255,0.16)" }}>
+                    <div style={{ fontSize: "16px", lineHeight: "1.4", fontWeight: "700" }}>{d.label}</div>
+                    <div style={{ marginTop: "6px", display: "flex", alignItems: "center", gap: "28px", fontSize: "11px", fontWeight: "600", letterSpacing: "0.14em" }}>
+                      <span style={{ minWidth: "64px", display: "inline-flex", alignItems: "center", gap: "8px", color: d.youFg }}>YOU<span style={{ fontSize: "17px", fontWeight: "700", letterSpacing: "0" }}>{d.you}</span></span>
+                      <span style={{ display: "inline-flex", alignItems: "center", gap: "8px", color: d.almFg }}>A LOT MEDIA<span style={{ fontSize: "17px", fontWeight: "700", letterSpacing: "0" }}>{d.alm}</span></span>
+                    </div>
+                  </li>
+                </Fragment>
+              ))}
+            </ul>
           </div>
         </section>
         {/* FAQ */}
-        <section style={{ padding: "128px 28px" }}>
+        <section className="alm-pt alm-pb" style={{ padding: "128px 28px" }}>
           <div style={{ maxWidth: "1360px", margin: "0 auto", display: "flex", flexWrap: "wrap", gap: "48px 64px" }}>
             <h2 className="alm-in" style={{ flex: "1 1 360px", margin: "0", fontSize: "clamp(38px, 5.2vw, 80px)", lineHeight: "1", letterSpacing: "-0.035em", fontWeight: "600" }}>Owner questions.</h2>
             <div style={{ flex: "2 1 560px", borderTop: "3px solid #0B1220" }}>
@@ -466,7 +483,7 @@ export default class RealEstatePage extends React.Component {
                     </button>
                     {q.open ? (
                       <>
-                        <p style={{ margin: "0", padding: "0 60px 24px 0", fontSize: "16px", lineHeight: "1.65", fontWeight: "400", color: "#4E586A" }}>{q.a}</p>
+                        <p className="m-re-faq-a" style={{ margin: "0", padding: "0 60px 24px 0", fontSize: "16px", lineHeight: "1.65", fontWeight: "400", color: "#4E586A" }}>{q.a}</p>
                       </>
                     ) : null}
                   </div>
@@ -476,14 +493,14 @@ export default class RealEstatePage extends React.Component {
           </div>
         </section>
         {/* ASSESSMENT */}
-        <section id="assess" style={{ padding: "128px 28px", background: "#0B1220", color: "#FFFFFF" }}>
-          <div style={{ maxWidth: "1360px", margin: "0 auto", display: "flex", flexWrap: "wrap", gap: "64px" }}>
+        <section className="alm-pt alm-pb" id="assess" style={{ padding: "128px 28px", background: "#0B1220", color: "#FFFFFF" }}>
+          <div className="m-re-assess" style={{ maxWidth: "1360px", margin: "0 auto", display: "flex", flexWrap: "wrap", gap: "64px" }}>
             <div style={{ flex: "1 1 380px" }}>
               <div style={{ display: "flex", alignItems: "center", gap: "10px", fontSize: "15px", fontWeight: "600", letterSpacing: "-0.005em", opacity: "0.72" }}><span style={{ width: "7px", height: "7px", background: "#FBAE4F", borderRadius: "50%" }} />Free assessment</div>
               <h2 className="alm-in" style={{ margin: "22px 0 0", fontSize: "clamp(38px, 5vw, 72px)", lineHeight: "1", letterSpacing: "-0.035em", fontWeight: "600" }}>What could your property earn?</h2>
               <p style={{ margin: "24px 0 0", fontSize: "18px", lineHeight: "1.6", fontWeight: "400", color: "#C9D0DB" }}>Tell us about the location. We’ll come back with the placements it supports and what it could add to your bottom line.</p>
             </div>
-            <div style={{ flex: "999 1 560px", minWidth: "0", padding: "40px", borderRadius: "18px", background: "#FFFFFF", color: "#0B1220" }}>
+            <div className="m-re-form" style={{ flex: "999 1 560px", minWidth: "0", padding: "40px", borderRadius: "18px", background: "#FFFFFF", color: "#0B1220" }}>
               {v.sent ? (
                 <>
                   <div style={{ minHeight: "420px", display: "flex", flexDirection: "column", justifyContent: "center", gap: "16px" }}>
