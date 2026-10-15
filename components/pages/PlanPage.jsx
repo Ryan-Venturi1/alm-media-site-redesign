@@ -46,7 +46,7 @@ export default class PlanPage extends React.Component {
       ['Rate boards', 'Digital · custom slot length', '/media/photos/ddrb-connecticut.webp?v=088e4141', '50% 34%', true],
       ['Digital panels', 'Digital · interactive', '/media/photos/blank-street-interactive-panel.webp?v=6f1265ae', '30% 50%', true],
       ['Wallscapes', 'Static · per location', '/media/photos/hartford-healthcare-entrance-wallscape.webp?v=04dc2f7b', '50% 40%'],
-      ['Elevator wraps', 'Static · per bank', '/media/photos/hartford-healthcare-elevator-wraps.webp?v=20725f9d', '50% 50%'],
+      ['Elevator wraps', 'Static · per bank', '/media/photos/hartford-healthcare-elevator-wraps.webp?v=30b1891b', '50% 50%'],
       ['Gate arms', 'Static · entry & exit', '/media/renders/gate-arm-wrap.webp?v=1dedea94', '50% 50%'],
       ['Tickets', 'Static · branded tickets', '/media/renders/branded-ticket.webp?v=6c7f672f', '62% 50%']
     ];

@@ -24,7 +24,7 @@ export default class FormatsPage extends React.Component {
         specs: [['MARKETS', 'CT · LA · Chicago · Miami · Austin · Boston'], ['SIZE', 'Custom to each wall'], ['SCALE', 'One wall to every level'], ['PRODUCTION', 'Design, print & install']],
         cta: 'Add to plan', ctaHref: '/plan', ss: 'REQUEST ONLINE' },
       { kind: 'elevator', short: 'ELEVATOR WRAPS', name: 'Elevator wraps', type: 'STATIC', stage: '03 · WALK', stageName: 'Walk', best: 'Health, finance, local offers',
-        img: '/media/photos/hartford-healthcare-elevator-wraps.webp?v=20725f9d', pos: '50% 50%', alt: 'Hartford HealthCare LifeStar elevator door wraps', caption: 'HARTFORD HEALTHCARE · ELEVATOR WRAPS',
+        img: '/media/photos/hartford-healthcare-elevator-wraps.webp?v=30b1891b', pos: '50% 50%', alt: 'Hartford HealthCare LifeStar elevator door wraps', caption: 'HARTFORD HEALTHCARE · ELEVATOR WRAPS',
         desc: 'Branded elevator doors at the pause between the car and the destination. A captive moment, every single ride.',
         specs: [['MARKETS', 'CT · LA · Chicago · Miami · Austin · Boston'], ['SIZE', 'Custom to each elevator bank'], ['ON THE NETWORK', 'Hartford HealthCare · Getaround'], ['PRODUCTION', 'Design, print & install']],
         cta: 'Add to plan', ctaHref: '/plan', ss: 'REQUEST ONLINE' },

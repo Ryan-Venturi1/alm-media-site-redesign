@@ -88,7 +88,7 @@ export default class HomePage extends React.Component {
       { name: 'Rate boards', biz: 'DIGITAL', stage: '02 · PARK', img: '/media/photos/ddrb-connecticut.webp?v=088e4141', pos: '50% 35%', href: '/formats#ddrb', desc: 'Live pricing up top, full-motion advertising below.', alt: 'A Lot Media digital rate board' },
       { name: 'Wallscapes', biz: 'STATIC', stage: '02 · PARK', img: '/media/photos/hartford-healthcare-wallscape.webp?v=0b3f98d9', pos: '50% 50%', href: '/formats#wallscape', desc: 'Large-format walls drivers face as they park.', alt: 'Hartford HealthCare wallscape' },
       { name: 'Digital panels', biz: 'DIGITAL', stage: '03 · WALK', img: '/media/photos/blank-street-interactive-panel.webp?v=6f1265ae', pos: '35% 50%', href: '/formats#panel', desc: 'Interactive screens — tap, scan and redeem.', alt: 'Man tapping his phone on an interactive digital panel' },
-      { name: 'Elevator wraps', biz: 'STATIC', stage: '03 · WALK', img: '/media/photos/hartford-healthcare-elevator-wraps.webp?v=20725f9d', pos: '50% 50%', href: '/formats#elevator', desc: 'Branded doors at the pause before the destination.', alt: 'Elevator door wraps' },
+      { name: 'Elevator wraps', biz: 'STATIC', stage: '03 · WALK', img: '/media/photos/hartford-healthcare-elevator-wraps.webp?v=30b1891b', pos: '50% 50%', href: '/formats#elevator', desc: 'Branded doors at the pause before the destination.', alt: 'Elevator door wraps' },
       { name: 'Events & venues', biz: 'EVENTS', stage: '04 · ACTIVATE', img: '/media/photos/stock-car-event.webp?v=d303b124', pos: '55% 50%', href: '/events', desc: 'Activations, VIP park & shuttle and game-day packages.', alt: 'Crowd filming a car at a live automotive event at night (stock photo)', stock: true }
     ];
     var pillars = [
@@ -531,7 +531,7 @@ export default class HomePage extends React.Component {
             </div>
             <div style={{ marginTop: "56px", display: "flex", flexWrap: "wrap", gap: "16px" }}>
               <figure className="alm-tile alm-wipe m-home-place" style={{ margin: "0", flex: "2 1 640px", height: "560px", position: "relative", overflow: "hidden", borderRadius: "16px", background: "#0B1220" }}>
-                <img className="m-home-lucid" src="/media/photos/lucid-digital-panel.webp?v=0437d0e2" alt="Travelers with luggage walking past a Lucid ad on an A Lot Media digital panel in a parking garage" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "40% 50%", display: "block" }} loading="lazy" decoding="async" />
+                <img className="m-home-lucid" src="/media/photos/lucid-digital-panel.webp?v=9b37ed49" alt="Travelers with luggage walking past a Lucid ad on an A Lot Media digital panel in a parking garage" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "40% 50%", display: "block" }} loading="lazy" decoding="async" />
                 <figcaption style={{ position: "absolute", left: "0", right: "0", bottom: "0", padding: "80px 28px 24px", background: "linear-gradient(180deg, rgba(11,18,32,0) 0%, rgba(11,18,32,0.82) 100%)", color: "#FFFFFF" }}>
                   <div style={{ display: "inline-flex", alignItems: "center", gap: "10px", marginBottom: "10px", fontSize: "15px", fontWeight: "600", letterSpacing: "-0.005em", opacity: "0.72" }}><span style={{ width: "7px", height: "7px", background: "#8FDCE8", borderRadius: "50%" }} />Digital</div>
                   <div style={{ fontSize: "22px", fontWeight: "650", letterSpacing: "-0.02em" }}>Lucid</div>
@@ -539,11 +539,11 @@ export default class HomePage extends React.Component {
                 </figcaption>
               </figure>
               <figure className="alm-tile alm-wipe m-home-place" style={{ margin: "0", flex: "1 1 320px", height: "560px", position: "relative", overflow: "hidden", borderRadius: "16px", background: "#0B1220" }}>
-                <img src="/media/photos/united-digital-panel.webp?v=f8d1849b" alt="United for Business ad on an A Lot Media digital panel beside a white sports car" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "30% 50%", display: "block" }} loading="lazy" decoding="async" />
+                <img src="/media/photos/united-digital-panel.webp?v=366cb758" alt="Commuters walking past a United for Business ad on an A Lot Media digital panel in a parking garage" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "19% 50%", display: "block" }} loading="lazy" decoding="async" />
                 <figcaption style={{ position: "absolute", left: "0", right: "0", bottom: "0", padding: "80px 28px 24px", background: "linear-gradient(180deg, rgba(11,18,32,0) 0%, rgba(11,18,32,0.82) 100%)", color: "#FFFFFF" }}>
                   <div style={{ display: "inline-flex", alignItems: "center", gap: "10px", marginBottom: "10px", fontSize: "15px", fontWeight: "600", letterSpacing: "-0.005em", opacity: "0.72" }}><span style={{ width: "7px", height: "7px", background: "#8FDCE8", borderRadius: "50%" }} />Digital</div>
                   <div style={{ fontSize: "22px", fontWeight: "650", letterSpacing: "-0.02em" }}>United</div>
-                  <div style={{ marginTop: "4px", fontSize: "14px", fontWeight: "600", color: "#D5DAE3" }}>Digital panel</div>
+                  <div style={{ marginTop: "4px", fontSize: "14px", fontWeight: "600", color: "#D5DAE3" }}>Digital panel · photo edited</div>
                 </figcaption>
               </figure>
               <figure className="alm-tile alm-wipe m-home-place" style={{ margin: "0", flex: "1 1 320px", height: "420px", position: "relative", overflow: "hidden", borderRadius: "16px", background: "#0B1220" }}>
@@ -555,11 +555,11 @@ export default class HomePage extends React.Component {
                 </figcaption>
               </figure>
               <figure className="alm-tile alm-wipe m-home-place" style={{ margin: "0", flex: "1 1 320px", height: "420px", position: "relative", overflow: "hidden", borderRadius: "16px", background: "#0B1220" }}>
-                <img src="/media/photos/a-beautiful-noise-panel.webp?v=2610293c" alt="A Beautiful Noise Broadway musical ad on a digital panel next to the garage cashier" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "50% 40%", display: "block" }} loading="lazy" decoding="async" />
+                <img src="/media/photos/a-beautiful-noise-panel.webp?v=d1e2b679" alt="A Beautiful Noise Broadway musical ad on a digital panel beside the garage cashier booth" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "93% 40%", display: "block" }} loading="lazy" decoding="async" />
                 <figcaption style={{ position: "absolute", left: "0", right: "0", bottom: "0", padding: "80px 28px 24px", background: "linear-gradient(180deg, rgba(11,18,32,0) 0%, rgba(11,18,32,0.82) 100%)", color: "#FFFFFF" }}>
                   <div style={{ display: "inline-flex", alignItems: "center", gap: "10px", marginBottom: "10px", fontSize: "15px", fontWeight: "600", letterSpacing: "-0.005em", opacity: "0.72" }}><span style={{ width: "7px", height: "7px", background: "#8FDCE8", borderRadius: "50%" }} />Digital</div>
                   <div style={{ fontSize: "22px", fontWeight: "650", letterSpacing: "-0.02em" }}>A Beautiful Noise</div>
-                  <div style={{ marginTop: "4px", fontSize: "14px", fontWeight: "600", color: "#D5DAE3" }}>Digital panel · Broadway</div>
+                  <div style={{ marginTop: "4px", fontSize: "14px", fontWeight: "600", color: "#D5DAE3" }}>Digital panel · Broadway · photo edited</div>
                 </figcaption>
               </figure>
               <figure className="alm-tile alm-wipe m-home-place" style={{ margin: "0", flex: "1 1 320px", height: "420px", position: "relative", overflow: "hidden", borderRadius: "16px", background: "#0B1220" }}>
@@ -571,7 +571,7 @@ export default class HomePage extends React.Component {
                 </figcaption>
               </figure>
               <figure className="alm-tile alm-wipe m-home-place" style={{ margin: "0", flex: "1 1 320px", height: "560px", position: "relative", overflow: "hidden", borderRadius: "16px", background: "#0B1220" }}>
-                <img src="/media/photos/hartford-healthcare-elevator-wraps.webp?v=20725f9d" alt="Hartford HealthCare LifeStar helicopter elevator door wraps" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} loading="lazy" decoding="async" />
+                <img src="/media/photos/hartford-healthcare-elevator-wraps.webp?v=30b1891b" alt="Hartford HealthCare LifeStar helicopter elevator door wraps" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} loading="lazy" decoding="async" />
                 <figcaption style={{ position: "absolute", left: "0", right: "0", bottom: "0", padding: "80px 28px 24px", background: "linear-gradient(180deg, rgba(11,18,32,0) 0%, rgba(11,18,32,0.82) 100%)", color: "#FFFFFF" }}>
                   <div style={{ display: "inline-flex", alignItems: "center", gap: "10px", marginBottom: "10px", fontSize: "15px", fontWeight: "600", letterSpacing: "-0.005em", opacity: "0.72" }}><span style={{ width: "7px", height: "7px", background: "#FFFFFF", borderRadius: "50%" }} />Static</div>
                   <div style={{ fontSize: "22px", fontWeight: "650", letterSpacing: "-0.02em" }}>Hartford HealthCare</div>
@@ -804,7 +804,7 @@ export default class HomePage extends React.Component {
                     </div>
                   </div>
                   <div style={{ borderRadius: "18px", overflow: "hidden", border: "1.5px solid #E3E5EA" }}>
-                    <img src="/media/photos/hartford-healthcare-elevator-wraps.webp?v=20725f9d" alt="" style={{ width: "100%", height: "90px", objectFit: "cover", display: "block" }} loading="lazy" decoding="async" />
+                    <img src="/media/photos/hartford-healthcare-elevator-wraps.webp?v=30b1891b" alt="" style={{ width: "100%", height: "90px", objectFit: "cover", display: "block" }} loading="lazy" decoding="async" />
                     <div style={{ padding: "10px 12px" }}>
                       <div style={{ fontSize: "14px", fontWeight: "600" }}>Elevator wraps</div>
                       <div style={{ fontSize: "12px", color: "#4E586A" }}>Static</div>
