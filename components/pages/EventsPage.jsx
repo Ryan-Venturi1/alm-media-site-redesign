@@ -202,7 +202,7 @@ export default class EventsPage extends React.Component {
                 </figure>
                 <div className="alm-in" style={{ flex: "1 1 400px", minWidth: "0", display: "flex", flexDirection: "column", gap: "20px" }}>
                   <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
-                    <span style={{ fontFamily: "'Geist Mono', monospace", fontSize: "13px", color: "#8A5300" }}>{m.no}</span>
+                    <span style={{ fontFamily: "'Geist Mono', monospace", fontSize: "13px", color: "#C2630A" }}>{m.no}</span>
                     <span style={{ height: "1px", flex: "0 0 48px", background: "#0B1220" }} />
                     <span style={{ fontSize: "12px", fontWeight: "600", letterSpacing: "0.14em", color: "#4E586A" }}>{m.kicker}</span>
                   </div>
@@ -352,7 +352,7 @@ export default class EventsPage extends React.Component {
                     </div>
                     <div style={{ padding: "22px 28px 28px" }}>
                       <div style={{ fontSize: "22px", fontWeight: "650", letterSpacing: "-0.02em" }}>{p.name}</div>
-                      <div style={{ marginTop: "8px", fontSize: "14px", fontWeight: "600", color: "#8A5300" }}>{p.where}</div>
+                      <div style={{ marginTop: "8px", fontSize: "14px", fontWeight: "600", color: "#C2630A" }}>{p.where}</div>
                       <p style={{ margin: "12px 0 0", fontSize: "15px", lineHeight: "1.6", fontWeight: "400", color: "#4E586A" }}>{p.desc}</p>
                     </div>
                   </article>

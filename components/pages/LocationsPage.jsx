@@ -179,7 +179,7 @@ export default class LocationsPage extends React.Component {
                       <div style={{ marginTop: "4px", fontSize: "28px", fontWeight: "650", lineHeight: "1.08", letterSpacing: "-0.02em" }}>{m.name}</div>
                       {m.office ? (
                         <>
-                          <div style={{ marginTop: "8px", fontSize: "13px", fontWeight: "700", color: "#8A5300" }}>A LOT MEDIA OFFICE · {m.address}</div>
+                          <div style={{ marginTop: "8px", fontSize: "13px", fontWeight: "700", color: "#C2630A" }}>A LOT MEDIA OFFICE · {m.address}</div>
                         </>
                       ) : null}
                     </div>

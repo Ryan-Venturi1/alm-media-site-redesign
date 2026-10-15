@@ -111,7 +111,7 @@ export default class InvestorsPage extends React.Component {
         <section className="alm-pt" style={{ padding: "140px 28px 40px" }}>
           <div style={{ maxWidth: "1240px", margin: "0 auto" }}>
             <div className="m-inv-opp-head" style={{ textAlign: "center" }}>
-              <div style={{ display: "inline-flex", alignItems: "center", gap: "10px", fontSize: "17px", fontWeight: "600", letterSpacing: "-0.01em", color: "#A85C00" }}><span style={{ width: "7px", height: "7px", background: "#FBAE4F", borderRadius: "50%" }} />The opportunity</div>
+              <div style={{ display: "inline-flex", alignItems: "center", gap: "10px", fontSize: "17px", fontWeight: "600", letterSpacing: "-0.01em", color: "#C2630A" }}><span style={{ width: "7px", height: "7px", background: "#FBAE4F", borderRadius: "50%" }} />The opportunity</div>
               <h2 className="alm-in" style={{ margin: "16px auto 0", maxWidth: "960px", fontSize: "clamp(40px, 6vw, 88px)", lineHeight: "1", letterSpacing: "-0.04em", fontWeight: "600" }}>Every trip ends<br />in a parking space.</h2>
               <p className="alm-in m-inv-opp-p" style={{ margin: "24px auto 0", maxWidth: "680px", fontSize: "21px", lineHeight: "1.5", fontWeight: "400", color: "#5B6474" }}>Drivers spend up to ten minutes there — three million cars a day across our network. We’re turning that moment into a national media platform, starting with the screens already live.</p>
             </div>
@@ -402,7 +402,7 @@ export default class InvestorsPage extends React.Component {
                       <span aria-hidden="true" style={{ flex: "0 0 auto", width: "64px", height: "64px", borderRadius: "50%", background: "#0B1220", color: "#FBAE4F", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "20px", fontWeight: "700", letterSpacing: "0.02em" }}>{p.ini}</span>
                       <div>
                         <div style={{ fontSize: "20px", fontWeight: "650", letterSpacing: "-0.02em" }}>{p.name}</div>
-                        <div style={{ marginTop: "4px", fontSize: "13px", fontWeight: "700", letterSpacing: "0.06em", color: "#8A5300" }}>{p.role}</div>
+                        <div style={{ marginTop: "4px", fontSize: "13px", fontWeight: "700", letterSpacing: "0.06em", color: "#C2630A" }}>{p.role}</div>
                       </div>
                     </div>
                     <p style={{ margin: "0", fontSize: "15px", lineHeight: "1.6", fontWeight: "400", color: "#4E586A" }}>{p.bio}</p>

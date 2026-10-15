@@ -41,7 +41,7 @@ export default class AdvertisersPage extends React.Component {
       { left: 97, time: '10:00', label: 'Exit gate' }
     ].map(function (p, i) {
       var hit = pct >= p.left - 1;
-      return { left: p.left, top: (3 + i * 94 / 6).toFixed(2), time: p.time, label: p.label, dot: hit ? '#FBAE4F' : '#C9CDD6', labelColor: hit ? '#0B1220' : '#8B95A7', timeColor: hit ? '#8A5300' : '#8B95A7' };
+      return { left: p.left, top: (3 + i * 94 / 6).toFixed(2), time: p.time, label: p.label, dot: hit ? '#FBAE4F' : '#C9CDD6', labelColor: hit ? '#0B1220' : '#8B95A7', timeColor: hit ? '#C2630A' : '#8B95A7' };
     });
     // phone timeline: rows are evenly spaced, so map progress onto them stop by stop
     var knots = [[0, 0]].concat(pts.map(function (p) { return [p.left, +p.top]; }), [[100, 100]]);

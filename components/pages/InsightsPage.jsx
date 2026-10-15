@@ -125,7 +125,7 @@ export default class InsightsPage extends React.Component {
                       <img src={p.img} alt="" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: p.pos, display: "block" }} loading="lazy" decoding="async" />
                     </div>
                     <div className="m-ins-posttext" style={{ padding: "24px 26px 28px", display: "flex", flexDirection: "column", gap: "10px", flex: "1" }}>
-                      <div style={{ fontSize: "11px", fontWeight: "600", letterSpacing: "0.14em", color: "#8A5300" }}>{p.cat}</div>
+                      <div style={{ fontSize: "11px", fontWeight: "600", letterSpacing: "0.14em", color: "#C2630A" }}>{p.cat}</div>
                       <div className="m-ins-posth" style={{ fontSize: "21px", fontWeight: "650", lineHeight: "1.1", letterSpacing: "-0.02em" }}>{p.title}</div>
                       <div style={{ marginTop: "auto", paddingTop: "8px", fontSize: "12px", fontWeight: "700", color: "#4E586A" }}>{p.meta}</div>
                     </div>
@@ -138,7 +138,7 @@ export default class InsightsPage extends React.Component {
               {(v.archive || []).map((a, aI) => (
                 <Fragment key={aI}>
                   <li style={{ borderBottom: "1px solid rgba(11,18,32,0.14)" }}>
-                    <A className="alm-link" href={a.href} style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: "16px", minHeight: "64px", padding: "14px 0", fontSize: "16px", fontWeight: "600" }}>{a.title} <span className="alm-arrow" style={{ flex: "0 0 auto", display: "inline-block", color: "#8A5300" }}>→</span></A>
+                    <A className="alm-link" href={a.href} style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: "16px", minHeight: "64px", padding: "14px 0", fontSize: "16px", fontWeight: "600" }}>{a.title} <span className="alm-arrow" style={{ flex: "0 0 auto", display: "inline-block", color: "#C2630A" }}>→</span></A>
                   </li>
                 </Fragment>
               ))}

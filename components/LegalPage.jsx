@@ -46,7 +46,7 @@ export default function LegalPage({ kicker, title, sections, other }) {
               ))}
             </ol>
             {other ? (
-              <a href={other.href} style={{ display: 'inline-block', marginTop: '24px', fontSize: '14px', fontWeight: 600, color: '#8A5300', textDecoration: 'none' }}>
+              <a href={other.href} style={{ display: 'inline-block', marginTop: '24px', fontSize: '14px', fontWeight: 600, color: '#C2630A', textDecoration: 'none' }}>
                 {other.label} →
               </a>
             ) : null}

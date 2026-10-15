@@ -69,7 +69,7 @@ export default class PlanPage extends React.Component {
     var ds = function (d) { return isNaN(d.getTime()) ? '—' : mo[d.getMonth()] + ' ' + d.getDate(); };
     return {
       steps: labels.map(function (l, i) {
-        return { no: '0' + (i + 1), label: l, bar: i <= step ? '#FBAE4F' : '#D5DAE3', numColor: i <= step ? '#8A5300' : '#8B95A7', op: i === step ? 1 : 0.6, current: i === step ? 'step' : 'false', go: function () { self.setState({ step: i }); } };
+        return { no: '0' + (i + 1), label: l, bar: i <= step ? '#FBAE4F' : '#D5DAE3', numColor: i <= step ? '#C2630A' : '#8B95A7', op: i === step ? 1 : 0.6, current: i === step ? 'step' : 'false', go: function () { self.setState({ step: i }); } };
       }),
       is: is,
       markets: mlist.map(function (m) {

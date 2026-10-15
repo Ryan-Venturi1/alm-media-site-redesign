@@ -74,7 +74,7 @@ export default class Nav extends React.Component {
   render() {
     const v = this.renderVals() || {};
     return (
-      <header className="alm-nav-head" ref={v.headRef} style={{ fontFamily: "'Montserrat', system-ui, sans-serif", color: "#FFFFFF", background: "#070C17", WebkitFontSmoothing: "antialiased" }}>
+      <header className="alm-nav-head" ref={v.headRef} style={{ fontFamily: "'Montserrat', system-ui, sans-serif", color: "#FFFFFF", background: "#344567", WebkitFontSmoothing: "antialiased" }}>
         <div className="alm-nav-util" style={{ borderBottom: "1px solid rgba(255,255,255,0.06)" }}>
           <div style={{ maxWidth: "1360px", margin: "0 auto", padding: "0 28px", minHeight: "34px", display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "space-between", gap: "2px 24px", fontSize: "12px", fontWeight: "500" }}>
             <nav aria-label="Audience" style={{ display: "flex", gap: "22px", flexWrap: "wrap" }}>
@@ -91,7 +91,7 @@ export default class Nav extends React.Component {
             </div>
           </div>
         </div>
-        <div className="alm-nav-bar" ref={v.barRef} style={{ position: "relative", background: "rgba(11,18,32,0.92)", backdropFilter: "saturate(180%) blur(20px)", WebkitBackdropFilter: "saturate(180%) blur(20px)", borderBottom: "1px solid rgba(255,255,255,0.06)" }}>
+        <div className="alm-nav-bar" ref={v.barRef} style={{ position: "relative", background: "rgba(52,69,103,0.96)", backdropFilter: "saturate(180%) blur(20px)", WebkitBackdropFilter: "saturate(180%) blur(20px)", borderBottom: "1px solid rgba(255,255,255,0.06)" }}>
           <div style={{ maxWidth: "1360px", margin: "0 auto", padding: "0 28px", minHeight: "68px", display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "space-between", gap: "8px 28px" }}>
             <A href="/" aria-label="A Lot Media home" style={{ display: "inline-flex", padding: "14px 0" }}>
               <img src="/media/brand/alm-logo.png?v=6fceb514" alt="A Lot Media" style={{ height: "34px", width: "auto", display: "block" }} />
@@ -123,7 +123,7 @@ export default class Nav extends React.Component {
         </div>
         {v.menuOpen ? (
           <>
-            <div className="alm-msheet" role="dialog" aria-modal="true" aria-label="Menu" style={{ position: "fixed", inset: "0", zIndex: "3000", display: "flex", flexDirection: "column", background: "#070C17", color: "#FFFFFF", overflowY: "auto" }}>
+            <div className="alm-msheet" role="dialog" aria-modal="true" aria-label="Menu" style={{ position: "fixed", inset: "0", zIndex: "3000", display: "flex", flexDirection: "column", background: "#344567", color: "#FFFFFF", overflowY: "auto" }}>
               <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: "12px", minHeight: "68px", padding: "0 20px 0 28px", borderBottom: "1px solid rgba(255,255,255,0.08)" }}>
                 <A href="/" aria-label="A Lot Media home" onClick={v.closeMenu} style={{ display: "inline-flex", padding: "14px 0" }}>
                   <img src="/media/brand/alm-logo.png?v=6fceb514" alt="A Lot Media" style={{ height: "30px", width: "auto", display: "block" }} />

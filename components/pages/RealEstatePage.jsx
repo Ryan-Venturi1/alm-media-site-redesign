@@ -351,7 +351,7 @@ export default class RealEstatePage extends React.Component {
                   <img src="/media/photos/ddrb-connecticut.webp?v=088e4141" alt="A Lot Media Digital Dynamic Rate Board installed in Connecticut" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "50% 34%", display: "block" }} loading="lazy" decoding="async" />
                 </div>
                 <div className="m-re-stream-body" style={{ padding: "36px" }}>
-                  <div style={{ fontSize: "12px", fontWeight: "600", letterSpacing: "0.14em", color: "#8A5300" }}>STREAM 01</div>
+                  <div style={{ fontSize: "12px", fontWeight: "600", letterSpacing: "0.14em", color: "#C2630A" }}>STREAM 01</div>
                   <div style={{ marginTop: "12px", fontSize: "30px", fontWeight: "650", lineHeight: "1.08", letterSpacing: "-0.02em" }}>More from every customer</div>
                   <p style={{ margin: "14px 0 0", fontSize: "16px", lineHeight: "1.6", fontWeight: "400", color: "#4E586A" }}>Demand-based pricing captures what each space is worth at that moment — busy weekdays, game nights, holiday weekends.</p>
                 </div>
@@ -361,7 +361,7 @@ export default class RealEstatePage extends React.Component {
                   <img src="/media/photos/hartford-healthcare-entrance-wallscape.webp?v=04dc2f7b" alt="Hartford HealthCare wallscape above a garage entrance" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} loading="lazy" decoding="async" />
                 </div>
                 <div className="m-re-stream-body" style={{ padding: "36px" }}>
-                  <div style={{ fontSize: "12px", fontWeight: "600", letterSpacing: "0.14em", color: "#8A5300" }}>STREAM 02</div>
+                  <div style={{ fontSize: "12px", fontWeight: "600", letterSpacing: "0.14em", color: "#C2630A" }}>STREAM 02</div>
                   <div style={{ marginTop: "12px", fontSize: "30px", fontWeight: "650", lineHeight: "1.08", letterSpacing: "-0.02em" }}>A new advertising line</div>
                   <p style={{ margin: "14px 0 0", fontSize: "16px", lineHeight: "1.6", fontWeight: "400", color: "#4E586A" }}>Screens, walls, gate arms and elevators sold to national and local brands — you receive a percentage of the gross.</p>
                 </div>

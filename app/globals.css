@@ -133,7 +133,7 @@ html.alm-motion .alm-static-only { display: none !important; }
 .alm-nav-bar { transition: transform .5s cubic-bezier(.2, .7, .2, 1), background-color .3s ease; }
 .alm-nav-prog { display: none; }
 html.alm-motion .alm-nav-head.is-fixed { padding-bottom: var(--nb, 68px); }
-html.alm-motion .alm-nav-bar.is-fixed { position: fixed !important; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(11, 18, 32, 0.78) !important; }
+html.alm-motion .alm-nav-bar.is-fixed { position: fixed !important; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(52, 69, 103, 0.94) !important; }
 html.alm-motion .alm-nav-bar.is-hidden { transform: translate3d(0, -105%, 0); }
 html.alm-motion .alm-nav-prog { display: block; position: absolute; left: 0; right: 0; bottom: -1px; height: 2px; background: #FBAE4F; transform-origin: 0 50%; transform: scaleX(var(--sp, 0)); }
 

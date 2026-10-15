@@ -419,7 +419,7 @@ export default class HomePage extends React.Component {
         <section className="alm-pt alm-pb" style={{ padding: "140px 28px 128px", background: "#F5F5F7" }}>
           <div style={{ maxWidth: "1240px", margin: "0 auto" }}>
             <div style={{ textAlign: "center" }}>
-              <div style={{ display: "inline-flex", alignItems: "center", gap: "10px", fontSize: "17px", fontWeight: "600", letterSpacing: "-0.01em", color: "#A85C00" }}><span style={{ width: "7px", height: "7px", background: "#FBAE4F", borderRadius: "50%" }} />For investors</div>
+              <div style={{ display: "inline-flex", alignItems: "center", gap: "10px", fontSize: "17px", fontWeight: "600", letterSpacing: "-0.01em", color: "#C2630A" }}><span style={{ width: "7px", height: "7px", background: "#FBAE4F", borderRadius: "50%" }} />For investors</div>
               <h2 className="alm-in" style={{ margin: "16px auto 0", maxWidth: "980px", fontSize: "clamp(40px, 6vw, 88px)", lineHeight: "1", letterSpacing: "-0.04em", fontWeight: "600" }}>A proven network.<br />An overlooked venue.</h2>
               <p className="alm-in" style={{ margin: "24px auto 0", maxWidth: "660px", fontSize: "21px", lineHeight: "1.5", fontWeight: "400", color: "#5B6474" }}>Parking is where every trip ends — and where drivers spend up to ten minutes. The footprint, the hardware and the brands are already in place.</p>
             </div>
@@ -597,7 +597,7 @@ export default class HomePage extends React.Component {
           <div aria-hidden="true" style={{ position: "absolute", left: "50%", top: "46%", width: "1100px", height: "900px", transform: "translate(-50%, -50%)", background: "radial-gradient(closest-side, rgba(63,120,255,0.16), rgba(0,0,0,0) 70%)", pointerEvents: "none" }} />
           <div style={{ position: "relative", maxWidth: "980px", margin: "0 auto", textAlign: "center" }}>
             <div style={{ display: "inline-flex", alignItems: "center", gap: "10px", fontSize: "17px", fontWeight: "600", letterSpacing: "-0.01em", color: "#8FDCE8" }}><span style={{ width: "7px", height: "7px", background: "#8FDCE8", borderRadius: "50%" }} />Digital Dynamic Rate Board™</div>
-            <h2 className="alm-in" style={{ margin: "18px 0 0", fontSize: "clamp(44px, 7vw, 104px)", lineHeight: "1", letterSpacing: "-0.04em", fontWeight: "600" }}>The rate board,<br /><span style={{ background: "linear-gradient(90deg, #FBAE4F, #FFD9A3)", WebkitBackgroundClip: "text", backgroundClip: "text", color: "transparent" }}>reinvented.</span></h2>
+            <h2 className="alm-in" style={{ margin: "18px 0 0", fontSize: "clamp(44px, 7vw, 104px)", lineHeight: "1", letterSpacing: "-0.04em", fontWeight: "600" }}>The rate board,<br /><span style={{ background: "linear-gradient(90deg, #FBAE4F, #FBAE4F)", WebkitBackgroundClip: "text", backgroundClip: "text", color: "transparent" }}>reinvented.</span></h2>
             <p className="alm-in" style={{ margin: "26px auto 0", maxWidth: "640px", fontSize: "21px", lineHeight: "1.5", fontWeight: "400", color: "#A1A1A6" }}>It prices parking in real time and sells full-motion advertising underneath — one screen, two revenue lines. Watch it work.</p>
             <div className="alm-in" style={{ marginTop: "32px", display: "flex", gap: "12px", flexWrap: "wrap", justifyContent: "center" }}>
               <A className="alm-btn" href="/real-estate#ddrb" style={{ display: "inline-flex", alignItems: "center", minHeight: "52px", padding: "0 26px", borderRadius: "999px", background: "#FBAE4F", color: "#0B1220", fontWeight: "600", fontSize: "15px" }}>For property owners</A>
@@ -661,7 +661,7 @@ export default class HomePage extends React.Component {
                     </div>
                     <div style={{ padding: "22px 24px 26px" }}>
                       <div style={{ display: "flex", justifyContent: "space-between", gap: "8px", alignItems: "center" }}>
-                        <span style={{ fontFamily: "'Geist Mono', monospace", fontSize: "11px", letterSpacing: "0.14em", color: "#8A5300" }}>{f.stage}</span>
+                        <span style={{ fontFamily: "'Geist Mono', monospace", fontSize: "11px", letterSpacing: "0.14em", color: "#C2630A" }}>{f.stage}</span>
                         <span style={{ display: "inline-flex", alignItems: "center", gap: "6px", fontSize: "10px", fontWeight: "600", letterSpacing: "0.12em", color: "#4E586A" }}><span style={{ width: "7px", height: "7px", background: f.bizDot, borderRadius: "50%" }} />{f.biz}</span>
                       </div>
                       <div style={{ marginTop: "8px", fontSize: "21px", fontWeight: "650", letterSpacing: "-0.02em" }}>{f.name}</div>
@@ -724,7 +724,7 @@ export default class HomePage extends React.Component {
                 <img src="/media/photos/ibm-digital-panel.webp?v=1985ec8c" alt="Commuters passing an IBM ad on an A Lot Media digital panel in a parking garage" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "60% 50%", display: "block" }} loading="lazy" decoding="async" />
               </div>
               <div style={{ padding: "32px", display: "flex", flexDirection: "column", gap: "14px", flex: "1" }}>
-                <div style={{ fontSize: "12px", fontWeight: "600", letterSpacing: "0.14em", color: "#8A5300" }}>FOR ADVERTISERS</div>
+                <div style={{ fontSize: "12px", fontWeight: "600", letterSpacing: "0.14em", color: "#C2630A" }}>FOR ADVERTISERS</div>
                 <div style={{ fontSize: "28px", fontWeight: "650", lineHeight: "1.08", letterSpacing: "-0.02em" }}>Reach drivers in the minutes they can’t skip.</div>
                 <div style={{ fontSize: "16px", lineHeight: "1.55", fontWeight: "400", color: "#4E586A" }}>Static, digital and event activations, targeted by profession, income and car type.</div>
                 <div style={{ marginTop: "auto", paddingTop: "12px", fontSize: "13px", fontWeight: "600", letterSpacing: "0.1em" }}>ADVERTISE WITH US <span className="alm-arrow" style={{ display: "inline-block" }}>→</span></div>
@@ -735,7 +735,7 @@ export default class HomePage extends React.Component {
                 <img src="/media/photos/stock-garage.webp?v=28875991" alt="Empty concrete parking garage level lit by overhead lights" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} loading="lazy" decoding="async" />
               </div>
               <div style={{ padding: "32px", display: "flex", flexDirection: "column", gap: "14px", flex: "1" }}>
-                <div style={{ fontSize: "12px", fontWeight: "600", letterSpacing: "0.14em", color: "#8A5300" }}>FOR PROPERTY OWNERS</div>
+                <div style={{ fontSize: "12px", fontWeight: "600", letterSpacing: "0.14em", color: "#C2630A" }}>FOR PROPERTY OWNERS</div>
                 <div style={{ fontSize: "28px", fontWeight: "650", lineHeight: "1.08", letterSpacing: "-0.02em" }}>More revenue from every space.</div>
                 <div style={{ fontSize: "16px", lineHeight: "1.55", fontWeight: "400", color: "#4E586A" }}>Advertising, dynamic pricing and event revenue — we install and sell, you get a percentage of the gross.</div>
                 <div style={{ marginTop: "auto", paddingTop: "12px", fontSize: "13px", fontWeight: "600", letterSpacing: "0.1em" }}>MONETIZE YOUR LOCATION <span className="alm-arrow" style={{ display: "inline-block" }}>→</span></div>
@@ -747,7 +747,7 @@ export default class HomePage extends React.Component {
                 <span style={{ position: "absolute", top: "14px", left: "14px", padding: "5px 10px", borderRadius: "999px", background: "rgba(11,18,32,0.72)", color: "#FFFFFF", fontSize: "10px", fontWeight: "600", letterSpacing: "0.1em" }}>STOCK PHOTO</span>
               </div>
               <div style={{ padding: "32px", display: "flex", flexDirection: "column", gap: "14px", flex: "1" }}>
-                <div style={{ fontSize: "12px", fontWeight: "600", letterSpacing: "0.14em", color: "#8A5300" }}>FOR EVENT ORGANIZERS</div>
+                <div style={{ fontSize: "12px", fontWeight: "600", letterSpacing: "0.14em", color: "#C2630A" }}>FOR EVENT ORGANIZERS</div>
                 <div style={{ fontSize: "28px", fontWeight: "650", lineHeight: "1.08", letterSpacing: "-0.02em" }}>Book a rooftop, a lot or a level.</div>
                 <div style={{ fontSize: "16px", lineHeight: "1.55", fontWeight: "400", color: "#4E586A" }}>Lots and garages for activations, VIP parking and game days — with media built in.</div>
                 <div style={{ marginTop: "auto", paddingTop: "12px", fontSize: "13px", fontWeight: "600", letterSpacing: "0.1em" }}>FIND A VENUE <span className="alm-arrow" style={{ display: "inline-block" }}>→</span></div>
@@ -758,7 +758,7 @@ export default class HomePage extends React.Component {
                 <img src="/media/photos/stock-aerial.webp?v=1f2e8bf5" alt="Aerial view of a large parking lot filled with cars" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} loading="lazy" decoding="async" />
               </div>
               <div style={{ padding: "32px", display: "flex", flexDirection: "column", gap: "14px", flex: "1" }}>
-                <div style={{ fontSize: "12px", fontWeight: "600", letterSpacing: "0.14em", color: "#8A5300" }}>FOR INVESTORS</div>
+                <div style={{ fontSize: "12px", fontWeight: "600", letterSpacing: "0.14em", color: "#C2630A" }}>FOR INVESTORS</div>
                 <div style={{ fontSize: "28px", fontWeight: "650", lineHeight: "1.08", letterSpacing: "-0.02em" }}>Vertically integrated, screen to sale.</div>
                 <div style={{ fontSize: "16px", lineHeight: "1.55", fontWeight: "400", color: "#4E586A" }}>110+ digital units live in NY and CT, with 1,000 more planned across 35 markets.</div>
                 <div style={{ marginTop: "auto", paddingTop: "12px", fontSize: "13px", fontWeight: "600", letterSpacing: "0.1em" }}>INVESTOR OVERVIEW <span className="alm-arrow" style={{ display: "inline-block" }}>→</span></div>
