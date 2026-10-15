@@ -570,12 +570,12 @@ export default class HomePage extends React.Component {
                   <div style={{ marginTop: "4px", fontSize: "14px", fontWeight: "600", color: "#D5DAE3" }}>Wallscape</div>
                 </figcaption>
               </figure>
-              <figure className="alm-tile alm-wipe m-home-place" style={{ margin: "0", flex: "1 1 320px", height: "560px", position: "relative", overflow: "hidden", borderRadius: "16px", background: "#0B1220" }}>
-                <img src="/media/photos/hartford-healthcare-elevator-wraps.webp?v=30b1891b" alt="Hartford HealthCare LifeStar helicopter elevator door wraps" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} loading="lazy" decoding="async" />
+              <figure className="alm-tile alm-wipe m-home-place" style={{ margin: "0", flex: "1 1 320px", height: "420px", position: "relative", overflow: "hidden", borderRadius: "16px", background: "#0B1220" }}>
+                <img src="/media/photos/hartford-healthcare-elevator-wrap-concept.webp?v=e8d9d31a" alt="Concept render of a Hartford HealthCare LIFE STAR helicopter wrap on an elevator door" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "50% 38%", display: "block" }} loading="lazy" decoding="async" />
                 <figcaption style={{ position: "absolute", left: "0", right: "0", bottom: "0", padding: "80px 28px 24px", background: "linear-gradient(180deg, rgba(11,18,32,0) 0%, rgba(11,18,32,0.82) 100%)", color: "#FFFFFF" }}>
                   <div style={{ display: "inline-flex", alignItems: "center", gap: "10px", marginBottom: "10px", fontSize: "15px", fontWeight: "600", letterSpacing: "-0.005em", opacity: "0.72" }}><span style={{ width: "7px", height: "7px", background: "#FFFFFF", borderRadius: "50%" }} />Static</div>
                   <div style={{ fontSize: "22px", fontWeight: "650", letterSpacing: "-0.02em" }}>Hartford HealthCare</div>
-                  <div style={{ marginTop: "4px", fontSize: "14px", fontWeight: "600", color: "#D5DAE3" }}>Elevator wraps</div>
+                  <div style={{ marginTop: "4px", fontSize: "14px", fontWeight: "600", color: "#D5DAE3" }}>Elevator wrap · concept render</div>
                 </figcaption>
               </figure>
               <figure className="alm-tile alm-wipe m-home-place" style={{ margin: "0", flex: "2 1 640px", height: "560px", position: "relative", overflow: "hidden", borderRadius: "16px", background: "#0B1220" }}>
